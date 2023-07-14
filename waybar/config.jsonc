@@ -1,0 +1,208 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "custom/arch",
+    "wlr/workspaces",
+    "custom/spotify",
+    "cava"
+  ],
+  "modules-center": [
+    "clock",
+    "clock#2",
+    "custom/weather"
+  ],
+  "modules-right": [
+    "network",
+    "network#2",
+    "pulseaudio",
+    "disk",
+    "memory",
+    "cpu",
+    "bluetooth",
+    "tray"
+  ],
+  "margin-top": 5,
+  "margin-left": 5,
+  "margin-right": 5,
+  "custom/arch": {
+    "format": " <span color=\"#266B79\"> </span>",
+    "tooltip": false,
+    "on-click": "sh $HOME/.config/rofi/powermenu/type-2/powermenu.sh"
+  },
+  "wlr/workspaces": {
+    "format": "<span color=\"#FABD2F\">{icon}</span>",
+    "tooltip": false,
+    "all-outputs": false,
+    "current-only": true,
+    "sort-by-number": true,
+    "persistent_workspaces": {
+      "1": [
+        "DP-1"
+      ],
+      "2": [
+        "DP-1"
+      ],
+      "3": [
+        "DP-1"
+      ],
+      "4": [
+        "DP-1"
+      ],
+      "5": [
+        "DP-1"
+      ],
+      "6": [
+        "DP-1"
+      ],
+      "7": [
+        "DP-1"
+      ],
+      "8": [
+        "DP-1"
+      ],
+      "9": [
+        "DP-1"
+      ],
+      "10": [
+        "DP-1"
+      ]
+    },
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    }
+  },
+  "clock": {
+    "format": "<span color=\"#AE5858\"></span>  {:%H:%M}"
+  },
+  "clock#2": {
+    "format": "<span color=\"#6F8352\"></span>  {:%d.%m.%Y}"
+  },
+  "pulseaudio": {
+    "on-click": "exec pavucontrol",
+    "format": "<span color=\"#B4730E\"> {icon}</span> {volume}%",
+    "format-muted": " ",
+    "tooltip": false,
+    "format-icons": {
+      "headphone": "",
+      "default": [
+        "",
+        "",
+        "󰕾",
+        "󰕾",
+        "󰕾",
+        "",
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 1
+  },
+  "bluetooth": {
+    "format": "<span color='#b4befe'></span> {status}",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": "<span color=\"#266B79\"></span> {num_connections}",
+    "tooltip-format": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}   {device_address}"
+  },
+  "network": {
+    "interface": "enp1s0",
+    "interval": 2,
+    "format": "{ifname}",
+    "format-ethernet": "<span color=\"#266B79\"> 󰁝</span> {bandwidthUpBytes}",
+    "min-length": 13,
+    "format-disconnected": "󰖪 No Network",
+    "tooltip": false
+  },
+  "network#2": {
+    "interface": "enp1s0",
+    "interval": 2,
+    "format": "{ifname}",
+    "format-ethernet": "<span color=\"#477A5B\"> 󰁅</span> {bandwidthDownBytes}",
+    "min-length": 13,
+    "format-disconncted": "󰖪 No Network",
+    "tooltip": false
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "format-charging": "> {capacity}%",
+    "tooltip": false
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "<span color=\"#B94C07\"></span>{usage:3}%",
+    "min-length": 8
+  },
+  "memory": {
+    "interval": 10,
+    "format": "<span color=\"#72761E\">󱤓</span>{used:6} GiB",
+    "min-length": 3
+  },
+  "disk": {
+    "interval": 1,
+    "format": "<span color=\"#AF2528\"></span> {free}"
+  },
+  "custom/spotify": {
+    "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
+    "format": "<span color=\"#1ED760\"></span>  {}",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+  "custom/weather": {
+    "format": "{} °C",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --date-format %d-%m-%Y --hide-conditions --location chemnitz",
+    "return-type": "json"
+  },
+  "tray": {
+    "icon-size": 26,
+    "spacing": 10
+  },
+  "cava": {
+    //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+    "framerate": 30,
+    "autosens": 1,
+    "sensitivity": 100,
+    "bars": 14,
+    "lower_cutoff_freq": 50,
+    "higher_cutoff_freq": 10000,
+    "method": "pulse",
+    "source": "auto",
+    "stereo": true,
+    "reverse": false,
+    "bar_delimiter": 0,
+    "monstercat": false,
+    "waves": false,
+    "noise_reduction": 0.77,
+    "input_delay": 2,
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ],
+    "actions": {
+      "on-click-right": "mode"
+    }
+  }
+}
