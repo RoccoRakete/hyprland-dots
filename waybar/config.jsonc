@@ -25,7 +25,7 @@
   "margin-left": 5,
   "margin-right": 5,
   "custom/arch": {
-    "format": " <span color=\"#266B79\"> </span>",
+    "format": " <span color=\"#5E81AC\"> </span>",
     "tooltip": false,
     "on-click": "sh $HOME/.config/rofi/powermenu/type-2/powermenu.sh"
   },
@@ -74,14 +74,14 @@
     }
   },
   "clock": {
-    "format": "<span color=\"#AE5858\"></span>  {:%H:%M}"
+    "format": "<span color=\"#ed8796\"></span>  {:%H:%M}"
   },
   "clock#2": {
-    "format": "<span color=\"#6F8352\"></span>  {:%d.%m.%Y}"
+    "format": "<span color=\"#a6da95\"></span>  {:%d.%m.%Y}"
   },
   "pulseaudio": {
     "on-click": "exec pavucontrol",
-    "format": "<span color=\"#B4730E\"> {icon}</span> {volume}%",
+    "format": "<span color=\"#f5a97f\"> {icon}</span> {volume}%",
     "format-muted": " ",
     "tooltip": false,
     "format-icons": {
@@ -102,7 +102,7 @@
   "bluetooth": {
     "format": "<span color='#b4befe'></span> {status}",
     "format-disabled": "", // an empty format will hide the module
-    "format-connected": "<span color=\"#266B79\"></span> {num_connections}",
+    "format-connected": "<span color=\"#8aadf4\"></span> {num_connections}",
     "tooltip-format": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}   {device_address}"
   },
@@ -110,7 +110,7 @@
     "interface": "enp1s0",
     "interval": 2,
     "format": "{ifname}",
-    "format-ethernet": "<span color=\"#266B79\"> 󰁝</span> {bandwidthUpBytes}",
+    "format-ethernet": "<span color=\"#c6a0f6\"> 󰁝</span> {bandwidthUpBytes}",
     "min-length": 13,
     "format-disconnected": "󰖪 No Network",
     "tooltip": false
@@ -119,7 +119,7 @@
     "interface": "enp1s0",
     "interval": 2,
     "format": "{ifname}",
-    "format-ethernet": "<span color=\"#477A5B\"> 󰁅</span> {bandwidthDownBytes}",
+    "format-ethernet": "<span color=\"#91d7e3\"> 󰁅</span> {bandwidthDownBytes}",
     "min-length": 13,
     "format-disconncted": "󰖪 No Network",
     "tooltip": false
@@ -143,17 +143,17 @@
   },
   "cpu": {
     "interval": 1,
-    "format": "<span color=\"#B94C07\"></span>{usage:3}%",
+    "format": "<span color=\"#8bd5ca\"></span>{usage:3}%",
     "min-length": 8
   },
   "memory": {
     "interval": 10,
-    "format": "<span color=\"#72761E\">󱤓</span>{used:6} GiB",
+    "format": "<span color=\"#a6da95\">󱤓</span>{used:6} GiB",
     "min-length": 3
   },
   "disk": {
     "interval": 1,
-    "format": "<span color=\"#AF2528\"></span> {free}"
+    "format": "<span color=\"#FB4934\"></span> {free}"
   },
   "custom/spotify": {
     "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
