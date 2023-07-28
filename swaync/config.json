@@ -48,6 +48,7 @@
     }
   },
   "widgets": [
+    "label",
     "buttons-grid",
     "inhibitors",
     "mpris",
@@ -75,8 +76,8 @@
       "label": "  "
     },
     "label": {
-      "max-lines": 5,
-      "text": "Label Text"
+      "max-lines": 1,
+      "text": "Control Center"
     },
     "mpris": {
       "image-size": 100,

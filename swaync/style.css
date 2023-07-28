@@ -20,10 +20,12 @@
   border: 5px solid #266B79;
   border-radius: 10px;
 }
+
 .notification-content {
   background: #1D2021;
   border-radius: 10px;
 }
+
 .control-center {
   background: #1D2021;
   border-radius: 10px;
@@ -45,6 +47,8 @@
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
+  border: 1px solid #91D7E3;
+  font-size: 1.5rem;
 }
 
 .widget-volume>box>button {
@@ -57,4 +61,110 @@
   padding: 4px 8px 8px 8px;
   margin: 0px 8px 8px 8px;
   border-radius: 12px;
+}
+
+.widget-buttons-grid {
+  font-size: x-large;
+  padding-left: 35px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid #91D7E3;
+  background-color: #1D2021
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  margin: 5px;
+  padding-left: 0px;
+  background: @noti-bg;
+  border: 1px solid #91D7E3;
+  border-radius: 10px;
+  color: @text-color
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background: @noti-bg-hover;
+  color: #A6DA95
+}
+
+.widget-mpris {
+  /* The parent to all players */
+}
+
+.widget-mpris-player {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #91D7E3;
+  border-radius: 10px;
+}
+
+.widget-mpris-title {
+  font-family: 'AurulentSansM Nerd Font Mono';
+  font-size: 22px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.widget-mpris-subtitle {
+  font-family: 'AurulentSansM Nerd Font Mono';
+  font-size: 22px;
+  font-size: 1.2rem;
+}
+
+/* Label widget */
+.widget-label {
+  margin: 10px;
+}
+
+.widget-label>label {
+  font-family: 'AurulentSansM Nerd Font Mono';
+  font-size: 22px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Title widget */
+.widget-title {
+  margin: 10px;
+  font-family: 'AurulentSansM Nerd Font Mono';
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.widget-title>button {
+  font-size: initial;
+  color: #EBDBB2;
+  text-shadow: none;
+  background: @noti-bg;
+  border: 1px solid #91D7E3;
+  box-shadow: none;
+  border-radius: 12px;
+}
+
+.widget-title>button:hover {
+  background: @noti-bg-hover;
+}
+
+/* DND widget */
+.widget-dnd {
+  margin: 8px;
+  font-family: 'AurulentSansM Nerd Font Mono';
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.widget-dnd>switch {
+  font-size: initial;
+  border-radius: 10px;
+  background: @noti-bg;
+  border: 1px solid #91D7E3;
+  box-shadow: none;
+}
+
+.widget-dnd>switch:checked {
+  background: #4B716E;
+}
+
+.widget-dnd>switch slider {
+  background: @noti-bg-hover;
+  border-radius: 10px;
 }
