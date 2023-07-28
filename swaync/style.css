@@ -1,0 +1,60 @@
+.notification-row {
+  outline: none;
+  background: #1D2021;
+  margin: 5px;
+  box-shadow: none;
+  border: none;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+  background: #1D2021;
+  margin: 5px;
+  box-shadow: none;
+  border: none;
+}
+
+.notification {
+  background: #1D2021;
+  margin: 5px 5px;
+  border: 5px solid #266B79;
+  border-radius: 10px;
+}
+.notification-content {
+  background: #1D2021;
+  border-radius: 10px;
+}
+.control-center {
+  background: #1D2021;
+  border-radius: 10px;
+  border: 5px solid #266B79;
+}
+
+
+
+
+
+
+
+
+
+
+
+.widget-volume {
+  background-color: @noti-bg;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.widget-volume>box>button {
+  background: transparent;
+  border: none;
+}
+
+.per-app-volume {
+  background-color: @noti-bg-alt;
+  padding: 4px 8px 8px 8px;
+  margin: 0px 8px 8px 8px;
+  border-radius: 12px;
+}
