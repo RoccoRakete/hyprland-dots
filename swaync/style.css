@@ -1,51 +1,41 @@
 .notification-row {
-  outline: none;
   background: #1D2021;
-  margin: 5px;
+  margin: 10px 5px 10px 5px;
+  border: 5px solid #266B79;
+  border-radius: 10px;
+  padding: 0px;
   box-shadow: none;
-  border: none;
 }
 
 .notification-row:focus,
 .notification-row:hover {
   background: #1D2021;
-  margin: 5px;
-  box-shadow: none;
-  border: none;
 }
 
 .notification {
   background: #1D2021;
-  margin: 5px 5px;
-  border: 5px solid #266B79;
+  
   border-radius: 10px;
+  box-shadow: none;
 }
 
 .notification-content {
   background: #1D2021;
   border-radius: 10px;
+  box-shadow: none;
 }
 
 .control-center {
   background: #1D2021;
   border-radius: 10px;
+  padding: 5px;
   border: 5px solid #266B79;
 }
-
-
-
-
-
-
-
-
-
-
 
 .widget-volume {
   background-color: @noti-bg;
   padding: 10px;
-  margin: 10px;
+  margin: 10px 5px 10px 5px;
   border-radius: 10px;
   border: 1px solid #91D7E3;
   font-size: 1.5rem;
@@ -66,17 +56,17 @@
 .widget-buttons-grid {
   font-size: x-large;
   padding-left: 35px;
-  margin: 10px;
+  margin: 10px 5px 10px 5px;
   border-radius: 10px;
   border: 1px solid #91D7E3;
   background-color: #1D2021
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button {
-  margin: 5px;
+  margin: 10px 5px 10px 5px;
   padding-left: 0px;
   background: @noti-bg;
-  border: 1px solid #91D7E3;
+  border: 1px solid #A6DA95;
   border-radius: 10px;
   color: @text-color
 }
@@ -92,7 +82,7 @@
 
 .widget-mpris-player {
   padding: 10px;
-  margin: 10px;
+  margin: 10px 5px 10px 5px;
   border: 1px solid #91D7E3;
   border-radius: 10px;
 }
@@ -112,7 +102,7 @@
 
 /* Label widget */
 .widget-label {
-  margin: 10px;
+  margin: 10px 5px 10px 5px;
 }
 
 .widget-label>label {
@@ -124,7 +114,7 @@
 
 /* Title widget */
 .widget-title {
-  margin: 10px;
+  margin: 10px 5px 10px 5px;
   font-family: 'AurulentSansM Nerd Font Mono';
   font-size: 1.5rem;
   font-weight: bold;
@@ -135,7 +125,7 @@
   color: #EBDBB2;
   text-shadow: none;
   background: @noti-bg;
-  border: 1px solid #91D7E3;
+  border: 1px solid #ED8796;
   box-shadow: none;
   border-radius: 12px;
 }
@@ -146,7 +136,7 @@
 
 /* DND widget */
 .widget-dnd {
-  margin: 8px;
+  margin: 10px 5px 10px 5px;
   font-family: 'AurulentSansM Nerd Font Mono';
   font-size: 1.2rem;
   font-weight: bold;
@@ -156,7 +146,7 @@
   font-size: initial;
   border-radius: 10px;
   background: @noti-bg;
-  border: 1px solid #91D7E3;
+  border: 1px solid #ED8796;
   box-shadow: none;
 }
 

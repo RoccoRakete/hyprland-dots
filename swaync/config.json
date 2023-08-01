@@ -31,13 +31,8 @@
   "script-fail-notify": true,
   "scripts": {
     "example-script": {
-      "exec": "echo 'Do something...'",
-      "urgency": "Normal"
-    },
-    "example-action-script": {
-      "exec": "echo 'Do something actionable!'",
-      "urgency": "Normal",
-      "run-on": "action"
+      "exec": "thunderbird",
+      "app-name": "Thunderbird"
     }
   },
   "notification-visibility": {
