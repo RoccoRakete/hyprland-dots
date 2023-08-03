@@ -7,18 +7,16 @@
     "cava"
   ],
   "modules-center": [
-    "clock",
-    "clock#2",
-    "custom/weather"
+    "clock"
   ],
   "modules-right": [
     "network",
     "network#2",
-    "pulseaudio",
     "disk",
     "memory",
     "cpu",
     "bluetooth",
+    "pulseaudio",
     "tray",
     "custom/notification"
   ],
@@ -69,20 +67,20 @@
       ]
     },
     "format-icons": {
-      "urgent": "",
-      "active": "",
+      "urgent": "<span color=\"#5E81AC\"></span>",
+      "active": "<span color=\"#5E81AC\"></span>",
       "default": ""
     }
   },
   "clock": {
-    "format": "<span color=\"#ed8796\"></span>  {:%H:%M}"
+    "format": "<span color=\"#5E81AC\">󰃰</span>  {:%d.%m.%y | %H:%M}"
   },
   "clock#2": {
     "format": "<span color=\"#a6da95\"></span>  {:%d.%m.%Y}"
   },
   "pulseaudio": {
     "on-click": "exec pavucontrol",
-    "format": "<span color=\"#f5a97f\"> {icon}</span> {volume}%",
+    "format": "<span color=\"#c6a0f6\"> {icon}</span>",
     "format-muted": " ",
     "tooltip": false,
     "format-icons": {
@@ -98,7 +96,7 @@
         ""
       ]
     },
-    "scroll-step": 1
+    "scroll-step": 0
   },
   "bluetooth": {
     "format": "<span color='#b4befe'></span> {status}",
@@ -144,17 +142,17 @@
   },
   "cpu": {
     "interval": 1,
-    "format": "<span color=\"#8bd5ca\"></span>{usage:3}%",
+    "format": "<span color=\"#5E81AC\"></span>{usage:3}%",
     "min-length": 8
   },
   "memory": {
     "interval": 10,
-    "format": "<span color=\"#a6da95\">󱤓</span>{used:6} GiB",
+    "format": "<span color=\"#5E81AC\">󱤓  </span>{used:0.1f}G",
     "min-length": 3
   },
   "disk": {
     "interval": 1,
-    "format": "<span color=\"#FB4934\"></span> {free}"
+    "format": "<span color=\"#5E81AC\"></span> {free}"
   },
   "custom/spotify": {
     "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
@@ -173,7 +171,8 @@
   },
   "tray": {
     "icon-size": 28,
-    "spacing": 10
+    "spacing": 10,
+    "tooltip": true
   },
   "custom/notification": {
     "tooltip": false,

@@ -40,6 +40,8 @@ window#waybar {
 }
 
 #workspaces button {
+  padding-left: 5px;
+  padding-right: 5px;
   background: rgba(29, 32, 33, 1);
   background-color: rgba(29, 32, 33, 1);
   color: #FABD2F;
@@ -71,10 +73,6 @@ window#waybar {
   padding-right: 0px;
   padding-right: 0px;
 }
-#bluetooth {
-  margin-left: 10px;
-  padding-left: 0px;
-}
 
 #tray {
   padding-left: 0px;
@@ -101,6 +99,11 @@ window#waybar {
   border-bottom: 0px solid #266B79;
 }
 
+#pulseaudio {
+  margin-right: 5px;
+  padding-left: 0px;
+}
+
 #network {
   padding-left: 0px;
   padding-right: 0px;
@@ -111,7 +114,7 @@ window#waybar {
 #custom-spotify {
   border: 0px solid #266B79;
   border-radius: 10px;
-  margin-left: 200px;
+  margin-left: 50px;
   background-color: rgba(29, 32, 33, 1);
   margin-top: 5px;
   margin-bottom: 5px;
@@ -121,25 +124,7 @@ window#waybar {
 }
 #custom-notification {
   font-family: "NotoSansMono Nerd Font";
-}
-
-.widget-buttons-grid {
-  font-size: x-large;
-  padding: 8px;
-  margin: 20px 10px 10px;
-  border-radius: 12px;
-  border: 1px solid #7aa2f7;
-  background-color: @noti-bg
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button {
-  margin: 3px;
-  background: #343b58;
-  border-radius: 12px;
-  color: @text-color
-}
-
-.widget-buttons-grid>flowbox>flowboxchild>button:hover {
-  background: @noti-bg-hover;
-  color: rgba(158, 206, 106, 1)
+  margin-left: 5px;
+  margin-right: 10px;
+  padding-left: 0px;
 }
