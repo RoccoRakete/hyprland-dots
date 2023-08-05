@@ -1,12 +1,8 @@
 * {
-  border: none;
-  font-family: 'AurulentSansM Nerd Font Mono';
-  font-size: 22px;
-  font-weight: bold;
   font-family: 'Symbols Nerd Font Mono';
   font-size: 22px;
   font-weight: bold;
-  min-height: 38px;
+  min-height: 34px;
 }
 
 window#waybar {
@@ -40,8 +36,8 @@ window#waybar {
 }
 
 #workspaces button {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
   background: rgba(29, 32, 33, 1);
   background-color: rgba(29, 32, 33, 1);
   color: #FABD2F;
@@ -58,7 +54,7 @@ window#waybar {
   background-color: rgba(29, 32, 33, 1);
   background-color: rgba(29, 32, 33, 1);
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 2px;
@@ -77,6 +73,7 @@ window#waybar {
 #tray {
   padding-left: 0px;
   padding-right: 0px;
+  margin-bottom: 7px;
 }
 
 #clock,
@@ -90,7 +87,7 @@ window#waybar {
   background-color: rgba(29, 32, 33, 1);
   background-color: rgba(29, 32, 33, 1);
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 2px;
@@ -101,6 +98,7 @@ window#waybar {
 
 #pulseaudio {
   margin-right: 5px;
+  margin-bottom: 7px;
   padding-left: 0px;
 }
 
@@ -127,4 +125,5 @@ window#waybar {
   margin-left: 5px;
   margin-right: 10px;
   padding-left: 0px;
+  margin-bottom: 7px;
 }
