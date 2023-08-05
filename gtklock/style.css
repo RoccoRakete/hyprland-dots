@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+window#DP-1 {
+    background-image: url("/home/martin/Dokumente/Backgrounds/onedark-wallpapers-main/wm/od_hyprland_blur.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    padding: 0px;
+}
+
+box#window-box {
+    padding-bottom: 600px;
+}
+
+button {
+    color: black;
+    background-color: #076678;
+    border: solid 2px;
+    border-radius: 10px;
+    border-color: black;
+    font-size: 1.3rem;
+    padding: 5px;
+}
+
+entry {
+    border: solid 2px;
+    border-radius: 10px;
+    border-color: black;
+    padding: 10px;
+}
+
+label#clock-label {
+    font-size: 5rem;
+    border: solid 0px;
+    border-radius: 10px;
+    border-color: #C6A0F6;
+    padding-bottom: 300px;
+    margin-top: 0px;
+}
+
+label#input-label {
+    font-size: 1.7rem;
+}
+
+grid {
+    font-size: 1rem;
+    border: solid 2px;
+    border-radius: 10px;
+    border-color: #C6A0F6;
+    padding: 20px;
+    background-color: rgba(29, 32, 33, 0.9);
+    margin-top: 0px;
+}
+
+image#user-image {
+    margin-top: 0px;
+}
+
+box#user-box {
+    margin-bottom: 0px;
+    border-radius: 30px;
+    background-color: rgba(29, 32, 33, 0.9);
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: solid 2px;
+    border-color: #91D7E3;
+    min-height: 200px;
+    min-width: 200px;
+}

@@ -14,7 +14,6 @@
 
 .notification {
   background: #1D2021;
-  
   border-radius: 10px;
   box-shadow: none;
 }
@@ -83,19 +82,19 @@
 .widget-mpris-player {
   padding: 10px;
   margin: 10px 5px 10px 5px;
-  border: 1px solid #91D7E3;
+  border: 1px solid ;
   border-radius: 10px;
 }
 
 .widget-mpris-title {
-  font-family: 'AurulentSansM Nerd Font Mono';
+  font-family: 'Cantarell';
   font-size: 22px;
   font-weight: bold;
   font-size: 1.5rem;
 }
 
 .widget-mpris-subtitle {
-  font-family: 'AurulentSansM Nerd Font Mono';
+  font-family: 'Cantarell';
   font-size: 22px;
   font-size: 1.2rem;
 }
@@ -106,7 +105,7 @@
 }
 
 .widget-label>label {
-  font-family: 'AurulentSansM Nerd Font Mono';
+  font-family: 'Cantarell';
   font-size: 22px;
   font-size: 2rem;
   font-weight: bold;
@@ -115,7 +114,7 @@
 /* Title widget */
 .widget-title {
   margin: 10px 5px 10px 5px;
-  font-family: 'AurulentSansM Nerd Font Mono';
+  font-family: 'Cantarell';
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -137,7 +136,7 @@
 /* DND widget */
 .widget-dnd {
   margin: 10px 5px 10px 5px;
-  font-family: 'AurulentSansM Nerd Font Mono';
+  font-family: 'Cantarell';
   font-size: 1.2rem;
   font-weight: bold;
 }

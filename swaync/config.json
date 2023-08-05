@@ -90,7 +90,7 @@
           },
           {
               "label": "󰌾",
-              "command": "swaylock"
+              "command": "gtklock"
           },
           {
               "label": "󰍃",
