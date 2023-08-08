@@ -2,13 +2,13 @@
   font-family: 'Symbols Nerd Font Mono';
   font-size: 22px;
   font-weight: bold;
-  min-height: 34px;
+  min-height: 32px;
 }
 
 window#waybar {
   background: rgba(29, 32, 33, 1);
   border-radius: 10px;
-  border: 5px solid #266B79;
+  border: 3px solid #266B79;
 }
 
 #custom-arch,
