@@ -1,0 +1,9 @@
+* {
+    font-family: 'Symbols Nerd Font Mono';
+    font-size: 22px;
+    font-weight: bold;
+    min-height: 32px;
+  }
+  #waybar{
+    margin: 50px;
+  }

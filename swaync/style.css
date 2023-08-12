@@ -29,7 +29,7 @@
   border-radius: 30px;
   padding: 5px;
   border: 3px solid #266B79;
-  margin-bottom: 700px;
+  margin-bottom: 400px;
   margin-top: 15px;
   margin-right: 15px;
   min-width: 700px;
@@ -83,10 +83,10 @@
   padding-left: 0px;
   background: @noti-bg;
   border: 0px solid #A6DA95;
-  border-radius: 30px;
+  border-radius: 20px;
   color: @text-color;
   min-width: 150px;
-  min-height: 70px;
+  min-height: 60px;
   margin-bottom: 10px;
   margin-left: 10px;
   margin-right: 10px;
@@ -98,13 +98,25 @@
   color: #A6DA95
 }
 
+/* Label widget */
+.widget-label {
+  margin: 5px 10px 20px 30px;
+}
+
+.widget-label>label {
+  font-family: 'Cantarell';
+  font-size: 22px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 .widget-mpris {
   /* The parent to all players */
 }
 
 .widget-mpris-player {
   padding: 10px;
-  margin: 10px 5px 10px 5px;
+  margin-left: 20px;
   border: 0px solid ;
   border-radius: 10px;
 }
@@ -120,18 +132,6 @@
   font-family: 'Cantarell';
   font-size: 22px;
   font-size: 1.2rem;
-}
-
-/* Label widget */
-.widget-label {
-  margin: 5px 10px 20px 30px;
-}
-
-.widget-label>label {
-  font-family: 'Cantarell';
-  font-size: 22px;
-  font-size: 2rem;
-  font-weight: bold;
 }
 
 /* Title widget */

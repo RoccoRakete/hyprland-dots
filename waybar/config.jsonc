@@ -73,7 +73,7 @@
     }
   },
   "clock": {
-    "format": "<span color=\"#5E81AC\">󰃰</span>  {:%d.%m.%y | %H:%M}"
+    "format": "<span color=\"#5E81AC\">󰃰</span>  {:%d.%m.%y 󰇙 %H:%M}"
   },
   "clock#2": {
     "format": "<span color=\"#a6da95\"></span>  {:%d.%m.%Y}"
@@ -99,7 +99,7 @@
     "scroll-step": 0
   },
   "bluetooth": {
-    "format": "<span color='#b4befe'></span> {status}",
+    "format": "<span rise='-1000' color='#b4befe'></span> {status}",
     "format-disabled": "", // an empty format will hide the module
     "format-connected": "<span color=\"#8aadf4\"></span> {num_connections}",
     "tooltip-format": "{device_enumerate}",
@@ -109,7 +109,7 @@
     "interface": "enp1s0",
     "interval": 2,
     "format": "{ifname}",
-    "format-ethernet": "<span color=\"#c6a0f6\"> 󰁝</span> {bandwidthUpBytes}",
+    "format-ethernet": "<span rise='-1000' color=\"#c6a0f6\"></span> {bandwidthUpBytes}",
     "min-length": 13,
     "format-disconnected": "󰖪 No Network",
     "tooltip": false
@@ -118,7 +118,7 @@
     "interface": "enp1s0",
     "interval": 2,
     "format": "{ifname}",
-    "format-ethernet": "<span color=\"#91d7e3\"> 󰁅</span> {bandwidthDownBytes}",
+    "format-ethernet": "<span rise='-1000' color=\"#91d7e3\"></span> {bandwidthDownBytes}",
     "min-length": 13,
     "format-disconncted": "󰖪 No Network",
     "tooltip": false
@@ -142,33 +142,33 @@
   },
   "cpu": {
     "interval": 1,
-    "format": "<span color=\"#5E81AC\"></span>{usage:3}%",
-    "min-length": 8
+    "format": "<span rise='-1000' color=\"#5E81AC\"> </span>{usage:2}%",
+    "min-length": 6
   },
   "memory": {
     "interval": 10,
-    "format": "<span color=\"#5E81AC\">󱤓  </span>{used:0.1f}G",
-    "min-length": 3
+    "format": "<span rise='-1000' color=\"#5E81AC\"> </span>{used:0.1f}G",
+    "min-length": 6
   },
   "disk": {
     "interval": 1,
-    "format": "<span color=\"#5E81AC\"></span> {free}"
+    "format": "<span rise='-1000' color=\"#5E81AC\"> </span>{free}"
   },
   "custom/spotify": {
     "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
-    "format": "<span color=\"#1ED760\"></span>  {}",
+    "format": "<span  color=\"#1ED760\"></span>  {}",
     "return-type": "json",
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous"
   },
   "custom/weather": {
-    "format": "{} °C",
-    "tooltip": true,
-    "interval": 3600,
-    "exec": "wttrbar --date-format %d-%m-%Y --hide-conditions --location chemnitz",
-    "return-type": "json"
+    "exec": "$HOME/.dots/waybar/scripts/weather.sh",
+    "format": "<span rise='10000'>{}</span>",
+    "return-type": "json",
+    "interval": 300
   },
+
   "tray": {
     "icon-size": 28,
     "spacing": 10,

@@ -1,14 +1,14 @@
 * {
   font-family: 'Symbols Nerd Font Mono';
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
-  min-height: 32px;
 }
+
 
 window#waybar {
   background: rgba(29, 32, 33, 1);
   border-radius: 10px;
-  border: 3px solid #266B79;
+  border: 2px solid #476C43;
 }
 
 #custom-arch,
@@ -21,7 +21,6 @@ window#waybar {
   margin-top: 5px;
   margin-bottom: 5px;
   margin-right: 3px;
-  padding-top: 0px;
   padding-left: 5px;
   padding-right: 5px;
   border-top: 0px solid #266B79;
@@ -32,7 +31,7 @@ window#waybar {
 #custom-arch {
   margin-left: 10px;
   background-color: rgba(29, 32, 33, 1);
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 #workspaces button {
@@ -41,39 +40,46 @@ window#waybar {
   background: rgba(29, 32, 33, 1);
   background-color: rgba(29, 32, 33, 1);
   color: #FABD2F;
+  border: 0px;
 }
 
 #bluetooth,
 #cpu,
 #memory,
 #disk,
-#tray,
 #custom-notification {
   border: 0px solid #266B79;
   border-radius: 10px;
   background-color: rgba(29, 32, 33, 1);
   background-color: rgba(29, 32, 33, 1);
   margin-top: 5px;
-  margin-bottom: 7px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 2px;
+  margin-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
   margin-right: 5px;
   border-top: 0px solid #266B79;
   border-bottom: 0px solid #266B79;
 }
 #cpu,
 #memory {
-  margin-right: 0px;
+  margin-right: 5px;
   margin-left: 0px;
-  padding-right: 0px;
-  padding-right: 0px;
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 8px;
+}
+#cpu,
+#memory,
+#disk,
+#network {
+  font-family: 'feather';
 }
 
 #tray {
-  padding-left: 0px;
+  padding-left: 10px;
   padding-right: 0px;
-  margin-bottom: 7px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 #clock,
@@ -81,32 +87,32 @@ window#waybar {
 #backlight,
 #pulseaudio,
 #network,
-#battery {
+#battery,
+#custom-weather {
   border: 0px solid #266B79;
   border-radius: 10px;
   background-color: rgba(29, 32, 33, 1);
   background-color: rgba(29, 32, 33, 1);
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 2px;
   margin-right: 5px;
   border-top: 0px solid #266B79;
   border-bottom: 0px solid #266B79;
 }
 
 #pulseaudio {
-  margin-right: 5px;
-  margin-bottom: 7px;
-  padding-left: 0px;
+  padding-left: 10px;
+  padding-right: 0px;
+  margin-bottom: 5px;
 }
 
 #network {
   padding-left: 0px;
   padding-right: 0px;
   margin-left: 0px;
-  margin-right: 0px;
+  margin-right: 5px;
 }
 
 #custom-spotify {
@@ -115,15 +121,14 @@ window#waybar {
   margin-left: 50px;
   background-color: rgba(29, 32, 33, 1);
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 2px;
 }
 #custom-notification {
   font-family: "NotoSansMono Nerd Font";
-  margin-left: 5px;
   margin-right: 10px;
-  padding-left: 0px;
-  margin-bottom: 7px;
+  padding-right: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
