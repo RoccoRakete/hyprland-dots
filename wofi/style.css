@@ -11,7 +11,7 @@
 
 #outer-box {
     background-color: #1c1c1c;
-    border: 5px solid #266B79;
+    border: 2px solid #476C43;
     border-radius: 30px;
 }
 
@@ -38,7 +38,7 @@
 #input {
     font-size: 22px;
     background-color: #1c1c1c;
-    border: 3px solid #AE5858;
+    border: 1px solid #AE5858;
     border-radius: 10px;
     color: #bcbcbc;
     margin: 20px;
@@ -47,7 +47,7 @@
 
 #entry:selected {
     color: #bcbcbc;
-    border: 2px solid #B4730E;
+    border: 1px solid #B4730E;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 10px;

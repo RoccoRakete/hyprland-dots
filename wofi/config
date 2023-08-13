@@ -1,16 +1,16 @@
 
-mode=drun
-run-always_parse_args=true
-term=foot
-allow_images=true
-hide_scroll=true
-insensitive=true
-prompt=
+mode                  = drun
+run-always_parse_args = true
+term                  = foot
+allow_images          = true
+hide_scroll           = true
+insensitive           = true
+prompt                =
 #height=40%
-#width=50%
-lines=10
-columns=2
-image_size=48
+width                 = 25%
+lines                 = 10
+columns               = 1
+image_size            = 48
 
 
 

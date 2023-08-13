@@ -142,7 +142,7 @@
   },
   "cpu": {
     "interval": 1,
-    "format": "<span rise='-1000' color=\"#5E81AC\"> </span>{usage:2}%",
+    "format": "<span rise='-1000' color=\"#5E81AC\"></span>{usage:2}%",
     "min-length": 6
   },
   "memory": {

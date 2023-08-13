@@ -1,7 +1,7 @@
 .notification-row {
   background: #1D2021;
-  margin: 10px 5px 10px 5px;
-  border: 3px solid #266B79;
+  margin: 10px 30px 10px 30px;
+  border: 2px solid #476C43;
   border-radius: 10px;
   padding: 0px;
   box-shadow: none;
@@ -28,8 +28,8 @@
   background: #1D2021;
   border-radius: 30px;
   padding: 5px;
-  border: 3px solid #266B79;
-  margin-bottom: 400px;
+  border: 2px solid #476C43;
+  margin-bottom: 300px;
   margin-top: 15px;
   margin-right: 15px;
   min-width: 700px;
@@ -37,7 +37,9 @@
 
 .widget-volume {
   background-color: @noti-bg;
-  padding: 20px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 10px 5px 10px 5px;
   border-radius: 25px;
   border: 0px solid #91D7E3;
@@ -55,12 +57,12 @@
   border-color: transparent;
 }
 .widget-volume>box>scale>contents>trough>highlight {
-  min-height: 30px;
+  min-height: 5px;
   border-radius: 20px;
   
 }
 .widget-volume>box>scale>contents>trough {
-  min-height: 30px;
+  min-height: 20px;
   border-radius: 20px;
   
 }
@@ -83,14 +85,14 @@
   padding-left: 0px;
   background: @noti-bg;
   border: 0px solid #A6DA95;
-  border-radius: 20px;
+  border-radius: 10px;
   color: @text-color;
-  min-width: 150px;
-  min-height: 60px;
+  min-width: 80px;
+  min-height: 45px;
   margin-bottom: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  font-size: 2rem;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 1.7rem;
 }
 
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
