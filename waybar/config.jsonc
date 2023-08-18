@@ -35,41 +35,31 @@
     "current-only": true,
     "sort-by-number": true,
     "persistent_workspaces": {
-      "1": [
-        "DP-1"
-      ],
-      "2": [
-        "DP-1"
-      ],
-      "3": [
-        "DP-1"
-      ],
-      "4": [
-        "DP-1"
-      ],
-      "5": [
-        "DP-1"
-      ],
-      "6": [
-        "DP-1"
-      ],
-      "7": [
-        "DP-1"
-      ],
-      "8": [
-        "DP-1"
-      ],
-      "9": [
-        "DP-1"
-      ],
-      "10": [
-        "DP-1"
-      ]
+      "1" : "",
+      "2" : "",
+      "3" : "",
+      "4" : "",
+      "5" : "",
+      "6" : "",
+      "7" : "",
+      "8" : "",
+      "9" : "",
+      "10": ""
     },
     "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "<span color=\"#c6a0f6\">󰊠</span>",
       "urgent": "<span color=\"#5E81AC\"></span>",
-      "active": "<span color=\"#5E81AC\"></span>",
-      "default": ""
+      "active": "<span color=\"#5E81AC\">󰮯</span>",
+      "default": ""
     }
   },
   "clock": {
@@ -109,8 +99,8 @@
     "interface": "enp1s0",
     "interval": 2,
     "format": "{ifname}",
-    "format-ethernet": "<span rise='-1000' color=\"#c6a0f6\"></span> {bandwidthUpBytes}",
-    "min-length": 13,
+    "format-ethernet": "<span rise='-1500' color=\"#c6a0f6\"></span> {bandwidthUpBytes}",
+    "min-length": 0,
     "format-disconnected": "󰖪 No Network",
     "tooltip": false
   },
@@ -118,7 +108,7 @@
     "interface": "enp1s0",
     "interval": 2,
     "format": "{ifname}",
-    "format-ethernet": "<span rise='-1000' color=\"#91d7e3\"></span> {bandwidthDownBytes}",
+    "format-ethernet": "<span rise='-1500' color=\"#91d7e3\"></span> {bandwidthDownBytes}",
     "min-length": 13,
     "format-disconncted": "󰖪 No Network",
     "tooltip": false
