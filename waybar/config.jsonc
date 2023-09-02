@@ -2,7 +2,7 @@
   "layer": "top",
   "modules-left": [
     "custom/arch",
-    "wlr/workspaces",
+    "hyprland/workspaces",
     "custom/spotify",
     "cava"
   ],
@@ -28,7 +28,7 @@
     "tooltip": false,
     "on-click": "sh $HOME/.config/rofi/powermenu/type-2/powermenu.sh"
   },
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
     "format": "<span color=\"#FABD2F\">{icon}</span>",
     "tooltip": false,
     "all-outputs": false,

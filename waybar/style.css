@@ -1,7 +1,7 @@
 * {
   font-family: 'Symbols Nerd Font Mono';
   font-size: 20px;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 
@@ -68,11 +68,15 @@ window#waybar {
   margin-top: 5px;
   margin-bottom: 8px;
 }
+
+#clock,
+#bluetooth,
 #cpu,
 #memory,
 #disk,
 #network {
   font-family: 'feather';
+  font-family: 'TeX Gyre Heros';
 }
 
 #tray {
