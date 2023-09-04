@@ -1,10 +1,11 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'TeX Gyre Heros';
 }
 
 window#DP-1 {
-    background-image: url("/home/martin/Dokumente/Backgrounds/onedark-wallpapers-main/wm/od_hyprland_blur.png");
+    background-image: url("/home/martin/Dokumente/Backgrounds/wallpapers/Gruv/stairs_blured.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -40,6 +41,7 @@ label#clock-label {
     border-color: #C6A0F6;
     padding-bottom: 300px;
     margin-top: 0px;
+    color: @theme_bg_color;
 }
 
 label#input-label {
@@ -50,7 +52,7 @@ grid {
     font-size: 1rem;
     border: solid 2px;
     border-radius: 10px;
-    border-color: #C6A0F6;
+    border-color: #476C43;
     padding: 20px;
     background-color: rgba(29, 32, 33, 0.9);
     margin-top: 0px;
@@ -68,7 +70,7 @@ box#user-box {
     padding-left: 20px;
     padding-right: 20px;
     border: solid 2px;
-    border-color: #91D7E3;
+    border-color: #476C43;
     min-height: 200px;
     min-width: 200px;
 }

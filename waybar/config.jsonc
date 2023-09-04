@@ -146,11 +146,11 @@
   },
   "custom/spotify": {
     "exec": "/usr/bin/python3 ~/.config/waybar/mediaplayer.py --player spotify",
-    "format": "<span  color=\"#1ED760\"></span>  {}",
+    "format": "<span font='18' rise='-1000' color=\"#1ED760\"></span>  {}",
     "return-type": "json",
     "on-click": "playerctl play-pause",
     "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous"
+    "on-scroll-down": "playerctl previous"                  
   },
   "custom/weather": {
     "exec": "$HOME/.dots/waybar/scripts/weather.sh",
