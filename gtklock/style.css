@@ -41,7 +41,7 @@ label#clock-label {
     border-color: #C6A0F6;
     padding-bottom: 300px;
     margin-top: 0px;
-    color: @theme_bg_color;
+    color: @theme_fg_color;
 }
 
 label#input-label {
