@@ -14,7 +14,7 @@ CPUThermalZone: /sys/class/thermal/thermal_zone2/temp
 SuspendCommand: ~/.config/scripts/sys.sh suspend
 
 # The command to execute on lock
-LockCommand: ~/.config/scripts/sys.sh lock
+LockCommand: gtklock
 
 # The command to execute on exit
 ExitCommand: killall Hyprland
@@ -22,17 +22,21 @@ ExitCommand: killall Hyprland
 # The folder, where the battery sensors reside
 BatteryFolder: /sys/class/power_supply/BAT1
 
-# Overrides the icon of the nth (in this case the first) workspace
-# WorkspaceSymbol-9: 1
-
+# Overrides the icon of the nth (in this case the first) workspace.
+# Please note the missing space between "," and the symbol. Adding a space here adds it to the bar too!
+#WorkspaceSymbol: 10,
+#WorkspaceSymbol: 1,2
 # The default symbol for the workspaces
 DefaultWorkspaceSymbol: 
 
 # Scroll through the workspaces of the current monitor instead of all workspaces
-WorkspaceScrollOnMonitor: false
+WorkspaceScrollOnMonitor: true
 
 # When true: Scroll up -> Next workspace instead of previous workspace. Analogous with scroll down
 WorkspaceScrollInvert: false
+
+# Number of workspaces to display. Displayed workspace IDs are 1-n (Default: 1-9)
+NumWorkspaces: 10
 
 # Use Hyprland IPC instead of the ext_workspace protocol for workspace polling.
 # Hyprland IPC is *slightly* less performant (+0.1% one core), but way less bug prone,
@@ -60,7 +64,7 @@ CenterTime: true
 TimeSpace: 300
 
 # Set datetime style
-DateTimeStyle: %d.%m.%y - %H:%M
+DateTimeStyle: %d.%m.%y 󰇙 %H:%M
 
 # Set datetime locale (defaults to system locale if not set or set to empty string)
 # DateTimeLocale: de_DE.utf8
@@ -69,7 +73,7 @@ DateTimeStyle: %d.%m.%y - %H:%M
 AudioInput: false
 
 # Sets the audio slider to be on reveal (Just like the sensors) when true. Only affects the bar.
-AudioRevealer: false
+AudioRevealer: true
 
 # Sets the rate of change of the slider on each scroll. In Percent
 AudioScrollSpeed: 5
@@ -98,7 +102,7 @@ NetworkAdapter: enp1s0
 NetworkWidget: true
 
 # Enables tray icons
-EnableSNI: true
+EnableSNI: false
 
 # SNIIconSize sets the icon size for a SNI icon.
 # SNIPaddingTop Can be used to push the Icon down. Negative values are allowed

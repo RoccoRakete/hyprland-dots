@@ -23,8 +23,10 @@
 }
 
 .time-text {
-  font-size: 18px;
+  font-size: 20px;
   padding-bottom: 2px;
+  color: @theme_fg_color;
+  font-weight: bolder;
 }
 
 .reboot-button {
@@ -44,7 +46,7 @@
 
 .power-button {
   font-size: 28px;
-  color: #ff5555;
+  color: #FB4934;
 }
 
 .system-confirm {
@@ -80,12 +82,12 @@ highlight {
 
 .audio-icon {
   font-size: 24px;
-  color: #ffb86c;
+  color: #FABD2F;
 }
 
 .audio-volume {
   font-size: 16px;
-  color: #ffb86c;
+  color: #FABD2F;
 }
 .audio-volume trough {
   background-color: #44475a;
@@ -94,7 +96,7 @@ highlight {
   background-color: transparent;
 }
 .audio-volume highlight {
-  background-color: #ffb86c;
+  background-color: #FABD2F;
 }
 
 .mic-icon {
@@ -261,26 +263,36 @@ highlight {
 .ws-dead {
   color: #44475a;
   font-size: 22px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .ws-inactive {
-  color: #6272a4;
+  color: #8EC07C;
   font-size: 22px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .ws-visible {
   color: #8be9fd;
   font-size: 22px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .ws-current {
   color: #f1fa8c;
   font-size: 22px;
+  padding: 0px;
+  margin: 0px;
 }
 
 .ws-active {
-  color: #50fa7b;
+  color: #FABD2F;
   font-size: 22px;
+  padding: 0px;
+  margin: 0px;
 }
 
 @keyframes connectanim {
@@ -387,5 +399,8 @@ highlight {
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
-
+.right.horizontal {
+  padding: 0px;
+  margin: 0px;
+}
 /*# sourceMappingURL=style.css.map */
