@@ -40,4 +40,6 @@ Forthermore I recommend installing the following things:
 * [Anyrun](https://github.com/Kirottu/anyrun) as an application launcher, web search and many more. Although ags has it's own application launcher, I like anyrun much more since It's capable of also doing websearches and much more! :D 
 * [GTK-Lock](https://github.com/jovanlanik/gtklock) ... same thing as with anyrun. I just like it much more, but this is totaly up to you!
 
+
+
 [![Anurag's GitHub stats-Dark](https://github-readme-stats.vercel.app/api?username=RoccoRakete&show_icons=true&theme=dark#gh-dark-mode-only)](https://github.com/anuraghazra/github-readme-stats#gh-dark-mode-only)
