@@ -20,3 +20,10 @@ When I first started using ags I thought, OMG: Why is this so hard and complicat
 JavaScript is a quiet simple programming language and since you already have a useful project to work with, it's easy to try out and make changes on the fly :) 
 
 There is also a nice [Wiki](https://github.com/Aylur/ags/wiki)
+
+The volume is controlled by ags like this:
+```
+bind = , XF86AudioRaiseVolume , exec , ags run-js "audio.speaker.volume += 0.05; indicator.speaker()"
+bind = , XF86AudioLowerVolume , exec , ags run-js "audio.speaker.volume -= 0.05; indicator.speaker()"
+```
+... this triggers the OSD to show up too!
