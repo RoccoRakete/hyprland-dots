@@ -27,3 +27,4 @@ bind = , XF86AudioRaiseVolume , exec , ags run-js "audio.speaker.volume += 0.05;
 bind = , XF86AudioLowerVolume , exec , ags run-js "audio.speaker.volume -= 0.05; indicator.speaker()"
 ```
 ... this triggers the OSD to show up too!
+This should with brightness control too, but I can't verify this, since I'm not using Linux on a Laptop. 
