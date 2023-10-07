@@ -3,6 +3,8 @@
 
 ---
 
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=RoccoRakete)](https://github.com/anuraghazra/github-readme-stats)
+
 # 🔧 **Stuff used** 
 * GTK-Theme: [Gruvbox theme by me.]()
 * Icons: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
