@@ -6,7 +6,7 @@
 ---
 
 # 🔧 **Stuff used** 
-* GTK-Theme: [Gruvbox theme by me.]()
+* GTK-Theme: [Gruvbox theme by me.](https://github.com/RoccoRakete/gruvbox-gtk-theme)
 * Icons: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 * Compositor: [Hyprland](https://github.com/hyprwm)
 * Shell: [ags](https://github.com/Aylur/ags)
