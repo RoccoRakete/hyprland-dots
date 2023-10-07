@@ -33,7 +33,7 @@ This should with brightness control too, but I can't verify this, since I'm not 
 If you install [ags](https://github.com/Aylur/ags/wiki/installation) and [Hyprland](https://wiki.hyprland.org/Getting-Started/Installation/) you're 99% ready to go. 
 
 Forthermore I recommend installing the following things: 
-* [playerctl.](https://github.com/altdesktop/playerctl) for proper media control.
-* [A nerdfont.](https://www.nerdfonts.com/) for displaying icons.
+* [playerctl](https://github.com/altdesktop/playerctl) for proper media control.
+* [A nerdfont](https://www.nerdfonts.com/) for displaying icons.
 * [Anyrun](https://github.com/Kirottu/anyrun) as an application launcher, web search and many more. Although ags has it's own application launcher, I like anyrun much more since It's capable of also doing websearches and much more! :D 
 
