@@ -17,4 +17,6 @@ When I first started using ags I thought, OMG: Why is this so hard and complicat
 
 ... but it's really not. If you want to make some minor adjustments to the shell, it's highly recommended, that you learn some JavaScript and (S)CSS for styling.
 
-JavaScript is a quiet simple programming language and since you already have a useful project to work with, it's easy to try out and make changes on the fly :)  
+JavaScript is a quiet simple programming language and since you already have a useful project to work with, it's easy to try out and make changes on the fly :) 
+
+There is also a nice [Wiki](https://github.com/Aylur/ags/wiki)
