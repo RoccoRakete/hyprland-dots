@@ -10,4 +10,4 @@
 * Shell: ags
 * Launcher: Anyrun
 * Terminal: Kitty
-* Wallaper
+* [Wallaper](https://github.com/AngelJumbo/gruvbox-wallpapers/blob/main/wallpapers/irl/stairs.jpg)
