@@ -18,7 +18,7 @@ window#waybar {
   color: #FABD2F;
   margin-top: 2px;
   margin-bottom: 2px;
-  margin-right: 3px;
+  margin-right: 5px;
   padding-left: 5px;
   padding-right: 5px;
   padding-top: 1px;
@@ -45,12 +45,10 @@ window#waybar {
   margin-bottom: 2px;
   padding-left: 5px;
   padding-right: 5px;
-  margin-right: 5px;
   padding-bottom: 2px;
 }
 #cpu,
 #memory {
-  margin-right: 5px;
   padding-right: 10px;
   margin-top: 2px;
   margin-bottom: 2px;
@@ -86,16 +84,20 @@ window#waybar {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 2px;
-  margin-right: 5px;
 }
 
 #pulseaudio {
   padding-left: 10px;
   margin-top: 2px;
-}
+  margin-left: 10px;
+  border-top: 0px solid #8EC07C;
+  border-bottom: 0px solid #8EC07C;
+  border-left: 0px solid #8EC07C;
+  border-right: 0px ;
 
-#network {
-  margin-right: 5px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-radius: 10px 0px 0px 10px;
 }
 
 #custom-spotify {
@@ -113,5 +115,72 @@ window#waybar {
   padding-right: 20px;
   margin-top: 2px;
   margin-top: 2px;
-  margin-left: 5px;
+  border-top: 0px solid #8EC07C;
+  border-bottom: 0px solid #8EC07C;
+  border-right: 0px solid #8EC07C;
+  border-left: 0px ;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-radius: 0px 10px 10px 0px;
 }
+/*
+#clock,
+#custom-arch,
+#workspaces,
+#cava{
+  border: 0px solid #8EC07C;
+  background-color: #282828;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+#network{
+  border: 0px solid #8EC07C;
+  border-right: 0px ;
+  background-color: #282828;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-radius: 10px 0px 0px 10px;
+}
+#network.ethernet.2{
+  border-top: 0px solid #8EC07C;
+  border-bottom: 0px solid #8EC07C;
+  border-left: 0px ;
+  border-right: 0px ;
+  background-color: #282828;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-radius: 0px 0px 0px 0px;
+}
+#disk,
+#cpu,
+#memory{
+  border-top: 0px solid #8EC07C;
+  border-bottom: 0px solid #8EC07C;
+  border-left: 0px ;
+  border-right: 0px ;
+  background-color: #282828;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-radius: 0px 0px 0px 0px;
+}
+#bluetooth{
+  border-top: 0px solid #8EC07C;
+  border-bottom: 0px solid #8EC07C;
+  border-right: 0px solid #8EC07C;
+  border-left: 0px ;
+  background-color: #282828;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-radius: 0px 10px 10px 0px;
+}
+#tray{
+  border-top: 0px solid #8EC07C;
+  border-bottom: 0px solid #8EC07C;
+  border-left: 0px ;
+  border-right: 0px ;
+  background-color: #282828;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  border-radius: 0px 0px 0px 0px;
+}
+*/

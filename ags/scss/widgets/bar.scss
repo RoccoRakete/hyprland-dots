@@ -1,4 +1,4 @@
-$float: 5px;
+$float: $spacing * 0.2;
 
 @mixin panel_button($flat: false, $reactive: true){
     all: unset;
@@ -17,7 +17,7 @@ $float: 5px;
             color: $hover_fg;
 
             @if $drop_shadow {
-                box-shadow: 0 0 $wm_gaps/2 0 $shadow,
+                box-shadow: 0 0 min(6px, $spacing/2) 0 $shadow,
                     inset 0 0 0 99px $hover;
             } @else {
                 box-shadow: inset 0 0 0 99px $hover;
@@ -31,19 +31,19 @@ $float: 5px;
         }
     } @else {
         @include accs_button($flat, $reactive);
-
-        > * {
-            margin: $float;
-        }
+        > * { margin: $float; }
     }
 
     label {
         font-weight: bold;
-        font-size: 22px;
+    }
+
+    image {
+        font-size: $font-size * 1.2;
     }
 
     > * {
-        padding: 0em .5em;
+        padding: .3em .5em;
     }
 }
 
@@ -66,13 +66,13 @@ $float: 5px;
         padding: 0;
         border-color: #476C43;
     }
-    
+
     @if $bar_style == 'separated' {
-        > .end button:last-child > * {
+        > .end > button:last-child > * {
             margin-right: $wm_gaps;
         }
 
-        > .start button:first-child > * {
+        > .start > button:first-child > * {
             margin-left: $wm_gaps;
         }
     }
@@ -81,21 +81,21 @@ $float: 5px;
         @include panel_button($flat: true);
     }
 
+    separator {
+        background-color: transparentize($fg_color, 0.98);
+        border-radius: $radii;
+        min-height: 5px;
+        min-width: 5px;
+    }
+
     .quicksettings > box > * {
         margin: 0 $spacing/2;
         &:last-child { margin-right: 0; }
         &:first-child { margin-left: 0; }
     }
 
-    .separator {
-        background-color: transparentize($fg_color, 0.7);
-        border-radius: $radii;
-        min-height: 5px;
-        min-width: 5px;
-    }
-
-    .launcher {
-        label { color: transparentize($accent, 0.2); } 
+    .overview {
+        label { color: transparentize($accent, 0.2); }
         &:hover label { color: $accent; }
         &:active label, &.active label { color: $accent_fg; }
     }
@@ -106,14 +106,57 @@ $float: 5px;
         &:active image { color: $red; }
     }
 
-    .quicksettings:not(.active) .battery {
-        &.low { color: $red; }
-        &.charged, &.charging { color: $green; }
+    /* stylelint-disable-next-line selector-not-notation */
+    .quicksettings:not(.active):not(:active) {
+        .bluetooth { color: $blue; }
+
+        .battery {
+            &.low { color: $red; }
+            &.charged, &.charging { color: $green; }
+        }
+    }
+
+    .media {
+        &.spotify image { color: $green; }
+        &.firefox image { color: $orange; }
+        &.mpv image { color: $magenta; }
+    }
+
+    .notifications {
+        image { color: $yellow; }
+    }
+
+    .battery-bar {
+        image { margin-right: $spacing/2; }
+        .font-icon { font-size: 1.3em; }
+
+        levelbar trough {
+            @include widget;
+            min-width: 60px;
+            min-height: 14px;
+
+            block.filled {
+                border-radius: max($radii - $border_width, 0);
+                background-image: $active_gradient;
+            }
+        }
+
+        @mixin color($color) {
+            image, label { color: $color }
+
+            block.filled {
+                background-image: linear-gradient(to right, $color, lighten($color, 6%));
+            }
+        }
+
+        .medium { @include color($yellow) }
+        .low { @include color($red) }
+        .charging { @include color($green) }
+        &:active { @include color($accent_fg) }
     }
 
     .workspaces {
         > * { padding: 0; }
-        
 
         .eventbox {
             transition: $transition;
@@ -122,72 +165,45 @@ $float: 5px;
                 border-radius: max($radii - $border_width, 0);
                 &:hover { background-color: $hover; }
             } @else {
-                @include button;
+                @include button($flat: true);
             }
         }
 
         button {
             all: unset;
-            font-size: 50px;
 
             .indicator {
-                min-width: 16px;
-                min-height: 16px;
-                border-radius: 20px;
-                border: 2px solid transparent;
-                transition: border-color $transition;
+                font-size: 0;
+                min-width: 6px;
+                min-height: 6px;
+                border-radius: $radii*0.6;
+                border: $border;
                 margin: 0 $spacing/2;
-
-                .fill {
-                    transition: background-color $transition;
-                    margin: 2px;
-                    min-width: 12px;
-                    min-height: 12px;
-                    border-radius: 15px;
-                    font-size: 50px;
-                }
+                transition: $transition/2;
+                background-color: transparentize($fg_color, 0.8);
             }
 
             &:last-child .indicator { margin-right: $spacing; }
             &:first-child .indicator { margin-left: $spacing; }
 
-            &.empty .indicator {
-                border-color: transparentize($fg_color, 0.3);
-            }
-
             &.occupied .indicator {
-                border-color: transparentize($fg_color, 0.1);
-                .fill { background-color: transparentize($fg_color, 0.1) }
-                }
+                background-color: transparentize($fg_color, 0.2);
+                min-width: 8px;
+                min-height: 8px;
+            }
 
             &:hover .indicator {
-                border-color: transparentize($accent, 0.2);
-                .fill { background-color: transparentize($accent, 0.2) }
-                }
+                box-shadow: inset 0 0 0 10px transparentize($fg_color, 0.8);
+            }
 
             &.active .indicator, &:active .indicator {
-                border-color: $accent;
-                .fill { background-color: $accent }
+                background-color: $accent;
             }
 
-            &.empty .indicator .fill {
-                background-color: transparent;
+            &.active .indicator {
+                min-width: 24px;
+                min-height: 12px;
             }
-        }
-    }
-
-    .media {
-        &.spotify .icon { color: $green; }
-        &.firefox .icon { color: $orange; }
-        &.mpv .icon { color: $magenta; }
-    }
-
-    .dock {
-        @include dock($spacing: $float);
-
-        @if $bar_style != 'separated' {
-            margin: 0;
-            button > * { margin: 0 $float; }
         }
     }
 }
