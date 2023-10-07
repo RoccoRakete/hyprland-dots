@@ -1,4 +1,4 @@
-https://raw.githubusercontent.com/trinib/trinib/82213791fa9ff58d3ca768ddd6de2489ec23ffca/images/footer.svg
+
 
 # 👀 **Screenshots** 
 ![Discord_Hyprland](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/ca05a82c-310a-4046-b3be-90cf5a4a74d3)
