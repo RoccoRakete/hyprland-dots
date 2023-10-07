@@ -38,7 +38,7 @@ Forthermore I recommend installing the following things:
 * [playerctl](https://github.com/altdesktop/playerctl) for proper media control.
 * [A nerdfont](https://www.nerdfonts.com/) for displaying icons.
 * [Anyrun](https://github.com/Kirottu/anyrun) as an application launcher, web search and many more. Although ags has it's own application launcher, I like anyrun much more since It's capable of also doing websearches and much more! :D 
-* [GTK-Lock](https://github.com/jovanlanik/gtklock) ... same thing as with anyrun. I just like it much more, but this is totaly up to you!
+* [GTK-Lock](https://github.com/jovanlanik/gtklock) ... same thing goes with anyrun. I just like it much more, but this is totaly up to you!
 
 
 
