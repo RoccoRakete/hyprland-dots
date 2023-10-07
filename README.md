@@ -10,3 +10,4 @@
 * Shell: ags
 * Launcher: Anyrun
 * Terminal: Kitty
+* Wallaper
