@@ -21,7 +21,7 @@ JavaScript is a quiet simple programming language and since you already have a u
 
 There is also a nice [Wiki](https://github.com/Aylur/ags/wiki)
 
-The volume is controlled by ags like this:
+The volume is controlled by ags, with Hyprland like this:
 ```
 bind = , XF86AudioRaiseVolume , exec , ags run-js "audio.speaker.volume += 0.05; indicator.speaker()"
 bind = , XF86AudioLowerVolume , exec , ags run-js "audio.speaker.volume -= 0.05; indicator.speaker()"
