@@ -5,3 +5,9 @@
 
 # 🔧 **Stuff used** 
 ---
+**⋅⋅* GTK-Theme: Gruvbox theme by me.**
+**⋅⋅* Icons: Papirus**
+**⋅⋅* Compositor: Hyprland**
+**⋅⋅* Shell: ags**
+**⋅⋅* Launcher: Anyrun**
+**⋅⋅* Terminal: Kitty**
