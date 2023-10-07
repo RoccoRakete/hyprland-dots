@@ -8,7 +8,7 @@
 # 🔧 **Stuff used** 
 * GTK-Theme: [Gruvbox theme by me.](https://github.com/RoccoRakete/gruvbox-gtk-theme)
 * Icons: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
-* Compositor: [Hyprland](https://github.com/hyprwm)
+* Compositor: [Hyprland](https://github.com/hyprwm/Hyprland)
 * Shell: [ags](https://github.com/Aylur/ags)
 * Launcher: [Anyrun](https://github.com/Kirottu/anyrun)
 * Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
