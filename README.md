@@ -4,10 +4,10 @@
 ---
 
 # 🔧 **Stuff used** 
-* GTK-Theme: Gruvbox theme by me.
-* Icons: Papirus
-* Compositor: Hyprland
-* Shell: ags
-* Launcher: Anyrun
-* Terminal: Kitty
+* GTK-Theme: [Gruvbox theme by me.]()
+* Icons: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+* Compositor: [Hyprland](https://github.com/hyprwm)
+* Shell: [ags](https://github.com/Aylur/ags)
+* Launcher: [Anyrun](https://github.com/Kirottu/anyrun)
+* Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
 * [Wallaper](https://github.com/AngelJumbo/gruvbox-wallpapers/blob/main/wallpapers/irl/stairs.jpg)
