@@ -1,24 +1,33 @@
 import OverviewButton from './buttons/OverviewButton.js';
 import Workspaces from './buttons/Workspaces.js';
-import FocusedClient from './buttons/FocusedClient.js';
-import MediaIndicator from './buttons/MediaIndicator.js';
 import DateButton from './buttons/DateButton.js';
-import NotificationIndicator from './buttons/NotificationIndicator.js';
 import SysTray from './buttons/SysTray.js';
 import ColorPicker from './buttons/ColorPicker.js';
 import SystemIndicators from './buttons/SystemIndicators.js';
 import PowerMenu from './buttons/PowerMenu.js';
 import Separator from '../misc/Separator.js';
 import ScreenRecord from './buttons/ScreenRecord.js';
-import BatteryBar from './buttons/BatteryBar.js';
 import SubMenu from './buttons/SubMenu.js';
 import { SystemTray, Widget, Variable } from '../imports.js';
-import { Notifications, Mpris, Battery } from '../imports.js';
 import Recorder from '../services/screenrecord.js';
+import * as vars from '../variables.js';
 
 const submenuItems = Variable(1);
 SystemTray.connect('changed', () => {
     submenuItems.setValue(SystemTray.items.length + 1);
+});
+
+const SysProgress = (type, title, unit) => Widget.Box({
+    className: `system-resources-box ${type}`,
+    hexpand: false,
+    binds: [['tooltipText', vars[type], 'value', v =>
+        `${title}: ${Math.floor(v * 100)}${unit}`]],
+    child: Widget.CircularProgress({
+        hexpand: true,
+        className: `circular-progress ${type}`,
+        binds: [['value', vars[type]]],
+        startAt: 0.75,
+    }),
 });
 
 const SeparatorDot = (service, condition) => Separator({
@@ -56,6 +65,15 @@ const End = () => Widget.Box({
             children: [
                 SysTray(),
                 ColorPicker(),
+            ],
+        }),
+        SeparatorDot(),
+        Widget.Box({
+            className: 'system-info',
+            children: [
+                SysProgress('cpu', 'CPU', '%'),
+                SysProgress('ram', 'Memory', '%'),
+                SysProgress('temp', 'Temperature', '°C'),
             ],
         }),
         SeparatorDot(),
