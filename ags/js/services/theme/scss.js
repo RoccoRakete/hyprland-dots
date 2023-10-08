@@ -31,6 +31,9 @@ $active_gradient: linear-gradient(${t.active_gradient});
 $border_color: transparentize(${t.border_color}, ${t.border_opacity / 100});
 $border_width: ${t.border_width}px;
 $border: $border_width solid $border_color;
+$bar_border: solid ${t.bar_border_color} ${t.border_width}px;
+$widget_border: solid ${t.accent} ${t.border_width}px;
+
 
 $shadow: ${t.shadow};
 $text_shadow: 2px 2px 2px $shadow;

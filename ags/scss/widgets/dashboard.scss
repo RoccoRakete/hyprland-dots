@@ -37,7 +37,7 @@
 
 window#dashboard .dashboard {
     @include floating_widget;
-    border: 2px solid $accent;
+    border: $widget_border;
 
     .notifications {
         min-width: 450px;

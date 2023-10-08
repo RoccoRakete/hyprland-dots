@@ -15,8 +15,6 @@ const gnome = {
     magenta: '#c061cb',
     teal: '#5bc8aF',
     orange: '#ffa348',
-    border_color: '#476C43',
-
 };
 
 const charm = {
@@ -27,7 +25,6 @@ const charm = {
     magenta: '#B16286',
     teal: '#689D6A',
     orange: '#D65D0E',
-    border_color: '#476C43',
 };
 
 const dark = {
@@ -35,8 +32,6 @@ const dark = {
     bg_color: '#1D2021',
     fg_color: '#FBF1C7',
     hover_fg: '#f1f1f1',
-    border_color: '#476C43',
-
     ...charm,
 };
 
@@ -74,8 +69,9 @@ const colors = {
     accent_fg: '#282828',
     widget_bg: '$fg_color',
     widget_opacity: 94,
-    active_gradient: 'to right, $accent, lighten($accent, 6%)',
+    active_gradient: 'to right, $accent, lighten($accent, 25%)',
     border_color: '#476C43',
+    bar_border_color: '#476C43',
     border_opacity: 100,
     border_width: 2,
 };

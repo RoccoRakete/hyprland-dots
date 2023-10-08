@@ -38,8 +38,8 @@ export default () => Widget.Box({
         Widget.Box({
             className: 'system-info',
             children: [
-                SysProgress('cpu', 'Cpu', '%'),
-                SysProgress('ram', 'Ram', '%'),
+                SysProgress('cpu', 'CPU', '%'),
+                SysProgress('ram', 'Memory', '%'),
                 SysProgress('temp', 'Temperature', '°C'),
             ],
         }),

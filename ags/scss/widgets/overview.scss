@@ -7,14 +7,14 @@ window#overview .overview {
         &:first-child { margin-left: 0; }
 
         &.active > widget {
-            border-color: $accent
+            border: $widget_border;
         }
 
         > widget {
             @include widget;
 
             &:drop(active) {
-                border-color: $accent;
+                border: $widget_border;
             }
         }
     }

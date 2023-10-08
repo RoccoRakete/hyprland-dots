@@ -64,7 +64,7 @@ $float: $spacing * 0.2;
         @include floating_widget;
         margin: $wm_gaps;
         padding: 0;
-        border-color: #476C43;
+        border: $bar_border;
     }
 
     @if $bar_style == 'separated' {
