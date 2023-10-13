@@ -67,7 +67,6 @@ const End = () => Widget.Box({
                 ColorPicker(),
             ],
         }),
-        SeparatorDot(),
         Widget.Box({
             className: 'system-info',
             children: [

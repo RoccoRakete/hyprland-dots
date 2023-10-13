@@ -2,7 +2,7 @@ window {
     background-color: transparent;
 }
 
-@mixin common{
+@mixin common {
     all: unset;
 
     * {
@@ -11,7 +11,7 @@ window {
     }
 }
 
-@mixin widget{
+@mixin widget {
     @include common;
     border-radius: $radii;
     color: $fg_color;
@@ -44,38 +44,43 @@ window {
     color: transparentize($fg_color, 0.7);
 }
 
-@mixin button($flat: false, $reactive: true, $radii: $radii, $focusable: true){
+@mixin button($flat: false, $reactive: true, $radii: $radii, $focusable: true) {
     @include common;
     transition: $transition;
     border-radius: $radii;
     color: $fg_color;
 
-    @if $flat{
+    @if $flat {
         background-color: transparent;
         background-image: none;
         box-shadow: none;
-    } @else{
+    }
+
+    @else {
         background-color: $widget_bg;
         box-shadow: inset 0 0 0 $border_width $border_color;
     }
 
-    @if $reactive{
+    @if $reactive {
         @if $focusable {
-            &:focus{
+            &:focus {
                 @include button_focus;
             }
         }
 
-        &:hover{
+        &:hover {
             @include button_hover;
         }
 
-        &:active, &.on, &.active, &:checked {
+        &:active,
+        &.on,
+        &.active,
+        &:checked {
             @include button_active;
 
             &:hover {
                 box-shadow: inset 0 0 0 $border_width $border_color,
-                            inset 0 0 0 99px $hover;
+                    inset 0 0 0 99px $hover;
             }
         }
     }
@@ -85,41 +90,48 @@ window {
     }
 }
 
-@mixin accs_button($flat: false, $reactive: true){
+@mixin accs_button($flat: false, $reactive: true) {
     @include button($flat: true, $reactive: false, $focusable: false);
     color: $fg_color;
 
-    > * {
+    >* {
         border-radius: $radii;
         transition: $transition;
 
-        @if $flat{
+        @if $flat {
             background-color: transparent;
             box-shadow: none;
-        } @else{
+        }
+
+        @else {
             background-color: $widget_bg;
             box-shadow: inset 0 0 0 $border_width $border_color;
         }
     }
 
 
-    @if $reactive{
-        &:focus > *, &.focused > * {
+    @if $reactive {
+
+        &:focus>*,
+        &.focused>* {
             @include button_focus;
         }
 
-        &:hover > * {
+        &:hover>* {
             @include button_hover;
         }
 
-        &:active, &.active, &.on, &:checked {
-            > * {
+        &:active,
+        &.active,
+        &.on,
+        &:checked {
+            >* {
                 @include button_active;
             }
 
-            &:hover > * {
+            &:hover>* {
                 box-shadow: inset 0 0 0 $border_width $border_color,
-                            inset 0 0 0 99px $hover;
+                    inset 0 0 0 99px $hover;
             }
         }
     }
@@ -131,6 +143,7 @@ window {
     @if $drop_shadow {
         box-shadow: 0 0 min(6px, $spacing/2) 0 $shadow;
     }
+
     margin: max($spacing, 8px);
     border: $border_width solid $popover_border_color;
     border-radius: $popover_radius;
@@ -139,23 +152,27 @@ window {
     padding: $popover_padding;
 }
 
-@mixin slider($width: .7em, $slider_width: .5em, $gradient: $active_gradient, $slider: true, $focusable: true, $radii: $radii){
+@mixin slider($width: .7em, $slider_width: .5em, $gradient: $active_gradient, $slider: true, $focusable: true, $radii: $radii) {
     @include common;
-    * { all:unset; }
 
-    trough{
+    * {
+        all: unset;
+    }
+
+    trough {
         transition: $transition;
         border-radius: $radii;
         border: $border;
         background-color: $widget_bg;
         min-height: $width;
-        min-width:  $width;
+        min-width: $width;
 
-        highlight, progress{
+        highlight,
+        progress {
             border-radius: max($radii - $border_width, 0);
             background-image: $gradient;
             min-height: $width;
-            min-width:  $width;
+            min-width: $width;
         }
     }
 
@@ -166,7 +183,7 @@ window {
         transition: $transition;
         border-radius: $radii;
         min-height: $width;
-        min-width:  $width;
+        min-width: $width;
         margin: -$slider_width;
     }
 
@@ -176,7 +193,7 @@ window {
         }
 
         slider {
-            @if $slider{
+            @if $slider {
                 background-color: $fg_color;
                 border-color: $border-color;
 
@@ -188,14 +205,16 @@ window {
     }
 
     &:disabled {
-        highlight, progress{
+
+        highlight,
+        progress {
             background-color: transparentize($fg_color, 0.4);
             background-image: none;
         }
     }
 
     @if $focusable {
-        trough:focus{
+        trough:focus {
             background-color: $hover;
             box-shadow: inset 0 0 0 $border_width $accent;
 
@@ -210,7 +229,7 @@ window {
     }
 }
 
-@mixin shader($width: 3em){
+@mixin shader($width: 3em) {
     @include common;
     border-radius: max($radii - $border_width, 0);
 
@@ -219,16 +238,16 @@ window {
         text-shadow: $text_shadow;
     }
 
-    @if $theme == 'dark' {
+    @if $theme =='dark' {
         box-shadow: inset 0 0 $width $width/3 transparentize($bg_color, 0.3);
     }
 
-    @if $theme == 'light' {
+    @if $theme =='light' {
         background-color: transparentize($bg_color, 0.8);
     }
 }
 
-@mixin text_border{
+@mixin text_border {
     text-shadow:
         -1 * $border_width -1 * $border_width 0 $border_color,
         $border_width $border_width 0 $border_color,
@@ -242,8 +261,10 @@ window {
         $border_width -1 * $border_width 0 $border_color;
 }
 
-@mixin scrollbar{
-    scrollbar, scrollbar * {
+@mixin scrollbar {
+
+    scrollbar,
+    scrollbar * {
         all: unset;
     }
 
@@ -271,7 +292,7 @@ window {
     }
 }
 
-@mixin switch{
+@mixin switch {
     @include button;
 
     slider {
@@ -281,7 +302,9 @@ window {
         min-height: 24px;
     }
 
-    image { color: transparent; }
+    image {
+        color: transparent;
+    }
 }
 
 @mixin hidden {
@@ -302,12 +325,15 @@ window {
 
 tooltip {
     @include common;
-    * { all: unset; }
+
+    * {
+        all: unset;
+    }
 
     background-color: transparent;
     border: none;
 
-    > * > *{
+    >*>* {
         background-color: $bg_color;
         border-radius: $radii;
         border: $border_width solid $popover_border_color;
@@ -319,7 +345,7 @@ tooltip {
 }
 
 window.popup {
-    > * {
+    >* {
         border: none;
         box-shadow: none;
     }
@@ -338,8 +364,14 @@ window.popup {
             @include button;
             padding: $spacing/2;
             margin: $spacing/2 0;
-            &:first-child { margin-top: 0; }
-            &:last-child { margin-bottom: 0; }
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 }

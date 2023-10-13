@@ -77,9 +77,8 @@ $float: $spacing * 0.2;
         margin: $spacing/2;
 
         .circular-progress {
-            min-height: $spacing * 2.6;
-            min-width: $spacing * 2.6;
-            margin: $spacing/3;
+            min-height: $spacing * 2.5;
+            min-width: $spacing * 2.5;
             font-size: 0.2em;
             background-color: $accent_fg;
         }
@@ -283,9 +282,9 @@ $float: $spacing * 0.2;
 
             .indicator {
                 font-size: 0;
-                min-width: 6px;
-                min-height: 6px;
-                border-radius: $radii*0.6;
+                min-width: 13px;
+                min-height: 13px;
+                border-radius: $radii*1;
                 border: $border;
                 margin: 0 $spacing/2;
                 transition: $transition/2;
@@ -302,8 +301,6 @@ $float: $spacing * 0.2;
 
             &.occupied .indicator {
                 background-color: transparentize($fg_color, 0.2);
-                min-width: 8px;
-                min-height: 8px;
             }
 
             &:hover .indicator {
@@ -316,8 +313,7 @@ $float: $spacing * 0.2;
             }
 
             &.active .indicator {
-                min-width: 24px;
-                min-height: 12px;
+                min-width: 13px*2;
             }
         }
     }
