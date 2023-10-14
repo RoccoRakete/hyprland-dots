@@ -1,7 +1,7 @@
 ![alt text](https://raw.githubusercontent.com/trinib/trinib/82213791fa9ff58d3ca768ddd6de2489ec23ffca/images/footer.svg)
 
 # 👀 **Screenshots** 
-![Discord_Hyprland](![Hyprland_new](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/0acf96c1-93b5-4c9a-9e71-7775172904d4)
+(![Hyprland_new](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/0acf96c1-93b5-4c9a-9e71-7775172904d4)
 
 
 ---
