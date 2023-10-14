@@ -24,9 +24,10 @@ const SysProgress = (type, title, unit) => Widget.Box({
         `${title}: ${Math.floor(v * 100)}${unit}`]],
     child: Widget.CircularProgress({
         hexpand: true,
+        inverted: true,
         className: `circular-progress ${type}`,
         binds: [['value', vars[type]]],
-        startAt: 0.75,
+        startAt: 0.75
     }),
 });
 

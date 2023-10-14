@@ -14,6 +14,7 @@ const SysProgress = (type, title, unit) => Widget.Box({
         className: `circular-progress ${type}`,
         child: Widget.Icon(icons.system[type]),
         startAt: 0.75,
+        inverted: true,
         binds: [['value', vars[type]]],
         connections: [[Theme, prog => {
             prog.rounded = Theme.getSetting('radii') > 0;
