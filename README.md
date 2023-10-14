@@ -5,6 +5,10 @@
 
 ---
 
+# ⏰ **Updates**
+ * Needs Ags v1.4.0 to work correctly now... 
+ * Added a systemresource monitor to the bar! 
+
 # 🔧 **Stuff used** 
 * GTK-Theme: [Gruvbox theme by me.](https://github.com/RoccoRakete/gruvbox-gtk-theme)
 * Icons: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
