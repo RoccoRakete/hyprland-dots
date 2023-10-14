@@ -79,7 +79,6 @@ window.desktop {
 window.indicator .progress {
     @include floating_widget;
     padding: $spacing/2;
-    border: 2px solid $accent;
 
     .fill {
         border-radius: max($popover_radius - $spacing/2, 0);

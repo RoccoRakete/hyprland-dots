@@ -10,7 +10,7 @@ const Padding = windowName => Widget.EventBox({
 
 const PopupRevealer = (windowName, transition, child) => Widget.Box({
     style: 'padding: 1px;',
-    children: [Widget.Revealer({
+    child: Widget.Revealer({
         transition,
         child,
         transitionDuration: options.windowAnimationDuration,
@@ -18,7 +18,7 @@ const PopupRevealer = (windowName, transition, child) => Widget.Box({
             if (name === windowName)
                 revealer.reveal_child = visible;
         }]],
-    })],
+    }),
 });
 
 const layouts = {
@@ -89,6 +89,7 @@ export default ({
     name,
     child: layouts[layout](name, content, expand),
     popup: true,
+    visible: false,
     focusable: true,
     ...rest,
 });

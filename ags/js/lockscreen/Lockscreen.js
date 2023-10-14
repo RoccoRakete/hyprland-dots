@@ -2,7 +2,7 @@ import Avatar from '../misc/Avatar.js';
 import Spinner from '../misc/Spinner.js';
 import Lockscreen from '../services/lockscreen.js';
 import { Widget } from '../imports.js';
-import { default as Layer } from 'gi://GtkLayerShell';
+import Layer from 'gi://GtkLayerShell';
 
 export default monitor => Widget.Window({
     name: `lockscreen${monitor}`,
@@ -15,7 +15,7 @@ export default monitor => Widget.Window({
     child: Widget.Box({
         style: 'min-width: 3000px; min-height: 2000px;',
         className: 'shader',
-        children: [Widget.Box({
+        child: Widget.Box({
             className: 'content',
             vertical: true,
             hexpand: true,
@@ -45,6 +45,6 @@ export default monitor => Widget.Window({
                     ],
                 }),
             ],
-        })],
+        }),
     }),
 });

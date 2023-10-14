@@ -6,7 +6,6 @@ import { Widget, Mpris, Utils } from '../../imports.js';
 export const getPlayer = (name = options.preferredMpris) =>
     Mpris.getPlayer(name) || Mpris.players[0] || null;
 
-
 const Indicator = ({ player, direction = 'right' } = {}) => HoverRevealer({
     className: `media panel-button ${player.name}`,
     direction,

@@ -35,7 +35,7 @@ export const Volume = () => Widget.Box({
         VolumeSlider(),
         Arrow('sink-selector'),
         Widget.Box({
-            children: [Arrow('app-mixer')],
+            child: Arrow('app-mixer'),
             connections: [[Audio, box => {
                 box.visible = Array.from(Audio.apps).length > 0;
             }]],
@@ -147,7 +147,7 @@ export const SinkSelector = () => Menu({
                 vertical: true,
                 connections: [[Audio, box => {
                     box.children = Audio.speakers.map(SinkItem);
-                }, 'notify::speaker']],
+                }, 'notify::speakers']],
             }),
             Separator({ orientation: 'horizontal' }),
             SettingsButton(),

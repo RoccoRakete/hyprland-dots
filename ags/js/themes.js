@@ -46,7 +46,7 @@ const light = {
 };
 
 const misc = {
-    wm_gaps: 5,
+    wm_gaps: 10,
     radii: 10,
     spacing: 9,
     shadow: 'rgba(0, 0, 0, 0)',
@@ -79,6 +79,7 @@ const colors = {
 // themes
 const kitty_dark = {
     wallpaper: WP + 'kitty.jpeg',
+    avatar: '~/face.png',
     name: 'kitty_dark',
     icon: '󰄛',
     ...dark,
