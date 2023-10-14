@@ -7,6 +7,7 @@
 
 # ⏰ **Updates**
  * Needs Ags v1.4.0 to work correctly now... 
+ * Rofi Wallpaper switcher is now available. 
  * Added a systemresource monitor to the bar! 
 
 # 🔧 **Stuff used** 
