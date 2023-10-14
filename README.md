@@ -17,6 +17,7 @@
 * Shell: [ags](https://github.com/Aylur/ags)
 * Launcher: [Anyrun](https://github.com/Kirottu/anyrun)
 * Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
+* [Rofi](https://github.com/lbonn/rofi)
 * [Wallaper](https://github.com/AngelJumbo/gruvbox-wallpapers/blob/main/wallpapers/irl/stairs.jpg)
 
 # 🎨 **The Ags-Shell** 
