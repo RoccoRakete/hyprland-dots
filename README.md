@@ -44,8 +44,8 @@ This should work with brightness control too, but I can't verify this, since I'm
 ![Screenshot_15-10-23_18-19](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/dd4d560e-6e05-44d9-ab41-bc190bb7b8fa)
 
 * The refering options are: "gtk_theme:", "icons:" and "pywall_theme:"
-      
-
+        ### Make sure these namings match exactly the themes you want to use! 
+            Otherwise the last used theme will be used. 
 
 # 📜 **Installation** 
 If you install [ags](https://github.com/Aylur/ags/wiki/installation) and [Hyprland](https://wiki.hyprland.org/Getting-Started/Installation/) you're 99% ready to go. 
