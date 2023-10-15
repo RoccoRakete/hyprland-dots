@@ -33,10 +33,6 @@ class ThemeService extends Service {
         IconBrowser();
     }
 
-    getTheme() {
-        return themes.find(({ name }) => name === this.getSetting('theme'));
-    }
-
     setup() {
         const theme = {
             ...this.getTheme(),
@@ -114,6 +110,32 @@ class ThemeService extends Service {
         return this.settings[prop] !== undefined
             ? this.settings[prop]
             : this.getTheme()[prop];
+    }
+
+    getTheme() {
+        const currentThemeName = this.getSetting('theme');
+        const theme = themes.find(({ name }) => name === currentThemeName,);
+        if (currentThemeName === 'gruvbox_dark_theme') {
+            Utils.execAsync('wal --theme base16-gruvbox-hard');
+            Utils.execAsync('gsettings set org.gnome.desktop.interface gtk-theme gruvbox_theme');
+            Utils.execAsync('gsettings set org.gnome.desktop.interface icon-theme gruvbox_icons');
+        } 
+        if (currentThemeName === 'pico_theme') {
+            Utils.execAsync('wal --theme base16-seti');
+            Utils.execAsync('gsettings set org.gnome.desktop.interface gtk-theme pico_theme');
+            Utils.execAsync('gsettings set org.gnome.desktop.interface icon-theme pico_icons');
+        } 
+        return theme;
+    }
+
+    getGTK() {
+        const gtk_theme = themes.find(({ gtk_theme }));
+        print(gtk_theme) 
+        if (currentThemeName === 'gruvbox_dark_theme') { 
+        } 
+        if (currentThemeName === 'pico_theme') {
+        } 
+        return theme;
     }
 }
 

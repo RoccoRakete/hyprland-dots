@@ -1,16 +1,15 @@
-
-mode                  = drun
+mode                  = dmenu
 run-always_parse_args = true
-term                  = foot
+term                  = kitty
 allow_images          = true
 hide_scroll           = true
 insensitive           = true
-prompt                =
+prompt                = 
 #height=40%
 width                 = 25%
 lines                 = 10
 columns               = 1
-image_size            = 48
+image_size            = 96
 
 
 

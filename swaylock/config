@@ -5,7 +5,6 @@
 # |____/ \_/\_/ \__,_|\__, |_|\___/ \___|_|\_\ 
 #                     |___/                    
 #  
-# by Stephan Raabe (2023) 
 # ----------------------------------------------------- 
 
 ignore-empty-password
@@ -20,7 +19,7 @@ datestr=%a, %e.%B
 
 # Add an image as a background 
 # In my setup the current wallpaper (requires wallpaper scripts in /scripts)
-image=~/Dokumente/Backgrounds/Stairs_rounded.png
+image=~/.dots/backgrounds/Stairs_rounded.png
 
 # Fade in time
 fade-in=1

@@ -213,7 +213,7 @@ export default () => Widget({
             SwitchButton('Screen Corners', 'screen_corners'),
         ]),
         '󰏘 Colors': Page([
-            TextSpinButton('Color Theme', 'color_scheme', ['light', 'dark']),
+            TextSpinButton('Color Theme', 'color_scheme', ['light', 'gruv_dark']),
             ...['Red', 'Green', 'Yellow', 'Blue', 'Magenta', 'Teal', 'Orange']
                 .map(c => Color(c, c.toLowerCase())),
         ]),
