@@ -3,12 +3,6 @@
 # 👀 **Screenshots** 
 ![Hyprland_new](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/0acf96c1-93b5-4c9a-9e71-7775172904d4)
 
-
-
-https://github.com/RoccoRakete/hyprland-dots/assets/44879342/c80a8d94-3b29-4c5e-8391-b08400a82176
-
-
-
 ---
 
 # ⏰ **Updates**
