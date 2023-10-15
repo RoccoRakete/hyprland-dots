@@ -4,6 +4,8 @@
 ![Hyprland_new](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/0acf96c1-93b5-4c9a-9e71-7775172904d4)
 
 
+https://youtu.be/lWJKRxjRYQI
+
 ---
 
 # ⏰ **Updates**
