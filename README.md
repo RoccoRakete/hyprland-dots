@@ -50,8 +50,10 @@ This should work with brightness control too, but I can't verify this, since I'm
   * Pywall-Themes can be found [here.](https://adamrutter.github.io/pywal-themes-preview/)
     Or simply by running ```wal --theme``` in your terminal and just picking one.
     
-  GTK-Icons and GTK-Themes should have the exact same naming as found in ```~/.themes/``` for example
+  GTK-Icons and GTK-Themes should have the exact same naming as found in ```~/.themes/``` for example.
+  
   After you have set up everything, it's just a matter of chaning the themes from the settings panel! :)
+  
   Have fun! 
 
 # 📜 **Installation** 
