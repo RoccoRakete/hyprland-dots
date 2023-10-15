@@ -3,8 +3,7 @@
 # 👀 **Screenshots** 
 ![Hyprland_new](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/0acf96c1-93b5-4c9a-9e71-7775172904d4)
 
-
-https://youtu.be/lWJKRxjRYQI
+https://github.com/RoccoRakete/hyprland-dots/assets/44879342/2e9817b1-5dd1-4b7d-9a95-a25bc025490d
 
 ---
 
