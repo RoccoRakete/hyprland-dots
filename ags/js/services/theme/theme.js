@@ -33,15 +33,23 @@ class ThemeService extends Service {
         IconBrowser();
     }
 
+    getTheme() {
+        return themes.find(({ name }) => name === this.getSetting('theme'));
+    }
+
     setup() {
         const theme = {
             ...this.getTheme(),
             ...this.settings,
+
         };
         setupScss(theme);
         setupHyprland(theme);
         this.setupOther();
         this.setupWallpaper();
+        this.getGTK();
+        this.getGTKIcons();
+        this.getPyWall();
     }
 
     reset() {
@@ -112,31 +120,38 @@ class ThemeService extends Service {
             : this.getTheme()[prop];
     }
 
-    getTheme() {
-        const currentThemeName = this.getSetting('theme');
-        const theme = themes.find(({ name }) => name === currentThemeName,);
-        if (currentThemeName === 'gruvbox_dark_theme') {
-            Utils.execAsync('wal --theme base16-gruvbox-hard');
-            Utils.execAsync('gsettings set org.gnome.desktop.interface gtk-theme gruvbox_theme');
-            Utils.execAsync('gsettings set org.gnome.desktop.interface icon-theme gruvbox_icons');
-        } 
-        if (currentThemeName === 'pico_theme') {
-            Utils.execAsync('wal --theme base16-seti');
-            Utils.execAsync('gsettings set org.gnome.desktop.interface gtk-theme pico_theme');
-            Utils.execAsync('gsettings set org.gnome.desktop.interface icon-theme pico_icons');
-        } 
-        return theme;
+    getGTK() {
+        const currentGTKName = this.getSetting('gtk_theme');
+        if (currentGTKName) {
+            const gtk = themes.find(({ gtk_theme }) => gtk_theme === currentGTKName);
+            Utils.execAsync(`gsettings set org.gnome.desktop.interface gtk-theme ${currentGTKName}`);
+            return gtk;
+        } else {
+            return null; 
+        }
     }
 
-    getGTK() {
-        const gtk_theme = themes.find(({ gtk_theme }));
-        print(gtk_theme) 
-        if (currentThemeName === 'gruvbox_dark_theme') { 
-        } 
-        if (currentThemeName === 'pico_theme') {
-        } 
-        return theme;
-    }
+    getGTKIcons() {
+        const currentGTKIcons = this.getSetting('icons');
+        if (currentGTKIcons) {
+            const icons = themes.find(({ icons }) => icons === currentGTKIcons);
+            Utils.execAsync(`gsettings set org.gnome.desktop.interface icon-theme ${currentGTKIcons}`);
+            return icons;
+        } else {
+            return null;
+        }
+    } 
+    
+    getPyWall() {
+        const currentPyWallTheme = this.getSetting('pywall_theme');
+        if (currentPyWallTheme) {
+            const pywall = themes.find(({ pywall_theme }) => pywall_theme === currentPyWallTheme);
+            Utils.execAsync(`wal --theme ${currentPyWallTheme}`);
+            return pywall;
+        } else {
+            return null;
+        }
+    } 
 }
 
 export default new ThemeService();

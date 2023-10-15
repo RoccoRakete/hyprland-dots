@@ -1,5 +1,21 @@
 const WP = `$HOME/.dots/backgrounds/`;
 
+const misc = {
+    wm_gaps: 5,
+    radii: 10,
+    spacing: 9,
+    shadow: 'rgba(0, 0, 0, 0)',
+    drop_shadow: false,
+    transition: 200,
+    screen_corners: false,
+    bar_style: 'floating',
+    layout: 'topbar',
+    desktop_clock: 'center center',
+    font: 'Ubuntu Nerd Font',
+    mono_font: 'Mononoki Nerd Font',
+    font_size: 19,
+};
+
 const gruv_dark = {
     color_scheme: 'gruv_dark',
     red: '#CC241D',
@@ -85,22 +101,6 @@ const light = {
     border_color: '#476C43',
 };
 
-const misc = {
-    wm_gaps: 10,
-    radii: 10,
-    spacing: 9,
-    shadow: 'rgba(0, 0, 0, 0)',
-    drop_shadow: false,
-    transition: 200,
-    screen_corners: false,
-    bar_style: 'floating',
-    layout: 'topbar',
-    desktop_clock: 'center center',
-    font: 'Ubuntu Nerd Font',
-    mono_font: 'Mononoki Nerd Font',
-    font_size: 19,
-};
-
 const colors_gruv_dark = {
     wallpaper_fg: 'white',
     hypr_active_border: 'rgba(476C43FF)',
@@ -184,6 +184,7 @@ const gruvbox_dark_theme = {
     icon: '󰄛',
     gtk_theme: 'gruvbox_theme',
     icons: 'gruvbox_icons',
+    pywall_theme: 'base16-gruvbox-hard',
     ...gruv_dark,
     ...misc,
     ...colors_gruv_dark,
@@ -226,6 +227,7 @@ const pico_theme = {
     icon: '󰄛',
     gtk_theme: 'pico_theme',
     icons: 'pico_icons',
+    pywall_theme: 'base16-seti',
     ...pico,
     ...misc,
     ...colors_pico,
