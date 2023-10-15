@@ -7,9 +7,11 @@
 ---
 
 # ⏰ **Updates**
+ * Added the ability to set GTK-Themes/Icons directly from the ags config. 
+ * Pywal-Themes can also be set from the ags config.
  * Needs Ags v1.4.0 to work correctly now... 
  * Rofi Wallpaper switcher is now available. 
- * Added a systemresource monitor to the bar! 
+ * Added a systemresource monitor to the bar.
 
 # 🔧 **Stuff used** 
 * GTK-Theme: [Gruvbox theme by me.](https://github.com/RoccoRakete/gruvbox-gtk-theme)
@@ -36,7 +38,10 @@ bind = , XF86AudioRaiseVolume , exec , ags run-js "audio.speaker.volume += 0.05;
 bind = , XF86AudioLowerVolume , exec , ags run-js "audio.speaker.volume -= 0.05; indicator.speaker()"
 ```
 ... this triggers the OSD to show up too!
-This should work with brightness control too, but I can't verify this, since I'm not using Linux on a Laptop. 
+This should work with brightness control too, but I can't verify this, since I'm not using Linux on a Laptop.
+
+# ⚙️ **Setting GTK-Themes / GTK-Icons and PyWall-Themes**
+
 
 # 📜 **Installation** 
 If you install [ags](https://github.com/Aylur/ags/wiki/installation) and [Hyprland](https://wiki.hyprland.org/Getting-Started/Installation/) you're 99% ready to go. 
