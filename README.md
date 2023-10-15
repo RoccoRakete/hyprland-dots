@@ -48,7 +48,8 @@ This should work with brightness control too, but I can't verify this, since I'm
   ### Make sure these namings match exactly the themes you want to use! 
   Otherwise the last used theme will be used.
   * Pywall-Themes can be found [here.](https://adamrutter.github.io/pywal-themes-preview/)
-    Or simply by running ```wal --theme``` in your terminal and just picking one.  
+    Or simply by running ```wal --theme``` in your terminal and just picking one.
+  GTK-Icons and GTK-Themes should have the exact same naming as found in ```~/.themes/``` for example
 
 # 📜 **Installation** 
 If you install [ags](https://github.com/Aylur/ags/wiki/installation) and [Hyprland](https://wiki.hyprland.org/Getting-Started/Installation/) you're 99% ready to go. 
