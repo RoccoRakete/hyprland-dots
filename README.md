@@ -49,6 +49,7 @@ This should work with brightness control too, but I can't verify this, since I'm
   Otherwise the last used theme will be used.
   * Pywall-Themes can be found [here.](https://adamrutter.github.io/pywal-themes-preview/)
     Or simply by running ```wal --theme``` in your terminal and just picking one.
+    
   GTK-Icons and GTK-Themes should have the exact same naming as found in ```~/.themes/``` for example
 
 # 📜 **Installation** 
