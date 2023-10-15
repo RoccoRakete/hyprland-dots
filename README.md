@@ -43,7 +43,7 @@ This should work with brightness control too, but I can't verify this, since I'm
 # ⚙️ **GTK-Themes / GTK-Icons / PyWall-Themes**
 ![Screenshot_15-10-23_18-19](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/dd4d560e-6e05-44d9-ab41-bc190bb7b8fa)
 
-* The refering options are: "gtk_theme:", "icons:" and "pywall_theme:"
+* The refering options are: ```gtk_theme:``` ```icons:``` ```pywall_theme:```
 
   ### Make sure these namings match exactly the themes you want to use! 
   Otherwise the last used theme will be used.
@@ -51,6 +51,8 @@ This should work with brightness control too, but I can't verify this, since I'm
     Or simply by running ```wal --theme``` in your terminal and just picking one.
     
   GTK-Icons and GTK-Themes should have the exact same naming as found in ```~/.themes/``` for example
+  After you have set up everything, it's just a matter of chaning the themes from the settings panel! :)
+  Have fun! 
 
 # 📜 **Installation** 
 If you install [ags](https://github.com/Aylur/ags/wiki/installation) and [Hyprland](https://wiki.hyprland.org/Getting-Started/Installation/) you're 99% ready to go. 
