@@ -52,7 +52,7 @@ class Recorder extends Service {
             'Screenrecord',
             this._file,
         ])
-            .then(res => {
+            .then(res => {s
                 if (res === 'files')
                     Utils.execAsync('xdg-open ' + this._path);
 

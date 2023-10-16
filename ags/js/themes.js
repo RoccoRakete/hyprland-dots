@@ -1,5 +1,3 @@
-const WP = `$HOME/.dots/backgrounds/`;
-
 const misc = {
     wm_gaps: 5,
     radii: 10,
@@ -30,13 +28,41 @@ const gruv_dark = {
     hover_fg: '#f1f1f1',
 };
 
+const pico = {
+    color_scheme: 'pico',
+    red: '#FF004D',
+    green: '#00E756',
+    yellow: '#FFF024',
+    blue: '#29ADFF',
+    magenta: '#FF77A8',
+    teal: '#83769C',
+    orange: '#D08770',
+    bg_color: '#000000',
+    fg_color: '#FFF1E8',
+    hover_fg: '#FFF1E8',
+};
+
+const catppuccin_mocha = {
+    color_scheme: 'catppuccin_mocha',
+    red: '#F38BA8',
+    green: '#A6E3A1',
+    yellow: '#F9E2AF',
+    blue: '#89B4FA',
+    magenta: '#CBA6F7',
+    teal: '#94E2D5',
+    orange: '#FAB387',
+    bg_color: '#181825',
+    fg_color: '#CDD6F4',
+    hover_fg: '#CDD6F4',
+};
+
 const material_dark = {
     color_scheme: 'material_dark',
     red: '#F07178',
     green: '#C3E88D',
     yellow: '#FFCB6B',
     blue: '#82AAFF',
-    magenta: '#C792EA',
+    magenta: '#C792EA ',
     teal: '#89DDFF',
     orange: '#D65D0E',
     bg_color: '#212121',
@@ -72,20 +98,6 @@ const onedark = {
     hover_fg: '#C8CCD4',
 };
 
-const pico = {
-    color_scheme: 'pico',
-    red: '#FF004D',
-    green: '#00E756',
-    yellow: '#FFF024',
-    blue: '#29ADFF',
-    magenta: '#FF77A8',
-    teal: '#83769C',
-    orange: '#D08770',
-    bg_color: '#000000',
-    fg_color: '#FFF1E8',
-    hover_fg: '#FFF1E8',
-};
-
 const light = {
     color_scheme: 'light',
     red: '#f66151',
@@ -112,6 +124,36 @@ const colors_gruv_dark = {
     active_gradient: 'to right, $accent, lighten($accent, 25%)',
     border_color: '#476C43',
     bar_border_color: '#476C43',
+    border_opacity: 100,
+    border_width: 2,
+};
+
+const colors_pico = {
+    wallpaper_fg: 'white',
+    hypr_active_border: 'rgba(29ADFFFF)',
+    hypr_inactive_border: 'rgba(545862DD)',
+    accent: '$teal',
+    accent_fg: '#282828',
+    widget_bg: '$fg_color',
+    widget_opacity: 94,
+    active_gradient: 'to right, $accent, lighten($accent, 25%)',
+    border_color: '#29ADFF',
+    bar_border_color: '#29ADFF',
+    border_opacity: 100,
+    border_width: 2,
+};
+
+const colors_catppuccin_mocha = {
+    wallpaper_fg: 'white',
+    hypr_active_border: 'rgba(CBA6F7FF)',
+    hypr_inactive_border: 'rgba(1E1E2EDD)',
+    accent: '$teal',
+    accent_fg: '#282828',
+    widget_bg: '$fg_color',
+    widget_opacity: 94,
+    active_gradient: 'to right, $accent, lighten($accent, 25%)',
+    border_color: '#B4BEFE',
+    bar_border_color: '#B4BEFE',
     border_opacity: 100,
     border_width: 2,
 };
@@ -161,37 +203,47 @@ const colors_onedark = {
     border_width: 2,
 };
 
-const colors_pico = {
-    wallpaper_fg: 'white',
-    hypr_active_border: 'rgba(29ADFFFF)',
-    hypr_inactive_border: 'rgba(545862DD)',
-    accent: '$teal',
-    accent_fg: '#282828',
-    widget_bg: '$fg_color',
-    widget_opacity: 94,
-    active_gradient: 'to right, $accent, lighten($accent, 25%)',
-    border_color: '#29ADFF',
-    bar_border_color: '#29ADFF',
-    border_opacity: 100,
-    border_width: 2,
-};
-
 // themes
 const gruvbox_dark_theme = {
-    wallpaper: WP + 'stairs.png',
     avatar: '~/face.png',
     name: 'gruvbox_dark_theme',
     icon: '󰄛',
-    gtk_theme: 'gruvbox_theme',
+    gtk_theme: 'Gruvbox-Dark-B',
     icons: 'gruvbox_icons',
     pywall_theme: 'base16-gruvbox-hard',
+    theme_wallpaper: 'stairs.png',
     ...gruv_dark,
     ...misc,
     ...colors_gruv_dark,
 };
 
+const pico_theme = {
+    avatar: '~/face.png',
+    name: 'pico_theme',
+    icon: '󰄛',
+    gtk_theme: 'Juno-ocean',
+    icons: 'pico_icons',
+    pywall_theme: 'base16-seti',
+    theme_wallpaper: 'color_city.png',
+    ...pico,
+    ...misc,
+    ...colors_pico,
+};
+
+const catppuccin_mocha_theme = {
+    avatar: '~/face.png',
+    name: 'catppuccin_mocha_theme',
+    icon: '󰄛',
+    gtk_theme: 'Catppuccin-Mocha-Standard-Lavender-Dark',
+    icons: 'catppuccin_mocha',
+    pywall_theme: 'base16-seti',
+    theme_wallpaper: 'oled-mountains.jpg',
+    ...catppuccin_mocha,
+    ...misc,
+    ...colors_catppuccin_mocha,
+};
+
 const material_dark_theme = {
-    wallpaper: WP + 'stairs.png',
     avatar: '~/face.png',
     name: 'material_dark_theme',
     icon: '󰄛',
@@ -201,7 +253,6 @@ const material_dark_theme = {
 };
 
 const nord_theme = {
-    wallpaper: WP + 'stairs.png',
     avatar: '~/face.png',
     name: 'nord_theme',
     icon: '󰄛',
@@ -211,7 +262,6 @@ const nord_theme = {
 };
 
 const onedark_theme = {
-    wallpaper: WP + 'stairs.png',
     avatar: '~/face.png',
     name: 'OneDark_theme',
     icon: '󰄛',
@@ -220,23 +270,11 @@ const onedark_theme = {
     ...colors_onedark,
 };
 
-const pico_theme = {
-    wallpaper: WP + 'stairs.png',
-    avatar: '~/face.png',
-    name: 'pico_theme',
-    icon: '󰄛',
-    gtk_theme: 'pico_theme',
-    icons: 'pico_icons',
-    pywall_theme: 'base16-seti',
-    ...pico,
-    ...misc,
-    ...colors_pico,
-};
-
 export default [
     gruvbox_dark_theme,
+    pico_theme,
+    catppuccin_mocha_theme,
     material_dark_theme,
     nord_theme,
     onedark_theme,
-    pico_theme,
 ];

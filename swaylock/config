@@ -19,7 +19,7 @@ datestr=%a, %e.%B
 
 # Add an image as a background 
 # In my setup the current wallpaper (requires wallpaper scripts in /scripts)
-image=~/.dots/backgrounds/Stairs_rounded.png
+image=~/.dots/backgrounds/last/*
 
 # Fade in time
 fade-in=1

@@ -1,49 +1,37 @@
 * {
     border: none;
-    font-size: 22px;
+    font-size: 1.3rem;
     font-weight: normal;
     min-height: 40px;
 }
 
 #outer-box {
-    background-color: rgba(29, 32, 33, 1);
-    border: 2px solid #476C43;
+    border: 2px solid @wm_border_focused;
     border-radius: 30px;
 }
 
 #window {
-    background-color: rgba(29, 32, 33, 1);
-    border: 0px solid #266B79;
     border-radius: 30px;
 }
 
 #scroll {
-    background-color: rgba(29, 32, 33, 1);
-    border: 0px solid #266B79;
-    border-radius: 0%;
     margin: 10px;
 }
 
 #inner-box {
-    background-color: rgba(29, 32, 33, 1);
-    border: 0px solid #266B79;
-    border-radius: 0px;
-    margin: 0px;
+color: @theme_fg_color;
 }
 
 #input {
-    font-size: 22px;
-    background-color: rgba(29, 32, 33, 1);
-    border: 1px solid #AE5858;
+    font-size: 1.3rem;
+    border: 1px solid rgba(255,255,255,.1);
     border-radius: 10px;
-    color: #bcbcbc;
     margin: 20px;
     padding-left: 20px;
 }
 
 #entry:selected {
-    color: #bcbcbc;
-    border: 1px solid #B4730E;
+    color: @theme_selected_fg_color;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 10px;

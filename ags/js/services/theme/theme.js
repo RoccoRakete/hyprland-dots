@@ -4,6 +4,8 @@ import setupHyprland from './hyprland.js';
 import SettingsDialog from '../../settingsdialog/SettingsDialog.js';
 import IconBrowser from '../../misc/IconBrowser.js';
 import { Service, Utils } from '../../imports.js';
+import GLib from 'gi://GLib';
+
 
 const THEME_CACHE = Utils.CACHE_DIR + '/theme-overrides.json';
 
@@ -19,6 +21,7 @@ class ThemeService extends Service {
         super();
         Utils.exec('swww init');
         this.setup();
+        
     }
 
     openSettings() {
@@ -35,21 +38,22 @@ class ThemeService extends Service {
 
     getTheme() {
         return themes.find(({ name }) => name === this.getSetting('theme'));
+        
     }
 
     setup() {
         const theme = {
             ...this.getTheme(),
             ...this.settings,
-
         };
         setupScss(theme);
         setupHyprland(theme);
         this.setupOther();
-        this.setupWallpaper();
         this.getGTK();
         this.getGTKIcons();
         this.getPyWall();
+        this.AutoWallpaper();
+        
     }
 
     reset() {
@@ -66,15 +70,6 @@ class ThemeService extends Service {
             const gsettings = 'gsettings set org.gnome.desktop.interface color-scheme';
             Utils.execAsync(`${gsettings} "prefer-${darkmode ? 'dark' : 'light'}"`).catch(print);
         }
-    }
-
-    setupWallpaper() {
-        Utils.execAsync([
-            'swww', 'img',
-            '--transition-type', 'grow',
-            '--transition-pos', Utils.exec('hyprctl cursorpos').replace(' ', ''),
-            this.getSetting('wallpaper'),
-        ]).catch(print);
     }
 
     get settings() {
@@ -148,6 +143,21 @@ class ThemeService extends Service {
             const pywall = themes.find(({ pywall_theme }) => pywall_theme === currentPyWallTheme);
             Utils.execAsync(`wal --theme ${currentPyWallTheme}`);
             return pywall;
+        } else {
+            return null;
+        }
+    } 
+    
+    AutoWallpaper() {
+        const backgrounds = GLib.get_home_dir() + '/.dots/backgrounds';
+        const AutoWallpaper = this.getSetting('theme_wallpaper');
+        if (AutoWallpaper) {
+            const wallpaper_var = themes.find(({ theme_wallpaper }) => theme_wallpaper === AutoWallpaper);
+            Utils.execAsync(`swww img ${backgrounds}/${AutoWallpaper} --transition-step 4 -f CatmullRom --transition-fps 120`);
+            Utils.execAsync(`rm -rf ${backgrounds}/last` );
+            Utils.execAsync(`mkdir ${backgrounds}/last` );
+            Utils.execAsync(`cp ${backgrounds}/${AutoWallpaper} ${backgrounds}/last` );
+            return wallpaper_var;
         } else {
             return null;
         }
