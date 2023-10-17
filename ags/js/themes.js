@@ -79,23 +79,9 @@ const nord = {
     magenta: '#88C0D0',
     teal: '#8FBCBB',
     orange: '#D08770',
-    bg_color: '#2E3440',
+    bg_color: '#272b35',
     fg_color: '#E5E9F0',
     hover_fg: '#E5E9F0',
-};
-
-const onedark = {
-    color_scheme: 'onedark',
-    red: '#E06C75',
-    green: '#98C379',
-    yellow: '#E5C07B',
-    blue: '#61AFEF',
-    magenta: '#C678DD',
-    teal: '#56B6C2',
-    orange: '#D08770',
-    bg_color: '#282C34',
-    fg_color: '#C8CCD4',
-    hover_fg: '#C8CCD4',
 };
 
 const light = {
@@ -186,22 +172,7 @@ const colors_nord = {
     bar_border_color: '#5E81AC',
     border_opacity: 100,
     border_width: 2,
-};
-
-const colors_onedark = {
-    wallpaper_fg: 'white',
-    hypr_active_border: 'rgba(98C379FF)',
-    hypr_inactive_border: 'rgba(545862DD)',
-    accent: '$blue',
-    accent_fg: '#282828',
-    widget_bg: '$fg_color',
-    widget_opacity: 94,
-    active_gradient: 'to right, $accent, lighten($accent, 25%)',
-    border_color: '#98C379',
-    bar_border_color: '#98C379',
-    border_opacity: 100,
-    border_width: 2,
-};
+}
 
 // themes
 const gruvbox_dark_theme = {
@@ -256,18 +227,13 @@ const nord_theme = {
     avatar: '~/face.png',
     name: 'nord_theme',
     icon: '󰄛',
+    gtk_theme: 'nord',
+    icons: 'nord_icons',
+    pywall_theme: 'base16-nord',
+    theme_wallpaper: 'nord.jpg',
     ...nord,
     ...misc,
     ...colors_nord,
-};
-
-const onedark_theme = {
-    avatar: '~/face.png',
-    name: 'OneDark_theme',
-    icon: '󰄛',
-    ...onedark,
-    ...misc,
-    ...colors_onedark,
 };
 
 export default [
@@ -276,5 +242,4 @@ export default [
     catppuccin_mocha_theme,
     material_dark_theme,
     nord_theme,
-    onedark_theme,
 ];

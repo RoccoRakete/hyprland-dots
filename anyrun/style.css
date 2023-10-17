@@ -41,15 +41,23 @@
   
   list > #plugin {
     border-radius: 16px;
-    margin: 0 .3rem;
+    margin: 0.5rem;
   }
-  list > #plugin:first-child { margin-top: .3rem; }
-  list > #plugin:last-child { margin-bottom: .3rem; }
-  list > #plugin:hover { padding: .6rem; }
+  list > #plugin:first-child { 
+    margin-top: .3rem; 
+  }
+  
+  list > #plugin:last-child { 
+    margin-bottom: .3rem; 
+  }
+
+  list > #plugin:hover { 
+    padding: .6rem; 
+  }
   
   box#main {
     color: @theme_fg_color;
-    border: 2px solid @wm_border_focused;
+    border: 2px solid @BLUEBERRY_100;
     margin-top: 15px;
     background-color: @theme_bg_color;
     border-radius: 12px;
