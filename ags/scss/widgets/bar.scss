@@ -77,7 +77,9 @@ $float: $spacing * 0.2;
         margin: $spacing/2;
         background-color: $bg_color;
         @if $bar_style =='separated' {
-            padding: $float
+            padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
+            border-radius: max($radii - $border_width, 0);
+            
         }
         
 
