@@ -22,7 +22,7 @@ datestr=%a, %e.%B
 image=~/.dots/backgrounds/last/*
 
 # Fade in time
-fade-in=1
+fade-in=0
 
 # Effect for background
 effect-blur=20x6
@@ -33,7 +33,7 @@ effect-blur=20x6
 indicator
 
 # smaller indicator
-indicator-radius=200
+indicator-radius=150
 
 # bigger indicator
 # indicator-radius=300

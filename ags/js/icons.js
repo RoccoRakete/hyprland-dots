@@ -5,7 +5,9 @@ export default {
     audio: {
         mic: {
             muted: 'microphone-disabled-symbolic',
-            unmuted: 'microphone-sensitivity-high-symbolic',
+            low: 'microphone-sensitivity-low-symbolic',
+            medium: 'microphone-sensitivity-medium-symbolic',
+            high: 'microphone-sensitivity-high-symbolic',
         },
         volume: {
             muted: 'audio-volume-muted-symbolic',
@@ -93,7 +95,7 @@ export default {
     },
     system: {
         cpu: 'org.gnome.SystemMonitor-symbolic',
-        ram: 'memory-symbolic',
-        temp: 'thermometer-symbolic',
+        ram: 'drive-harddisk-solidstate-symbolic',
+        temp: 'temperature-symbolic',
     },
 };

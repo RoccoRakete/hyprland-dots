@@ -2,7 +2,7 @@ $float: $spacing * 0.2;
 
 @mixin panel_button($flat: false, $reactive: true) {
     all: unset;
-
+    
     @if $bar_style =='separated' {
         transition: $transition;
 
@@ -62,6 +62,7 @@ $float: $spacing * 0.2;
 
 .panel {
     .cpu {
+        padding-left: $spacing/3;
         color: $accent;
     }
 
@@ -70,6 +71,7 @@ $float: $spacing * 0.2;
     }
 
     .temp {
+        padding-right: $spacing/3;
         color: $magenta;
     }
 
@@ -87,7 +89,7 @@ $float: $spacing * 0.2;
             min-height: $spacing * 2.5;
             min-width: $spacing * 2.5;
             font-size: 0.2em;
-            background-color: $accent_fg;
+            background-color: lighten($bg_color, $amount: 8);
         }
     }
 
@@ -128,7 +130,7 @@ $float: $spacing * 0.2;
     }
 
     separator {
-        background-color: transparentize($fg_color, 0.98);
+        background-color: lighten($bg_color, $amount: 8);
         border-radius: $radii;
         min-height: 5px;
         min-width: 5px;
@@ -178,6 +180,7 @@ $float: $spacing * 0.2;
 
     /* stylelint-disable-next-line selector-not-notation */
     .quicksettings:not(.active):not(:active) {
+
         .bluetooth {
             color: $blue;
         }
@@ -215,22 +218,43 @@ $float: $spacing * 0.2;
     }
 
     .battery-bar {
+        box {
+            padding-left: $spacing/3;
+            padding-right: $spacing/3;
+        }
         image {
             margin-right: $spacing/2;
         }
 
         .font-icon {
-            font-size: 1.3em;
+            font-size: 1.1em;
+            margin-right: $spacing;
+
+        }
+
+        label {
+            margin-left: $spacing/1.5;
+            
         }
 
         levelbar trough {
             @include widget;
-            min-width: 60px;
-            min-height: 14px;
+            min-width: 70px;
+            min-height: 15px;
+            border-color: transparent;
+            background-color: transparent;
+            border-radius: $radii;
+
+            block {
+                border-radius: max($radii - $border_width, 0);
+                background-color: lighten($bg_color, $amount: 8);
+            }
+
 
             block.filled {
                 border-radius: max($radii - $border_width, 0);
                 background-image: $active_gradient;
+              
             }
         }
 
@@ -238,7 +262,7 @@ $float: $spacing * 0.2;
 
             image,
             label {
-                color: $color
+                color: $fg_color;
             }
 
             block.filled {
@@ -289,9 +313,9 @@ $float: $spacing * 0.2;
 
             .indicator {
                 font-size: 0;
-                min-width: 13px;
-                min-height: 13px;
-                border-radius: $radii*1;
+                min-width: 12px;
+                min-height: 12px;
+                border-radius: $radii*1.5;
                 border: $border;
                 margin: 0 $spacing/2;
                 transition: $transition/2;

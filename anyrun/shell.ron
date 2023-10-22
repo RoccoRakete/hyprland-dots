@@ -1,6 +1,0 @@
-// <Anyrun config dir>/shell.ron
-Config(
-  prefix: ":sh",
-  // Override the shell used to launch the command
-  shell: None,
-)

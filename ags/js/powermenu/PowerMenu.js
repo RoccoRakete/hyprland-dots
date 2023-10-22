@@ -2,6 +2,7 @@ import icons from '../icons.js';
 import PowerMenu from '../services/powermenu.js';
 import PopupWindow from '../misc/PopupWindow.js';
 import { Widget } from '../imports.js';
+import './Verification.js';
 
 const SysButton = (action, label) => Widget.Button({
     onClicked: () => PowerMenu.action(action),

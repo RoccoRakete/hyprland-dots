@@ -10,15 +10,15 @@ export default {
 
     battaryBar: {
         // wether to show percentage by deafult
-        showPercentage: false,
+        showPercentage: true,
 
         // at what percentages should the battery-bar change color
-        low: 30,
+        low: 20,
         medium: 50,
     },
 
     // path to read temperature from
-    temperature: '/sys/class/thermal/thermal_zone2/temp',
+    temperature: '/sys/class/thermal/thermal_zone0/temp',
 
     // at what intervals should cpu, ram, temperature refresh
     systemFetchInterval: 1000,

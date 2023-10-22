@@ -9,8 +9,10 @@ import Separator from '../misc/Separator.js';
 import ScreenRecord from './buttons/ScreenRecord.js';
 import SubMenu from './buttons/SubMenu.js';
 import { SystemTray, Widget, Variable } from '../imports.js';
+import { Notifications, Mpris, Battery } from '../imports.js';
 import Recorder from '../services/screenrecord.js';
 import * as vars from '../variables.js';
+import BatteryBar from './buttons/BatteryBar.js';
 
 const submenuItems = Variable(1);
 SystemTray.connect('changed', () => {
@@ -68,6 +70,7 @@ const End = () => Widget.Box({
                 ColorPicker(),
             ],
         }),
+        
         Widget.Box({
             className: 'system-info',
             children: [
@@ -76,9 +79,10 @@ const End = () => Widget.Box({
                 SysProgress('temp', 'Temperature', '°C'),
             ],
         }),
-        SeparatorDot(),
-        ScreenRecord(),
         SeparatorDot(Recorder, r => r.recording),
+        ScreenRecord(),
+        SeparatorDot(Battery, b => b.available),
+        BatteryBar(),
         SystemIndicators(),
         SeparatorDot(),
         PowerMenu(),

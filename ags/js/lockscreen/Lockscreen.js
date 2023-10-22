@@ -4,8 +4,9 @@ import Lockscreen from '../services/lockscreen.js';
 import { Widget } from '../imports.js';
 import Layer from 'gi://GtkLayerShell';
 
+
 export default monitor => Widget.Window({
-    name: `lockscreen${monitor}`,
+    name: `lockscreen`,
     className: 'lockscreen',
     monitor,
     layer: 'overlay',

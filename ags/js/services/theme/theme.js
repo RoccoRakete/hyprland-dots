@@ -154,9 +154,12 @@ class ThemeService extends Service {
         if (AutoWallpaper) {
             const wallpaper_var = themes.find(({ theme_wallpaper }) => theme_wallpaper === AutoWallpaper);
             Utils.execAsync(`swww img ${backgrounds}/${AutoWallpaper} --transition-step 4 -f CatmullRom --transition-fps 120`);
-            Utils.execAsync(`rm -rf ${backgrounds}/last` );
-            Utils.execAsync(`mkdir ${backgrounds}/last` );
-            Utils.execAsync(`cp ${backgrounds}/${AutoWallpaper} ${backgrounds}/last` );
+            Utils.execAsync(`cp ${backgrounds}/${AutoWallpaper} ${backgrounds}/last/image.png`);
+            Utils.subprocess(
+                ['sh', '-c', '~/.dots/ags/prepare_background.sh'], 
+                (output) => print(output),
+                (err) => logError(err),
+              );
             return wallpaper_var;
         } else {
             return null;

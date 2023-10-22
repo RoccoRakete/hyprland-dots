@@ -1,5 +1,6 @@
 import { App, Service } from '../imports.js';
-
+import  '../powermenu/Verification.js'
+ 
 class PowerMenu extends Service {
     static {
         Service.register(this, {}, {

@@ -37,7 +37,7 @@ const BluetoothDevicesIndicator = () => Widget.Box({
         box.children = Bluetooth.connectedDevices
             .map(({ iconName, name }) => HoverRevealer({
                 indicator: Widget.Icon(iconName + '-symbolic'),
-                child: Widget.Label(name + "  "),
+                child: Widget.Label(name + ' '),
             }));
 
         box.visible = Bluetooth.connectedDevices.length > 0;

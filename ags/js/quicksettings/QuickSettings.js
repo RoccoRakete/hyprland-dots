@@ -46,6 +46,9 @@ export default () => PopupWindow({
                         [Volume()],
                         [SinkSelector(), AppMixer()],
                     ),
+                    Row(
+                        [Brightness()],
+                    ),
                 ],
             })]),
             Row(
@@ -53,7 +56,7 @@ export default () => PopupWindow({
                 [WifiSelection(), BluetoothDevices()],
             ),
             Row(
-                [Homogeneous([ThemeToggle()])],
+                [Homogeneous([ThemeToggle()]), MicMute()],
                 [ThemeSelector()],
             ),
             Media(),

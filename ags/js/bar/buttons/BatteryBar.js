@@ -7,7 +7,6 @@ import { Battery, Widget } from '../../imports.js';
 
 const Indicator = () => Widget.Stack({
     items: [
-        ['false', Widget.Icon({ binds: [['icon', Battery, 'icon-name']] })],
         ['true', FontIcon({ icon: icons.battery.charging })],
     ],
     connections: [[Battery, stack => {
@@ -44,8 +43,8 @@ export default () => {
             }]],
             children: [
                 Indicator(),
-                revaler,
                 LevelBar(),
+                revaler,
             ],
         }),
     });

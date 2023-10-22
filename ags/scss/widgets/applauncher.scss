@@ -1,5 +1,6 @@
 window#applauncher .applauncher{
     @include floating_widget;
+    border: $widget_border;
 
     .header {
         margin: $popover_padding;
