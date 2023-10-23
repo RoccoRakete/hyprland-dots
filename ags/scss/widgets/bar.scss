@@ -313,10 +313,9 @@ $float: $spacing * 0.2;
 
             .indicator {
                 font-size: 0em;
-                min-width: 12px;
-                min-height: 12px;
+                min-width: $workspace_bttn_size;
+                min-height: $workspace_bttn_size;
                 border-radius: $radii*1.5;
-                border: $border;
                 margin: 0 $spacing/2;
                 transition: $transition/2;
                 background-color: transparentize($fg_color, 0.8);

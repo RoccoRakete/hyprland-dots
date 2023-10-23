@@ -33,6 +33,7 @@ $border_width: ${t.border_width}px;
 $border: $border_width solid $border_color;
 $bar_border: solid ${t.bar_border_color} ${t.border_width}px;
 $widget_border: solid ${t.border_color} ${t.border_width}px;
+$workspace_bttn_size: ${t.workspace_button_size}px;
 
 
 $shadow: ${t.shadow};

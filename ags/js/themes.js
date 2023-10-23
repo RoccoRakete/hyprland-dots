@@ -66,6 +66,7 @@ const gruv_dark = {
     icons: 'gruvbox_icons',
     pywall_theme: 'base16-gruvbox-hard',
     theme_wallpaper: 'stairs.png',
+    workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -108,6 +109,7 @@ const gruv_darktooth = {
     icons: 'gruvbox_icons',
     pywall_theme: 'base16-gruvbox-hard',
     theme_wallpaper: 'gruvbox_forest-4.png',
+    workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -151,6 +153,7 @@ const pico = {
     icons: 'pico_icons',
     pywall_theme: 'base16-seti',
     theme_wallpaper: 'color_city.png',
+    workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -193,6 +196,7 @@ const catppuccin_mocha = {
     icons: 'catppuccin_mocha',
     pywall_theme: 'base16-seti',
     theme_wallpaper: 'oled-mountains.jpg',
+    workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -235,6 +239,7 @@ const material_dark = {
     icons: 'material',
     pywall_theme: 'base16-materialer',
     theme_wallpaper: 'japanese-sakura-painting.jpg',
+    workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -277,6 +282,7 @@ const nord = {
     icons: 'nord_icons',
     pywall_theme: 'base16-nord',
     theme_wallpaper: 'nord.jpg',
+    workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -319,6 +325,7 @@ const tokyo_night = {
     icons: 'tokyo_night',
     pywall_theme: 'base16-tomorrow-night',
     theme_wallpaper: 'nord-street.png',
+    workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -361,6 +368,7 @@ const adwaita = {
     icons: 'Adwaita',
     pywall_theme: 'base16-default',
     theme_wallpaper: 'minimal_landscape.jpg',
+    workspace_button_size: '16',
 
     //includes...
     ...misc,
