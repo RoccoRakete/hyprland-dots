@@ -137,6 +137,7 @@ $float: $spacing * 0.2;
     }
 
     .quicksettings>box>* {
+        font-size: 1.2em;
         margin: 0 $spacing/2;
 
         &:last-child {
@@ -180,7 +181,6 @@ $float: $spacing * 0.2;
 
     /* stylelint-disable-next-line selector-not-notation */
     .quicksettings:not(.active):not(:active) {
-
         .bluetooth {
             color: $blue;
         }
@@ -233,6 +233,7 @@ $float: $spacing * 0.2;
         }
 
         label {
+            font-size: 1.1em;
             margin-left: $spacing/1.5;
             
         }

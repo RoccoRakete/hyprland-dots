@@ -1,6 +1,6 @@
 const misc = {
-    wm_gaps: 5,
-    radii: 10,
+    wm_gaps: 3,
+    radii: 6,
     spacing: 9,
     shadow: 'rgba(0, 0, 0, 0)',
     drop_shadow: false,
@@ -11,7 +11,7 @@ const misc = {
     desktop_clock: 'center center',
     font: 'Ubuntu Nerd Font',
     mono_font: 'Mononoki Nerd Font',
-    font_size: 19,
+    font_size: 16,
 };
 
 const light = {
@@ -66,7 +66,7 @@ const gruv_dark = {
     icons: 'gruvbox_icons',
     pywall_theme: 'base16-gruvbox-hard',
     theme_wallpaper: 'stairs.png',
-    workspace_button_size: '16',
+    //workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -109,7 +109,7 @@ const gruv_darktooth = {
     icons: 'gruvbox_icons',
     pywall_theme: 'base16-gruvbox-hard',
     theme_wallpaper: 'gruvbox_forest-4.png',
-    workspace_button_size: '16',
+    //workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -153,7 +153,7 @@ const pico = {
     icons: 'pico_icons',
     pywall_theme: 'base16-seti',
     theme_wallpaper: 'color_city.png',
-    workspace_button_size: '16',
+    //workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -196,7 +196,7 @@ const catppuccin_mocha = {
     icons: 'catppuccin_mocha',
     pywall_theme: 'base16-seti',
     theme_wallpaper: 'oled-mountains.jpg',
-    workspace_button_size: '16',
+    //workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -239,7 +239,7 @@ const material_dark = {
     icons: 'material',
     pywall_theme: 'base16-materialer',
     theme_wallpaper: 'japanese-sakura-painting.jpg',
-    workspace_button_size: '16',
+    //workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -282,7 +282,7 @@ const nord = {
     icons: 'nord_icons',
     pywall_theme: 'base16-nord',
     theme_wallpaper: 'nord.jpg',
-    workspace_button_size: '16',
+    //workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -325,7 +325,7 @@ const tokyo_night = {
     icons: 'tokyo_night',
     pywall_theme: 'base16-tomorrow-night',
     theme_wallpaper: 'nord-street.png',
-    workspace_button_size: '16',
+    //workspace_button_size: '16',
 
     //includes...
     ...misc,
@@ -368,7 +368,7 @@ const adwaita = {
     icons: 'Adwaita',
     pywall_theme: 'base16-default',
     theme_wallpaper: 'minimal_landscape.jpg',
-    workspace_button_size: '16',
+    //workspace_button_size: '16',
 
     //includes...
     ...misc,
