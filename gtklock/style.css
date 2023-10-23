@@ -9,12 +9,12 @@ window {
 }
 
 box#window-box {
-    margin-bottom: 200px;;
+    padding-bottom: 5em;
 }
 
 label#clock-label {
     font-size: 5em;
-    margin-bottom: 200px;
+    padding-bottom: 3em;
     color: @theme_fg_color;
 }
 label#input-label {
