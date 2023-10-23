@@ -2,5 +2,9 @@ yay -S aylurs-gtk-shell-git grimblast-git gtklock gtklock-userinfo-module hyprla
 ttf-ubuntu-nerd ttf-ubuntu-mono-nerd sway-audio-idle-inhibit-git swww-git visual-studio-code-bin spotify wf-recorder wl-clip-persist-git
 zsh-autosuggestions-git zsh-theme-powerlevel10k-git gdm-settings xdg-desktop-portal-hyprland-git thinkfan wev
 
-sudo pacman -S bluez bluez-utils btop cifs-utils discord brightnessctl file-roller firefox flatpak fprintd fwupd gdm gimp git  gnome-calculator gnome-disk-utility gnome-keyring gnome-software gnome-sound-recorder grim gnome-tweaks imagemagick gvfs gvfs-smb inotify-tools intel-gpu-tools kitty libgnome-keyring libinput lm_sensors mpv nautilus neofetch network-manager-applet nextcloud-client obs-studio pavucontrol polkit-gnome python-pam pywal-16-colors qt5-base qt6-base seahorse slurp smbclient swayidle wl-clipboard zsh-completions zsh
+sudo pacman -S bluez bluez-utils btop cifs-utils discord brightnessctl file-roller firefox flatpak fprintd fwupd gdm gimp git 
+gnome-calculator gnome-disk-utility gnome-keyring gnome-software gnome-sound-recorder grim gnome-tweaks imagemagick gvfs gvfs-smb 
+inotify-tools intel-gpu-tools kitty libgnome-keyring libinput lm_sensors mpv nautilus neofetch network-manager-applet nextcloud-client 
+obs-studio pavucontrol polkit-gnome python-pam pywal-16-colors qt5-base qt6-base seahorse slurp smbclient swayidle wl-clipboard 
+zsh-completions zsh tracker3 tracker3-miners 
 
