@@ -57,7 +57,7 @@ fi
 
 # needed packages
 needed_pacman_packages=(
-  "lshw" "bluez" "bluez-utils" "top" "free" "brightnessctl" "file-roller" "grim" "imagemagick"
+  "lshw" "bluez" "bluez-utils" "brightnessctl" "file-roller" "grim" "imagemagick"
   "gvfs" "inotify-tools" "libinput" "lm_sensors" "pavucontrol" "python-pam" "slurp" "swayidle"
   "wl-clipboard" "tracker3" "tracker3-miners" "qt5-base" "qt6-base"
 )
@@ -91,32 +91,32 @@ read -p "Enter the number of your choice: " choice
 if [ "$choice" == "1" ]; then
   # Installation of needed packages (Pacman)
   for package in "${needed_pacman_packages[@]}"; do
-    sudo pacman -S --needed "$package"
+    sudo pacman -S --needed --noconfirm "$package"
   done
 
   # Installation of needd packages (AUR)
   for package in "${needed_aur_packages[@]}"; do
-    yay -S "$package"
+    yay -S --noconfirm "$package"
   done
 elif [ "$choice" == "2" ]; then
   # Installation of needed packages (Pacman)
   for package in "${needed_pacman_packages[@]}"; do
-    sudo pacman -S --needed "$package"
+    sudo pacman -S --needed --noconfirm "$package"
   done
 
   # Installation of needed packages (AUR)
   for package in "${needed_aur_packages[@]}"; do
-    yay -S "$package"
+    yay -S --noconfirm "$package"
   done
 
   # Installation of optional packages (Pacman)
   for package in "${optional_pacman_packages[@]}"; do
-    sudo pacman -S "$package"
+    sudo pacman -S --noconfirm "$package"
   done
 
   # Installation of packages (AUR)
   for package in "${optional_aur_packages[@]}"; do
-    yay -S "$package"
+    yay -S --noconfirm "$package"
   done
 else
   echo "Invalid choice. No packages were installed."
