@@ -1,10 +1,269 @@
-yay -S aylurs-gtk-shell-git grimblast-git gtklock gtklock-userinfo-module hyprland-git hyprpicker libadwaita-without-adwaita-git 
-ttf-ubuntu-nerd ttf-ubuntu-mono-nerd sway-audio-idle-inhibit-git swww-git visual-studio-code-bin spotify wf-recorder wl-clip-persist-git
-zsh-autosuggestions-git zsh-theme-powerlevel10k-git gdm-settings xdg-desktop-portal-hyprland-git thinkfan wev
+#!/bin/bash
 
-sudo pacman -S bluez bluez-utils btop cifs-utils discord brightnessctl file-roller firefox flatpak fprintd fwupd gdm gimp git 
-gnome-calculator gnome-disk-utility gnome-keyring gnome-software gnome-sound-recorder grim gnome-tweaks imagemagick gvfs gvfs-smb 
-inotify-tools intel-gpu-tools kitty libgnome-keyring libinput lm_sensors mpv nautilus neofetch network-manager-applet nextcloud-client 
-obs-studio pavucontrol polkit-gnome python-pam pywal-16-colors qt5-base qt6-base seahorse slurp smbclient swayidle wl-clipboard 
-zsh-completions zsh tracker3 tracker3-miners 
+# Check if the system is an Arch Linux-based distribution
+if [ -f /etc/os-release ]; then
+  source /etc/os-release
+  if [ "$ID" != "arch" ]; then
+    echo "This script is intended for Arch Linux or Arch-based distributions only."
+    read -p "Do you want to run this script anyway? (y/n): " run_script
+    if [ "$run_script" != "y" ]; then
+      exit 1
+    fi
+  fi
+else
+  echo "Unable to determine the distribution. Proceeding with the script..."
+fi
 
+git_dir=~/git
+
+if [ -d "$git_dir" ]; then
+  echo "$git_dir exists."
+  cd "$git_dir"
+else
+  echo "$git_dir does not exist."
+  echo "Creating $git_dir..."
+  mkdir -p "$git_dir"
+  cd "$git_dir"
+  echo "$git_dir was created."
+fi
+
+# Check if Yay is installed
+if [ -n "$(command -v yay)" ]; then
+  echo "Yay (AUR Helper) is already installed."
+else
+  # Prompt the user to install Yay
+  read -p "Yay (AUR Helper) is required. Do you want to install Yay? (y/n): " install_yay
+  if [ "$install_yay" == "y" ]; then
+    sudo pacman -S --needed git base-devel
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+  else
+    echo "Yay is required for this script. Exiting."
+    exit 1
+  fi
+fi
+
+if [ -d "$git_dir" ]; then
+  echo "$git_dir exists."
+  cd "$git_dir"
+else
+  echo "$git_dir does not exist."
+  echo "Creating $git_dir..."
+  mkdir -p "$git_dir"
+  cd "$git_dir"
+  echo "$git_dir was created."
+fi
+
+# needed packages
+needed_pacman_packages=(
+  "lshw" "bluez" "bluez-utils" "top" "free" "brightnessctl" "file-roller" "grim" "imagemagick"
+  "gvfs" "inotify-tools" "libinput" "lm_sensors" "pavucontrol" "python-pam" "slurp" "swayidle"
+  "wl-clipboard" "tracker3" "tracker3-miners" "qt5-base" "qt6-base"
+)
+
+needed_aur_packages=(
+  "aylurs-gtk-shell-git" "grimblast-git" "gtklock" "gtklock-userinfo-module" "hyprland-git"
+  "hyprpicker" "libadwaita-without-adwaita-git" "ttf-ubuntu-nerd" "ttf-ubuntu-mono-nerd"
+  "sway-audio-idle-inhibit-git" "swww-git" "pywal-16-colors" "xdg-desktop-portal-hyprland-git"
+  "wf-recorder" "wl-clip-persist-git"
+)
+
+# optional packages
+optional_pacman_packages=(
+  "discord" "btop" "firefox" "flatpak" "fprintd" "fwupd" "cifs-utils" "gdm" "gimp" "gnome-calculator" 
+  "gnome-disk-utility" "gnome-keyring" "gnome-software" "gnome-sound-recorder" "gnome-tweaks"
+  "intel-gpu-tools" "kitty" "gvfs-smb" "libgnome-keyring" "mpv" "neofetch" "network-manager-applet"
+  "nextcloud-client" "obs-studio" "smbclient" "seahorse" "polkit-gnome" "nautilus"
+)
+
+optional_aur_packages=(
+  "visual-studio-code-bin" "spotify" "gdm-settings" "wev"
+)
+
+# print packages
+echo "Available packages:"
+echo "1) Install only needed packages (both pacman and AUR)"
+echo "2) Install needed and optional packages (both pacman and AUR)"
+
+read -p "Enter the number of your choice: " choice
+
+if [ "$choice" == "1" ]; then
+  # Installation of needed packages (Pacman)
+  for package in "${needed_pacman_packages[@]}"; do
+    sudo pacman -S --needed "$package"
+  done
+
+  # Installation of needd packages (AUR)
+  for package in "${needed_aur_packages[@]}"; do
+    yay -S "$package"
+  done
+elif [ "$choice" == "2" ]; then
+  # Installation of needed packages (Pacman)
+  for package in "${needed_pacman_packages[@]}"; do
+    sudo pacman -S --needed "$package"
+  done
+
+  # Installation of needed packages (AUR)
+  for package in "${needed_aur_packages[@]}"; do
+    yay -S "$package"
+  done
+
+  # Installation of optional packages (Pacman)
+  for package in "${optional_pacman_packages[@]}"; do
+    sudo pacman -S "$package"
+  done
+
+  # Installation of packages (AUR)
+  for package in "${optional_aur_packages[@]}"; do
+    yay -S "$package"
+  done
+else
+  echo "Invalid choice. No packages were installed."
+fi
+
+git clone https://github.com/RoccoRakete/hyprland-dots.git
+git clone https://github.com/RoccoRakete/hyprland-gtk-themes.git
+git clone https://github.com/RoccoRakete/hyprland-icons.git
+
+# Check if the directories exist
+if [ -d ~/.config ]; then
+  echo "~/.config directory exists."
+  echo "Do you want to create a backup of the existing ~/.config directory and copy the new config? (y/n): "
+  read create_config_backup
+  if [ "$create_config_backup" == "y" ]; then
+    mv ~/.config ~/.config_bak
+    echo "~/.config_bak was created!"
+    mkdir -p ~/.config
+    echo "~/.config was created!"
+    cp -r ./hyprland-dots/* ~/.config
+  fi
+else
+  echo "~/.config directory does not exist."
+  echo "Do you want to create it and copy the new config? (y/n): "
+  read create_config
+  if [ "$create_config" == "y" ]; then
+    mkdir -p ~/.config
+    echo "~/.config was created!"
+    cp -r ./hyprland-dots/* ~/.config
+  fi
+fi
+
+if [ -d ~/.icons ]; then
+  echo "~/.icons directory exists."
+  echo "Do you want to create a backup of the existing ~/.icons directory and copy the new icons? (y/n): "
+  read create_icons_backup
+  if [ "$create_icons_backup" == "y" ]; then
+    mv ~/.icons ~/.icons_bak
+    echo "~/.icons_bak was created!"
+    mkdir -p ~/.icons
+    echo "~/.icons was created!"
+    cp -r ./hyprland-icons/* ~/.icons
+  fi
+else
+  echo "~/.icons directory does not exist."
+  echo "Do you want to create it and copy the new icons? (y/n): "
+  read create_icons
+  if [ "$create_icons" == "y" ]; then
+    mkdir -p ~/.icons
+    echo "~/.icons was created!"
+    cp -r ./hyprland-icons/* ~/.icons
+  fi
+fi
+
+if [ -d ~/.themes ]; then
+  echo "~/.themes directory exists."
+  echo "Do you want to create a backup of the existing ~/.themes directory and copy the new themes? (y/n): "
+  read create_themes_backup
+  if [ "$create_themes_backup" == "y" ]; then
+    mv ~/.themes ~/.themes_bak
+    echo "~/.themes_bak was created!"
+    mkdir -p ~/.themes
+    echo "~/.themes was created!"
+    cp -r ./hyprland-gtk-themes/* ~/.themes
+  fi
+else
+  echo "~/.themes directory does not exist."
+  echo "Do you want to create it and copy the new themes? (y/n): "
+  read create_themes
+  if [ "$create_themes" == "y" ]; then
+    mkdir -p ~/.themes
+    echo "~/.themes was created!"
+    cp -r ./hyprland-gtk-themes/* ~/.themes
+  fi
+fi
+
+# Hardware detect
+hardware_info=$(sudo lshw 2>/dev/null)
+
+if [[ $hardware_info == *"Lenovo"* ]]; then
+  echo "Lenovo-Laptop detected."
+  
+  echo "Do you want to install thinkfan? (y/n): "
+  read install_thinkfan
+  if [ "$install_thinkfan" == "y" ]; then
+    yay -S thinkfan
+    echo "Thinkfan has been installed."
+    
+    if [ -e /etc/thinkfan.yaml ]; then
+      echo "Do you want to rename the existing thinkfan.yaml to thinkfan.bak? (y/n): "
+      read rename_config
+      if [ "$rename_config" == "y" ]; then
+        sudo mv /etc/thinkfan.yaml /etc/thinkfan.bak
+        echo "Existing thinkfan.yaml has been renamed to thinkfan.bak."
+      fi
+    fi
+
+    echo "Do you want to copy the new thinkfan configuration? (y/n): "
+    read copy_config
+    if [ "$copy_config" == "y" ]; then
+      sudo cp ./hyprland-dots/scriptsnstuff/thinkfan.yaml /etc/thinkfan.yaml
+      echo "New thinkfan configuration has been copied."
+    fi
+  else
+    echo "Thinkfan config has not been copied."
+  fi
+else
+  echo "No Lenovo-Laptop detected..."
+fi
+
+echo "Do you want to install ZSH and related extensions and configure Oh My Zsh? (y/n): "
+read install_zsh
+
+if [ "$install_zsh" == "y" ]; then
+  sudo pacman -S zsh-completions zsh
+  yay -S zsh-autosuggestions-git zsh-theme-powerlevel10k-git
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+  git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+  cp ./hyprland-dots/.zshrc ~/.zshrc
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  echo "ZSH and related extensions have been installed and configured."
+else
+  echo "ZSH and related extensions have not been installed."
+fi
+
+if [ -n "$(command -v gdm)" ]; then
+  echo "GDM (GNOME Display Manager) is installed."
+  read -p "Do you want to enable GDM now? (y/n): " enable_gdm
+  if [ "$enable_gdm" == "y" ]; then
+    sudo systemctl enable gdm
+    echo "GDM has been enabled. You can start it manually using 'sudo systemctl start gdm'."
+  fi
+
+if [ -n "$(command -v thinkfan)" ]; then
+  echo "Thinkfan is installed."
+  read -p "Do you want to enable and start Thinkfan now? (y/n): " enable_thinkfan
+  if [ "$enable_thinkfan" == "y" ]; then
+    sudo systemctl enable thinkfan
+    sudo systemctl start thinkfan
+    echo "Thinkfan has been enabled and started."
+  fi
+fi
+
+# Prompt the user to restart the computer
+read -p "Installation has now complete. Do you want to reboot now? (y/n): " restart_pc
+if [ "$restart_pc" == "y" ]; then
+  reboot
+fi
