@@ -65,7 +65,7 @@ needed_pacman_packages=(
 needed_aur_packages=(
   "aylurs-gtk-shell-git" "grimblast-git" "gtklock" "gtklock-userinfo-module" "hyprland-git"
   "hyprpicker" "libadwaita-without-adwaita-git" "ttf-ubuntu-nerd" "ttf-ubuntu-mono-nerd"
-  "sway-audio-idle-inhibit-git" "swww-git" "pywal-16-colors" "xdg-desktop-portal-hyprland-git"
+  "sway-audio-idle-inhibit-git" "swww-git" "pywal-16-colors" "xdg-desktop-portal-hyprland"
   "wf-recorder" "wl-clip-persist-git"
 )
 
@@ -227,23 +227,6 @@ else
   echo "No Lenovo-Laptop detected..."
 fi
 
-echo "Do you want to install ZSH and related extensions and configure Oh My Zsh? (y/n): "
-read install_zsh
-
-if [ "$install_zsh" == "y" ]; then
-  sudo pacman --noconfirm -S zsh
-  yay -S --noconfirm -S zsh-theme-powerlevel10k-git
-  sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-  sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-  sudo git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-  sudo git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
-  cp ./hyprland-dots/.zshrc ~/.zshrc
-  echo "ZSH and related extensions have been installed and configured."
-else
-  echo "ZSH and related extensions have not been installed."
-fi
-
 if [ -n "$(command -v gdm)" ]; then
   echo "GDM (GNOME Display Manager) is installed."
   read -p "Do you want to enable GDM now? (y/n): " enable_gdm
@@ -263,7 +246,7 @@ if [ -n "$(command -v thinkfan)" ]; then
 fi
 
 # Prompt the user to restart the computer
-read -p "Installation has now complete. Do you want to reboot now? (y/n): " restart_pc
+read -p "Installation has now completed. Do you want to reboot now? (y/n): " restart_pc
 if [ "$restart_pc" == "y" ]; then
   reboot
 fi
