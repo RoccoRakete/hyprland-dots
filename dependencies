@@ -231,7 +231,8 @@ echo "Do you want to install ZSH and related extensions and configure Oh My Zsh?
 read install_zsh
 
 if [ "$install_zsh" == "y" ]; then
-  sudo pacman --noconfirm -S zsh zsh-theme-powerlevel10k-git
+  sudo pacman --noconfirm -S zsh
+  yay -S --noconfirm -S zsh-theme-powerlevel10k-git
   sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   sudo git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
   sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
