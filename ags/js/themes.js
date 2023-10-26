@@ -367,7 +367,7 @@ const adwaita = {
     gtk_theme: 'adw-gtk3-dark',
     icons: 'Adwaita',
     pywall_theme: 'base16-default',
-    theme_wallpaper: 'minimal_landscape.jpg',
+    theme_wallpaper: 'blobs-d.png',
     //workspace_button_size: '16',
 
     //includes...
