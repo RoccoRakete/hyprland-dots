@@ -1,10 +1,14 @@
+import GLib from 'gi://GLib';
+
+const Home = GLib.get_home_dir();
+
 const misc = {
     wm_gaps: 3,
-    radii: 5,
+    radii: 10,
     spacing: 9,
     shadow: 'rgba(0, 0, 0, 0)',
     drop_shadow: false,
-    transition: 200,
+    transition: 400,
     screen_corners: false,
     bar_style: 'floating',
     layout: 'topbar',
@@ -12,6 +16,7 @@ const misc = {
     font: 'Ubuntu Nerd Font',
     mono_font: 'Mononoki Nerd Font',
     font_size: 16,
+    border_width: 0,
 };
 
 const light = {
@@ -56,7 +61,6 @@ const gruv_dark = {
     border_color: '$yellow',
     bar_border_color: '$green',
     border_opacity: 100,
-    border_width: 2,
 
     //misc
     avatar: '~/face.png',
@@ -99,7 +103,6 @@ const gruv_darktooth = {
     border_color: '$yellow',
     bar_border_color: '$green',
     border_opacity: 100,
-    border_width: 2,
 
     //misc
     avatar: '~/face.png',
@@ -143,7 +146,6 @@ const pico = {
     border_color: '$blue',
     bar_border_color: '$blue',
     border_opacity: 100,
-    border_width: 2,
 
     //misc
     avatar: '~/face.png',
@@ -186,7 +188,6 @@ const catppuccin_mocha = {
     border_color: '$blue',
     bar_border_color: '$blue',
     border_opacity: 100,
-    border_width: 2,
 
     //misc
     avatar: '~/face.png',
@@ -229,7 +230,6 @@ const material_dark = {
     border_color: '$blue',
     bar_border_color: '$blue',
     border_opacity: 100,
-    border_width: 2,
 
     //misc
     avatar: '~/face.png',
@@ -272,7 +272,6 @@ const nord = {
     border_color: '$blue',
     bar_border_color: '$blue',
     border_opacity: 100,
-    border_width: 2,
 
     //misc
     avatar: '~/face.png',
@@ -315,7 +314,6 @@ const tokyo_night = {
     border_color: '$magenta',
     bar_border_color: '$magenta',
     border_opacity: 100,
-    border_width: 2,
 
     //misc
     avatar: '~/face.png',
@@ -358,10 +356,9 @@ const adwaita = {
     border_color: '$magenta',
     bar_border_color: '$blue',
     border_opacity: 100,
-    border_width: 1,
 
     //misc
-    avatar: '~/face.png',
+    avatar: `${Home}/face.png`,
     name: 'adwaita_theme',
     icon: '󰄛',
     gtk_theme: 'adw-gtk3-dark',

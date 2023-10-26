@@ -24,7 +24,7 @@ export default {
     systemFetchInterval: 1000,
 
     // the slide down animation on quicksettings and dashboard
-    windowAnimationDuration: 250,
+    windowAnimationDuration: 350,
 
     // keyboard id for brightnessctl
     brightnessctlKBD: 'asus::kbd_backlight',

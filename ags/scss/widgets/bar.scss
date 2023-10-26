@@ -76,19 +76,22 @@ $float: $spacing * 0.2;
     }
 
     .system-resources-box {
-        margin: $spacing/2;
+        margin: $spacing/2.5;
         background-color: $bg_color;
+        font-size: 1em;
         @if $bar_style =='separated' {
             padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
             border-radius: max($radii - $border_width, 0);
+            margin-left: $spacing/4;
+            margin-right: $spacing/4;
             
         }
         
 
         .circular-progress {
-            min-height: $spacing * 2.5;
-            min-width: $spacing * 2.5;
-            font-size: 0.2em;
+            min-height: $font_size * 1.35;
+            min-width: $font_size * 1.35;
+            font-size: $font_size/4.5;
             background-color: lighten($bg_color, $amount: 8);
         }
     }
@@ -113,6 +116,7 @@ $float: $spacing * 0.2;
         margin: $wm_gaps;
         padding: 0;
         border: $bar_border;
+        border-radius: $radii;
     }
 
     @if $bar_style =='separated' {
@@ -126,18 +130,25 @@ $float: $spacing * 0.2;
     }
 
     .panel-button {
+        .clock {
+            font-size: $font_size*1.1;
+        }
         @include panel_button($flat: true);
     }
 
     separator {
+        @if $bar_style =='separated' {
+        }
+        @else {
         background-color: lighten($bg_color, $amount: 8);
         border-radius: $radii;
         min-height: 5px;
         min-width: 5px;
+        }
     }
 
     .quicksettings>box>* {
-        font-size: 1.2em;
+        font-size: $font_size;
         margin: 0 $spacing/2;
 
         &:last-child {
@@ -151,7 +162,7 @@ $float: $spacing * 0.2;
 
     .overview {
         .font-icon {
-            font-size: 1.3em;
+            font-size: $font_size*1.3;
         }
         label {
             color: transparentize($accent, 0.2);
@@ -230,33 +241,33 @@ $float: $spacing * 0.2;
         }
 
         .font-icon {
-            font-size: 1.3em;
+            font-size: $font_size*1.3;
             margin-right: $spacing;
 
         }
 
         label {
-            font-size: 1.1em;
+            font-size: $font_size*1.1;
             margin-left: $spacing/1.5;
             
         }
 
         levelbar trough {
             @include widget;
-            min-width: 70px;
-            min-height: 15px;
+            min-width: $font_size*4.5;
+            min-height: $font_size/1.1;
             border-color: transparent;
             background-color: transparent;
-            border-radius: $radii;
+            border-radius: $radii/2;
 
             block {
-                border-radius: max($radii - $border_width, 0);
+                border-radius: $radii/2;
                 background-color: lighten($bg_color, $amount: 8);
             }
 
 
             block.filled {
-                border-radius: max($radii - $border_width, 0);
+                border-radius: $radii/2;
                 background-image: $active_gradient;
               
             }
@@ -319,7 +330,7 @@ $float: $spacing * 0.2;
                 font-size: 0em;
                 min-width: $workspace_bttn_size;
                 min-height: $workspace_bttn_size;
-                border-radius: $radii*1.5;
+                border-radius: $font_size;
                 margin: 0 $spacing/2;
                 transition: $transition/2;
                 background-color: transparentize($fg_color, 0.8);
@@ -347,7 +358,7 @@ $float: $spacing * 0.2;
             }
 
             &.active .indicator {
-                min-width: 13px*2;
+                min-width: $font_size*2.5
             }
         }
     }

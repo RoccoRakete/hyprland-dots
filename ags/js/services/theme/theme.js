@@ -14,7 +14,7 @@ class ThemeService extends Service {
 
     get themes() { return themes; }
 
-    _defaultAvatar = `~/face.png`;
+    _defaultAvatar = `/home/${Utils.USER}/face.png`;
     _defaultTheme = themes[0].name;
 
     constructor() {
