@@ -57,7 +57,7 @@ fi
 
 # needed packages
 needed_pacman_packages=(
-  "hyprland" "nano" "lshw" "bluez" "bluez-utils" "brightnessctl" "file-roller" "grim" "imagemagick"
+  "hyprland" "nano" "lshw" "wezterm" "bluez" "bluez-utils" "brightnessctl" "file-roller" "grim" "imagemagick"
   "gvfs" "inotify-tools" "libinput" "lm_sensors" "pavucontrol" "python-pam" "slurp" "swayidle"
   "wl-clipboard" "tracker3" "tracker3-miners" "qt5-base" "qt6-base" "gnome-bluetooth" "gnome-control-center"
 )
