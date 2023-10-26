@@ -135,8 +135,10 @@ if [ -d ~/.config ]; then
     mv ~/.config ~/.config_bak
     echo "~/.config_bak was created!"
     mkdir -p ~/.config
+    mkdir -p ~/.dots
     echo "~/.config was created!"
-    cp -r ./hyprland-dots/* ~/.config
+    cp -r ./hyprland-dots/* ~/.dots
+    ln -s ~/.dots/* ~/.config
   fi
 else
   echo "~/.config directory does not exist."
@@ -144,8 +146,10 @@ else
   read create_config
   if [ "$create_config" == "y" ]; then
     mkdir -p ~/.config
+    mkdir -p ~/.dots
     echo "~/.config was created!"
-    cp -r ./hyprland-dots/* ~/.config
+    cp -r ./hyprland-dots/* ~/.dots
+    ln -s ~/.dots/* ~/.config
   fi
 fi
 
