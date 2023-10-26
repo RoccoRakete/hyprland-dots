@@ -260,14 +260,6 @@ else
     echo "The exampleconfig doesn't exist!"
 fi
 
-if [ -n "$(command -v gdm)" ]; then
-  echo "GDM (GNOME Display Manager) is installed."
-  read -p "Do you want to enable GDM now? (y/n): " enable_gdm
-  if [ "$enable_gdm" == "y" ]; then
-    sudo systemctl enable gdm
-    echo "GDM has been enabled. You can start it manually using 'sudo systemctl start gdm'."
-  fi
-
 # Prompt the user to restart the computer
 read -p "Installation has now completed. Do you want to reboot now? (y/n): " restart_pc
 if [ "$restart_pc" == "y" ]; then
