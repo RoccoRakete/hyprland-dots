@@ -150,6 +150,9 @@ $float: $spacing * 0.2;
     }
 
     .overview {
+        .font-icon {
+            font-size: 1.3em;
+        }
         label {
             color: transparentize($accent, 0.2);
         }
@@ -227,7 +230,7 @@ $float: $spacing * 0.2;
         }
 
         .font-icon {
-            font-size: 1.1em;
+            font-size: 1.3em;
             margin-right: $spacing;
 
         }

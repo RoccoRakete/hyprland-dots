@@ -1,6 +1,6 @@
 const misc = {
     wm_gaps: 3,
-    radii: 6,
+    radii: 5,
     spacing: 9,
     shadow: 'rgba(0, 0, 0, 0)',
     drop_shadow: false,
