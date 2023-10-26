@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Hardware detect
+hardware_info=$(sudo lshw 2>/dev/null)
+
+if [[ $hardware_info == *"Lenovo"* ]]; then
+  echo "Lenovo-Laptop detected."
+  
+  echo "Do you want to install thinkfan? (y/n): "
+  read install_thinkfan
+  if [ "$install_thinkfan" == "y" ]; then
+    yay -S thinkfan
+    echo "Thinkfan has been installed."
+    
+    if [ -e /etc/thinkfan.yaml ]; then
+      echo "Do you want to rename the existing thinkfan.yaml to thinkfan.bak? (y/n): "
+      read rename_config
+      if [ "$rename_config" == "y" ]; then
+        sudo mv /etc/thinkfan.yaml /etc/thinkfan.bak
+        echo "Existing thinkfan.yaml has been renamed to thinkfan.bak."
+      fi
+    fi
+
+    echo "Do you want to copy the new thinkfan configuration? (y/n): "
+    read copy_config
+    if [ "$copy_config" == "y" ]; then
+      sudo cp ./hyprland-dots/scriptsnstuff/thinkfan.yaml /etc/thinkfan.yaml
+      echo "New thinkfan configuration has been copied."
+    fi
+  else
+    echo "Thinkfan config has not been copied."
+  fi
+else
+  echo "No Lenovo-Laptop detected..."
+fi
