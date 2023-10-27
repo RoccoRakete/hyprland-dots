@@ -74,11 +74,11 @@ optional_pacman_packages=(
   "discord" "btop" "firefox" "flatpak" "fprintd" "fwupd" "cifs-utils" "gdm" "gimp" "gnome-calculator" 
   "gnome-disk-utility" "gnome-keyring" "gnome-software" "gnome-sound-recorder" "gnome-tweaks"
   "intel-gpu-tools" "kitty" "gvfs-smb" "libgnome-keyring" "mpv" "neofetch" "network-manager-applet"
-  "nextcloud-client" "obs-studio" "smbclient" "seahorse" "polkit-gnome" "nautilus"
+  "nextcloud-client" "obs-studio" "smbclient" "seahorse" "polkit-gnome" "nautilus" "thunar" "tlp"
 )
 
 optional_aur_packages=(
-  "visual-studio-code-bin" "spotify" "gdm-settings" "wev"
+  "visual-studio-code-bin" "spotify" "gdm-settings" "wev" "tlpui"
 )
 
 # print packages
@@ -259,6 +259,8 @@ if [ -e "$example_conf_file" ]; then
 else
     echo "The exampleconfig doesn't exist!"
 fi
+
+sudo systemctl enable --now tlp.service
 
 # Prompt the user to restart the computer
 read -p "Installation has now completed. Do you want to reboot now? (y/n): " restart_pc
