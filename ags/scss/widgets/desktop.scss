@@ -78,14 +78,16 @@ window.desktop {
 
 window.indicator .progress {
     @include floating_widget;
+    border-radius: $radii;
     padding: $spacing/2;
 
     .fill {
-        border-radius: max($popover_radius - $spacing/2, 0);
+        border-radius: $radii/2;
         background-color: $accent;
         color: $accent_fg;
 
         image {
+            padding-top: $spacing/4;
             -gtk-icon-transform: scale(0.7);
         }
 
