@@ -1,6 +1,5 @@
 #! /bin/sh
 
-# Terminate already running waybar instances!
 killall -q ags
 
 # Launch ags

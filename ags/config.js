@@ -11,7 +11,6 @@ import options from './js/options.js';
 import * as setup from './js/utils.js';
 import { forMonitors } from './js/utils.js';
 import Verification from './js/powermenu/Verification.js';
-import Lockscreen from './js/lockscreen/Lockscreen.js';
 
 setup.warnOnLowBattery();
 setup.scssWatcher();
@@ -29,7 +28,6 @@ export default {
         forMonitors(ScreenCorners),
         forMonitors(OSD),
         forMonitors(Notifications),
-        forMonitors(Lockscreen),
         Applauncher(),
         Overview(),
         Dashboard(),

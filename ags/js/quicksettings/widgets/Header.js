@@ -1,10 +1,9 @@
 import icons from '../../icons.js';
 import PowerMenu from '../../services/powermenu.js';
 import Theme from '../../services/theme/theme.js';
-import Lockscreen from '../../services/lockscreen.js';
 import Avatar from '../../misc/Avatar.js';
 import { uptime } from '../../variables.js';
-import { Battery, Widget } from '../../imports.js';
+import { Battery, Widget, Utils } from '../../imports.js';
 
 export const BatteryProgress = () => Widget.Box({
     className: 'battery-progress',
@@ -59,8 +58,9 @@ export default () => Widget.Box({
                         }),
                         Widget.Button({
                             valign: 'center',
-                            onClicked: () => Lockscreen.lockscreen(),
+                            onClicked: () => Utils.execAsync(`gtklock`),
                             child: Widget.Icon(icons.lock),
+
                         }),
                         Widget.Button({
                             valign: 'center',

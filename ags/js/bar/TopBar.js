@@ -9,7 +9,7 @@ import Separator from '../misc/Separator.js';
 import ScreenRecord from './buttons/ScreenRecord.js';
 import SubMenu from './buttons/SubMenu.js';
 import { SystemTray, Widget, Variable } from '../imports.js';
-import { Notifications, Mpris, Battery } from '../imports.js';
+import { Battery } from '../imports.js';
 import Recorder from '../services/screenrecord.js';
 import * as vars from '../variables.js';
 import BatteryBar from './buttons/BatteryBar.js';

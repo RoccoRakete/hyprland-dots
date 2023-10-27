@@ -1,6 +1,6 @@
 import { App, Utils } from '../../imports.js';
 
-const noAlphaignore = ['verification', 'powermenu', 'lockscreen'];
+const noAlphaignore = ['verification', 'powermenu'];
 
 export default function({
     wm_gaps,
@@ -49,7 +49,6 @@ export default function({
         Utils.execAsync(`hyprctl keyword general:gaps_in ${wm_gaps / 2}`);
         Utils.execAsync(`hyprctl keyword general:col.active_border ${hypr_active_border}`);
         Utils.execAsync(`hyprctl keyword general:col.inactive_border ${hypr_inactive_border}`);
-        console.log(`${radii}`)
         Utils.execAsync(`hyprctl keyword decoration:rounding ${radii}`);
         Utils.execAsync(`hyprctl keyword decoration:drop_shadow ${drop_shadow ? 'yes' : 'no'}`);
     } catch (error) {
