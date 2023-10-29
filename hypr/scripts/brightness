@@ -1,15 +1,11 @@
 #!/bin/sh
 
-# Variable, um die vorherige Helligkeit zu speichern
 previous_brightness=$(brightnessctl g)
 
 case $1 in
     off)
-        # Speichern Sie die aktuelle Helligkeit
         brightnessctl -s -q
         previous_brightness=$(brightnessctl g)
-
-        # Reduzieren Sie die Helligkeit um 5%
         current_brightness=$previous_brightness
         while [ "$current_brightness" -gt 1 ]; do
             current_brightness=$((current_brightness - 1200))
@@ -19,7 +15,6 @@ case $1 in
         ;;
 
     on)
-        # Stellen Sie die Helligkeit auf den vorherigen Wert zur�ck
         brightnessctl -r -q
         ;;
 esac
