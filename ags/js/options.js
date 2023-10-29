@@ -1,14 +1,26 @@
 import { Utils } from './imports.js';
 
+// Run the `grep` command to check for "closed" in the file
+const lidStateOutput = Utils.exec('cat /proc/acpi/button/lid/LID/state');
+const isLidClosed = lidStateOutput.includes('closed');
+
 const hyprctlOutput = JSON.parse(Utils.exec('hyprctl -j monitors'));
-const monitorNameToCheck = "HDMI-A-2";
+
+const monitorIdToCheck = 1; // The ID to check for
+
+// Check if the monitor with the specified ID is in the list
+const isMonitorConnected = hyprctlOutput.some(monitor => monitor.id === monitorIdToCheck);
 
 let configuration;
 
-if (hyprctlOutput.some(monitor => monitor.name === monitorNameToCheck)) {
+console.log('Lid state output:', lidStateOutput); // Debugging
+console.log('Monitor is connected:', isMonitorConnected); // Debugging
+
+if (isLidClosed || !isMonitorConnected) {
+  console.log('Lid is closed or monitor is not connected'); // Debugging
   configuration = {
     preferredMpris: 'spotify',
-    workspaces: 20,
+    workspaces: 10,
     dockItemSize: 56,
     battaryBar: {
       showPercentage: true,
@@ -21,9 +33,10 @@ if (hyprctlOutput.some(monitor => monitor.name === monitorNameToCheck)) {
     brightnessctlKBD: 'asus::kbd_backlight',
   };
 } else {
+  console.log('Lid is open and monitor is connected'); // Debugging
   configuration = {
     preferredMpris: 'spotify',
-    workspaces: 10,
+    workspaces: 20,
     dockItemSize: 56,
     battaryBar: {
       showPercentage: true,
