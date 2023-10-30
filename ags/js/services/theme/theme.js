@@ -119,7 +119,7 @@ class ThemeService extends Service {
         const currentGTKName = this.getSetting('gtk_theme');
         if (currentGTKName) {
             const gtk = themes.find(({ gtk_theme }) => gtk_theme === currentGTKName);
-            Utils.exec(`gsettings set org.gnome.desktop.interface gtk-theme ${currentGTKName}`);
+            Utils.execAsync(`gsettings set org.gnome.desktop.interface gtk-theme ${currentGTKName}`);
             return gtk;
         } else {
             return null; 
@@ -130,7 +130,7 @@ class ThemeService extends Service {
         const currentGTKIcons = this.getSetting('icons');
         if (currentGTKIcons) {
             const icons = themes.find(({ icons }) => icons === currentGTKIcons);
-            Utils.exec(`gsettings set org.gnome.desktop.interface icon-theme ${currentGTKIcons}`);
+            Utils.execAsync(`gsettings set org.gnome.desktop.interface icon-theme ${currentGTKIcons}`);
             return icons;
         } else {
             return null;
@@ -141,7 +141,7 @@ class ThemeService extends Service {
         const currentPyWallTheme = this.getSetting('pywall_theme');
         if (currentPyWallTheme) {
             const pywall = themes.find(({ pywall_theme }) => pywall_theme === currentPyWallTheme);
-            Utils.exec(`wal --theme ${currentPyWallTheme}`);
+            Utils.execAsync(`wal --theme ${currentPyWallTheme}`);
             return pywall;
         } else {
             return null;
@@ -153,8 +153,8 @@ class ThemeService extends Service {
         const AutoWallpaper = this.getSetting('theme_wallpaper');
         if (AutoWallpaper) {
             const wallpaper_var = themes.find(({ theme_wallpaper }) => theme_wallpaper === AutoWallpaper);
-            Utils.exec(`swww img ${backgrounds}/${AutoWallpaper} --transition-step 4 -f CatmullRom --transition-fps 120`);
-            Utils.exec(`cp ${backgrounds}/${AutoWallpaper} ${backgrounds}/last/image.png`);
+            Utils.execAsync(`swww img ${backgrounds}/${AutoWallpaper} --transition-step 4 -f CatmullRom --transition-fps 120`);
+            Utils.execAsync(`cp ${backgrounds}/${AutoWallpaper} ${backgrounds}/last/image.png`);
             Utils.subprocess(
                 ['sh', '-c', '~/.dots/ags/prepare_background.sh'], 
                 (output) => print(output),

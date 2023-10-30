@@ -79,7 +79,7 @@ optional_pacman_packages=(
 )
 
 optional_aur_packages=(
-  "visual-studio-code-bin" "spotify" "gdm-settings" "wev" "tlpui" "git-credential-manager-core"
+  "visual-studio-code-bin" "spotify" "gdm-settings" "wev" "tlpui" "git-credential-manager-core" "celeste"
 )
 
 # print packages
