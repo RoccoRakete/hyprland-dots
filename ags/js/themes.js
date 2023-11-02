@@ -6,6 +6,8 @@ const misc = {
     wm_gaps: 3,
     radii: 10,
     spacing: 9,
+    font_size: 16,
+    border_width: 0,
     shadow: 'rgba(0, 0, 0, 0)',
     drop_shadow: false,
     transition: 400,
@@ -15,8 +17,6 @@ const misc = {
     desktop_clock: 'center center',
     font: 'Ubuntu Nerd Font',
     mono_font: 'Mononoki Nerd Font',
-    font_size: 16,
-    border_width: 0,
 };
 
 const light = {
