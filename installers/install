@@ -57,7 +57,7 @@ fi
 
 # needed packages
 needed_pacman_packages=(
-  "hyprland" "nano" "lshw" "bluez" "bluez-utils" "brightnessctl" "file-roller" "grim" "imagemagick"
+  "wget" "hyprland" "nano" "lshw" "bluez" "bluez-utils" "brightnessctl" "file-roller" "grim" "imagemagick"
   "gvfs" "inotify-tools" "libinput" "lm_sensors" "pavucontrol" "python-pam" "slurp" "swayidle" "playerctl"
   "wl-clipboard" "tracker3" "tracker3-miners" "qt5-base" "qt6-base" "gnome-bluetooth" "gnome-control-center"
   "kitty"
@@ -244,8 +244,12 @@ else
   fi
 fi
 
-# Edit monitors example config
+# Download and install Hermit Nerd Font
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hermit.zip
+unzip Hermit.zip -d Hermit
+sudo cp -r ./Hermit /usr/share/fonts
 
+# Edit monitors example config
 example_conf_file="$HOME/.dots/hypr/presets/monitors.exampleconf"
 conf_file="$HOME/.dots/hypr/monitors.conf"
 
