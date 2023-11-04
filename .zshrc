@@ -111,6 +111,9 @@ export MANPATH="/usr/local/man:$MANPATH"
 # Example aliases
 alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias gpush='git add . && git commit -a && git push'
+
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
