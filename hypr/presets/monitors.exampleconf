@@ -10,26 +10,5 @@
 
 
 
-monitor = eDP-1    , 1920x1080@60.0  , 0x0     , 1.0
-#monitor = HDMI-A-2 , 1920x1080@120.0 , 0x-1080 , 1.0
-
-workspace = eDP-1 , 0
-workspace = eDP-1 , 1
-workspace = eDP-1 , 2
-workspace = eDP-1 , 3
-workspace = eDP-1 , 4
-workspace = eDP-1 , 5
-workspace = eDP-1 , 6
-workspace = eDP-1 , 7
-workspace = eDP-1 , 8
-workspace = eDP-1 , 9
-#workspace = HDMI-A-2 , 10
-#workspace = HDMI-A-2 , 11
-#workspace = HDMI-A-2 , 12
-#workspace = HDMI-A-2 , 13
-#workspace = HDMI-A-2 , 14
-##orkspace = HDMI-A-2 , 15
-#orkspace = HDMI-A-2 , 16
-#orkspace = HDMI-A-2 , 17
-#orkspace = HDMI-A-2 , 18
-#orkspace = HDMI-A-2 , 19
+monitor = DP-1    , 2560x1440@120.0  , 0x0     , 1.0
+#monitor = HDMI-A-2 , 1920x1080@120.0 , 0x-1080 , 1.0   
