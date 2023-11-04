@@ -76,11 +76,11 @@ optional_pacman_packages=(
   "gnome-disk-utility" "gnome-keyring" "gnome-software" "gnome-sound-recorder" "gnome-tweaks"
   "intel-gpu-tools" "gvfs-smb" "libgnome-keyring" "mpv" "neofetch" "network-manager-applet"
   "nextcloud-client" "obs-studio" "smbclient" "seahorse" "polkit-gnome" "nautilus" "thunar" "tlp"
-  "obsidian"
+  "obsidian" "neovim"
 )
 
 optional_aur_packages=(
-  "visual-studio-code-bin" "spotify" "gdm-settings" "wev" "tlpui" "git-credential-manager-core" "celeste"
+  "spotify" "gdm-settings" "wev" "tlpui" "git-credential-manager-core" "celeste"
 )
 
 # print packages
@@ -206,7 +206,7 @@ if [[ $choice == "n" || $choice == "N" ]]; then
   echo "hyprland-git was not installed!"
 else
   echo "installing 'hyprland-git' ..."
-  yay -S hyprland-git
+  yay -S hyprland-git --noconfirm
   if [ $? -eq 0 ]; then
     echo "hyprland-git was installed!"
   else
@@ -221,11 +221,26 @@ if [[ $choice == "n" || $choice == "N" ]]; then
   echo "libadwaita-without-adwaita-git was not installed!"
 else
   echo "installing 'libadwaita-without-adwaita-git' ..."
-  yay -S libadwaita-without-adwaita-git
+  yay -S libadwaita-without-adwaita-git --noconfirm
   if [ $? -eq 0 ]; then
     echo "libadwaita-without-adwaita-git was installed!"
   else
     echo "Installation was aborted! Make sure you have 'yay' installed! "
+  fi
+fi
+
+# install nvChad
+read -p "Install nvChad? (Y/n): " choice
+
+if [[ $choice == "n" || $choice == "N" ]]; then
+  echo "nvChad was not installed!"
+else
+  echo "installing 'nvChad' ..."
+  git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
+  if [ $? -eq 0 ]; then
+    echo "nvChad was installed ... to set it up start 'neovim'"
+  else
+    echo "Installation was aborted!"
   fi
 fi
 
