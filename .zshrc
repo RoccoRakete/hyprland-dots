@@ -1,4 +1,5 @@
-export TERM=xterm
+
+export TERM=kitty
 wal -R
 neofetch
 source ~/.bash_profile

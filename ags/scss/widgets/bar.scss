@@ -2,10 +2,8 @@ $float: $spacing * 0.2;
 
 @mixin panel_button($flat: false, $reactive: true) {
     all: unset;
-    
     @if $bar_style =='separated' {
         transition: $transition;
-
         >* {
             @include floating_widget;
             border-radius: $radii;
@@ -28,7 +26,6 @@ $float: $spacing * 0.2;
 
         &:active>*,
         &.active>* {
-
             label,
             image {
                 color: $accent_fg;
