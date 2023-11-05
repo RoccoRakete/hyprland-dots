@@ -2,6 +2,41 @@
 -- List of all default plugins & their definitions
 local default_plugins = {
 
+  {
+  "ibhagwan/fzf-lua",
+  -- optional for icon support
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  config = function()
+    -- calling `setup` is optional for customization
+    require("fzf-lua").setup({})
+  end
+  },
+
+  { "junegunn/fzf", build = "./install --bin" },
+
+  {
+    "gennaro-tedesco/nvim-possession",
+    dependencies = {
+        "ibhagwan/fzf-lua",
+    },
+    config = true,
+    init = function()
+        local possession = require("nvim-possession")
+        vim.keymap.set("n", "<leader>sl", function()
+            possession.list()
+        end)
+        vim.keymap.set("n", "<leader>sn", function()
+            possession.new()
+        end)
+        vim.keymap.set("n", "<leader>su", function()
+            possession.update()
+        end)
+        vim.keymap.set("n", "<leader>sd", function()
+            possession.delete()
+        end)
+    end,
+},
+
   "nvim-lua/plenary.nvim",
 
   {

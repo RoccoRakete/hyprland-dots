@@ -76,7 +76,7 @@ optional_pacman_packages=(
   "gnome-disk-utility" "gnome-keyring" "gnome-software" "gnome-sound-recorder" "gnome-tweaks"
   "intel-gpu-tools" "gvfs-smb" "libgnome-keyring" "mpv" "neofetch" "network-manager-applet"
   "nextcloud-client" "obs-studio" "smbclient" "seahorse" "polkit-gnome" "nautilus" "thunar" "tlp"
-  "obsidian" "neovim"
+  "obsidian" "neovim" "neovide" "fzf"
 )
 
 optional_aur_packages=(

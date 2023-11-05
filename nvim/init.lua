@@ -16,6 +16,13 @@ if not vim.loop.fs_stat(lazypath) then
   require("core.bootstrap").lazy(lazypath)
 end
 
+if vim.g.neovide then
+   vim.o.guifont = "Hurmit Nerd Font:h14"
+   vim.g.neovide_padding_top = 10
+   vim.g.neovide_padding_bottom = 0
+   vim.g.neovide_theme = 'auto'
+end
+
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"

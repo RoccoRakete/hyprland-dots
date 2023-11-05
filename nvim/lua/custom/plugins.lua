@@ -4,7 +4,28 @@ local overrides = require("custom.configs.overrides")
 local plugins = {
 
   -- Override plugin definition options
+  {
+  "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup({
+       api_key_cmd = "secret-tool lookup password key1"
+      })
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  },
 
+  {
+    "dylanaraps/wal.vim",
+  },
+  {
+    "vim-crystal/vim-crystal",
+    ft = "crystal"
+  },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
