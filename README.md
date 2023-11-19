@@ -6,6 +6,7 @@
 ---
 
 # ⏰ **Updates**
+ * Now works with ags > 1.5.0! If you want to use it with ags < 1.5.0 please use: "ags_old_working_1.4.x"
  * Added the ability to set GTK-Themes/Icons directly from the ags config. 
  * Pywal-Themes can also be set from the ags config.
  * Needs Ags v1.4.0 to work correctly now... 
