@@ -1,10 +1,14 @@
+import Notifications from 'resource:///com/github/Aylur/ags/service/notifications.js';
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import Notification from '../misc/Notification.js';
-import { Notifications, Widget, Utils } from '../imports.js';
+import options from '../options.js';
 
-const Popups = () => {
+/** @param {import('types/widgets/revealer').default} parent */
+const Popups = parent => {
     const map = new Map();
 
-    const onDismissed = (box, id, force = false) => {
+    const onDismissed = (_, id, force = false) => {
         if (!id || !map.has(id))
             return;
 
@@ -12,7 +16,7 @@ const Popups = () => {
             return;
 
         if (map.size - 1 === 0)
-            box.get_parent().revealChild = false;
+            parent.reveal_child = false;
 
         Utils.timeout(200, () => {
             map.get(id)?.destroy();
@@ -20,15 +24,23 @@ const Popups = () => {
         });
     };
 
+    /** @param {import('types/widgets/box').default} box */
     const onNotified = (box, id) => {
         if (!id || Notifications.dnd)
             return;
 
+        const n = Notifications.getNotification(id);
+        if (!n)
+            return;
+
+        if (options.notifications.black_list.value.includes(n.app_name || ''))
+            return;
+
         map.delete(id);
-        map.set(id, Notification(Notifications.getNotification(id)));
+        map.set(id, Notification(n));
         box.children = Array.from(map.values()).reverse();
         Utils.timeout(10, () => {
-            box.get_parent().revealChild = true;
+            parent.reveal_child = true;
         });
     };
 
@@ -42,20 +54,22 @@ const Popups = () => {
     });
 };
 
-const PopupList = ({ transition = 'slide_down' } = {}) => Widget.Box({
-    className: 'notifications-popup-list',
-    style: 'padding: 1px',
+/** @param {import('types/widgets/revealer').RevealerProps['transition']} transition */
+const PopupList = (transition = 'slide_down') => Widget.Box({
+    css: 'padding: 1px',
     children: [
         Widget.Revealer({
             transition,
-            child: Popups(),
+            setup: self => self.child = Popups(self),
         }),
     ],
 });
 
+/** @param {number} monitor */
 export default monitor => Widget.Window({
     monitor,
     name: `notifications${monitor}`,
-    anchor: ['top'],
+    class_name: 'notifications',
+    binds: [['anchor', options.notifications.position]],
     child: PopupList(),
 });

@@ -1,9 +1,10 @@
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+import Notifications from 'resource:///com/github/Aylur/ags/service/notifications.js';
 import icons from '../icons.js';
 import Notification from '../misc/Notification.js';
-import { Widget, Notifications } from '../imports.js';
 
 const ClearButton = () => Widget.Button({
-    onClicked: () => Notifications.clear(),
+    on_clicked: () => Notifications.clear(),
     binds: [['sensitive', Notifications, 'notifications', n => n.length > 0]],
     child: Widget.Box({
         children: [
@@ -17,7 +18,7 @@ const ClearButton = () => Widget.Button({
 });
 
 const Header = () => Widget.Box({
-    className: 'header',
+    class_name: 'header',
     children: [
         Widget.Label({ label: 'Notifications', hexpand: true, xalign: 0 }),
         ClearButton(),
@@ -36,10 +37,10 @@ const NotificationList = () => Widget.Box({
 });
 
 const Placeholder = () => Widget.Box({
-    className: 'placeholder',
+    class_name: 'placeholder',
     vertical: true,
-    valign: 'center',
-    halign: 'center',
+    vpack: 'center',
+    hpack: 'center',
     vexpand: true,
     hexpand: true,
     children: [
@@ -50,17 +51,15 @@ const Placeholder = () => Widget.Box({
 });
 
 export default () => Widget.Box({
-    className: 'notifications',
+    class_name: 'notifications',
     vertical: true,
     children: [
         Header(),
         Widget.Scrollable({
             vexpand: true,
-            className: 'notification-scrollable',
-            hscroll: 'never',
-            vscroll: 'automatic',
+            class_name: 'notification-scrollable',
             child: Widget.Box({
-                className: 'notification-list',
+                class_name: 'notification-list',
                 vertical: true,
                 children: [
                     NotificationList(),

@@ -1,18 +1,29 @@
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import Clock from '../misc/Clock.js';
-import { Widget } from '../imports.js';
+import * as vars from '../variables.js';
+
 
 export default () => Widget.Box({
     vertical: true,
-    className: 'datemenu',
+    class_name: 'datemenu vertical',
     children: [
-        Clock({ format: '%H:%M' }),
         Widget.Box({
-            className: 'calendar',
+            class_name: 'clock-box',
+            vertical: true,
             children: [
-                Widget({
-                    type: imports.gi.Gtk.Calendar,
+                Clock({ format: '%H:%M' }),
+                Widget.Label({
+                    class_name: 'uptime',
+                    binds: [['label', vars.uptime, 'value', t => `uptime: ${t}`]],
+                }),
+            ],
+        }),
+        Widget.Box({
+            class_name: 'calendar',
+            children: [
+                Widget.Calendar({
                     hexpand: true,
-                    halign: 'center',
+                    hpack: 'center',
                 }),
             ],
         }),

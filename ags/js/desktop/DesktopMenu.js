@@ -1,11 +1,17 @@
-import Theme from '../services/theme/theme.js';
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+import App from 'resource:///com/github/Aylur/ags/app.js';
 import PowerMenu from '../services/powermenu.js';
 import icons from '../icons.js';
-import { App, Widget } from '../imports.js';
 import Gtk from 'gi://Gtk';
+import { openSettings } from '../settings/theme.js';
 
-const Item = (label, icon, onActivate) => Widget.MenuItem({
-    onActivate,
+/**
+ * @param {string} label
+ * @param {string} icon
+ * @param {import('types/widgets/menu').MenuItemProps['on_activate']} on_activate
+ */
+const Item = (label, icon, on_activate) => Widget.MenuItem({
+    on_activate,
     child: Widget.Box({
         children: [
             Widget.Icon(icon),
@@ -19,7 +25,7 @@ const Item = (label, icon, onActivate) => Widget.MenuItem({
 });
 
 export default () => Widget.Menu({
-    className: 'desktop-menu',
+    class_name: 'desktop-menu',
     children: [
         Widget.MenuItem({
             child: Widget.Box({
@@ -42,7 +48,7 @@ export default () => Widget.Menu({
             }),
         }),
         Item('Applications', icons.apps.apps, () => App.openWindow('applauncher')),
-        Widget({ type: Gtk.SeparatorMenuItem }),
-        Item('Settings', icons.settings, () => Theme.openSettings()),
+        new Gtk.SeparatorMenuItem,
+        Item('Settings', icons.ui.settings, openSettings),
     ],
 });

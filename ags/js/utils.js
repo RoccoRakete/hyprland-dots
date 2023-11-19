@@ -1,22 +1,47 @@
-import Cairo from 'cairo';
-import options from './options.js';
+import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
+import cairo from 'cairo';
 import icons from './icons.js';
-import Theme from './services/theme/theme.js';
-import { Utils, App, Battery } from './imports.js';
+import Gdk from 'gi://Gdk';
 
-export function forMonitors(widget) {
-    const ws = JSON.parse(Utils.exec('hyprctl -j monitors'));
-    return ws.map(mon => widget(mon.id));
+/**
+  * @param {number} length
+  * @param {number=} start
+  * @returns {Array<number>}
+  */
+export function range(length, start = 1) {
+    return Array.from({ length }, (_, i) => i + start);
 }
 
+/**
+  * @param {Array<[string, string] | string[]>} collection
+  * @param {string} item
+  * @returns {string}
+  */
+export function substitute(collection, item) {
+    return collection.find(([from]) => from === item)?.[1] || item;
+}
+
+/**
+  * @param {(monitor: number) => any} widget
+  * @returns {Array<import('types/widgets/window').default>}
+  */
+export function forMonitors(widget) {
+    const n = Gdk.Display.get_default()?.get_n_monitors() || 1;
+    return range(n, 0).map(widget).flat(1);
+}
+
+/**
+  * @param {import('gi://Gtk').Gtk.Widget} widget
+  * @returns {any} - missing cairo type
+  */
 export function createSurfaceFromWidget(widget) {
     const alloc = widget.get_allocation();
-    const surface = new Cairo.ImageSurface(
-        Cairo.Format.ARGB32,
+    const surface = new cairo.ImageSurface(
+        cairo.Format.ARGB32,
         alloc.width,
         alloc.height,
     );
-    const cr = new Cairo.Context(surface);
+    const cr = new cairo.Context(surface);
     cr.setSourceRGBA(255, 255, 255, 0);
     cr.rectangle(0, 0, alloc.width, alloc.height);
     cr.fill();
@@ -25,20 +50,7 @@ export function createSurfaceFromWidget(widget) {
     return surface;
 }
 
-export function warnOnLowBattery() {
-    Battery.connect('changed', () => {
-        const { low } = options.battaryBar;
-        if (Battery.percentage < low || Battery.percentage < low / 2) {
-            Utils.execAsync([
-                'notify-send',
-                `${Battery.percentage}% Battery Percentage`,
-                '-i', icons.battery.warning,
-                '-u', 'critical',
-            ]);
-        }
-    });
-}
-
+/** @param {string} icon */
 export function getAudioTypeIcon(icon) {
     const substitues = [
         ['audio-headset-bluetooth', icons.audio.type.headset],
@@ -54,23 +66,9 @@ export function getAudioTypeIcon(icon) {
     return icon;
 }
 
-export function scssWatcher() {
-    return Utils.subprocess([
-        'inotifywait',
-        '--recursive',
-        '--event', 'create,modify',
-        '-m', App.configDir + '/scss',
-    ], () => Theme.setup());
-}
 
-import recorder from './services/screenrecord.js';
-import brightness from './services/brightness.js';
-import indicator from './services/onScreenIndicator.js';
-import { Audio as audio, Mpris as mpris } from './imports.js';
-export async function globalServices() {
-    globalThis.recorder = recorder;
-    globalThis.brightness = brightness;
-    globalThis.indicator = indicator;
-    globalThis.audio = audio;
-    globalThis.mpris = mpris;
+/** @param {import('types/service/applications').Application} app */
+export function launchApp(app) {
+    Utils.execAsync(['hyprctl', 'dispatch', 'exec', `sh -c ${app.executable}`]);
+    app.frequency += 1;
 }

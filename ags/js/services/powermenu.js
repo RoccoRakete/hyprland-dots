@@ -1,6 +1,6 @@
-import { App, Service } from '../imports.js';
-import  '../powermenu/Verification.js'
- 
+import App from 'resource:///com/github/Aylur/ags/app.js';
+import Service from 'resource:///com/github/Aylur/ags/service.js';
+
 class PowerMenu extends Service {
     static {
         Service.register(this, {}, {
@@ -9,11 +9,15 @@ class PowerMenu extends Service {
         });
     }
 
-    get title() { return this._title || ''; }
-    get cmd() { return this._cmd || ''; }
+    #title = '';
+    #cmd = '';
 
+    get title() { return this.#title; }
+    get cmd() { return this.#cmd; }
+
+    /** @param {'sleep' | 'reboot' | 'logout' | 'shutdown'} action */
     action(action) {
-        [this._cmd, this._title] = {
+        [this.#cmd, this.#title] = {
             'sleep': ['systemctl suspend', 'Sleep'],
             'reboot': ['systemctl reboot', 'Reboot'],
             'logout': ['pkill Hyprland', 'Log Out'],

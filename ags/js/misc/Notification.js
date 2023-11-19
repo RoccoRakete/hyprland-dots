@@ -1,15 +1,18 @@
-import { Utils, Widget, Variable } from '../imports.js';
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+import Variable from 'resource:///com/github/Aylur/ags/variable.js';
+import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import GLib from 'gi://GLib';
 
-const NotificationIcon = ({ appEntry, appIcon, image }) => {
+/** @param {import('types/service/notifications').Notification} n */
+const NotificationIcon = ({ app_entry, app_icon, image }) => {
     if (image) {
         return Widget.Box({
-            valign: 'start',
+            vpack: 'start',
             hexpand: false,
-            className: 'icon img',
-            style: `
+            class_name: 'icon img',
+            css: `
                 background-image: url("${image}");
-                background-size: contain;
+                background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
                 min-width: 78px;
@@ -19,40 +22,42 @@ const NotificationIcon = ({ appEntry, appIcon, image }) => {
     }
 
     let icon = 'dialog-information-symbolic';
-    if (Utils.lookUpIcon(appIcon))
-        icon = appIcon;
+    if (Utils.lookUpIcon(app_icon))
+        icon = app_icon;
 
-    if (Utils.lookUpIcon(appEntry))
-        icon = appEntry;
+    if (Utils.lookUpIcon(app_entry || ''))
+        icon = app_entry || '';
 
     return Widget.Box({
-        valign: 'start',
+        vpack: 'start',
         hexpand: false,
-        className: 'icon',
-        style: `
+        class_name: 'icon',
+        css: `
             min-width: 78px;
             min-height: 78px;
         `,
         child: Widget.Icon({
             icon, size: 58,
-            halign: 'center', hexpand: true,
-            valign: 'center', vexpand: true,
+            hpack: 'center', hexpand: true,
+            vpack: 'center', vexpand: true,
         }),
     });
 };
 
+/** @param {import('types/service/notifications').Notification} notification */
 export default notification => {
     const hovered = Variable(false);
+    let block = false;
 
     const hover = () => {
         hovered.value = true;
-        hovered._block = true;
+        block = true;
 
-        Utils.timeout(100, () => hovered._block = false);
+        Utils.timeout(100, () => block = false);
     };
 
     const hoverLost = () => GLib.idle_add(0, () => {
-        if (hovered._block)
+        if (block)
             return GLib.SOURCE_REMOVE;
 
         hovered.value = false;
@@ -61,7 +66,7 @@ export default notification => {
     });
 
     const content = Widget.Box({
-        className: 'content',
+        class_name: 'content',
         children: [
             NotificationIcon(notification),
             Widget.Box({
@@ -71,34 +76,34 @@ export default notification => {
                     Widget.Box({
                         children: [
                             Widget.Label({
-                                className: 'title',
+                                class_name: 'title',
                                 xalign: 0,
                                 justification: 'left',
                                 hexpand: true,
-                                maxWidthChars: 24,
+                                max_width_chars: 24,
                                 truncate: 'end',
                                 wrap: true,
                                 label: notification.summary,
-                                useMarkup: notification.summary.startsWith('<'),
+                                use_markup: true,
                             }),
                             Widget.Label({
-                                className: 'time',
-                                valign: 'start',
+                                class_name: 'time',
+                                vpack: 'start',
                                 label: GLib.DateTime.new_from_unix_local(notification.time).format('%H:%M'),
                             }),
                             Widget.Button({
-                                onHover: hover,
-                                className: 'close-button',
-                                valign: 'start',
+                                on_hover: hover,
+                                class_name: 'close-button',
+                                vpack: 'start',
                                 child: Widget.Icon('window-close-symbolic'),
-                                onClicked: () => notification.close(),
+                                on_clicked: () => notification.close(),
                             }),
                         ],
                     }),
                     Widget.Label({
-                        className: 'description',
+                        class_name: 'description',
                         hexpand: true,
-                        useMarkup: true,
+                        use_markup: true,
                         xalign: 0,
                         justification: 'left',
                         label: notification.body,
@@ -113,13 +118,13 @@ export default notification => {
         transition: 'slide_down',
         binds: [['revealChild', hovered]],
         child: Widget.EventBox({
-            onHover: hover,
+            on_hover: hover,
             child: Widget.Box({
-                className: 'actions',
+                class_name: 'actions horizontal',
                 children: notification.actions.map(action => Widget.Button({
-                    onHover: hover,
-                    className: 'action-button',
-                    onClicked: () => notification.invoke(action.id),
+                    on_hover: hover,
+                    class_name: 'action-button',
+                    on_clicked: () => notification.invoke(action.id),
                     hexpand: true,
                     child: Widget.Label(action.label),
                 })),
@@ -128,15 +133,15 @@ export default notification => {
     });
 
     return Widget.EventBox({
-        className: `notification ${notification.urgency}`,
+        class_name: `notification ${notification.urgency}`,
         vexpand: false,
-        onPrimaryClick: () => {
+        on_primary_click: () => {
             hovered.value = false;
             notification.dismiss();
         },
         properties: [['hovered', hovered]],
-        onHover: hover,
-        onHoverLost: hoverLost,
+        on_hover: hover,
+        on_hover_lost: hoverLost,
         child: Widget.Box({
             vertical: true,
             children: [

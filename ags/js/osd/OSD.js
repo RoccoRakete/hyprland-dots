@@ -1,15 +1,16 @@
-import { Utils, Widget } from '../imports.js';
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 import FontIcon from '../misc/FontIcon.js';
 import Progress from '../misc/Progress.js';
 import Indicator from '../services/onScreenIndicator.js';
 
 export const OnScreenIndicator = ({ height = 200, width = 22 } = {}) => Widget.Box({
-    className: 'indicator',
-    style: 'padding: 1px;',
+    class_name: 'indicator',
+    css: 'padding: 1px;',
     child: Widget.Revealer({
         transition: 'slide_left',
         connections: [[Indicator, (revealer, value) => {
-            revealer.revealChild = value > -1;
+            revealer.reveal_child = value > -1;
         }]],
         child: Progress({
             width,
@@ -17,19 +18,19 @@ export const OnScreenIndicator = ({ height = 200, width = 22 } = {}) => Widget.B
             vertical: true,
             connections: [[Indicator, (progress, value) => progress.setValue(value)]],
             child: Widget.Stack({
-                valign: 'start',
-                halign: 'center',
+                vpack: 'start',
+                hpack: 'center',
                 hexpand: false,
                 items: [
                     ['true', Widget.Icon({
-                        halign: 'center',
+                        hpack: 'center',
                         size: width,
                         connections: [[Indicator, (icon, _v, name) => icon.icon = name || '']],
                     })],
                     ['false', FontIcon({
-                        halign: 'center',
+                        hpack: 'center',
                         hexpand: true,
-                        style: `font-size: ${width}px;`,
+                        css: `font-size: ${width}px;`,
                         connections: [[Indicator, (icon, _v, name) => icon.icon = name || '']],
                     })],
                 ],
@@ -41,10 +42,11 @@ export const OnScreenIndicator = ({ height = 200, width = 22 } = {}) => Widget.B
     }),
 });
 
+/** @param {number} monitor */
 export default monitor => Widget.Window({
     name: `indicator${monitor}`,
     monitor,
-    className: 'indicator',
+    class_name: 'indicator',
     layer: 'overlay',
     anchor: ['right'],
     child: OnScreenIndicator(),

@@ -1,15 +1,29 @@
+import App from 'resource:///com/github/Aylur/ags/app.js';
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+import Notifications from 'resource:///com/github/Aylur/ags/service/notifications.js';
+import Bluetooth from 'resource:///com/github/Aylur/ags/service/bluetooth.js';
+import Audio from 'resource:///com/github/Aylur/ags/service/audio.js';
+import Network from 'resource:///com/github/Aylur/ags/service/network.js';
 import HoverRevealer from '../../misc/HoverRevealer.js';
 import PanelButton from '../PanelButton.js';
 import Indicator from '../../services/onScreenIndicator.js';
 import icons from '../../icons.js';
-import { App, Widget } from '../../imports.js';
-import { Bluetooth, Audio, Notifications, Network } from '../../imports.js';
 
-const MicrophoneMuteIndicator = () => Widget.Icon({
-    icon: icons.audio.mic.muted,
+const MicrophoneIndicator = () => Widget.Icon({
     connections: [[Audio, icon => {
-        icon.visible = Audio.microphone?.isMuted;
-    }, 'microphone-changed']],
+        if (!Audio.microphone)
+            return;
+
+        const { muted, low, medium, high } = icons.audio.mic;
+        if (Audio.microphone.is_muted)
+            return icon.icon = muted;
+
+        /** @type {Array<[number, string]>} */
+        const cons = [[67, high], [34, medium], [1, low], [0, muted]];
+        icon.icon = cons.find(([n]) => n <= Audio.microphone.volume * 100)?.[1] || '';
+
+        icon.visible = Audio.recorders.length > 0 || Audio.microphone.is_muted;
+    }]],
 });
 
 const DNDIndicator = () => Widget.Icon({
@@ -30,25 +44,17 @@ const BluetoothDevicesIndicator = () => Widget.Box({
 });
 
 const BluetoothIndicator = () => Widget.Icon({
-    className: 'bluetooth',
+    class_name: 'bluetooth',
     icon: icons.bluetooth.enabled,
     binds: [['visible', Bluetooth, 'enabled']],
 });
 
-const NetworkIndicator = () => Widget.Stack({
-    items: [
-        ['wifi', Widget.Icon({
-            connections: [[Network, icon => {
-                icon.icon = Network.wifi?.iconName;
-            }]],
-        })],
-        ['wired', Widget.Icon({
-            connections: [[Network, icon => {
-                icon.icon = Network.wired?.iconName;
-            }]],
-        })],
-    ],
-    binds: [['shown', Network, 'primary']],
+const NetworkIndicator = () => Widget.Icon({
+    connections: [[Network, self => {
+        const icon = Network[Network.primary || 'wifi']?.iconName;
+        self.icon = icon || '';
+        self.visible = icon;
+    }]],
 });
 
 const AudioIndicator = () => Widget.Icon({
@@ -57,16 +63,18 @@ const AudioIndicator = () => Widget.Icon({
             return;
 
         const { muted, low, medium, high, overamplified } = icons.audio.volume;
-        if (Audio.speaker.isMuted)
+        if (Audio.speaker.is_muted)
             return icon.icon = muted;
 
-        icon.icon = [[101, overamplified], [67, high], [34, medium], [1, low], [0, muted]]
-            .find(([threshold]) => threshold <= Audio.speaker.volume * 100)[1];
+
+        /** @type {Array<[number, string]>} */
+        const cons = [[101, overamplified], [67, high], [34, medium], [1, low], [0, muted]];
+        icon.icon = cons.find(([n]) => n <= Audio.speaker.volume * 100)?.[1] || '';
     }, 'speaker-changed']],
 });
 
 export default () => PanelButton({
-    className: 'quicksettings panel-button',
+    class_name: 'quicksettings panel-button',
     onClicked: () => App.toggleWindow('quicksettings'),
     onScrollUp: () => {
         Audio.speaker.volume += 0.02;
@@ -81,12 +89,12 @@ export default () => PanelButton({
     }]],
     child: Widget.Box({
         children: [
-            MicrophoneMuteIndicator(),
-            DNDIndicator(),
             BluetoothDevicesIndicator(),
             BluetoothIndicator(),
             NetworkIndicator(),
             AudioIndicator(),
+            DNDIndicator(),
+            MicrophoneIndicator(),
         ],
     }),
 });

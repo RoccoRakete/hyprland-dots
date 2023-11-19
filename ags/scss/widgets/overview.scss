@@ -1,28 +1,26 @@
-window#overview .overview {
-    @include floating_widget;
+window#overview .window-content {
+    @include floating-widget;
+    @include spacing;
 
     .workspace {
-        margin: 0 $spacing;
-        &:last-child { margin-right: 0; }
-        &:first-child { margin-left: 0; }
-
         &.active > widget {
-            border: $widget_border;
+            border-color: $accent
         }
 
         > widget {
             @include widget;
+            border-radius: if($radii == 0, 0, $radii + $padding);
 
             &:drop(active) {
-                border: $widget_border;
+                border-color: $accent;
             }
         }
     }
 
     .client {
         @include button;
-        border-radius: $radii*0.8;
-        margin: $spacing;
+        border-radius: $radii;
+        margin: $padding;
 
         &.hidden {
             @include hidden;

@@ -1,13 +1,27 @@
-import { Widget, Utils } from '../imports.js';
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
 
+/**
+ * @typedef {import('types/widgets/eventbox').EventBoxProps & {
+ *    indicator?: import('types/widgets/box').BoxProps['child']
+ *    direction?: 'left' | 'right' | 'down' | 'up'
+ *    duration?: number
+ *    eventboxConnections?: import('types/widgets/box').BoxProps['connections']
+ *    connections?: import('types/widgets/revealer').RevealerProps['connections']
+ * }} HoverRevealProps
+ */
+
+/**
+ * @param {HoverRevealProps} props
+ */
 export default ({
     indicator,
     child,
     direction = 'left',
     duration = 300,
-    connections,
-    eventboxConnections,
-    binds,
+    connections = [],
+    eventboxConnections = [],
+    binds = [],
     ...rest
 }) => {
     let open = false;
@@ -19,25 +33,25 @@ export default ({
         transition: `slide_${direction}`,
         connections,
         binds,
-        transitionDuration: duration,
+        transition_duration: duration,
         child,
     });
 
-    const box = Widget.EventBox({
+    const eventbox = Widget.EventBox({
         ...rest,
         connections: eventboxConnections,
-        onHover: () => {
+        on_hover: () => {
             if (open)
                 return;
 
-            revealer.revealChild = true;
+            revealer.reveal_child = true;
             Utils.timeout(duration, () => open = true);
         },
-        onHoverLost: () => {
+        on_hover_lost: () => {
             if (!open)
                 return;
 
-            revealer.revealChild = false;
+            revealer.reveal_child = false;
             open = false;
         },
         child: Widget.Box({
@@ -51,7 +65,7 @@ export default ({
     });
 
     return Widget.Box({
-        children: [box],
+        children: [eventbox],
     });
 };
 

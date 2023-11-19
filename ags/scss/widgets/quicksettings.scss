@@ -1,119 +1,107 @@
-window#quicksettings .quicksettings {
-    @include floating_widget;
-    border: $widget_border;
-    .row {
-        margin-top: $spacing;
-        &:first-child { margin-top: 0; }
+window#quicksettings .window-content {
+    @include floating-widget;
+    @include spacing;
+
+    .avatar {
+        @include widget;
     }
 
     .header {
-        .avatar {
-            @include widget;
-            margin-right: $spacing;
-            min-width: $spacing*7 + 38px;
-            min-height: $spacing*7 + 38px;
-            .shader {
-                @include shader;
-            }
-        }
+        @include spacing;
+    }
 
-        .battery-progress {
-            label {
-                margin-top: $spacing;
-                color: $accent_fg;
-                font-size: $spacing*2;
-                font-weight: bold;
-            }
+    .system-box {
+        @include widget;
+        @include spacing($rec: true);
 
-            &.half label { color: $fg_color; }
+        padding: 10px;
 
-            progressbar {
-                @include slider($width: $spacing*3.4);
-                margin-top: $spacing;
-                min-height: 20px;
-            }
 
-            &.low progressbar {
-                @include slider($width: $spacing*3.4, $gradient: linear-gradient(to right, $red, $red));
-                margin-top: $spacing;
-                min-height: 20px;
-            }
-        }
+        button, .uptime {
+            @include button;
+            padding: $padding;
+            font-weight: bold;
+            min-height: 20px;
+            min-width: 20px;
 
-        .system-box {
-            @include widget;
-            padding: $spacing;
-
-            button, .uptime {
-                @include button;
-                padding: $spacing;
-                font-weight: bold;
-                margin-left: $spacing;
-                &:first-child { margin-left: 0; }
-                min-height: 20px;
-                min-width: 20px;
-                
-                image {
-                    font-size: 1.2em;
-                }
+            image {
+                font-size: 1.2em;
             }
         }
     }
 
-    .slider-box {
-        @include widget;
-        padding: $spacing;
-
-        > box:last-child { margin-bottom: 0; }
-
-        .slider > * {
-            margin-left: $spacing;
-            &:first-child { margin-left: 0; }
+    .battery-progress {
+        label {
+            color: $accent-fg;
+            font-weight: bold;
         }
 
-        button, .icon {
+        &.charging label {
+            font-size: $padding*2;
+        }
+
+        &.half label { color: $fg-color; }
+
+        progressbar {
+            @include slider($width: $padding*3.6);
+        }
+
+        &.low progressbar {
+            @include slider($width: $padding*3.6, $gradient: linear-gradient(to right, $red, $red));
+        }
+    }
+
+    .sliders-box {
+        @include widget;
+        @include spacing($rec: true);
+        @include spacing(0);
+        padding: $padding;
+
+        button {
             @include button($flat: true);
-            padding: $spacing/2;
+            padding: $padding / 2;
         }
 
         scale {
             @include slider;
-
-            &:last-child {
-                margin-right: $spacing/2;
-            }
+            margin-left: $spacing * -0.5;
         }
 
         .menu {
-            background-color: $bg_color;
-            border: $border_width solid $popover_border_color;
+            margin: $spacing 0;
+            background-color: $bg-color;
+            border: $border-width solid $popover-border-color;
             border-radius: $radii;
         }
     }
 
     .mixer-item {
-        margin: 0 $spacing;
         scale { @include slider($width: 7px); }
-        > box { padding: $spacing; }
-        label:last-child { min-width: 3em; }
-        image { font-size: 20px; }
+        image { font-size: 1.2em; }
+    }
+
+    .row {
+        @include spacing($rec: true);
     }
 
     .menu {
+        @include unset;
         @include widget;
+        @include spacing($rec: true);
+        padding: $padding;
         margin-top: $spacing;
-        padding: $spacing;
 
-        separator { 
-            background-color: $border_color;
-            margin: $spacing $spacing/2;
+        .title {
+            @include spacing(.5);
         }
 
-        label { margin-left: $spacing; }
+        separator {
+            margin: 0 $radii / 2;
+        }
 
         button {
             @include button($flat: true);
-            padding: $spacing/2;
+            padding: $padding / 2;
         }
 
         switch {
@@ -123,16 +111,15 @@ window#quicksettings .quicksettings {
 
     .toggle-button {
         @include button;
-        margin-right: $spacing;
         font-weight: bold;
 
-        label {
-            margin-left: $spacing/2;
+        .label-box {
+            @include spacing(.5);
         }
 
         button {
             @include button($flat: true);
-            padding: $spacing;
+            padding: $padding;
 
             &:first-child {
                 border-top-right-radius: 0;
@@ -149,18 +136,21 @@ window#quicksettings .quicksettings {
             background-color: $accent;
 
             label, image {
-                color: $accent_fg;
+                color: $accent-fg;
             }
         }
     }
 
     .simple-toggle {
         @include button;
-        padding: $spacing;
+        padding: $padding;
     }
 
-    .media .player {
-        @include media;
-        margin-top: $spacing;
+    .media {
+        @include spacing;
+
+        .player {
+            @include media;
+        }
     }
 }

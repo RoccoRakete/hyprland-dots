@@ -76,17 +76,17 @@ optional_pacman_packages=(
   "gnome-disk-utility" "gnome-keyring" "gnome-software" "gnome-sound-recorder" "gnome-tweaks"
   "intel-gpu-tools" "gvfs-smb" "libgnome-keyring" "mpv" "neofetch" "network-manager-applet"
   "nextcloud-client" "obs-studio" "smbclient" "seahorse" "polkit-gnome" "nautilus" "thunar" "tlp"
-  "obsidian" "neovim" "neovide" "fzf"
+  "obsidian" "neovim" "neovide" "fzf" "wireguard-tools"
 )
 
 optional_aur_packages=(
-  "spotify" "gdm-settings" "wev" "tlpui" "git-credential-manager-core" "celeste"
+  "spotify" "gdm-settings" "wev" "tlpui" "git-credential-manager-core" "celeste" "overskride "
 )
 
 # print packages
 echo "Available packages:"
-echo "1) Install only needed packages (both pacman and AUR)"
-echo "2) Install needed and optional packages (both pacman and AUR)"
+echo "1) Install only needed packages (both offical Arch and AUR)"
+echo "2) Install needed and optional packages (both offical Arch and AUR)"
 
 read -p "Enter the number of your choice: " choice
 

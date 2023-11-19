@@ -1,6 +1,4 @@
 export default {
-    settings: 'emblem-system-symbolic',
-    tick: 'object-select-symbolic',
     lock: 'system-lock-screen-symbolic',
     audio: {
         mic: {
@@ -22,17 +20,6 @@ export default {
             card: 'audio-card-symbolic',
         },
         mixer: '',
-    },
-    asusctl: {
-        profile: {
-            Balanced: 'power-profile-balanced-symbolic',
-            Quiet: 'power-profile-power-saver-symbolic',
-            Performance: 'power-profile-performance-symbolic',
-        },
-        mode: {
-            Integrated: '',
-            Hybrid: '󰢮',
-        },
     },
     apps: {
         apps: 'view-app-grid-symbolic',
@@ -86,6 +73,12 @@ export default {
         next: '󰒭',
     },
     ui: {
+        close: 'window-close-symbolic',
+        info: 'info-symbolic',
+        menu: 'open-menu-symbolic',
+        link: 'external-link-symbolic',
+        settings: 'emblem-system-symbolic',
+        tick: 'object-select-symbolic',
         arrow: {
             right: 'pan-end-symbolic',
             left: 'pan-start-symbolic',
@@ -97,5 +90,18 @@ export default {
         cpu: 'org.gnome.SystemMonitor-symbolic',
         ram: 'drive-harddisk-solidstate-symbolic',
         temp: 'temperature-symbolic',
+    },
+    dialog: {
+        Search: ' ',
+        Applauncher: '󰵆 ',
+        Bar: ' ',
+        Border: '󰃇 ',
+        Color: '󰏘 ',
+        Desktop: '  ',
+        Font: ' ',
+        General: '󰒓 ',
+        Misc: '󰠱 ',
+        Theme: '󰃟 ',
+        Notifications: '󰂚 ',
     },
 };

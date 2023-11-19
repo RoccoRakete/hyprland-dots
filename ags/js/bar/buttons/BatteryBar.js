@@ -1,13 +1,13 @@
+import Widget from 'resource:///com/github/Aylur/ags/widget.js';
+import Battery from 'resource:///com/github/Aylur/ags/service/battery.js';
 import icons from '../../icons.js';
 import FontIcon from '../../misc/FontIcon.js';
 import options from '../../options.js';
 import PanelButton from '../PanelButton.js';
-import Gtk from 'gi://Gtk';
-import { Battery, Widget } from '../../imports.js';
 
 const Indicator = () => Widget.Stack({
     items: [
-        ['true', FontIcon({ icon: icons.battery.charging })],
+        ['true', FontIcon(icons.battery.charging)],
     ],
     connections: [[Battery, stack => {
         stack.shown = `${Battery.charging || Battery.charged}`;
@@ -16,35 +16,39 @@ const Indicator = () => Widget.Stack({
 
 const PercentLabel = () => Widget.Revealer({
     transition: 'slide_right',
-    revealChild: options.battaryBar.showPercentage,
+    binds: [['reveal-child', options.battery.show_percentage]],
     child: Widget.Label({
-        binds: [['label', Battery, 'percent', p => `${p}%`]],
+        binds: [['label', Battery, 'percent', p => ` ${p}%`]],
     }),
 });
 
-const LevelBar = () => Widget({
-    type: Gtk.LevelBar,
-    valign: 'center',
-    binds: [['value', Battery, 'percent', p => p / 100]],
+const LevelBar = () => Widget.LevelBar({
+    vpack: 'center',
+    binds: [['value', Battery, 'percent', p => p / 100,]],
 });
 
 export default () => {
     const revaler = PercentLabel();
 
     return PanelButton({
-        className: 'battery-bar',
-        onClicked: () => revaler.revealChild = !revaler.revealChild,
+        class_name: 'battery-bar',
+        on_clicked: () => {
+            const v = options.battery.show_percentage.value;
+            options.battery.show_percentage.value = !v;
+        },
         content: Widget.Box({
             binds: [['visible', Battery, 'available']],
             connections: [[Battery, w => {
                 w.toggleClassName('charging', Battery.charging || Battery.charged);
-                w.toggleClassName('medium', Battery.percent < options.battaryBar.medium);
-                w.toggleClassName('low', Battery.percent < options.battaryBar.low);
+                w.toggleClassName('medium', Battery.percent < options.battery.medium.value);
+                w.toggleClassName('low', Battery.percent < options.battery.low.value);
+                w.toggleClassName('half', Battery.percent < 48);
             }]],
             children: [
                 Indicator(),
                 LevelBar(),
-                revaler,
+                Widget.Box({ child: revaler }),
+                
             ],
         }),
     });

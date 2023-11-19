@@ -1,5 +1,7 @@
 extends: stylelint-config-standard-scss
-ignoreFiles: "**/*.js"
+ignoreFiles:
+  - "**/*.js"
+  - "**/*.ts"
 rules:
   selector-type-no-unknown: null
   declaration-empty-line-before: null
@@ -10,5 +12,3 @@ rules:
   scss/operator-no-unspaced: null
   scss/no-global-function-names: null
   scss/dollar-variable-empty-line-before: null
-  scss/dollar-variable-pattern: ^[a-z]+(_[a-z]+)*$
-  scss/at-mixin-pattern: ^[a-z]+(_[a-z]+)*$
