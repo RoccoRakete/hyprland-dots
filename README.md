@@ -41,8 +41,8 @@ bind = , XF86AudioLowerVolume , exec , ags run-js "audio.speaker.volume -= 0.05;
 This should work with brightness control too, but I can't verify this, since I'm not using Linux on a Laptop.
 
 # ⚙️ **GTK-Themes / GTK-Icons / PyWall-Themes**
-![Screenshot_15-10-23_18-19](![Screenshot_19-11-23_12-20](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/2018f337-a71c-4df9-83b8-4ba313a1d1fa)
-)
+![Screenshot_19-11-23_12-20](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/0a197c8a-e0d8-40e4-acf2-7d17771c5bb7)
+
 
 * The refering options are: ```gtk_theme:``` ```icons:``` ```pywall_theme:```
 
