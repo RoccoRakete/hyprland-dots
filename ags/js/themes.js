@@ -14,6 +14,9 @@ export default [
     "misc.gtk.theme": "adw-gtk3-dark",
     "misc.gtkIcons.theme": "Adwaita",
 
+    "desktop.wallpaper.img": "/home/martin/.dots/backgrounds/waves_dark.jpg",
+    "desktop.avatar": "/home/martin/face.png",
+
     "spacing": 2,
     "padding": 8,
     "radii": 5,
@@ -63,8 +66,6 @@ export default [
     "battery.medium": 35,
 
     "desktop.wallpaper.fg": "#fff",
-    "desktop.wallpaper.img": "/home/martin/.dots/backgrounds/waves_dark.jpg",
-    "desktop.avatar": "/home/martin/face.png",
 
     "desktop.drop_shadow": false,
     "desktop.shadow": "rgba(0, 0, 0, .6)",
@@ -91,6 +92,8 @@ export default [
     "misc.gtk.theme": "Gruvbox-Dark-B",
     "misc.gtkIcons.theme": "gruvbox_icons",
 
+    "desktop.wallpaper.img": "/home/martin/.dots/backgrounds/stairs.png",
+    "desktop.avatar": "/home/martin/face.png",
 
     "spacing": 2,
     "padding": 8,
@@ -141,8 +144,6 @@ export default [
     "battery.medium": 35,
 
     "desktop.wallpaper.fg": "#fff",
-    "desktop.wallpaper.img": "/home/martin/.dots/backgrounds/stairs.png",
-    "desktop.avatar": "/home/martin/face.png",
 
     "desktop.drop_shadow": false,
     "desktop.shadow": "rgba(0, 0, 0, .6)",

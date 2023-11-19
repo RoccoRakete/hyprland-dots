@@ -60,14 +60,14 @@ needed_pacman_packages=(
   "wget" "hyprland" "nano" "lshw" "bluez" "bluez-utils" "brightnessctl" "file-roller" "grim" "imagemagick"
   "gvfs" "inotify-tools" "libinput" "lm_sensors" "pavucontrol" "python-pam" "slurp" "swayidle" "playerctl"
   "wl-clipboard" "tracker3" "tracker3-miners" "qt5-base" "qt6-base" "gnome-bluetooth" "gnome-control-center"
-  "kitty"
+  "kitty" "sassc"
 )
 
 needed_aur_packages=(
   "aylurs-gtk-shell-git" "grimblast-git" "gtklock" "gtklock-userinfo-module" 
   "hyprpicker" "ttf-ubuntu-nerd" "ttf-ubuntu-mono-nerd"
   "sway-audio-idle-inhibit-git" "swww-git" "pywal-16-colors" "xdg-desktop-portal-hyprland"
-  "wf-recorder" "wl-clip-persist-git"
+  "wf-recorder" "wl-clip-persist-git" "wayshot-bin"
 )
 
 # optional packages
