@@ -44,7 +44,7 @@ This should work with brightness control too, but I can't verify this, since I'm
 ![Screenshot_19-11-23_12-20](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/0a197c8a-e0d8-40e4-acf2-7d17771c5bb7)
 
 
-* The refering options are: ```gtk_theme:``` ```icons:``` ```pywall_theme:```
+* The refering options are: ```misc.pywal.theme:``` ```misc.gtk.theme:``` ```misc.gtkIcons.theme:```
 
   ### Make sure these namings match exactly the themes you want to use! 
   Otherwise the last used theme will be used.
