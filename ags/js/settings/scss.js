@@ -22,39 +22,33 @@ export function scssWatcher() {
  * e.g
  * options.bar.style.value => $bar-style
  */
-
 export async function reloadScss() {
-    try {
-        if (!Utils.exec('which sassc')) {
-            return print('Missing dependency: sassc');
+    if (!Utils.exec('which sassc'))
+        return print('missing dependancy: sassc');
+
+    const opts = getOptions();
+    const vars = opts.map(opt => {
+        if (opt.scss === 'exclude')
+            return '';
+
+        const unit = typeof opt.value === 'number' ? opt.unit : '';
+        const value = opt.scssFormat ? opt.scssFormat(opt.value) : opt.value;
+        return `$${opt.scss}: ${value}${unit};`;
+    });
+
+    const bar_style = opts.find(opt => opt.id === 'bar.style')?.value || '';
+    const additional = bar_style === 'normal' ? '//' : `
+        window#quicksettings .window-content {
+            margin-right: $wm-gaps;
         }
 
-        const opts = getOptions();
-        const vars = opts.map(opt => {
-            if (opt.scss === 'exclude') {
-                return '';
-            }
+        window#quicksettings .window-content,
+        window#dashboard .window-content {
+            margin-top: 0;
+        }
+    `;
 
-            const unit = typeof opt.value === 'number' ? opt.unit : '';
-            const value = opt.format ? opt.format(opt.value) : opt.value;
-            return `$${opt.scss}: ${value}${unit};`;
-        });
-
-        const bar_style = opts.find(opt => opt.id === 'bar.style')?.value || '';
-        const additional =
-            bar_style === 'normal'
-                ? '//'
-                : `
-                    window#quicksettings .window-content {
-                        margin-right: $wm-gaps;
-                    }
-    
-                    window#quicksettings .window-content,
-                    window#dashboard .window-content {
-                        margin-top: 0;
-                    }
-                `;
-
+    try {
         const tmp = '/tmp/ags/scss';
         Utils.ensureDirectory(tmp);
         await Utils.writeFile(vars.join('\n'), `${tmp}/options.scss`);
@@ -63,9 +57,10 @@ export async function reloadScss() {
         App.resetCss();
         App.applyCss(`${tmp}/style.css`);
     } catch (error) {
-        console.error('Error:', error);
-        // Handle the error accordingly or return an error message
-        return print('An error occurred while reloading SCSS files');
+        if (error instanceof Error)
+            console.error(error.message);
+
+        if (typeof error === 'string')
+            console.error(error);
     }
 }
-

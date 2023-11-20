@@ -126,6 +126,11 @@ export default {
             'category': 'Border',
             'title': 'Border Width',
         }),
+        barcolor: Option('#ffffff', {
+            'category': 'Border',
+            'title': 'Bar Border color',
+            'scss': 'bar-border-color',
+        }),
     },
 
     hypr: {
@@ -134,10 +139,10 @@ export default {
             'title': 'Border on Inactive Windows',
             'scss': 'exclude',
         }),
-        wm_gaps_multiplier: Option(2.4, {
+        wm_gaps: Option(1, {
             'category': 'General',
-            'scss': 'wm-gaps-multiplier',
-            'note': 'wm-gaps: padding × this',
+            'scss': 'wm-gaps',
+            'note': 'wm-gaps',
             'type': 'float',
             'unit': '',
         }),
@@ -206,16 +211,15 @@ export default {
         wallpaper: {
             fg: Option('#fff', { 'scss': 'wallpaper-fg' }),
             img: Option(themes[0].options['desktop.wallpaper.img'], {
-                'format': v => `"${v}"`,
+                'scssFormat': v => `"${v}"`,
                 'type': 'img',
             }),
         },
         avatar: Option(`/var/lib/AccountsService/icons/${USER}`, {
-            'format': v => `"${v}"`,
+            'scssFormat': v => `"${v}"`,
             'type': 'img',
             'note': 'displayed in quicksettings and locksreen',
         }),
-
         drop_shadow: Option(true, { 'scss': 'drop-shadow' }),
         shadow: Option('rgba(0, 0, 0, .6)', { 'scss': 'shadow' }),
     },

@@ -143,6 +143,8 @@ $bar-spacing: $spacing / 2;
         margin: $wm-gaps;
         padding: 0;
         border-radius: $radii;
+        border: $bar-border;
+
     }
 
     @if $bar-style =='separated' {
@@ -255,13 +257,15 @@ $bar-spacing: $spacing / 2;
         }
 
         levelbar trough {
-            @include widget;
+            @include bar-widget;
+            padding: 0px;
             min-width: $battery-bar-width;
             min-height: $battery-bar-height;
 
             block.filled {
                 border-radius: max($radii - $border-width, 0);
                 background-image: $active-gradient;
+                border-radius: $radii;
             }
         }
 

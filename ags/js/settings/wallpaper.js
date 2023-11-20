@@ -1,8 +1,6 @@
 import options from '../options.js';
 import { exec, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 import GLib from 'gi://GLib';
-import { gtkIcons } from './setup.js';
-
 
 export function initWallpaper() {
     try {
@@ -30,9 +28,6 @@ export function wallpaper() {
     execAsync([
         'cp', options.desktop.wallpaper.img.value, `${backgrounds}/last/image.png`
     ]);
-    execAsync(
-        ['sh', '-c', '~/.dots/ags/prepare_background.sh'], 
-      )
-      .catch(err => console.error(err));
+    exec(`sh -c ~/.dots/ags/prepare_background.sh`)
 
 }
