@@ -1,5 +1,4 @@
 import * as Utils from 'resource:///com/github/Aylur/ags/utils.js';
-import App from 'resource:///com/github/Aylur/ags/app.js';
 import Widget from 'resource:///com/github/Aylur/ags/widget.js';
 import RegularWindow from '../misc/RegularWindow.js';
 import Variable from 'resource:///com/github/Aylur/ags/variable.js';
@@ -165,7 +164,7 @@ const sidebar = Widget.Revealer({
                 class_name: 'sidebar-header',
                 children: [
                     Widget.Button({
-                        hexpand: true,
+                        hexpand: false,
                         label: icons.dialog.Search + ' Search',
                         on_clicked: () => showSearch.value = !showSearch.value,
                     }),

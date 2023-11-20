@@ -27,6 +27,8 @@ window#settings-dialog {
     }
 
     .sidebar-header  {
+        @include spacing($rec: true);
+
         background-color: $widget-bg;
         border-right: $border;
         border-bottom: $border;
@@ -34,11 +36,7 @@ window#settings-dialog {
 
         button {
             @include button($flat: true);
-            padding: $padding / 2 $padding;
-        }
-
-        button:last-child {
-            margin-left: $spacing / 2;
+            padding: $padding / 2 $padding * 2;
         }
     }
 
