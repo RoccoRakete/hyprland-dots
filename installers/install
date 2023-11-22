@@ -214,22 +214,20 @@ else
   fi
 fi
 
-#not possible atm since this won't work with gnome > 45.0 yet...
-
 # install libadwaita-without-adwaita-git
-#read -p "Install libadwaita-without-adwaita? This is needed to run GTK4/Adwaita applications with a GTK3 theme... (Y/n): " choice
+read -p "Install libadwaita-without-adwaita? This is needed to run GTK4/Adwaita applications with a GTK3 theme... (Y/n): " choice
 
-#if [[ $choice == "n" || $choice == "N" ]]; then
-#  echo "libadwaita-without-adwaita-git was not installed!"
-#else
-#  echo "installing 'libadwaita-without-adwaita-git' ..."
-#  yay -S libadwaita-without-adwaita-git --noconfirm
-#  if [ $? -eq 0 ]; then
-#    echo "libadwaita-without-adwaita-git was installed!"
-#  else
-#    echo "Installation was aborted! Make sure you have 'yay' installed! "
-#  fi
-#fi
+if [[ $choice == "n" || $choice == "N" ]]; then
+  echo "libadwaita-without-adwaita-git was not installed!"
+else
+  echo "installing 'libadwaita-without-adwaita-git' ..."
+  yay -S libadwaita-without-adwaita-git --noconfirm
+  if [ $? -eq 0 ]; then
+    echo "libadwaita-without-adwaita-git was installed!"
+  else
+    echo "Installation was aborted! Make sure you have 'yay' installed! "
+  fi
+fi
 
 # install nvChad
 read -p "Install nvChad? (Y/n): " choice
