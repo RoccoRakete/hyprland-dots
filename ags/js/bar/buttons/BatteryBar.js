@@ -27,9 +27,8 @@ const LevelBar = () => Widget.LevelBar({
     binds: [['value', Battery, 'percent', p => p / 100,]],
 });
 
-export default () => {
+export default (Service, condition) => {
     const revaler = PercentLabel();
-
     return PanelButton({
         class_name: 'battery-bar',
         on_clicked: () => {
@@ -48,7 +47,7 @@ export default () => {
                 Indicator(),
                 LevelBar(),
                 Widget.Box({ child: revaler }),
-                
+
             ],
         }),
     });

@@ -2,7 +2,7 @@
  * A Theme is a set of options that will be applied
  * ontop of the default values. see options.js for possible options
  */
-import { Theme } from './settings/theme.js';
+import { Theme, WP, HOME } from './settings/theme.js';
 
 export default [
 
@@ -16,8 +16,8 @@ export default [
     "misc.gtk.theme": "adw-gtk3-dark",
     "misc.gtkIcons.theme": "Adwaita",
 
-    "desktop.wallpaper.img": "/home/martin/.dots/backgrounds/waves_dark.jpg",
-    "desktop.avatar": "/home/martin/face.png",
+    "desktop.wallpaper.img": WP + "waves_dark.jpg",
+    "desktop.avatar": HOME + "face.png",
 
     "spacing": 2,
     "padding": 8,
@@ -96,8 +96,8 @@ export default [
     "misc.gtk.theme": "Gruvbox-Dark-B",
     "misc.gtkIcons.theme": "gruvbox_icons",
 
-    "desktop.wallpaper.img": "/home/martin/.dots/backgrounds/stairs.png",
-    "desktop.avatar": "/home/martin/face.png",
+    "desktop.wallpaper.img": WP + "stairs.png",
+    "desktop.avatar": HOME + "face.png",
 
     "spacing": 2,
     "padding": 8,
@@ -176,8 +176,8 @@ export default [
     "misc.gtk.theme": "Catppuccin_Mocha",
     "misc.gtkIcons.theme": "catppuccin_mocha",
 
-    "desktop.wallpaper.img": "/home/martin/.dots/backgrounds/oled-mountains.jpg",
-    "desktop.avatar": "/home/martin/face.png",
+    "desktop.wallpaper.img": WP + "oled-mountains.jpg",
+    "desktop.avatar": HOME + "face.png",
 
     "spacing": 2,
     "padding": 8,
@@ -256,8 +256,8 @@ Theme({
     "misc.gtk.theme": "rose-pine-gtk",
     "misc.gtkIcons.theme": "rose-pine-icons",
 
-    "desktop.wallpaper.img": "/home/martin/.dots/backgrounds/leafy-moon.png",
-    "desktop.avatar": "/home/martin/face.png",
+    "desktop.wallpaper.img": WP + "leafy-moon.png",
+    "desktop.avatar": HOME + "face.png",
 
     "spacing": 2,
     "padding": 8,

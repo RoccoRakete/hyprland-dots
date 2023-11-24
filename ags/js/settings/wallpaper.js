@@ -13,7 +13,7 @@ export function initWallpaper() {
 }
 
 export function wallpaper() {
-    const backgrounds = GLib.get_home_dir() + '/.dots/backgrounds';
+    const backgrounds = GLib.get_home_dir() + '/.config/backgrounds';
     if (!exec('which swww'))
         return print('missing dependancy: swww');
 
@@ -28,6 +28,6 @@ export function wallpaper() {
     execAsync([
         'cp', options.desktop.wallpaper.img.value, `${backgrounds}/last/image.png`
     ]);
-    exec(`sh -c ~/.dots/ags/prepare_background.sh`)
+    exec(`sh -c ~/.config/ags/prepare_background.sh`)
 
 }

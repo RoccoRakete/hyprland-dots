@@ -1,11 +1,11 @@
-import App from 'resource:///com/github/Aylur/ags/app.js';
 import options from '../options.js';
 import themes from '../themes.js';
 import { reloadScss } from './scss.js';
 import { setupHyprland } from './hyprland.js';
 import { wallpaper } from './wallpaper.js';
-import { exec, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 import { gtkIcons, gtkTheme, pywal } from './setup.js';
+import GLib from 'gi://GLib';
+
 
 /** @param {string} name */
 export function setTheme(name) {
@@ -23,7 +23,8 @@ export function setTheme(name) {
     gtkTheme();
 }
 
-export const WP = App.configDir + '/assets/';
+export const WP = GLib.get_home_dir() + '/.config/backgrounds/';
+export const HOME = GLib.get_home_dir() + '/';
 
 export const lightColors = {
     'theme.scheme': 'light',

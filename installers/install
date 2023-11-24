@@ -80,7 +80,7 @@ optional_pacman_packages=(
 )
 
 optional_aur_packages=(
-  "spotify" "gdm-settings" "wev" "tlpui" "git-credential-manager-core" "celeste" "overskride "
+  "spotify" "gdm-settings" "wev" "tlpui" "git-credential-manager-core" "overskride "
 )
 
 # print packages
