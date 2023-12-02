@@ -1,6 +1,6 @@
 #! /bin/sh
 
-killall -q ags
+pkill  ags
 
 # Launch ags
 echo "---" | tee -a /tmp/ags.log

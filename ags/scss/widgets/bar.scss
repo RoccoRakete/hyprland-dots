@@ -58,6 +58,7 @@ $bar-spacing: $spacing / 2;
 }
 
 .panel {
+
     .cpu {
         padding-left: $spacing/2;
         color: $accent;
@@ -113,7 +114,7 @@ $bar-spacing: $spacing / 2;
             margin: $spacing/2.5;
             background-color: $widget-bg;
             font-size: 1em;
-            
+
 
             @if $bar_style =='separated' {
                 padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
@@ -174,6 +175,8 @@ $bar-spacing: $spacing / 2;
     }
 
     .overview {
+        margin-right: $spacing;
+
         label {
             color: transparentize($accent, 0.2);
         }

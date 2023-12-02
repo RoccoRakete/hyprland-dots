@@ -158,7 +158,7 @@ export default {
     },
 
     // TODO: use this on revealers
-    transition: Option(200, {
+    transition: Option(400, {
         'category': 'exclude',
         'note': 'Transition time on aminations in ms, e.g on hover',
         'unit': 'ms',
@@ -264,7 +264,7 @@ export default {
         'note': 'Set it to 0 to make it dynamic',
     }),
 
-    temperature: '/sys/class/thermal/thermal_zone0/temp',
+    temperature: '/sys/class/thermal/thermal_zone6/temp',
     systemFetchInterval: 1000,
     brightnessctlKBD: 'asus::kbd_backlight',
     substitutions: {

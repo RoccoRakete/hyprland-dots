@@ -32,6 +32,7 @@ const DNDIndicator = () => Widget.Icon({
 });
 
 const BluetoothDevicesIndicator = () => Widget.Box({
+    class_name: 'bluetooth-devices-box',
     connections: [[Bluetooth, box => {
         box.children = Bluetooth.connectedDevices
             .map(({ iconName, name }) => HoverRevealer({
