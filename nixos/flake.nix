@@ -31,7 +31,6 @@
       homeConfigurations = {
         martin = home-manager.lib.homeManagerConfiguration {
           extraSpecialArgs = { inherit inputs; };
-
           inherit pkgs;
           modules = [ ./home.nix ];
         };

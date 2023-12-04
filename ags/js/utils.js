@@ -66,6 +66,19 @@ export function getAudioTypeIcon(icon) {
     return icon;
 }
 
+/** @param {Array<string>} bins */
+export function dependencies(bins) {
+    const deps = bins.map(bin => {
+        const has = Utils.exec(`which ${bin}`);
+        if (!has)
+            print(`missing dependency: ${bin}`);
+
+        return !!has;
+    });
+
+    return deps.every(has => has);
+}
+
 
 /** @param {import('types/service/applications').Application} app */
 export function launchApp(app) {

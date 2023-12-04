@@ -15,6 +15,7 @@ const Indicator = () => Widget.Stack({
 });
 
 const PercentLabel = () => Widget.Revealer({
+    class_name: 'battery_percentage',
     transition: 'slide_right',
     binds: [['reveal-child', options.battery.show_percentage]],
     child: Widget.Label({

@@ -31,7 +31,8 @@
         "clear";
       initExtra =
         "source ~/.p10k.zsh" + "\n" +
-        "neofetch";
+        "neofetch" + "\n" +
+        "export TERM=kitty";
       shellAliases = {
         ll = "ls -lah";
         update = "sudo nixos-rebuild switch";

@@ -187,15 +187,19 @@ in
   };
 
   # Installed Fonts
-  fonts.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "Ubuntu"
-        "UbuntuMono"
-        "Hermit"
-      ];
-    })
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    fontDir.enable = true;
+    packages = with pkgs; [
+      (nerdfonts.override {
+        fonts = [
+          "Ubuntu"
+          "UbuntuMono"
+          "Hermit"
+        ];
+      })
+    ];
+  };
 
   system.stateVersion = "23.05";
 

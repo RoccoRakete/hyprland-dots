@@ -8,15 +8,25 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Packages
+  # Package configurations
   environment.systemPackages = with pkgs; [
-
+    
+    #Commandline arguments
     (brave.override {
       commandLineArgs = [
         "--enable-features=TouchpadOverscrollHistoryNavigation"
       ];
     })
 
+#    (vscode.override {
+#    commandLineArgs = [
+#      "--enable-features=UseOzonePlatform" 
+#        "--enable-features=WaylandWindowDecorations"
+#        "--ozone-platform=wayland"
+#      ];
+##    })
+
+    #Packages
     # gnome
     pkgs.gnome.gnome-bluetooth
     pkgs.gnome.gnome-settings-daemon
@@ -47,13 +57,18 @@
     # code
     pkgs.vscode
     pkgs.sassc
-    pkgs.neovim
+    pkgs.neovim-unwrapped
     pkgs.neovide
     pkgs.fzf
     pkgs.vimPlugins.telescope-fzf-native-nvim
     pkgs.nodejs_21
     pkgs.libgcc
+    pkgs.libgccjit
+    pkgs.bintools-unwrapped
     pkgs.nixpkgs-fmt
+
+    # homelab
+    pkgs.rpi-imager
 
     # information
     pkgs.firefox
@@ -81,6 +96,7 @@
     pkgs.wget
     pkgs.kitty
     pkgs.brightnessctl
+    pkgs.libnotify
     pkgs.inotify-tools
     pkgs.pavucontrol
     pkgs.bluez
@@ -102,6 +118,7 @@
     pkgs.usbutils
     pkgs.btop
     pkgs.stress-ng
+    pkgs.slurp
   ];
 
 }
