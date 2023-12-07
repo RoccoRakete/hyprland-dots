@@ -14,5 +14,6 @@
       ./hardware-configuration.nix
       ./nixos.nix
       ./packages.nix
+      ./thinkfan.nix
     ];
 }

@@ -66,6 +66,7 @@
     pkgs.libgccjit
     pkgs.bintools-unwrapped
     pkgs.nixpkgs-fmt
+    pkgs.python3
 
     # homelab
     pkgs.rpi-imager
