@@ -4,6 +4,7 @@ window#quicksettings .window-content {
 
     .avatar {
         @include widget;
+        border-radius: $popover-radius;
     }
 
     .header {
@@ -13,12 +14,13 @@ window#quicksettings .window-content {
     .system-box {
         @include widget;
         @include spacing($rec: true);
-
+        border-radius: $popover-radius;
         padding: 10px;
 
-
-        button, .uptime {
+        button,
+        .uptime {
             @include button;
+            border-radius: $radii * 3;
             padding: $padding;
             font-weight: bold;
             min-height: 20px;
@@ -37,17 +39,19 @@ window#quicksettings .window-content {
         }
 
         &.charging label {
-            font-size: $padding*2;
+            font-size: $padding * 2;
         }
 
-        &.half label { color: $fg-color; }
+        &.half label {
+            color: $fg-color;
+        }
 
         progressbar {
-            @include slider($width: $padding*3.6);
+            @include slider($width: $padding * 3.6);
         }
 
         &.low progressbar {
-            @include slider($width: $padding*3.6, $gradient: linear-gradient(to right, $red, $red));
+            @include slider($width: $padding * 3.6, $gradient: linear-gradient(to right, $red, $red));
         }
     }
 
@@ -55,6 +59,8 @@ window#quicksettings .window-content {
         @include widget;
         @include spacing($rec: true);
         @include spacing(0);
+        border-radius: $popover-radius;
+
         padding: $padding;
 
         button {
@@ -76,8 +82,12 @@ window#quicksettings .window-content {
     }
 
     .mixer-item {
-        scale { @include slider($width: 7px); }
-        image { font-size: 1.2em; }
+        scale {
+            @include slider($width: 7px);
+        }
+        image {
+            font-size: 1.2em;
+        }
     }
 
     .row {
@@ -92,7 +102,7 @@ window#quicksettings .window-content {
         margin-top: $spacing;
 
         .title {
-            @include spacing(.5);
+            @include spacing(0.5);
         }
 
         separator {
@@ -112,9 +122,10 @@ window#quicksettings .window-content {
     .toggle-button {
         @include button;
         font-weight: bold;
+        border-radius: $popover-radius;
 
         .label-box {
-            @include spacing(.5);
+            @include spacing(0.5);
         }
 
         button {
@@ -135,7 +146,8 @@ window#quicksettings .window-content {
         &.active {
             background-color: $accent;
 
-            label, image {
+            label,
+            image {
                 color: $accent-fg;
             }
         }
@@ -144,6 +156,7 @@ window#quicksettings .window-content {
     .simple-toggle {
         @include button;
         padding: $padding;
+        border-radius: $popover-radius;
     }
 
     .media {
@@ -151,6 +164,7 @@ window#quicksettings .window-content {
 
         .player {
             @include media;
+            border-radius: $popover-radius;
         }
     }
 }

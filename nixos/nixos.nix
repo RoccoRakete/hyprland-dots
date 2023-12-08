@@ -38,14 +38,11 @@ in
     plymouth.logo = "${nixos-icons}/share/icons/hicolor/48x48/apps/nix-snowflake-white.png";
   };
 
-  services.udev.extraRules = ''
-    SUBSYSTEMS=="usb", ATTRS{idVendor}=="(0483)", ATTRS{idProduct}=="(3256)", GROUP="users", MODE="0777"
-  '';
-
   # Networking
   #nixosConfigurations.myhostname = "ThinkPad";
   networking = {
     hostName = "ThinkPad";
+    useDHCP = lib.mkDefault true;
     networkmanager.enable = true;
   };
 
@@ -140,8 +137,6 @@ in
       isNormalUser = true;
       description = "Martin";
       extraGroups = [ "networkmanager" "wheel" "dialout" ];
-      packages = with pkgs; [
-      ];
     };
   };
 
@@ -161,5 +156,4 @@ in
   };
 
   system.stateVersion = "23.05";
-
 }
