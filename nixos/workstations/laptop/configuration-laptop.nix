@@ -8,7 +8,7 @@ in
   imports =
     [
       ./hardware-configuration-laptop.nix
-      #./configs/thinkfan.nix
+      ../../configs/thinkfan.nix
       ../../configs/bluetooth.nix
       ../../configs/tlp.nix
       ../../nixos.nix

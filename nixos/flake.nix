@@ -19,11 +19,15 @@
       nixosConfigurations = {
         ${vars.desktop} = lib.nixosSystem {
           inherit system;
-          modules = [ ./workstations/desktop/configuration-desktop.nix ];
+          modules = [
+            ./workstations/desktop/configuration-desktop.nix
+          ];
         };
         ${vars.laptop} = lib.nixosSystem {
           inherit system;
-          modules = [ ./workstations/laptop/configuration-laptop.nix ];
+          modules = [
+            ./workstations/laptop/configuration-laptop.nix
+          ];
         };
       };
       homeConfigurations = {
