@@ -2,9 +2,11 @@
 
 let
   inherit (pkgs) nixos-icons;
+  vars = import ./configs/variables.nix;
 in
 
 {
+
   #environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.pathsToLink = [ "/share/zsh" ];
 
@@ -39,9 +41,8 @@ in
   };
 
   # Networking
-  #nixosConfigurations.myhostname = "ThinkPad";
   networking = {
-    hostName = "ThinkPad";
+    hostName = vars.hostname;
     useDHCP = lib.mkDefault true;
     networkmanager.enable = true;
   };
@@ -133,7 +134,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users = {
     defaultUserShell = pkgs.zsh;
-    users.martin = {
+    users.${vars.user1} = {
       isNormalUser = true;
       description = "Martin";
       extraGroups = [ "networkmanager" "wheel" "dialout" ];

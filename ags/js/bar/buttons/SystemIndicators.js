@@ -95,7 +95,6 @@ export default () => PanelButton({
             NetworkIndicator(),
             AudioIndicator(),
             DNDIndicator(),
-            MicrophoneIndicator(),
         ],
     }),
 });

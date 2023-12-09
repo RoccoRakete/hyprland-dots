@@ -15,6 +15,7 @@
     (brave.override {
       commandLineArgs = [
         "--enable-features=TouchpadOverscrollHistoryNavigation"
+        "--ozone-platform=wayland"
       ];
     })
 
@@ -44,7 +45,7 @@
     pkgs.gtk3
 
     # theming
-    pkgs.bibata-cursors
+    #pkgs.bibata-cursors
     pkgs.neofetch
     pkgs.swww
     pkgs.pywal

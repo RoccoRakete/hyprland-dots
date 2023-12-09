@@ -101,8 +101,6 @@ const End = () => Widget.Box({
         SeparatorDot(),
         ScreenRecord(),
         SeparatorDot(Recorder, r => r.recording),
-        BatteryBar(Battery, b => b.available),
-        SeparatorDot(Battery, b => b.available),
         SystemIndicators(),
         SeparatorDot(),
         PowerMenu(),
