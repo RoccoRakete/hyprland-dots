@@ -40,13 +40,6 @@ in
     plymouth.logo = "${nixos-icons}/share/icons/hicolor/48x48/apps/nix-snowflake-white.png";
   };
 
-  # Networking
-  networking = {
-    hostName = vars.hostname;
-    useDHCP = lib.mkDefault true;
-    networkmanager.enable = true;
-  };
-
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 

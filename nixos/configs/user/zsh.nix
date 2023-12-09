@@ -13,7 +13,8 @@
     shellAliases = {
       ll = "ls -lah";
       update = "sudo nixos-rebuild switch";
-      upgrade = "sudo nixos-rebuild switch --flake ~/.dots/nixos";
+      upgrade-desktop = "sudo nixos-rebuild switch --flake ~/.dots/nixos#OptiPlex3060";
+      upgrade-laptop = "sudo nixos-rebuild switch --flake ~/.dots/nixos#ThinkPad";
       home-upgrade = "nix flake update ~/.dots/nixos && home-manager switch --flake ~/.dots/nixos";
       v = "nvim";
     };
