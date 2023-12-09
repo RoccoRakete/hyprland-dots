@@ -31,10 +31,21 @@
         };
       };
       homeConfigurations = {
-        ${vars.user1} = home-manager.lib.homeManagerConfiguration {
+        ${vars.desktop} = home-manager.lib.homeManagerConfiguration {
           extraSpecialArgs = { inherit inputs; };
           inherit pkgs;
-          modules = [ ./home.nix ];
+          modules = [
+            ./workstations/desktop/home-desktop.nix
+          ];
+        };
+      };
+      homeConfigurations = {
+        ${vars.laptop} = home-manager.lib.homeManagerConfiguration {
+          extraSpecialArgs = { inherit inputs; };
+          inherit pkgs;
+          modules = [
+            ./workstations/desktop/home-laptop.nix
+          ];
         };
       };
     };
