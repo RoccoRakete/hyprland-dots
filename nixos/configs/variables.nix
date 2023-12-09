@@ -3,7 +3,8 @@ let
 in
 
 {
-  hostname = "OptiPlex3060";
+  desktop = "OptiPlex3060";
+  laptop = "ThinkPad";
   user1 = user1;
   homeDirectoryUser1 = "/home/${user1}";
 }
