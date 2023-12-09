@@ -94,6 +94,7 @@ export default () => PanelButton({
             BluetoothIndicator(),
             NetworkIndicator(),
             AudioIndicator(),
+            MicrophoneIndicator(),
             DNDIndicator(),
         ],
     }),

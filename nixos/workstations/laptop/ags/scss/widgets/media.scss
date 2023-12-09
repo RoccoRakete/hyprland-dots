@@ -1,0 +1,117 @@
+@mixin player-color($color) {
+    button {
+        .shuffle.enabled {
+            color: $color;
+        }
+
+        .loop {
+            &.playlist, &.track {
+                color: $color;
+            }
+        }
+
+        &:active label {
+            color: $color;
+        }
+    }
+
+    .position-slider:hover trough {
+        background-color: transparentize($color, 0.5);
+    }
+
+    .player-icon {
+        color: $color;
+    }
+}
+
+@mixin media() {
+    @include widget;
+
+    label {
+        color: $shader-fg;
+        text-shadow: $text-shadow;
+    }
+
+    .shader {
+        @include shader;
+    }
+
+    .cover {
+        border-radius: $radii*0.8;
+        min-height: 100px;
+        min-width: 100px;
+        box-shadow: 2px 2px 2px 0 $shadow;
+        margin: $padding;
+
+        .shader {
+            background-color: transparent;
+            border-radius: max($radii*0.8 - 1px, 0);
+            box-shadow: inset 0 0 0 999px transparentize($bg-color, 0.8);
+        }
+    }
+
+    .blurred-cover, .cover {
+        background-size: cover;
+        background-position: center;
+        border-radius: max($radii - $border-width, 0);
+    }
+
+    .labels {
+        margin-top: $padding;
+
+        label {
+            font-size: 1.1em;
+            text-shadow: $text-shadow;
+
+            &.title {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .position-slider {
+        @include slider($width: .4em, $slider: false, $gradient: linear-gradient($shader-fg, $shader-fg), $radii: 0);
+        margin: $padding/2 $padding $padding/2;
+
+        trough {
+            border: none;
+            background-color: transparentize($shader-fg, 0.7);
+        }
+    }
+
+    .footer-box {
+        margin: -$padding/2 $padding $padding/2;
+
+        image {
+            -gtk-icon-shadow: $text-shadow;
+        }
+    }
+
+    .controls button {
+        @include unset;
+
+        label {
+            font-size: 2em;
+            color: transparentize($shader-fg, 0.2);
+            transition: $transition;
+            margin: $padding/2 $font-size/1.5 $padding/2;
+
+            &.shuffle, &.loop {
+                font-size: 1.4em;
+
+            }
+        }
+
+        &:hover label {
+            color: transparentize($shader-fg, 0.1);
+        }
+
+        &:active label {
+            color: $shader-fg;
+        }
+    }
+
+    &.spotify { @include player-color($green); }
+    &.firefox { @include player-color($orange); }
+    &.mpv { @include player-color($magenta); }
+}
