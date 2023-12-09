@@ -3,8 +3,8 @@
 {
   imports = [
     inputs.ags.homeManagerModules.default
-    ./configs/user/styling.nix
-    ./configs/user/zsh.nix
+    ../../configs/user/styling.nix
+    ../../configs/user/zsh.nix
 
   ];
 
@@ -14,7 +14,7 @@
   programs = {
     ags = {
       enable = true;
-      configDir = null;
+      configDir = ./ags;
       extraPackages = [ pkgs.libsoup_3 ];
     };
     git = {
