@@ -44,7 +44,7 @@
           extraSpecialArgs = { inherit inputs; };
           inherit pkgs;
           modules = [
-            ./workstations/desktop/home-laptop.nix
+            ./workstations/laptop/home-laptop.nix
           ];
         };
       };
