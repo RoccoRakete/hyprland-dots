@@ -8,7 +8,7 @@
     enable = true;
   };
 
-  # hyprland
+  # Hyprland
   home.file."${config.xdg.configHome}/hypr" = {
     source = ./dotfiles/hypr;
     recursive = true;
