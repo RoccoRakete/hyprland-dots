@@ -1,0 +1,14 @@
+2023-12-07 15:58:55.049 [info] update#setState idle
+2023-12-07 15:59:25.051 [info] update#setState checking for updates
+2023-12-07 15:59:25.095 [info] update#setState idle
+2023-12-07 16:59:25.085 [info] update#setState checking for updates
+2023-12-07 16:59:25.216 [info] update#setState idle
+2023-12-07 17:59:25.113 [info] update#setState checking for updates
+2023-12-07 17:59:25.230 [info] update#setState idle
+2023-12-07 18:59:25.139 [info] update#setState checking for updates
+2023-12-07 18:59:25.281 [info] update#setState idle
+2023-12-07 19:59:25.166 [info] update#setState checking for updates
+2023-12-07 19:59:25.305 [info] update#setState idle
+2023-12-07 20:59:25.191 [info] update#setState checking for updates
+2023-12-07 20:59:25.391 [info] update#setState available for download
+2023-12-08 20:03:35.359 [error] [UtilityProcessWorker]: terminated unexpectedly with code 15, signal: unknown

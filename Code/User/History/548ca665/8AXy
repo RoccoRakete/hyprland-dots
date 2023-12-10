@@ -1,0 +1,13 @@
+updates to ags launchscript
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   hypr/Autostart.conf
+#	modified:   hypr/KeyBinds.conf
+#	renamed:    nixos/workstations/desktop/ags/launch.sh -> hypr/scripts/launch_ags.sh
+#	deleted:    nixos/workstations/laptop/ags/launch.sh
+#

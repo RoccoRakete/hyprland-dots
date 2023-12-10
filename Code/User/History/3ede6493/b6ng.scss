@@ -1,0 +1,369 @@
+$bar-spacing: $spacing / 2;
+
+@mixin panel-button($flat: $bar-flat-buttons, $reactive: true) {
+    @include unset;
+
+    @if $bar-style =='separated' {
+        transition: $transition;
+
+        >* {
+            @include floating-widget;
+            border-radius: $radii;
+            margin: $wm-gaps $bar-spacing;
+            transition: $transition;
+        }
+
+        &:hover>* {
+            color: $hover-fg;
+
+            @if $drop-shadow {
+                box-shadow: 0 0 min(6px, $spacing/2) 0 $shadow,
+                    inset 0 0 0 99px $hover;
+            }
+
+            @else {
+                box-shadow: inset 0 0 0 99px $hover;
+            }
+        }
+
+        &:active>*,
+        &.active>* {
+
+            label,
+            image {
+                color: $accent-fg;
+            }
+
+            background-image: $active-gradient;
+            background-color: $accent;
+        }
+    }
+
+    @else {
+        @include accs-button($flat, $reactive);
+
+        >* {
+            margin: $bar-spacing;
+        }
+    }
+
+    label,
+    image {
+        font-weight: bold;
+    }
+
+    >* {
+        padding: $padding * 0.4 $padding * 0.7;
+    }
+}
+
+.panel {
+
+    .cpu {
+        padding-left: $spacing/2;
+        color: $accent;
+        font-size: $font_size/4.5;
+        border-radius: max($radii - $border_width, 0);
+        margin: $spacing;
+        min-height: $font_size * 1.35;
+        min-width: $font_size * 1.35;
+
+        @if $bar_style =='separated' {
+            padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
+            border-radius: max($radii - $border_width, 0);
+            margin-left: $spacing/4;
+            margin-right: $spacing/4;
+        }
+    }
+
+    .ram {
+        color: $yellow;
+        font-size: $font_size/4.5;
+        border-radius: max($radii - $border_width, 0);
+        margin: $spacing;
+        min-height: $font_size * 1.35;
+        min-width: $font_size * 1.35;
+
+        @if $bar_style =='separated' {
+            padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
+            border-radius: max($radii - $border_width, 0);
+            margin-left: $spacing/4;
+            margin-right: $spacing/4;
+        }
+    }
+
+    .temp {
+        padding-right: $spacing*2;
+        color: $magenta;
+        font-size: $font_size/4.5;
+        border-radius: max($radii - $border_width, 0);
+        margin: $spacing;
+        min-height: $font_size * 1.35;
+        min-width: $font_size * 1.35;
+
+        @if $bar_style =='separated' {
+            padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
+            border-radius: max($radii - $border_width, 0);
+            margin-left: $spacing/4;
+            margin-right: $spacing/4;
+        }
+    }
+
+    .circular-progress-box {
+        .circular-progress {
+            margin: $spacing/2.5;
+            background-color: $widget-bg;
+            font-size: 1em;
+
+
+            @if $bar_style =='separated' {
+                padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
+                border-radius: max($radii - $border_width, 0);
+                margin-left: $spacing/4;
+                margin-right: $spacing/4;
+            }
+        }
+    }
+
+    @if $bar-style =='normal' {
+        background-color: $bg-color;
+    }
+
+    @if not $bar-style =='normal' {
+        @if $bar-position =='bottom' {
+            border-top: $border;
+        }
+
+        @else {
+            border-bottom: $border;
+        }
+    }
+
+    @if $bar-style =='floating' {
+        @include floating-widget;
+        margin: $wm-gaps;
+        
+        padding: 0;
+        border-radius: $radii;
+        border: $bar-border;
+
+    }
+
+    @if $bar-style =='separated' {
+        >.end>button:last-child>* {
+            margin-right: $wm-gaps;
+        }
+
+        >.start>button:first-child>* {
+            margin-left: $wm-gaps;
+        }
+    }
+
+    .panel-button {
+        @include panel-button;
+    }
+
+    .tray-item,
+    .color-picker {
+        @include panel-button($flat: true);
+    }
+
+    separator {
+        background-color: transparentize($fg-color, 0.86);
+        border-radius: $radii;
+        min-height: 5px;
+        min-width: 5px;
+    }
+
+    .overview {
+        margin-right: $spacing;
+
+        label {
+            color: transparentize($accent, 0.2);
+        }
+
+        &:hover label {
+            color: $accent;
+        }
+
+        &:active label,
+        &.active label {
+            color: $accent-fg;
+        }
+    }
+
+    .powermenu,
+    .recorder {
+        image {
+            color: transparentize($red, 0.3);
+        }
+
+        &:hover image {
+            color: transparentize($red, 0.15);
+        }
+
+        &:active image {
+            color: $red;
+        }
+    }
+
+    .focused-client>box>box,
+    .quicksettings>box {
+        @include spacing(3);
+    }
+
+    /* stylelint-disable-next-line selector-not-notation */
+    .quicksettings:not(.active):not(:active) {
+        .bluetooth {
+            color: $blue;
+        }
+
+        .battery {
+            &.low {
+                color: $red;
+            }
+
+            &.charged,
+            &.charging {
+                color: $green;
+            }
+        }
+    }
+
+    .media {
+        &.spotify image {
+            color: $green;
+        }
+
+        &.firefox image {
+            color: $orange;
+        }
+
+        &.mpv image {
+            color: $magenta;
+        }
+    }
+
+    .notifications {
+        image {
+            color: $yellow;
+        }
+    }
+
+    .battery-bar {
+        .font-icon {
+            font-size: 1.15em;
+        }
+
+        image,
+        .font-icon {
+            margin-right: $bar-spacing * .5;
+        }
+
+        levelbar trough {
+            @include bar-widget;
+            padding: 0px;
+            min-width: $battery-bar-width;
+            min-height: $battery-bar-height;
+
+            block.filled {
+                border-radius: max($radii - $border-width, 0);
+                background-image: $active-gradient;
+                border-radius: $radii;
+            }
+        }
+
+        @mixin color($color) {
+
+            image,
+            label {
+                color: $fg_color
+            }
+            .battery_percentage {
+                padding-bottom: 2px;
+            }
+
+            block.filled {
+                background-image: linear-gradient(to right, $color, lighten($color, 6%));
+            }
+        }
+
+        .medium {
+            @include color($yellow);
+        }
+
+        .low {
+            @include color($red)
+        }
+
+        .charging {
+            @include color($green)
+        }
+
+        &:active {
+            @include color($accent-fg)
+        }
+    }
+
+    .workspaces {
+        >* {
+            padding: 0;
+        }
+
+        .eventbox {
+            transition: $transition;
+
+            @if $bar-style =='separated' {
+                border-radius: max($radii - $border-width, 0);
+
+                &:hover {
+                    background-color: $hover;
+                }
+            }
+
+            @else {
+                @include button($flat: true);
+            }
+        }
+
+        button {
+            all: unset;
+
+            .indicator {
+                font-size: 0;
+                min-width: $font_size*2;
+                min-height: $font_size*0.9;
+                border-radius: $font_size;
+                box-shadow: inset 0 0 0 $border-width $border-color;
+                margin: 0 $padding/2;
+                transition: $transition/2;
+                background-color: transparentize($fg-color, 0.8);
+            }
+
+            &:last-child .indicator {
+                margin-right: $padding;
+            }
+
+            &:first-child .indicator {
+                margin-left: $padding;
+            }
+
+            &.occupied .indicator {
+                background-color: transparentize($fg-color, 0.2);
+            }
+
+            &:hover .indicator {
+                box-shadow: inset 0 0 0 10px transparentize($fg-color, 0.8);
+            }
+
+            &.active .indicator,
+            &:active .indicator {
+                background-color: $accent;
+            }
+
+            &.active .indicator {
+                min-width: $font_size*2.5
+            }
+        }
+    }
+}

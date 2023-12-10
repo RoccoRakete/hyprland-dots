@@ -1,0 +1,25 @@
+2023-12-09 23:28:20.457 [info] Extension host with pid 3649 started
+2023-12-09 23:28:20.457 [info] Skipping acquiring lock for /home/martin/.config/Code/User/workspaceStorage/1511603eb765f43b407fc2d65447fdef.
+2023-12-09 23:28:20.644 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-12-09 23:28:20.652 [info] ExtensionService#_doActivateExtension arrterian.nix-env-selector, startup: false, activationEvent: 'onLanguage'
+2023-12-09 23:28:20.680 [info] ExtensionService#_doActivateExtension mkhl.direnv, startup: false, activationEvent: 'onLanguage'
+2023-12-09 23:28:20.686 [info] ExtensionService#_doActivateExtension jnoortheen.nix-ide, startup: false, activationEvent: 'onLanguage:nix'
+2023-12-09 23:28:20.845 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-12-09 23:28:20.866 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-12-09 23:28:20.898 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-12-09 23:28:20.962 [info] Eager extensions activated
+2023-12-09 23:28:20.985 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-12-09 23:28:20.987 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-12-09 23:28:20.996 [info] ExtensionService#_doActivateExtension PKief.material-icon-theme, startup: false, activationEvent: 'onStartupFinished'
+2023-12-09 23:28:21.147 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2023-12-10 10:43:39.182 [info] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:json'
+2023-12-10 10:43:39.195 [info] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:json'
+2023-12-10 10:43:39.251 [info] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onLanguage:json'
+2023-12-10 10:43:39.855 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2023-12-10 18:47:37.654 [warning] [Decorations] CAPPING events from decorations provider vscode.git 1636
+2023-12-10 18:47:38.944 [warning] [Decorations] CAPPING events from decorations provider vscode.git 1636
+2023-12-10 18:47:44.015 [warning] [Decorations] CAPPING events from decorations provider vscode.git 1636
+2023-12-10 18:47:49.113 [warning] [Decorations] CAPPING events from decorations provider vscode.git 1636
+2023-12-10 18:47:54.174 [warning] [Decorations] CAPPING events from decorations provider vscode.git 1636
+2023-12-10 18:47:56.174 [warning] [Decorations] CAPPING events from decorations provider vscode.git 1636
+2023-12-10 18:47:59.275 [warning] [Decorations] CAPPING events from decorations provider vscode.git 1636

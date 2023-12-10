@@ -1,0 +1,144 @@
+nix
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	deleted:    .zshrc
+#	modified:   ags/js/bar/buttons/SystemIndicators.js
+#	modified:   ags/js/dashboard/Dashboard.js
+#	modified:   ags/js/options.js
+#	modified:   ags/js/quicksettings/QuickSettings.js
+#	modified:   ags/js/variables.js
+#	modified:   ags/launch.sh
+#	modified:   ags/package.json
+#	modified:   ags/scss/widgets/bar.scss
+#	deleted:    ags_old_working_1.4.x/.eslintrc.yml
+#	deleted:    ags_old_working_1.4.x/.gitignore
+#	deleted:    ags_old_working_1.4.x/.stylelintrc.yml
+#	deleted:    ags_old_working_1.4.x/config.js
+#	deleted:    ags_old_working_1.4.x/js/applauncher/Applauncher.js
+#	deleted:    ags_old_working_1.4.x/js/bar/PanelButton.js
+#	deleted:    ags_old_working_1.4.x/js/bar/TopBar.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/BatteryBar.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/ColorPicker.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/DateButton.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/FocusedClient.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/MediaIndicator.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/NotificationIndicator.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/OverviewButton.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/PowerMenu.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/ScreenRecord.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/SubMenu.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/SysTray.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/SystemIndicators.js
+#	deleted:    ags_old_working_1.4.x/js/bar/buttons/Workspaces.js
+#	deleted:    ags_old_working_1.4.x/js/dashboard/Dashboard.js
+#	deleted:    ags_old_working_1.4.x/js/dashboard/DateColumn.js
+#	deleted:    ags_old_working_1.4.x/js/dashboard/NotificationColumn.js
+#	deleted:    ags_old_working_1.4.x/js/desktop/Desktop.js
+#	deleted:    ags_old_working_1.4.x/js/desktop/DesktopMenu.js
+#	deleted:    ags_old_working_1.4.x/js/icons.js
+#	deleted:    ags_old_working_1.4.x/js/imports.js
+#	deleted:    ags_old_working_1.4.x/js/misc/Avatar.js
+#	deleted:    ags_old_working_1.4.x/js/misc/Clock.js
+#	deleted:    ags_old_working_1.4.x/js/misc/FontIcon.js
+#	deleted:    ags_old_working_1.4.x/js/misc/HoverRevealer.js
+#	deleted:    ags_old_working_1.4.x/js/misc/IconBrowser.js
+#	deleted:    ags_old_working_1.4.x/js/misc/Notification.js
+#	deleted:    ags_old_working_1.4.x/js/misc/PopupWindow.js
+#	deleted:    ags_old_working_1.4.x/js/misc/Progress.js
+#	deleted:    ags_old_working_1.4.x/js/misc/Separator.js
+#	deleted:    ags_old_working_1.4.x/js/misc/Spinner.js
+#	deleted:    ags_old_working_1.4.x/js/misc/Wallpaper.js
+#	deleted:    ags_old_working_1.4.x/js/misc/mpris.js
+#	deleted:    ags_old_working_1.4.x/js/notifications/Notifications.js
+#	deleted:    ags_old_working_1.4.x/js/options.example.js
+#	deleted:    ags_old_working_1.4.x/js/options.js
+#	deleted:    ags_old_working_1.4.x/js/osd/OSD.js
+#	deleted:    ags_old_working_1.4.x/js/overview/Overview.js
+#	deleted:    ags_old_working_1.4.x/js/overview/Workspace.js
+#	deleted:    ags_old_working_1.4.x/js/powermenu/PowerMenu.js
+#	deleted:    ags_old_working_1.4.x/js/powermenu/Verification.js
+#	deleted:    ags_old_working_1.4.x/js/quicksettings/QuickSettings.js
+#	deleted:    ags_old_working_1.4.x/js/quicksettings/ToggleButton.js
+#	deleted:    ags_old_working_1.4.x/js/quicksettings/widgets/Bluetooth.js
+#	deleted:    ags_old_working_1.4.x/js/quicksettings/widgets/Brightness.js
+#	deleted:    ags_old_working_1.4.x/js/quicksettings/widgets/DND.js
+#	deleted:    ags_old_working_1.4.x/js/quicksettings/widgets/Header.js
+#	deleted:    ags_old_working_1.4.x/js/quicksettings/widgets/Media.js
+#	deleted:    ags_old_working_1.4.x/js/quicksettings/widgets/MicMute.js
+#	deleted:    ags_old_working_1.4.x/js/quicksettings/widgets/Network.js
+#	deleted:    ags_old_working_1.4.x/js/quicksettings/widgets/Theme.js
+#	deleted:    ags_old_working_1.4.x/js/quicksettings/widgets/Volume.js
+#	deleted:    ags_old_working_1.4.x/js/screencorner/ScreenCorners.js
+#	deleted:    ags_old_working_1.4.x/js/services/brightness.js
+#	deleted:    ags_old_working_1.4.x/js/services/onScreenIndicator.js
+#	deleted:    ags_old_working_1.4.x/js/services/powermenu.js
+#	deleted:    ags_old_working_1.4.x/js/services/screenrecord.js
+#	deleted:    ags_old_working_1.4.x/js/services/theme/hyprland.js
+#	deleted:    ags_old_working_1.4.x/js/services/theme/scss.js
+#	deleted:    ags_old_working_1.4.x/js/services/theme/theme.js
+#	deleted:    ags_old_working_1.4.x/js/settingsdialog/SettingsDialog.js
+#	deleted:    ags_old_working_1.4.x/js/themes.js
+#	deleted:    ags_old_working_1.4.x/js/utils.js
+#	deleted:    ags_old_working_1.4.x/js/variables.js
+#	deleted:    ags_old_working_1.4.x/launch.sh
+#	deleted:    ags_old_working_1.4.x/package.json
+#	deleted:    ags_old_working_1.4.x/prepare_background.sh
+#	deleted:    ags_old_working_1.4.x/scss/common.scss
+#	deleted:    ags_old_working_1.4.x/scss/main.scss
+#	deleted:    ags_old_working_1.4.x/scss/wal-colors.scss
+#	deleted:    ags_old_working_1.4.x/scss/widgets/applauncher.scss
+#	deleted:    ags_old_working_1.4.x/scss/widgets/bar.scss
+#	deleted:    ags_old_working_1.4.x/scss/widgets/dashboard.scss
+#	deleted:    ags_old_working_1.4.x/scss/widgets/desktop.scss
+#	deleted:    ags_old_working_1.4.x/scss/widgets/dock.scss
+#	deleted:    ags_old_working_1.4.x/scss/widgets/media.scss
+#	deleted:    ags_old_working_1.4.x/scss/widgets/notifications.scss
+#	deleted:    ags_old_working_1.4.x/scss/widgets/overview.scss
+#	deleted:    ags_old_working_1.4.x/scss/widgets/powermenu.scss
+#	deleted:    ags_old_working_1.4.x/scss/widgets/quicksettings.scss
+#	deleted:    ags_old_working_1.4.x/scss/widgets/settings.scss
+#	deleted:    btop/btop.conf
+#	deleted:    btop/btop.log
+#	modified:   hypr/Autostart.conf
+#	modified:   hypr/KeyBinds.conf
+#	modified:   hypr/WindowRules.conf
+#	new file:   hypr/monitors.exampleconf
+#	new file:   nixos/backups/home_old.nix
+#	new file:   nixos/configuration.nix
+#	new file:   nixos/flake.lock
+#	new file:   nixos/flake.nix
+#	new file:   nixos/hardware-configuration.nix
+#	new file:   nixos/home.nix
+#	new file:   nixos/nixos.nix
+#	new file:   nixos/packages.nix
+#	deleted:    oomox/colors/__plugin__import_from_image/gtk.css
+#	deleted:    oomox/colors/catppuccin_mocha
+#	deleted:    oomox/colors/gruvbox_v2
+#	deleted:    oomox/colors/material
+#	deleted:    oomox/colors/nord
+#	deleted:    oomox/colors/pico
+#	deleted:    oomox/export_config/base16.json
+#	deleted:    oomox/export_config/gtk_theme_oomox.json
+#	deleted:    oomox/export_config/icons_papirus.json
+#	deleted:    oomox/migrations/import_from_image.json
+#	deleted:    oomox/recent_palette.json
+#	deleted:    oomox/ui_config.json
+#	deleted:    scriptsnstuff/thinkfan.conf
+#	deleted:    scriptsnstuff/thinkfan.yaml
+#	deleted:    swaylock/config
+#	deleted:    wallpapers/cherry.png
+#	deleted:    wallpapers/cutefish.jpeg
+#	deleted:    wallpapers/gnome_pastel1.png
+#	deleted:    wallpapers/gnome_pastel2.jpg
+#	deleted:    wallpapers/hyprland1-dark.png
+#	deleted:    wallpapers/hyprland1-light.png
+#	deleted:    wallpapers/hyprland_kitty.jpeg
+#	deleted:    wallpapers/kitty.jpeg
+#	deleted:    wallpapers/leaves.jpg
+#

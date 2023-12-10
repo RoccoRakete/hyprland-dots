@@ -1,0 +1,28 @@
+2023-12-07 15:41:38.658 [info] Getting Manifest... sibiraj-s.vscode-scss-formatter
+2023-12-07 15:41:38.680 [info] Installing extension: sibiraj-s.vscode-scss-formatter
+2023-12-07 15:41:39.591 [warning] Extension signature verification failed with error 'EACCES': sibiraj-s.vscode-scss-formatter
+2023-12-07 15:41:39.914 [info] Extracted extension to file:///home/martin/.vscode/extensions/sibiraj-s.vscode-scss-formatter-3.0.0: sibiraj-s.vscode-scss-formatter
+2023-12-07 15:41:39.920 [info] Renamed to /home/martin/.vscode/extensions/sibiraj-s.vscode-scss-formatter-3.0.0
+2023-12-07 15:41:39.922 [info] Extracting extension completed. sibiraj-s.vscode-scss-formatter
+2023-12-07 15:41:39.937 [info] Extension installed successfully: sibiraj-s.vscode-scss-formatter
+2023-12-07 15:41:40.015 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/martin/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/martin/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30053)
+    at a (/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30167)
+    at s.fb (/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:36175)
+    at s.stat (/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:28621)
+    at async E.stat (/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:15732)
+    at async K.tb (/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:109:9535)
+2023-12-07 15:42:03.728 [info] Getting Manifest... xabikos.javascriptsnippets
+2023-12-07 15:42:03.743 [info] Installing extension: xabikos.javascriptsnippets
+2023-12-07 15:42:04.506 [warning] Extension signature verification failed with error 'EACCES': xabikos.javascriptsnippets
+2023-12-07 15:42:04.531 [info] Extracted extension to file:///home/martin/.vscode/extensions/xabikos.javascriptsnippets-1.8.0: xabikos.javascriptsnippets
+2023-12-07 15:42:04.539 [info] Renamed to /home/martin/.vscode/extensions/xabikos.javascriptsnippets-1.8.0
+2023-12-07 15:42:04.548 [info] Extracting extension completed. xabikos.javascriptsnippets
+2023-12-07 15:42:04.571 [info] Extension installed successfully: xabikos.javascriptsnippets
+2023-12-07 15:42:04.639 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/martin/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/martin/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30053)
+    at a (/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30167)
+    at s.fb (/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:36175)
+    at s.stat (/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:28621)
+    at async E.stat (/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:15732)
+    at async K.tb (/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:109:9535)

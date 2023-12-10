@@ -1,0 +1,15 @@
+sperated thinkfan
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   ags/package.json
+#	modified:   nixos/configuration.nix
+#	modified:   nixos/flake.lock
+#	modified:   nixos/nixos.nix
+#	modified:   nixos/packages.nix
+#	new file:   nixos/thinkfan.nix
+#

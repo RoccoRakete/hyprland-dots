@@ -1,0 +1,28 @@
+2023-12-06 21:50:27.461 [info] update#setState idle
+2023-12-06 21:50:57.464 [info] update#setState checking for updates
+2023-12-06 21:50:57.509 [info] update#setState idle
+2023-12-06 22:50:57.491 [info] update#setState checking for updates
+2023-12-06 22:50:57.678 [info] update#setState idle
+2023-12-06 23:50:57.517 [info] update#setState checking for updates
+2023-12-06 23:50:57.660 [info] update#setState idle
+2023-12-07 00:50:57.542 [info] update#setState checking for updates
+2023-12-07 00:50:57.695 [info] update#setState idle
+2023-12-07 01:50:57.569 [info] update#setState checking for updates
+2023-12-07 01:50:57.691 [info] update#setState idle
+2023-12-07 02:50:57.594 [info] update#setState checking for updates
+2023-12-07 02:50:57.738 [info] update#setState idle
+2023-12-07 03:50:57.619 [info] update#setState checking for updates
+2023-12-07 03:50:57.752 [info] update#setState idle
+2023-12-07 10:58:08.258 [info] update#setState checking for updates
+2023-12-07 10:58:08.349 [info] update#setState idle
+2023-12-07 11:58:08.283 [info] update#setState checking for updates
+2023-12-07 11:58:08.370 [info] update#setState idle
+2023-12-07 12:59:13.779 [info] update#setState checking for updates
+2023-12-07 12:59:13.911 [info] update#setState idle
+2023-12-07 13:59:13.786 [info] update#setState checking for updates
+2023-12-07 13:59:13.890 [info] update#setState idle
+2023-12-07 14:59:13.807 [info] update#setState checking for updates
+2023-12-07 14:59:33.834 [error] Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:2:49876)
+    at SimpleURLLoaderWrapper.emit (node:events:513:28)
+2023-12-07 14:59:33.838 [info] update#setState idle

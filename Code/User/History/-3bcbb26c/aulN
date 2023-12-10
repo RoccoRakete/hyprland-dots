@@ -1,0 +1,221 @@
+ags
+upgrade
+sudo systemctl status thinkfan
+cat /nix/store/60yb9bcr01m8y0g3kkg0r23xpjj5b66w-thinkfan.yaml
+upgrade
+sudo cp .config/scriptsnstuff/thinkfan.yaml /etc
+sudo systemctl start thinkfan
+sudo systemctl status thinkfan
+lsmod | grep thinkpad 
+upgrade
+sudo systemctl start thinkfan
+sudo systemctl restart thinkfan
+sudo systemctl status thinkfan
+sudo modprobe -r thinkpad_acpi\
+sudo modprobe thinkpad_acpi
+sudo systemctl restart thinkfan
+sudo systemctl status thinkfan
+upgrade
+cat /nix/store/pl6acyqc4fmrk7gc6ll32nkfh82hbzil-thinkfan.yaml
+journalctl -j
+journalctl 
+sudo systemctl status thinkfan
+cat /nix/store/60yb9bcr01m8y0g3kkg0r23xpjj5b66w-thinkfan.yaml
+upgrade
+sudo systemctl status thinkfan
+upgrade
+ags inspector
+cd /sys/class/thermal/
+ll
+top -b -n 1
+free
+htop
+upgrade
+sudo nix-env -i -f https://github.com/nix-community/rnix-lsp/archive/master.tar.gz
+sudo nix profile https://github.com/nix-community/rnix-lsp/archive/master.tar.gz
+sudo nix profile install https://github.com/nix-community/rnix-lsp/archive/master.tar.gz
+cd /sys/class/thermal/
+ll
+cat thermal_zone0
+cd thermal_zone1
+ll
+cat temp
+cd ..
+cd thermal_zone1
+cat temp
+ll
+cd ..
+cd thermal_zone3
+cat temp
+cd ..
+ls
+cat /sys/class/thermal/thermal_zone*/temp
+cat /sys/class/thermal/thermal_zone*/type
+ll
+sudo systemctl status thinkfan
+upgrade
+fprintd-enroll
+fprintd-verify
+upgrade
+htop
+upgrade
+flatpak install flathub com.github.d4nj1.tlpui
+flatpak install com.github.d4nj1.tlpui
+flatpak install tlpui
+flatpak install spotify
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install tlpui
+flatpak install flatseal
+tlp
+tlp -h
+tlp --help
+tlp-rdw
+tlp-rdw -h
+tlp-stat
+sudo tlp-stat
+flatpak run com.github.d4nj1.tlpui
+upgrade
+flatpak run com.github.d4nj1.tlpui
+upgrade
+flatpak run com.github.d4nj1.tlpui
+tlp-stat
+sudo tlp-stat
+sudo tlp
+upgrade
+sudo tlp
+sudo tlp-stat
+sudo tlp
+sudo tlp-rdw
+upgrade
+sudo tlp-stat
+upgrade
+hyprctl clients
+upgrade
+hyprctl clients
+intel_gpu_top
+sudo intel_gpu_top
+htop
+upgrade
+btop
+sudo intel_gpu_top
+upgrade
+stress-ng -h
+stress-ng --cpu 8 --iomix 4 --vm 2 --vm-bytes 128M --fork 4 --timeout 10s
+BTOP
+btop
+stress-ng --cpu 8 --iomix 4 --vm 2 --vm-bytes 128M --fork 4 --timeout 120s
+stress-ng --cpu 32 --iomix 4 --vm 2 --vm-bytes 128M --fork 4 --timeout 120s
+upgrade
+stress-ng --cpu 1024 --iomix 4 --vm 2 --vm-bytes 128M --fork 4 --timeout 120s
+stress-ng --cpu 8 --iomix 4 --vm 2 --vm-bytes 128M --fork 4 --timeout 120s
+upgrade
+ags inspector
+mkdir .dots
+cd .dots
+ll
+cp /etc/nixos/* .
+ll
+cp ~/.config/nixos
+cp ~/.config/nixos/*.nix .
+ll
+upgrade
+sudo nixos-rebuild switch --flake
+sudo nixos-rebuild switch --flake .
+ll
+nix flake new . -t github:nix-community/home-manager#nixos
+rm flake.nix
+rm flake.lock
+ll
+sudo rm flake.lock
+nix flake new . -t github:nix-community/home-manager#nixos
+sudo nixos-rebuild switch --flake .
+sudo rm flake.lock
+sudo nixos-rebuild switch --flake .
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager\
+
+sudo nix-channel --update\
+sudo nix-shell '<home-manager>' -A install
+nix-channel --update\
+nix-shell '<home-manager>' -A install
+sudo nixos-rebuild switch --flake .
+home-manager switch
+home-manager switch --flake\
+
+sudo nixos-rebuild switch --flake .
+htop
+sudo nixos-rebuild switch --flake .
+htop
+sudo nixos-rebuild switch --flake .
+nix flake update
+sudo nixos-rebuild switch --flake .
+home-manager switch
+htop
+home-manager switch -h
+home-manager switch ./home.nix
+sudo nixos-rebuild switch --flake .
+upgrade
+sudo nixos-rebuild switch --flake .
+upgrade
+nix-shell '<home-manager>' -A uninstall
+nix-shell '<home-manager>' -A remove
+upgrade
+cd /etc
+mv nixos nixos_bkp
+sudo mv nixos nixos_bkp
+upgrade
+sudo mv nixos_bkp nixos
+upgrade
+sudo nix-channel --update\
+
+upgrade
+nix flake update
+home-manager switch --flake\
+
+home-manager switch
+cd .dots/nixos
+ll
+sudo cp flake.nix /etc/nixos
+nix flake update
+sudo rm /etc/nixos/flake.nix flake.lock
+upgrade
+home-manager switch
+upgrade
+update
+upgrade
+home-manager switch --flake\
+
+nix flake update
+home-manager switch --flake
+nix flake update
+nixos-rebuild switch
+home-manager switch --flake\
+
+home-manager switch --flake .
+nix-shell '<home-manager>' -A install
+home-manager switch --flake .
+upgrade
+home-manager switch --flake .
+home-manager switch --flake 
+home-manager switch --flake .
+home-manager switch --flake . --impure
+home-manager news
+home-manager switch --flake .
+nix profile remove github:Aylur/ags
+nix profile list
+home-manager switch --flake .
+home-manager switch --flake ~/.dots/nixos
+sudo nixos-rebuild switch --upgrade && home-manager switch --flake ~/.dots/nixos
+upgrade
+home-manager switch --flake ~/.dots/nixos
+upgrade
+home-manager switch --flake ~/.dots/nixos
+upgrade
+home-manager switch --flake ~/.dots/nixos
+home-upgrade
+nix flake update
+home-upgrade
+nix flake update
+nix flake update ~/.dots/nixos
+home-upgrade
+ags
+home-upgrade
