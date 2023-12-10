@@ -1,4 +1,4 @@
-{ pkgs, nixos-icons, options, lib, ... }:
+{ pkgs, nixos-icons, options, lib, inputs, ... }:
 
 let
   inherit (pkgs) nixos-icons;
@@ -19,6 +19,8 @@ in
       options = "--delete-older-than 7d";
     };
     settings = {
+      substituters = [ "https://hyprland.cachix.org" ];
+      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
       experimental-features = "nix-command flakes";
       auto-optimise-store = true;
     };
@@ -61,6 +63,10 @@ in
   console.keyMap = "de";
 
   programs = {
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    };
     thunar = {
       plugins = with pkgs.xfce; [
         thunar-archive-plugin
@@ -70,7 +76,7 @@ in
     };
     dconf.enable = true;
     zsh.enable = true;
-    hyprland.enable = true;
+    #hyprland.enable = true;
     direnv.enable = true;
   };
 
