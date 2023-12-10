@@ -1,9 +1,0 @@
-[2023-12-10T12:04:56Z ERROR rnix_lsp] ----- Panic -----
-[2023-12-10T12:04:56Z ERROR rnix_lsp] panicked at 'called `Result::unwrap()` on an `Err` value: Error("EOF while parsing a value", line: 1, column: 0)', src/lookup.rs:200:124
-[Info  - 13:04:56] Connection to server got closed. Server will restart.
-[2023-12-10T12:04:57Z ERROR rnix_lsp] ----- Panic -----
-[2023-12-10T12:04:57Z ERROR rnix_lsp] panicked at 'called `Result::unwrap()` on an `Err` value: Error("EOF while parsing a value", line: 1, column: 0)', src/lookup.rs:200:124
-[Info  - 13:04:57] Connection to server got closed. Server will restart.
-[2023-12-10T12:04:57Z ERROR rnix_lsp] ----- Panic -----
-[2023-12-10T12:04:57Z ERROR rnix_lsp] panicked at 'called `Result::unwrap()` on an `Err` value: Error("EOF while parsing a value", line: 1, column: 0)', src/lookup.rs:200:124
-[Info  - 13:04:57] Connection to server got closed. Server will restart.

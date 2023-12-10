@@ -1,13 +1,20 @@
 { inputs, config, pkgs, ... }:
 
+let
+  inherit (pkgs) nixos-icons;
+  vars = import ../../configs/variables.nix;
+in
+
 {
   imports = [
-    inputs.ags.homeManagerModules.default
     ../../configs/user/styling.nix
     ../../configs/user/zsh.nix
     ./dotfiles.nix
     ./home-programs-desktop.nix
   ];
+
+  home.username = vars.user1;
+  home.homeDirectory = vars.homeDirectoryUser1;
 
   services.gpg-agent = {
     enable = true;
