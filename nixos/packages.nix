@@ -8,9 +8,13 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
+
   # Package configurations
   environment.systemPackages = with pkgs; [
-    
+
     #Commandline arguments
     (brave.override {
       commandLineArgs = [
@@ -19,13 +23,13 @@
       ];
     })
 
-#    (vscode.override {
-#    commandLineArgs = [
-#      "--enable-features=UseOzonePlatform" 
-#        "--enable-features=WaylandWindowDecorations"
-#        "--ozone-platform=wayland"
-#      ];
-##    })
+    #    (vscode.override {
+    #    commandLineArgs = [
+    #      "--enable-features=UseOzonePlatform" 
+    #        "--enable-features=WaylandWindowDecorations"
+    #        "--ozone-platform=wayland"
+    #      ];
+    ##    })
 
     #Packages
     # gnome
@@ -45,6 +49,7 @@
     pkgs.gtk3
 
     # theming
+    pkgs.neofetch
     pkgs.swww
     pkgs.pywal
     pkgs.imagemagick

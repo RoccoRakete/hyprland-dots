@@ -5,7 +5,7 @@
     inputs.ags.homeManagerModules.default
     ../../configs/user/styling.nix
     ../../configs/user/zsh.nix
-
+    ./dotfiles.nix
   ];
 
   home.username = "martin";
@@ -14,12 +14,12 @@
   programs = {
     ags = {
       enable = true;
-      configDir = ./ags;
+      configDir = ./dotfiles/ags;
       extraPackages = [ pkgs.libsoup_3 ];
     };
     kitty = {
       enable = true;
-      extraConfig = builtins.readFile ./kitty/kitty.conf;
+      extraConfig = builtins.readFile ./dotfiles/kitty/kitty.conf;
     };
     git = {
       enable = true;
@@ -51,12 +51,6 @@
     exec = "env XDG_CURRENT_DESKTOP=gnome ${pkgs.gnome.gnome-control-center}/bin/gnome-control-center";
     categories = [ "X-Preferences" ];
     terminal = false;
-  };
-
-  home.file."${config.xdg.configHome}/neofetch" = {
-    source = ./neofetch;
-    recursive = true;
-    enable = true;
   };
 
   home.file = { };
