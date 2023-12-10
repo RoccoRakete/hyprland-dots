@@ -49,7 +49,6 @@
           inherit pkgs;
           modules = [
             ./workstations/desktop/home-desktop.nix
-            { wayland.windowManager.hyprland.enable = true; }
           ];
         };
       };
@@ -61,7 +60,6 @@
           inherit pkgs;
           modules = [
             ./workstations/laptop/home-laptop.nix
-            { wayland.windowManager.hyprland.enable = true; }
           ];
         };
       };

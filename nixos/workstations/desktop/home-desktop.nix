@@ -33,9 +33,6 @@
     };
   };
 
-    wayland.windowManager.hyprland.extraConfig = builtins.readFile ./hypr/hyprland.conf;
-
-
   # Packages that should be installed to the user profile.
   home.packages = [
     pkgs.htop

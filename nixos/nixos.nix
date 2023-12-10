@@ -63,10 +63,10 @@ in
   console.keyMap = "de";
 
   programs = {
-    #hyprland = {
-    #  enable = true;
-    #  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    #};
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    };
     thunar = {
       plugins = with pkgs.xfce; [
         thunar-archive-plugin
@@ -76,11 +76,9 @@ in
     };
     dconf.enable = true;
     zsh.enable = true;
+    #hyprland.enable = true;
     direnv.enable = true;
   };
-
-  # XDG desktop portal
-  xdg.portal.enable = true;
 
   services = {
     fprintd.enable = true;

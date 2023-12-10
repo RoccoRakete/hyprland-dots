@@ -11,10 +11,22 @@
       name = "Ubuntu Nerd Font";
       size = 13;
     };
+    gtk3.extraCss = ''
+      headerbar, .titlebar,
+      .csd:not(.popup):not(tooltip):not(messagedialog) decoration{
+        border-radius: 0;
+      }
+    '';
     #iconTheme = {
     #  package = pkgs.libsForQt5.breeze-icons;
     #  name = "breeze-dark";
     #};
+  };
+
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
+    style.name = "adwaita-dark";
   };
 
   home = {
