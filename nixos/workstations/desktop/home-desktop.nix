@@ -17,6 +17,10 @@
       configDir = ./ags;
       extraPackages = [ pkgs.libsoup_3 ];
     };
+    kitty = {
+      enable = true;
+      extraConfig = builtins.readFile ./kitty/kitty.conf;
+    };
     git = {
       enable = true;
       userName = "RoccoRakete";
@@ -28,6 +32,9 @@
       };
     };
   };
+
+    wayland.windowManager.hyprland.extraConfig = builtins.readFile ./hypr/hyprland.conf;
+
 
   # Packages that should be installed to the user profile.
   home.packages = [

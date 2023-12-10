@@ -17,6 +17,10 @@
       configDir = ./ags;
       extraPackages = [ pkgs.libsoup_3 ];
     };
+    kitty = {
+      enable = true;
+      extraConfig = builtins.readFile ./kitty/kitty.conf;
+    };
     git = {
       enable = true;
       userName = "RoccoRakete";

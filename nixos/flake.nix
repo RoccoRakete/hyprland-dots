@@ -20,6 +20,7 @@
 
       # system configurations
 
+      # desktop
       nixosConfigurations = {
         ${vars.desktop} = lib.nixosSystem {
           inherit system;
@@ -28,6 +29,8 @@
             ./workstations/desktop/configuration-desktop.nix
           ];
         };
+
+        # desktop
         ${vars.laptop} = lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
@@ -39,21 +42,26 @@
 
       # home configurations
 
+      # desktop
       homeConfigurations = {
         ${vars.desktop} = home-manager.lib.homeManagerConfiguration {
           extraSpecialArgs = { inherit inputs; };
           inherit pkgs;
           modules = [
             ./workstations/desktop/home-desktop.nix
+            { wayland.windowManager.hyprland.enable = true; }
           ];
         };
       };
+
+      # laptop
       homeConfigurations = {
         ${vars.laptop} = home-manager.lib.homeManagerConfiguration {
           extraSpecialArgs = { inherit inputs; };
           inherit pkgs;
           modules = [
             ./workstations/laptop/home-laptop.nix
+            { wayland.windowManager.hyprland.enable = true; }
           ];
         };
       };
