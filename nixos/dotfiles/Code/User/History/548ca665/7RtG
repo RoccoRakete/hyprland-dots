@@ -1,0 +1,71 @@
+refactor
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	renamed:    gtklock/config.ini -> nixos/dotfiles/gtklock/config.ini
+#	renamed:    gtklock/playerctl-module.so -> nixos/dotfiles/gtklock/playerctl-module.so
+#	renamed:    gtklock/style.css -> nixos/dotfiles/gtklock/style.css
+#	renamed:    gtklock/userinfo-module.so -> nixos/dotfiles/gtklock/userinfo-module.so
+#	renamed:    nvim/.github/CONTRIBUTING.md -> nixos/dotfiles/nvim/.github/CONTRIBUTING.md
+#	renamed:    nvim/.github/FUNDING.yml -> nixos/dotfiles/nvim/.github/FUNDING.yml
+#	renamed:    nvim/.github/ISSUE_TEMPLATE/bug_report.md -> nixos/dotfiles/nvim/.github/ISSUE_TEMPLATE/bug_report.md
+#	renamed:    nvim/.github/ISSUE_TEMPLATE/config.yml -> nixos/dotfiles/nvim/.github/ISSUE_TEMPLATE/config.yml
+#	renamed:    nvim/.github/ISSUE_TEMPLATE/feature_request.md -> nixos/dotfiles/nvim/.github/ISSUE_TEMPLATE/feature_request.md
+#	renamed:    nvim/.github/PULL_REQUEST_TEMPLATE/feature.md -> nixos/dotfiles/nvim/.github/PULL_REQUEST_TEMPLATE/feature.md
+#	renamed:    nvim/.github/PULL_REQUEST_TEMPLATE/plugin.md -> nixos/dotfiles/nvim/.github/PULL_REQUEST_TEMPLATE/plugin.md
+#	renamed:    nvim/.github/README.md -> nixos/dotfiles/nvim/.github/README.md
+#	renamed:    nvim/.github/workflows/stale.yml -> nixos/dotfiles/nvim/.github/workflows/stale.yml
+#	renamed:    nvim/.stylua.toml -> nixos/dotfiles/nvim/.stylua.toml
+#	renamed:    nvim/LICENSE -> nixos/dotfiles/nvim/LICENSE
+#	renamed:    nvim/init.lua -> nixos/dotfiles/nvim/init.lua
+#	renamed:    nvim/lazy-lock.json -> nixos/dotfiles/nvim/lazy-lock.json
+#	renamed:    nvim/lua/core/bootstrap.lua -> nixos/dotfiles/nvim/lua/core/bootstrap.lua
+#	renamed:    nvim/lua/core/default_config.lua -> nixos/dotfiles/nvim/lua/core/default_config.lua
+#	renamed:    nvim/lua/core/init.lua -> nixos/dotfiles/nvim/lua/core/init.lua
+#	renamed:    nvim/lua/core/mappings.lua -> nixos/dotfiles/nvim/lua/core/mappings.lua
+#	renamed:    nvim/lua/core/utils.lua -> nixos/dotfiles/nvim/lua/core/utils.lua
+#	renamed:    nvim/lua/custom/README.md -> nixos/dotfiles/nvim/lua/custom/README.md
+#	renamed:    nvim/lua/custom/chadrc.lua -> nixos/dotfiles/nvim/lua/custom/chadrc.lua
+#	renamed:    nvim/lua/custom/configs/lspconfig.lua -> nixos/dotfiles/nvim/lua/custom/configs/lspconfig.lua
+#	renamed:    nvim/lua/custom/configs/null-ls.lua -> nixos/dotfiles/nvim/lua/custom/configs/null-ls.lua
+#	renamed:    nvim/lua/custom/configs/overrides.lua -> nixos/dotfiles/nvim/lua/custom/configs/overrides.lua
+#	renamed:    nvim/lua/custom/highlights.lua -> nixos/dotfiles/nvim/lua/custom/highlights.lua
+#	renamed:    nvim/lua/custom/init.lua -> nixos/dotfiles/nvim/lua/custom/init.lua
+#	renamed:    nvim/lua/custom/mappings.lua -> nixos/dotfiles/nvim/lua/custom/mappings.lua
+#	renamed:    nvim/lua/custom/plugins.lua -> nixos/dotfiles/nvim/lua/custom/plugins.lua
+#	renamed:    nvim/lua/plugins/configs/cmp.lua -> nixos/dotfiles/nvim/lua/plugins/configs/cmp.lua
+#	renamed:    nvim/lua/plugins/configs/lazy_nvim.lua -> nixos/dotfiles/nvim/lua/plugins/configs/lazy_nvim.lua
+#	renamed:    nvim/lua/plugins/configs/lspconfig.lua -> nixos/dotfiles/nvim/lua/plugins/configs/lspconfig.lua
+#	renamed:    nvim/lua/plugins/configs/mason.lua -> nixos/dotfiles/nvim/lua/plugins/configs/mason.lua
+#	renamed:    nvim/lua/plugins/configs/nvimtree.lua -> nixos/dotfiles/nvim/lua/plugins/configs/nvimtree.lua
+#	renamed:    nvim/lua/plugins/configs/others.lua -> nixos/dotfiles/nvim/lua/plugins/configs/others.lua
+#	renamed:    nvim/lua/plugins/configs/telescope.lua -> nixos/dotfiles/nvim/lua/plugins/configs/telescope.lua
+#	renamed:    nvim/lua/plugins/configs/treesitter.lua -> nixos/dotfiles/nvim/lua/plugins/configs/treesitter.lua
+#	renamed:    nvim/lua/plugins/init.lua -> nixos/dotfiles/nvim/lua/plugins/init.lua
+#	modified:   nixos/flake.lock
+#	modified:   nixos/packages.nix
+#	new file:   nixos/workstations/desktop/dotfiles.nix
+#	modified:   nixos/workstations/desktop/dotfiles/neofetch/config.conf
+#	modified:   nixos/workstations/desktop/home-desktop.nix
+#	new file:   nixos/workstations/laptop/dotfiles.nix
+#	renamed:    hypr/Autostart.conf -> nixos/workstations/laptop/dotfiles/hypr/Autostart.conf
+#	renamed:    hypr/Decoration.conf -> nixos/workstations/laptop/dotfiles/hypr/Decoration.conf
+#	renamed:    hypr/KeyBinds.conf -> nixos/workstations/laptop/dotfiles/hypr/KeyBinds.conf
+#	renamed:    hypr/Misc.conf -> nixos/workstations/laptop/dotfiles/hypr/Misc.conf
+#	renamed:    hypr/WindowRules.conf -> nixos/workstations/laptop/dotfiles/hypr/WindowRules.conf
+#	renamed:    hypr/hyprland.conf -> nixos/workstations/laptop/dotfiles/hypr/hyprland.conf
+#	renamed:    hypr/presets/monitors.exampleconf -> nixos/workstations/laptop/dotfiles/hypr/monitors.conf
+#	new file:   nixos/workstations/laptop/dotfiles/hypr/presets/monitors.exampleconf
+#	renamed:    hypr/presets/monitors_external.conf -> nixos/workstations/laptop/dotfiles/hypr/presets/monitors_external.conf
+#	renamed:    hypr/presets/monitors_internal.conf -> nixos/workstations/laptop/dotfiles/hypr/presets/monitors_internal.conf
+#	renamed:    hypr/scripts/brightness -> nixos/workstations/laptop/dotfiles/hypr/scripts/brightness
+#	renamed:    hypr/scripts/launch_ags.sh -> nixos/workstations/laptop/dotfiles/hypr/scripts/launch_ags.sh
+#	renamed:    hypr/scripts/monitor_attached.sh -> nixos/workstations/laptop/dotfiles/hypr/scripts/monitor_attached.sh
+#	renamed:    hypr/scripts/monitor_dettached.sh -> nixos/workstations/laptop/dotfiles/hypr/scripts/monitor_dettached.sh
+#	modified:   nixos/workstations/laptop/dotfiles/neofetch/config.conf
+#	modified:   nixos/workstations/laptop/home-laptop.nix
+#

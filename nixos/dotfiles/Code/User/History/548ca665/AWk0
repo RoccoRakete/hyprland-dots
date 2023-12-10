@@ -1,0 +1,10 @@
+follow up
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch Thinkpad
+# Your branch is up to date with 'origin/Thinkpad'.
+#
+# Changes to be committed:
+#	modified:   nixos/configs/user/zsh.nix
+#

@@ -1,0 +1,22 @@
+update
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   ags/js/bar/TopBar.js
+#	modified:   ags/js/bar/buttons/SystemIndicators.js
+#	modified:   ags/js/options.js
+#	modified:   nixos/configs/hardware-configuration.nix
+#	new file:   nixos/configs/user/styling.nix
+#	new file:   nixos/configs/user/zsh.nix
+#	new file:   nixos/configs/variables.nix
+#	modified:   nixos/configuration.nix
+#	modified:   nixos/flake.lock
+#	modified:   nixos/flake.nix
+#	modified:   nixos/home.nix
+#	modified:   nixos/nixos.nix
+#	modified:   nixos/packages.nix
+#

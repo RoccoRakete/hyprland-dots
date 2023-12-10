@@ -1,0 +1,29 @@
+2023-12-10 18:18:04.773 [info] Log level: Info
+2023-12-10 18:18:04.773 [info] Validating found git in: "git"
+2023-12-10 18:18:04.773 [info] Using git "2.42.0" from "git"
+2023-12-10 18:18:15.362 [info] Log level: Info
+2023-12-10 18:18:15.362 [info] Validating found git in: "git"
+2023-12-10 18:18:15.362 [info] Using git "2.42.0" from "git"
+2023-12-10 18:18:15.362 [info] > git rev-parse --show-toplevel [5ms]
+2023-12-10 18:18:15.411 [info] > git rev-parse --git-dir --git-common-dir [15ms]
+2023-12-10 18:18:15.428 [info] Open repository: /home/martin/.dots
+2023-12-10 18:18:15.465 [info] > git config --get commit.template [14ms]
+2023-12-10 18:18:15.467 [info] > git rev-parse --show-toplevel [8ms]
+2023-12-10 18:18:15.494 [info] > git rev-parse --show-toplevel [6ms]
+2023-12-10 18:18:15.495 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [18ms]
+2023-12-10 18:18:15.530 [info] > git status -z -uall [25ms]
+2023-12-10 18:18:15.556 [info] > git rev-parse --show-toplevel [26ms]
+2023-12-10 18:18:15.568 [info] > git config --get commit.template [13ms]
+2023-12-10 18:18:15.585 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [4ms]
+2023-12-10 18:18:15.597 [info] > git rev-parse --show-toplevel [30ms]
+2023-12-10 18:18:15.698 [info] > git status -z -uall [101ms]
+2023-12-10 18:18:16.000 [info] > git check-ignore -v -z --stdin [1ms]
+2023-12-10 18:18:16.033 [info] > git show --textconv :nixos/workstations/desktop/home-desktop.nix [7ms]
+2023-12-10 18:18:16.046 [info] > git ls-files --stage -- /home/martin/.dots/nixos/workstations/desktop/home-desktop.nix [14ms]
+2023-12-10 18:18:16.059 [info] > git cat-file -s a9e8ea088eb7abe57a9ddd44afafd52b2e57450c [5ms]
+2023-12-10 18:18:31.995 [info] > git config --get commit.template [8ms]
+2023-12-10 18:18:31.995 [info] > git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track)%00%(upstream:remotename)%00%(upstream:remoteref) refs/heads/main refs/remotes/main [1ms]
+2023-12-10 18:18:32.005 [info] > git status -z -uall [4ms]
+2023-12-10 18:18:42.204 [info] > git show --textconv :nixos/packages.nix [8ms]
+2023-12-10 18:18:42.206 [info] > git ls-files --stage -- /home/martin/.dots/nixos/packages.nix [2ms]
+2023-12-10 18:18:42.214 [info] > git cat-file -s ab22e02e78e6b9aedf96c276b5b1c48f0ef0db75 [1ms]

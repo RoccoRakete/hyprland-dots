@@ -1,0 +1,9 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "window.zoomLevel": 1,
+    "nix.enableLanguageServer": true,
+    "nix.serverSettings": {
+        "nix.enableLanguageServer": true
+    },
+    "workbench.colorTheme": "Adwaita Dark & default syntax highlighting"
+}

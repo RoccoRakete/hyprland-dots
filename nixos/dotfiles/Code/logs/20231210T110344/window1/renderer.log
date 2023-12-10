@@ -1,0 +1,20 @@
+2023-12-10 11:03:44.832 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-dotnettools.dotnet-interactive-vscode' wants API proposal 'languageConfigurationAutoClosingPairs' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
+2023-12-10 11:03:49.013 [info] [perf] Render performance baseline is 59ms
+2023-12-10 11:40:52.844 [error] Unable to read file '/home/martin/.dots/Backups/nixos (Kopie 1)/workstations/desktop/ags/js/bar/buttons/MediaIndicator.js' (Error: File not modified since): Error: Unable to read file '/home/martin/.dots/Backups/nixos (Kopie 1)/workstations/desktop/ags/js/bar/buttons/MediaIndicator.js' (Error: File not modified since)
+    at n.F (vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:645:16688)
+    at n.D (vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:645:16576)
+    at async b.M (vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:2418:42819)
+    at async b.readStream (vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:2418:42576)
+    at async P.Cb (vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:2407:29172)
+    at async P.resolve (vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:2407:27619)
+    at async vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:2418:38687
+2023-12-10 13:10:39.608 [error] [text file model] handleSaveError(0) - exit - resulted in a save error: Error: Unable to write file '/home/martin/.config/hypr/hyprland.conf' (Unknown (FileSystemError): Error: EROFS: read-only file system, open '/home/martin/.config/hypr/hyprland.conf') file:///home/martin/.config/hypr/hyprland.conf
+2023-12-10 13:12:27.049 [error] [text file model] handleSaveError(0) - exit - resulted in a save error: Error: Unable to write file '/home/martin/.config/hypr/hyprland.conf' (Unknown (FileSystemError): Error: EROFS: read-only file system, open '/home/martin/.config/hypr/hyprland.conf') file:///home/martin/.config/hypr/hyprland.conf
+2023-12-10 13:12:33.435 [error] Unable to read file '/home/martin/.config/hypr/hyprland.conf' (Error: File not modified since): Error: Unable to read file '/home/martin/.config/hypr/hyprland.conf' (Error: File not modified since)
+    at n.F (vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:645:16688)
+    at n.D (vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:645:16576)
+    at async b.M (vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:2418:42819)
+    at async b.readStream (vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:2418:42576)
+    at async P.Cb (vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:2407:29172)
+    at async P.resolve (vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:2407:27619)
+    at async vscode-file://vscode-app/nix/store/h44yybwk50qmdfnf09rwkmapr7x0pjda-vscode-1.84.2/lib/vscode/resources/app/out/vs/workbench/workbench.desktop.main.js:2418:38687

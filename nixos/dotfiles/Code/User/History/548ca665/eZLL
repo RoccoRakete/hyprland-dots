@@ -1,0 +1,32 @@
+added neofetch to be managed by home-manager
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	modified:   nixos/flake.nix
+#	modified:   nixos/packages.nix
+#	modified:   nixos/workstations/desktop/home-desktop.nix
+#	new file:   nixos/workstations/desktop/hypr/Autostart.conf
+#	new file:   nixos/workstations/desktop/hypr/Decoration.conf
+#	new file:   nixos/workstations/desktop/hypr/KeyBinds.conf
+#	new file:   nixos/workstations/desktop/hypr/Misc.conf
+#	new file:   nixos/workstations/desktop/hypr/WindowRules.conf
+#	new file:   nixos/workstations/desktop/hypr/hyprland.conf
+#	new file:   nixos/workstations/desktop/hypr/monitors.conf
+#	new file:   nixos/workstations/desktop/hypr/presets/monitors.exampleconf
+#	new file:   nixos/workstations/desktop/hypr/presets/monitors_external.conf
+#	new file:   nixos/workstations/desktop/hypr/presets/monitors_internal.conf
+#	new file:   nixos/workstations/desktop/hypr/scripts/brightness
+#	new file:   nixos/workstations/desktop/hypr/scripts/launch_ags.sh
+#	new file:   nixos/workstations/desktop/hypr/scripts/monitor_attached.sh
+#	new file:   nixos/workstations/desktop/hypr/scripts/monitor_dettached.sh
+#	new file:   nixos/workstations/desktop/neofetch/ascii.txt
+#	new file:   nixos/workstations/desktop/neofetch/config.conf
+#	modified:   nixos/workstations/laptop/home-laptop.nix
+#	new file:   nixos/workstations/laptop/neofetch/ascii.txt
+#	new file:   nixos/workstations/laptop/neofetch/config.conf
+#

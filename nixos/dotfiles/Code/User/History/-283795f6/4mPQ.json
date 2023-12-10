@@ -1,0 +1,12 @@
+{
+    "security.workspace.trust.untrustedFiles": "open",
+    "nix.enableLanguageServer": true,
+    "nix.serverSettings": {
+        "nix.enableLanguageServer": true
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "'Hurmit Nerd Font','Droid Sans Mono', 'monospace', monospace",
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": 2,
+    "workbench.colorTheme": "Adwaita Dark & default syntax highlighting"
+}

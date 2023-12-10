@@ -1,0 +1,21 @@
+separated laptop & desktop
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch Thinkpad
+# Your branch is up to date with 'origin/Thinkpad'.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	modified:   nixos/configs/variables.nix
+#	deleted:    nixos/configuration.nix
+#	modified:   nixos/flake.nix
+#	modified:   nixos/nixos.nix
+#	new file:   nixos/workstations/desktop/configuration-desktop.nix
+#	new file:   nixos/workstations/desktop/hardware-configuration-desktop.nix
+#	new file:   nixos/workstations/laptop/configuration-laptop.nix
+#	new file:   nixos/workstations/laptop/hardware-configuration-laptop.nix
+#
+# Changes not staged for commit:
+#	modified:   nixos/configs/user/zsh.nix
+#

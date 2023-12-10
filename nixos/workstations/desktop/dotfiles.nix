@@ -28,5 +28,12 @@
     recursive = true;
     enable = true;
   };
+
+  # VsCode
+  home.file."${config.xdg.configHome}/Code" = {
+    source = ../../dotfiles/Code;
+    recursive = true;
+    enable = true;
+  };
 }
 
