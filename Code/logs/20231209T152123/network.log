@@ -1,2 +1,0 @@
-2023-12-09 18:33:51.250 [error] electron #6: https://update.code.visualstudio.com/api/update/linux-x64/stable/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e - error undefined net::ERR_INTERNET_DISCONNECTED
-2023-12-09 18:33:53.341 [error] electron #7: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NETWORK_CHANGED

@@ -1,3 +1,0 @@
-2023-12-09 21:20:31.831 [error] electron #153: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NETWORK_CHANGED
-2023-12-09 22:36:24.334 [error] electron #154: https://az764295.vo.msecnd.net/extensions/marketplace.json - error GET net::ERR_INTERNET_DISCONNECTED
-2023-12-09 22:36:24.342 [error] electron #155: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_INTERNET_DISCONNECTED

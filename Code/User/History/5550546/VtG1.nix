@@ -1,7 +1,0 @@
-{ pkgs,config, lib, ... }:
-
-{
-  services = {
-    
-  };
-}

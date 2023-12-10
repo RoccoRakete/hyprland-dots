@@ -1,9 +1,0 @@
-{
-    "git.openRepositoryInParentFolders": "never",
-    "window.zoomLevel": 1,
-    "workbench.colorTheme": "Adwaita Dark & default syntax highlighting",
-    "workbench.productIconTheme": "adwaita",
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.minimap.enabled": false,
-    "explorer.confirmDragAndDrop": false
-}
