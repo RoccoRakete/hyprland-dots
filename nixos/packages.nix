@@ -45,8 +45,6 @@
     pkgs.gtk3
 
     # theming
-    #pkgs.bibata-cursors
-    pkgs.neofetch
     pkgs.swww
     pkgs.pywal
     pkgs.imagemagick

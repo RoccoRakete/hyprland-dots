@@ -53,6 +53,12 @@
     terminal = false;
   };
 
+  home.file."${config.xdg.configHome}/neofetch" = {
+    source = ./neofetch;
+    recursive = true;
+    enable = true;
+  };
+
   home.file = { };
   home.sessionVariables = { };
   home.stateVersion = "23.11"; # Please read the comment before changing.
