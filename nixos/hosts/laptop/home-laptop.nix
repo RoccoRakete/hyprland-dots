@@ -2,14 +2,14 @@
 
 let
   inherit (pkgs) nixos-icons;
-  vars = import ../../configs/variables.nix;
+  vars = import ../../variables.nix;
 in
 
 {
   imports = [
-    ../../configs/user/styling.nix
-    ../../configs/user/zsh.nix
-    ./dotfiles.nix
+    ../../configs/home-configs/styling.nix
+    ../../configs/home-configs/zsh.nix
+    ./link-dotfiles-laptop.nix
     ./home-programs-laptop.nix
   ];
 
@@ -33,8 +33,6 @@ in
 
   home.file = { };
   home.sessionVariables = { };
-  home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  home.stateVersion = "23.11";
 }

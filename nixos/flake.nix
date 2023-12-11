@@ -11,7 +11,7 @@
 
   outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
     let
-      vars = import ./configs/variables.nix;
+      vars = import ./variables.nix;
       system = "x86_64-linux";
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
@@ -26,7 +26,7 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            ./workstations/desktop/configuration-desktop.nix
+            ./hosts/desktop/configuration-desktop.nix
           ];
         };
 
@@ -35,7 +35,7 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            ./workstations/laptop/configuration-laptop.nix
+            ./hosts/laptop/configuration-laptop.nix
           ];
         };
       };
@@ -48,7 +48,7 @@
           extraSpecialArgs = { inherit inputs; };
           inherit pkgs;
           modules = [
-            ./workstations/desktop/home-desktop.nix
+            ./hosts/desktop/home-desktop.nix
           ];
         };
       };
@@ -59,7 +59,7 @@
           extraSpecialArgs = { inherit inputs; };
           inherit pkgs;
           modules = [
-            ./workstations/laptop/home-laptop.nix
+            ./hosts/laptop/home-laptop.nix
           ];
         };
       };

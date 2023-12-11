@@ -7,16 +7,18 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.home-manager.enable = true;
+
   programs = {
     ags = {
       enable = true;
-      configDir = ./dotfiles/ags;
+      configDir = ./home-dotfiles-desktop/ags;
       extraPackages = [ pkgs.libsoup_3 ];
     };
 
     kitty = {
       enable = true;
-      extraConfig = builtins.readFile ./dotfiles/kitty/kitty.conf;
+      extraConfig = builtins.readFile ./home-dotfiles-desktop/kitty/kitty.conf;
     };
 
     vscode = {

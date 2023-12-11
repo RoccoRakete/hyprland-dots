@@ -1,16 +1,17 @@
 { config, home-manager, lib, pkgs, username, inputs, ... }:
 
 let
-  vars = import ../../configs/variables.nix;
+  vars = import ../../variables.nix;
 in
 
 {
   imports =
     [
       ./hardware-configuration-desktop.nix
-      #./configs/thinkfan.nix
-      ../../configs/bluetooth.nix
-      ../../configs/tlp.nix
+      ../../configs/global-configs/services.nix
+      ../../configs/global-configs/programs.nix
+      ../../configs/global-configs/bluetooth.nix
+      ../../configs/global-configs/tlp.nix
       ../../nixos.nix
       ../../packages.nix
     ];
