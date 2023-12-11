@@ -1,12 +1,14 @@
-{ pkgs,config, lib, ... }:
+{ pkgs, config, lib, ... }:
 
 {
   services = {
     thinkfan.enable = true;
+    thinkfan.extraArgs = [ "-b""-10" "-s" "1" ];
     thinkfan.sensors = [
       {
         query = "/proc/acpi/ibm/thermal";
         type = "tpacpi";
+        #indices= [0];
       }
     ];
     thinkfan.fans = [
@@ -16,9 +18,9 @@
       }
     ];
     thinkfan.levels = [
-      [ 0 0 85 ]
-      [ 1 82 91 ]
-      [ "level auto" 89 32767 ]
+      [ 0 0 90 ]
+      [ 1 87 95 ]
+      [ "level auto" 92 32767 ]
     ];
   };
 }
