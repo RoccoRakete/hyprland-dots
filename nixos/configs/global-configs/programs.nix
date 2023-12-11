@@ -1,3 +1,5 @@
+{ pkgs, inputs, ... }:
+
 {
     programs = {
     hyprland = {

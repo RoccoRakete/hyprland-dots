@@ -1,5 +1,7 @@
+{ pkgs, ... }:
+
 {
-    services = {
+  services = {
     fprintd.enable = true;
     tumbler.enable = true;
     gvfs.enable = true;
