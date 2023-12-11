@@ -2,41 +2,6 @@
 -- List of all default plugins & their definitions
 local default_plugins = {
 
-  {
-  "ibhagwan/fzf-lua",
-  -- optional for icon support
-  dependencies = { "nvim-tree/nvim-web-devicons" },
-  config = function()
-    -- calling `setup` is optional for customization
-    require("fzf-lua").setup({})
-  end
-  },
-
-  { "junegunn/fzf", build = "./install --bin" },
-
-  {
-    "gennaro-tedesco/nvim-possession",
-    dependencies = {
-        "ibhagwan/fzf-lua",
-    },
-    config = true,
-    init = function()
-        local possession = require("nvim-possession")
-        vim.keymap.set("n", "<leader>sl", function()
-            possession.list()
-        end)
-        vim.keymap.set("n", "<leader>sn", function()
-            possession.new()
-        end)
-        vim.keymap.set("n", "<leader>su", function()
-            possession.update()
-        end)
-        vim.keymap.set("n", "<leader>sd", function()
-            possession.delete()
-        end)
-    end,
-},
-
   "nvim-lua/plenary.nvim",
 
   {
@@ -131,13 +96,18 @@ local default_plugins = {
       vim.api.nvim_create_autocmd({ "BufRead" }, {
         group = vim.api.nvim_create_augroup("GitSignsLazyLoad", { clear = true }),
         callback = function()
-          vim.fn.system("git -C " .. '"' .. vim.fn.expand "%:p:h" .. '"' .. " rev-parse")
-          if vim.v.shell_error == 0 then
-            vim.api.nvim_del_augroup_by_name "GitSignsLazyLoad"
-            vim.schedule(function()
-              require("lazy").load { plugins = { "gitsigns.nvim" } }
-            end)
-          end
+          vim.fn.jobstart({"git", "-C", vim.loop.cwd(), "rev-parse"},
+            {
+              on_exit = function(_, return_code)
+                if return_code == 0 then
+                  vim.api.nvim_del_augroup_by_name "GitSignsLazyLoad"
+                  vim.schedule(function()
+                    require("lazy").load { plugins = { "gitsigns.nvim" } }
+                  end)
+                end
+              end
+            }
+          )
         end,
       })
     end,

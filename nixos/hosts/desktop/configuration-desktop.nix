@@ -22,4 +22,11 @@ in
     useDHCP = lib.mkDefault true;
     networkmanager.enable = true;
   };
+  #networking.interfaces.enp1s0.useDHCP = true;
+  #networking.interfaces.br0.useDHCP = false;
+  #networking.bridges = {
+  #  "br0" = {
+  #    interfaces = [ "enp1s0" ];
+  #  };
+  #};
 }

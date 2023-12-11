@@ -22,6 +22,13 @@ in
     enableSshSupport = true;
   };
 
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
+    };
+  };
+
   xdg.desktopEntries."org.gnome.Settings" = {
     name = "Settings";
     comment = "Gnome Control Center";
@@ -33,6 +40,10 @@ in
 
   home.file = { };
   home.sessionVariables = { };
-  
+
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+
   home.stateVersion = "23.11";
 }

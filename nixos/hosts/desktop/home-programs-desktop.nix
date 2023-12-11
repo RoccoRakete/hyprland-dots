@@ -28,6 +28,7 @@
         jnoortheen.nix-ide
         piousdeer.adwaita-theme
         pkief.material-product-icons
+        #asvetliakov.vscode-neovim
       ];
       userSettings = { };
     };

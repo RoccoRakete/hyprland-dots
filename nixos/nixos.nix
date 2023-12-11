@@ -96,7 +96,7 @@ in
     users.${vars.user1} = {
       isNormalUser = true;
       description = "Martin";
-      extraGroups = [ "networkmanager" "wheel" "dialout" ];
+      extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
     };
   };
 

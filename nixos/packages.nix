@@ -1,4 +1,4 @@
-# Edit this configuration file to define what should be installed on
+#Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
@@ -33,96 +33,104 @@
 
     #Packages
     # gnome
-    pkgs.gnome.gnome-bluetooth
-    pkgs.gnome.gnome-settings-daemon
-    pkgs.gnome.gnome-software
-    pkgs.gnome.nautilus
-    pkgs.glib
-    pkgs.nautilus-open-any-terminal
-    pkgs.libadwaita
-    pkgs.gnome.gnome-control-center
-    pkgs.gnome.gvfs
-    pkgs.gnome.sushi
-    pkgs.gnome.seahorse
-    pkgs.gnome.gnome-tweaks
-    pkgs.gtk4
-    pkgs.gtk3
+    gnome.gnome-bluetooth
+    gnome.gnome-settings-daemon
+    gnome.gnome-software
+    gnome.nautilus
+    glib
+    nautilus-open-any-terminal
+    libadwaita
+    gnome.gnome-control-center
+    gnome.gvfs
+    gnome.sushi
+    gnome.seahorse
+    gnome.gnome-tweaks
+    gtk4
+    gtk3
 
     # theming
-    pkgs.neofetch
-    pkgs.swww
-    pkgs.pywal
-    pkgs.imagemagick
-    pkgs.nwg-look
-    pkgs.hyprpicker
-    pkgs.gtklock
-    pkgs.gtklock-userinfo-module
+    neofetch
+    swww
+    pywal
+    imagemagick
+    nwg-look
+    hyprpicker
+    gtklock
+    gtklock-userinfo-module
 
     # code
-    pkgs.sassc
-    pkgs.neovim-unwrapped
-    pkgs.neovide
-    pkgs.fzf
-    pkgs.vimPlugins.telescope-fzf-native-nvim
-    pkgs.nodejs_21
-    pkgs.libgcc
-    pkgs.libgccjit
-    pkgs.bintools-unwrapped
-    pkgs.nixpkgs-fmt
-    pkgs.python3
+    sassc
+    neovim-unwrapped
+    neovide
+    fzf
+    vimPlugins.telescope-fzf-native-nvim
+    nodejs_21
+    libgcc
+    libgccjit
+    bintools-unwrapped
+    nixpkgs-fmt
+    python3
+    gcc-unwrapped
+    gnumake
+    gccgo
+    cargo
 
     # homelab
-    pkgs.rpi-imager
+    rpi-imager
 
     # information
-    pkgs.firefox
-    pkgs.thunderbird
-    pkgs.brave
-    pkgs.bitwarden
-    pkgs.discord
-    pkgs.betaflight-configurator
+    firefox
+    thunderbird
+    brave
+    bitwarden
+    discord
+    betaflight-configurator
 
     # office
-    pkgs.obsidian
-    pkgs.libreoffice-fresh
-    pkgs.nextcloud-client
+    obsidian
+    libreoffice-fresh
+    nextcloud-client
+    anydesk
+    remmina
 
     # media
-    pkgs.obs-studio
-    pkgs.wf-recorder
-    pkgs.grimblast
-    pkgs.wayshot
-    pkgs.spotify
+    obs-studio
+    wf-recorder
+    grimblast
+    wayshot
+    spotify
 
     # system
-    pkgs.mate.mate-polkit
-    pkgs.polkit
-    pkgs.wget
-    pkgs.kitty
-    pkgs.brightnessctl
-    pkgs.libnotify
-    pkgs.inotify-tools
-    pkgs.pavucontrol
-    pkgs.bluez
-    pkgs.bluez-tools
-    pkgs.wl-clip-persist
-    pkgs.mission-center
-    pkgs.wl-clipboard
-    pkgs.swayidle
-    pkgs.sway-audio-idle-inhibit
-    pkgs.fwupd
-    pkgs.xdg-desktop-portal
-    pkgs.distrobox
-    pkgs.nixos-icons
-    pkgs.libsecret
-    pkgs.wireguard-tools
-    pkgs.wireguard-go
-    pkgs.networkmanagerapplet
-    pkgs.intel-gpu-tools
-    pkgs.usbutils
-    pkgs.btop
-    pkgs.stress-ng
-    pkgs.slurp
+    mate.mate-polkit
+    polkit
+    wget
+    kitty
+    brightnessctl
+    libnotify
+    inotify-tools
+    pavucontrol
+    bluez
+    bluez-tools
+    wl-clip-persist
+    mission-center
+    wl-clipboard
+    swayidle
+    sway-audio-idle-inhibit
+    fwupd
+    xdg-desktop-portal
+    distrobox
+    nixos-icons
+    libsecret
+    wireguard-tools
+    wireguard-go
+    networkmanagerapplet
+    intel-gpu-tools
+    usbutils
+    btop
+    stress-ng
+    slurp
+    playerctl
+    unzip
   ];
 
 }
