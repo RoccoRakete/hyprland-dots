@@ -77,6 +77,7 @@
 
     # homelab
     rpi-imager
+    super-slicer-beta
 
     # information
     firefox
@@ -131,6 +132,7 @@
     slurp
     playerctl
     unzip
+    sway-audio-idle-inhibit
   ];
 
 }
