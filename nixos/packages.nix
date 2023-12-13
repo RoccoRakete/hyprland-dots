@@ -133,6 +133,7 @@
     playerctl
     unzip
     sway-audio-idle-inhibit
+    wev
   ];
 
 }
