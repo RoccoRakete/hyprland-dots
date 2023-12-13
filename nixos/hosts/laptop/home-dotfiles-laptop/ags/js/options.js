@@ -158,7 +158,7 @@ export default {
     },
 
     // TODO: use this on revealers
-    transition: Option(400, {
+    transition: Option(100, {
         'category': 'exclude',
         'note': 'Transition time on aminations in ms, e.g on hover',
         'unit': 'ms',

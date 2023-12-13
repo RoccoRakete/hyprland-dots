@@ -93,7 +93,6 @@
     nextcloud-client
     anydesk
     remmina
-    onlyoffice-bin
 
     # media
     obs-studio

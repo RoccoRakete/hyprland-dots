@@ -32,7 +32,7 @@ in
   boot = {
     initrd.systemd.enable = true;
     tmp.cleanOnBoot = true;
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages;
     kernelParams = [ "quiet" "nosgx" ];
 
     loader = {
