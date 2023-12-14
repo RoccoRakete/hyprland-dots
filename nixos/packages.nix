@@ -23,13 +23,12 @@
       ];
     })
 
-    #    (vscode.override {
-    #    commandLineArgs = [
-    #      "--enable-features=UseOzonePlatform" 
-    #        "--enable-features=WaylandWindowDecorations"
-    #        "--ozone-platform=wayland"
-    #      ];
-    ##    })
+    (lutris.override {
+      extraPkgs = pkgs: [
+        wineWowPackages.waylandFull
+      ];
+    })
+
 
     #Packages
     # gnome
@@ -103,6 +102,7 @@
     grimblast
     wayshot
     spotify
+    lutris-unwrapped
 
     # system
     coreutils
@@ -138,6 +138,8 @@
     unzip
     sway-audio-idle-inhibit
     wev
+    sabnzbd
+    wineWowPackages.waylandFull
   ];
 
 }
