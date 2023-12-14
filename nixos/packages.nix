@@ -74,6 +74,9 @@
     gnumake
     gccgo
     cargo
+    ripgrep
+    fd
+    emacs
 
     # homelab
     rpi-imager
@@ -102,6 +105,7 @@
     spotify
 
     # system
+    coreutils
     mate.mate-polkit
     polkit
     wget

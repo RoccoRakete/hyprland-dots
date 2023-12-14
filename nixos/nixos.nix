@@ -8,7 +8,10 @@ in
 {
 
   #environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.pathsToLink = [ "/share/zsh" ];
+  environment.pathsToLink = [ 
+    "/share/zsh"
+    "~/.config/emacs/bin"
+     ];
 
 
   nix = {
