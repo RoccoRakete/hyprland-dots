@@ -45,7 +45,9 @@
   };
 
   # Packages that should be installed to the user profile.
-  home.packages = [
-    pkgs.htop
+  home.packages = with pkgs; [
+    htop
+    sassc
+    (python311.withPackages (p: [ p.python-pam ]))
   ];
 }

@@ -14,12 +14,18 @@
 
     shellAliases = {
       ll = "ls -lah";
-      update = "sudo nixos-rebuild switch";
-      upgrade-desktop = "sudo nixos-rebuild switch --flake ~/.dots/nixos#OptiPlex3060";
-      home-upgrade-desktop = "nix flake update ~/.dots/nixos && home-manager switch --flake ~/.dots/nixos#OptiPlex3060";
-      upgrade-laptop = "sudo nixos-rebuild switch --flake ~/.dots/nixos#ThinkPad";
-      home-upgrade-laptop = "nix flake update ~/.dots/nixos && home-manager switch --flake ~/.dots/nixos#ThinkPad";
       v = "nvim";
+
+      update = "sudo nixos-rebuild switch";
+      flake-update = "nix flake update ~/.dots/nixos";
+
+      upgrade-desktop = "sudo nixos-rebuild switch --flake ~/.dots/nixos#OptiPlex3060";
+      home-upgrade-desktop = "home-manager switch --flake ~/.dots/nixos#OptiPlex3060";
+      news-desktop = "home-manager news --flake ~/.dots/nixos#OptiPlex3060";
+
+      upgrade-laptop = "sudo nixos-rebuild switch --flake ~/.dots/nixos#ThinkPad";
+      home-upgrade-laptop = "home-manager switch --flake ~/.dots/nixos#ThinkPad";
+      news-laptop = "home-manager news --flake ~/.dots/nixos#ThinkPad";
     };
 
     enableCompletion = true;

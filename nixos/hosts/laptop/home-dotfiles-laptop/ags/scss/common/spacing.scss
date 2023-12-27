@@ -1,4 +1,4 @@
-@mixin spacing($multiplier: 8, $spacing: $spacing, $rec: false) {
+@mixin spacing($multiplier: 6, $spacing: $spacing, $rec: false) {
     &.horizontal > * {
         margin: 0 $spacing * $multiplier / 2;
         &:first-child { margin-left: 0; }

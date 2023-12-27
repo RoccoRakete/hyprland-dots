@@ -4,7 +4,7 @@ import FontIcon from '../misc/FontIcon.js';
 import Progress from '../misc/Progress.js';
 import Indicator from '../services/onScreenIndicator.js';
 
-export const OnScreenIndicator = ({ height = 200, width = 22 } = {}) => Widget.Box({
+export const OnScreenIndicator = ({ height = 200, width = 32 } = {}) => Widget.Box({
     class_name: 'indicator',
     css: 'padding: 1px;',
     child: Widget.Revealer({

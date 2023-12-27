@@ -4,32 +4,31 @@ window#quicksettings .window-content {
 
     .avatar {
         @include widget;
+        opacity: 0.9;
         border-radius: $popover-radius;
     }
 
     .header {
-        @include spacing;
-    }
-
-    .system-box {
-        @include widget;
         @include spacing($rec: true);
-        border-radius: $popover-radius;
-        padding: 10px;
 
-        button,
-        .uptime {
+        button, .uptime, .battery {
             @include button;
-            border-radius: $radii * 3;
             padding: $padding;
             font-weight: bold;
             min-height: 20px;
             min-width: 20px;
+            border-radius: $popover-radius;
+
 
             image {
                 font-size: 1.2em;
             }
         }
+
+        .battery {
+            @include spacing($multiplier: 0.5);
+        }
+
     }
 
     .battery-progress {
@@ -39,19 +38,17 @@ window#quicksettings .window-content {
         }
 
         &.charging label {
-            font-size: $padding * 2;
+            font-size: $padding*2;
         }
 
-        &.half label {
-            color: $fg-color;
-        }
+        &.half label { color: $fg-color; }
 
         progressbar {
-            @include slider($width: $padding * 3.6);
+            @include slider($width: $padding*3.6);
         }
 
         &.low progressbar {
-            @include slider($width: $padding * 3.6, $gradient: linear-gradient(to right, $red, $red));
+            @include slider($width: $padding*3.6, $gradient: linear-gradient(to right, $red, $red));
         }
     }
 
@@ -59,9 +56,8 @@ window#quicksettings .window-content {
         @include widget;
         @include spacing($rec: true);
         @include spacing(0);
-        border-radius: $popover-radius;
-
         padding: $padding;
+        border-radius: $popover-radius;
 
         button {
             @include button($flat: true);
@@ -82,16 +78,13 @@ window#quicksettings .window-content {
     }
 
     .mixer-item {
-        scale {
-            @include slider($width: 7px);
-        }
-        image {
-            font-size: 1.2em;
-        }
+        scale { @include slider($width: 7px); }
+        image { font-size: 1.2em; }
     }
 
     .row {
         @include spacing($rec: true);
+        border-radius: $popover-radius;
     }
 
     .menu {
@@ -100,9 +93,10 @@ window#quicksettings .window-content {
         @include spacing($rec: true);
         padding: $padding;
         margin-top: $spacing;
+        border-radius: $popover-radius;
 
         .title {
-            @include spacing(0.5);
+            @include spacing(.5);
         }
 
         separator {
@@ -125,12 +119,13 @@ window#quicksettings .window-content {
         border-radius: $popover-radius;
 
         .label-box {
-            @include spacing(0.5);
+            @include spacing(.5);
         }
 
         button {
             @include button($flat: true);
             padding: $padding;
+            border-radius: $popover-radius;
 
             &:first-child {
                 border-top-right-radius: 0;
@@ -146,8 +141,7 @@ window#quicksettings .window-content {
         &.active {
             background-color: $accent;
 
-            label,
-            image {
+            label, image {
                 color: $accent-fg;
             }
         }
@@ -155,7 +149,7 @@ window#quicksettings .window-content {
 
     .simple-toggle {
         @include button;
-        padding: $padding;
+        padding: $padding $padding * 1.1;
         border-radius: $popover-radius;
     }
 
@@ -164,7 +158,6 @@ window#quicksettings .window-content {
 
         .player {
             @include media;
-            border-radius: $popover-radius;
         }
     }
 }

@@ -56,6 +56,7 @@
     hyprpicker
     gtklock
     gtklock-userinfo-module
+    gradience
 
     # code
     sassc
@@ -102,7 +103,8 @@
     grimblast
     wayshot
     spotify
-    lutris-unwrapped
+    sauerbraten
+    gimp
 
     # system
     coreutils

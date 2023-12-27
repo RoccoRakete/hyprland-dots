@@ -1,48 +1,45 @@
 $bar-spacing: $spacing / 2;
+$button-radius: if($bar-style == "floating", max(0, $radii - $bar-spacing), $radii);
 
 @mixin panel-button($flat: $bar-flat-buttons, $reactive: true) {
     @include unset;
 
-    @if $bar-style =='separated' {
+    @if $bar-style == "separated" {
         transition: $transition;
 
-        >* {
+        > * {
             @include floating-widget;
             border-radius: $radii;
             margin: $wm-gaps $bar-spacing;
             transition: $transition;
         }
 
-        &:hover>* {
+        &:hover > * {
             color: $hover-fg;
 
             @if $drop-shadow {
-                box-shadow: 0 0 min(6px, $spacing/2) 0 $shadow,
+                box-shadow:
+                    0 0 min(6px, $spacing/2) 0 $shadow,
                     inset 0 0 0 99px $hover;
-            }
-
-            @else {
+            } @else {
                 box-shadow: inset 0 0 0 99px $hover;
             }
         }
 
-        &:active>*,
-        &.active>* {
-
+        &:active > *,
+        &.active > * {
             label,
             image {
                 color: $accent-fg;
             }
-
             background-image: $active-gradient;
             background-color: $accent;
         }
-    }
-
-    @else {
+    } @else {
         @include accs-button($flat, $reactive);
 
-        >* {
+        > * {
+            border-radius: $button-radius;
             margin: $bar-spacing;
         }
     }
@@ -52,60 +49,66 @@ $bar-spacing: $spacing / 2;
         font-weight: bold;
     }
 
-    >* {
-        padding: $padding * 0.4 $padding * 0.7;
+    > * {
+        padding: $padding * 0.4 $padding * 0.8;
     }
 }
 
 .panel {
-
     .cpu {
         padding-left: $spacing/2;
         color: $accent;
-        font-size: $font_size/4.5;
+        font-size: $font_size/5;
         border-radius: max($radii - $border_width, 0);
         margin: $spacing;
-        min-height: $font_size * 1.35;
-        min-width: $font_size * 1.35;
+        min-height: $font_size * 1.25;
+        min-width: $font_size * 1.25;
 
-        @if $bar_style =='separated' {
-            padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
-            border-radius: max($radii - $border_width, 0);
+        @if $bar_style == "separated" {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
             margin-left: $spacing/4;
-            margin-right: $spacing/4;
+            margin-right: 0;
+            padding: $spacing;
+            padding-left: $spacing * 3;
+            background-color: $bg-color;
         }
     }
 
     .ram {
         color: $yellow;
-        font-size: $font_size/4.5;
+        font-size: $font_size/5;
         border-radius: max($radii - $border_width, 0);
         margin: $spacing;
-        min-height: $font_size * 1.35;
-        min-width: $font_size * 1.35;
+        min-height: $font_size * 1.25;
+        min-width: $font_size * 1.25;
 
-        @if $bar_style =='separated' {
-            padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
-            border-radius: max($radii - $border_width, 0);
-            margin-left: $spacing/4;
-            margin-right: $spacing/4;
+        @if $bar_style == "separated" {
+            border-radius: 0;
+            margin-left: 0;
+            margin-right: 0;
+            padding: $spacing;
+            background-color: $bg-color;
         }
     }
 
     .temp {
-        padding-right: $spacing*2;
+        padding-right: $spacing * 2;
         color: $magenta;
-        font-size: $font_size/4.5;
+        font-size: $font_size/5;
         border-radius: max($radii - $border_width, 0);
         margin: $spacing;
-        min-height: $font_size * 1.35;
-        min-width: $font_size * 1.35;
+        min-height: $font_size * 1.25;
+        min-width: $font_size * 1.25;
 
-        @if $bar_style =='separated' {
-            padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
-            border-radius: max($radii - $border_width, 0);
-            margin-left: $spacing/4;
+        @if $bar_style == "separated" {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
             margin-right: $spacing/4;
+            margin-left: 0;
+            padding: $spacing;
+            padding-right: $spacing * 3;
+            background-color: $bg-color;
         }
     }
 
@@ -115,9 +118,8 @@ $bar-spacing: $spacing / 2;
             background-color: $widget-bg;
             font-size: 1em;
 
-
-            @if $bar_style =='separated' {
-                padding: $wm_gaps $wm_gaps+5px $wm_gaps $wm_gaps+5px;
+            @if $bar_style == "separated" {
+                padding: $wm_gaps $wm_gaps + 5px $wm_gaps $wm_gaps + 5px;
                 border-radius: max($radii - $border_width, 0);
                 margin-left: $spacing/4;
                 margin-right: $spacing/4;
@@ -125,38 +127,37 @@ $bar-spacing: $spacing / 2;
         }
     }
 
-    @if $bar-style =='normal' {
+    @if $bar-style == "normal" {
         background-color: $bg-color;
     }
 
-    @if not $bar-style =='normal' {
-        @if $bar-position =='bottom' {
+    @if not $screen-corners and $bar-style == "normal" {
+        @if $bar-position == "bottom" {
             border-top: $border;
-        }
-
-        @else {
+        } @else {
             border-bottom: $border;
         }
     }
 
-    @if $bar-style =='floating' {
+    @if $bar-style == "floating" {
         @include floating-widget;
-        margin: $wm-gaps;
-
-        padding: 0;
         border-radius: $radii;
-        border: $bar-border;
-
+        margin-top: $wm-gaps;
+        margin-left: $wm-gaps;
+        margin-right: $wm-gaps;
+        margin-bottom: 0;
+        padding: 0;
     }
 
-    @if $bar-style =='separated' {
-        >.end>button:last-child>* {
+    @if $bar-style == "separated" {
+        > .end > button:last-child > * {
             margin-right: $wm-gaps;
         }
 
-        >.start>button:first-child>* {
+        > .start > button:first-child > * {
             margin-left: $wm-gaps;
         }
+        margin-bottom: 0;
     }
 
     .panel-button {
@@ -180,16 +181,12 @@ $bar-spacing: $spacing / 2;
     }
 
     .overview {
-        margin-right: $spacing;
-
         label {
             color: transparentize($accent, 0.2);
         }
-
         &:hover label {
             color: $accent;
         }
-
         &:active label,
         &.active label {
             color: $accent-fg;
@@ -201,19 +198,17 @@ $bar-spacing: $spacing / 2;
         image {
             color: transparentize($red, 0.3);
         }
-
         &:hover image {
             color: transparentize($red, 0.15);
         }
-
         &:active image {
             color: $red;
         }
     }
 
-    .focused-client>box>box,
-    .quicksettings>box {
-        @include spacing(3);
+    .focused-client > box > box,
+    .quicksettings > box > box {
+        @include spacing($spacing: if($bar-spacing == 0, $padding / 2, $bar-spacing));
     }
 
     /* stylelint-disable-next-line selector-not-notation */
@@ -226,7 +221,6 @@ $bar-spacing: $spacing / 2;
             &.low {
                 color: $red;
             }
-
             &.charged,
             &.charging {
                 color: $green;
@@ -238,11 +232,9 @@ $bar-spacing: $spacing / 2;
         &.spotify image {
             color: $green;
         }
-
         &.firefox image {
             color: $orange;
         }
-
         &.mpv image {
             color: $magenta;
         }
@@ -255,33 +247,39 @@ $bar-spacing: $spacing / 2;
     }
 
     .battery-bar {
+        label {
+            margin-right: $bar-spacing * 3;
+        }
         .font-icon {
             font-size: 1.15em;
         }
 
+        @if $battery-bar-full {
+            > box {
+                padding: 0;
+            }
+        }
+
         image,
         .font-icon {
-            margin-right: $bar-spacing * .5;
+            margin-right: $bar-spacing * 0.5;
         }
 
         levelbar trough {
-            @include bar-widget;
-            padding: 0px;
+            @include widget;
             min-width: $battery-bar-width;
             min-height: $battery-bar-height;
 
             block.filled {
                 border-radius: max($radii - $border-width, 0);
                 background-image: $active-gradient;
-                border-radius: $radii;
             }
         }
 
         @mixin color($color) {
-
             image,
             label {
-                color: $fg_color
+                color: $fg_color;
             }
 
             block.filled {
@@ -292,48 +290,59 @@ $bar-spacing: $spacing / 2;
         .medium {
             @include color($yellow);
         }
-
         .low {
-            @include color($red)
+            @include color($red);
         }
-
         .charging {
-            @include color($green)
+            @include color($green);
+        }
+        &:active {
+            @include color($accent-fg);
         }
 
-        &:active {
-            @include color($accent-fg)
+        .whole-button {
+            label {
+                color: $fg-color;
+                text-shadow: $text-shadow;
+            }
+
+            trough,
+            block.filled {
+                border-radius: $button-radius;
+            }
+
+            @if $bar-style == "separated" {
+                trough {
+                    border: none;
+                }
+            }
         }
     }
 
     .workspaces {
-        >* {
+        > * {
             padding: 0;
         }
 
         .eventbox {
             transition: $transition;
 
-            @if $bar-style =='separated' {
+            @if $bar-style == "separated" {
                 border-radius: max($radii - $border-width, 0);
 
-                &:hover {
-                    background-color: $hover;
-                }
-            }
-
-            @else {
+            } @else {
                 @include button($flat: true);
             }
         }
 
         button {
             all: unset;
+            border-radius: $radii;
 
             .indicator {
                 font-size: 0;
-                min-width: $font_size*0.9;
-                min-height: $font_size*0.9;
+                min-width: $font_size * 0.9;
+                min-height: $font_size * 0.9;
                 border-radius: $font_size;
                 box-shadow: inset 0 0 0 $border-width $border-color;
                 margin: 0 $padding/2;
@@ -363,7 +372,7 @@ $bar-spacing: $spacing / 2;
             }
 
             &.active .indicator {
-                min-width: $font_size*2.5
+                min-width: $font_size * 2.5;
             }
         }
     }

@@ -16,7 +16,7 @@ export default [
     "misc.gtk.theme": "adw-gtk3-dark",
     "misc.gtkIcons.theme": "Adwaita",
 
-    "desktop.wallpaper.img": WP + "waves_dark.jpg",
+    "desktop.wallpaper.img": WP + "topography_hyprland_bright.png",
     "desktop.avatar": HOME + "face.png",
 
     "spacing": 2,
@@ -55,7 +55,7 @@ export default [
 
     "applauncher.width": 500,
     "applauncher.height": 400,
-    "applauncher.icon_size": 40,
+    "applauncher.icon_size": 42,
 
     "bar.position": "top",
     "bar.style": "floating",
@@ -71,6 +71,16 @@ export default [
     "desktop.wallpaper.fg": "#fff",
     "desktop.drop_shadow": false,
     "desktop.shadow": "rgba(0, 0, 0, .6)",
+    "desktop.dock.icon_size": 42,
+    "desktop.dock.pinned_apps": [
+      "brave",
+      "code",
+      "org.gnome.Nautilus",
+      "obsidian",
+      "discord",
+      "spotify",
+      "org.gnome.Software"
+    ],
 
     "notifications.black_list": [
       "Spotify"

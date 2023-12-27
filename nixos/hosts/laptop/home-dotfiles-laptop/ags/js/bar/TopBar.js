@@ -15,7 +15,6 @@ import SubMenu from './buttons/SubMenu.js';
 import Recorder from '../services/screenrecord.js';
 import options from '../options.js';
 import * as vars from '../variables.js';
-import { execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 
 const submenuItems = Variable(1);
 SystemTray.connect('changed', () => {
