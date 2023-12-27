@@ -43,7 +43,7 @@ export const ThemeSelector = () => Menu({
             child: Widget.Box({
                 children: [
                     Widget.Icon(icons.ui.settings),
-                    Widget.Label(' ' + 'Theme Settings'),
+                    Widget.Label('Theme Settings'),
                 ],
             }),
         }),

@@ -74,12 +74,15 @@ export default [
     "desktop.dock.icon_size": 42,
     "desktop.dock.pinned_apps": [
       "brave",
-      "code",
+      "Visual Studio Code",
+      "kitty",
       "org.gnome.Nautilus",
       "obsidian",
       "discord",
       "spotify",
-      "org.gnome.Software"
+      "superslicer",
+      "org.gnome.Software",
+      
     ],
 
     "notifications.black_list": [

@@ -320,16 +320,17 @@ $button-radius: if($bar-style == "floating", max(0, $radii - $bar-spacing), $rad
     }
 
     .workspaces {
+        .horizontal {
+            background-color: $bg-color;
+        }
         > * {
             padding: 0;
         }
-
         .eventbox {
             transition: $transition;
 
             @if $bar-style == "separated" {
                 border-radius: max($radii - $border-width, 0);
-
             } @else {
                 @include button($flat: true);
             }
@@ -337,6 +338,7 @@ $button-radius: if($bar-style == "floating", max(0, $radii - $bar-spacing), $rad
 
         button {
             all: unset;
+            background-color: $bg-color;
             border-radius: $radii;
 
             .indicator {

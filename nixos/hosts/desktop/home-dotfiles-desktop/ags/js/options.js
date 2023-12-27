@@ -11,6 +11,8 @@
 import { Option, resetOptions, getValues, apply, getOptions } from './settings/option.js';
 import { USER } from 'resource:///com/github/Aylur/ags/utils.js';
 import themes from './themes.js';
+import { Theme, WP, HOME } from './settings/theme.js';
+
 
 export default {
     reset: resetOptions,
@@ -31,19 +33,19 @@ export default {
 
     misc: {
         pywal: {
-            theme: Option('', {
+            theme: Option('base16-default', {
                 'scss': 'exclude',
 
             })
         },
         gtk: {
-            theme: Option('', {
+            theme: Option('adw-gtk3-dark', {
                 'scss': 'exclude',
 
             })
         },
         gtkIcons: {
-            theme: Option('', {
+            theme: Option('Adwaita', {
                 'scss': 'exclude',
 
             })
@@ -158,7 +160,7 @@ export default {
     },
 
     // TODO: use this on revealers
-    transition: Option(400, {
+    transition: Option(100, {
         'category': 'exclude',
         'note': 'Transition time on aminations in ms, e.g on hover',
         'unit': 'ms',
@@ -183,7 +185,7 @@ export default {
     applauncher: {
         width: Option(500),
         height: Option(500),
-        icon_size: Option(52),
+        icon_size: Option(42),
     },
 
     bar: {
@@ -209,8 +211,10 @@ export default {
             'category': 'exclude',
         }),
         bar: {
+            show_icon: Option(false, { 'category': 'Bar' }),
             width: Option(70, { 'category': 'Bar' }),
             height: Option(14, { 'category': 'Bar' }),
+            full: Option(false, { 'category': 'Bar' }),
         },
         low: Option(30, { 'category': 'Bar' }),
         medium: Option(50, { 'category': 'Bar' }),
@@ -224,13 +228,34 @@ export default {
                 'type': 'img',
             }),
         },
-        avatar: Option(`/var/lib/AccountsService/icons/${USER}`, {
+        avatar: Option(`${HOME}/face.png`, {
             'scssFormat': v => `"${v}"`,
             'type': 'img',
             'note': 'displayed in quicksettings and locksreen',
         }),
+        screen_corners: Option(true, { 'scss': 'screen-corners' }),
+        clock: {
+            enable: Option(true),
+            position: Option('center center', {
+                'note': 'halign valign',
+            }),
+        },
         drop_shadow: Option(false, { 'scss': 'drop-shadow' }),
         shadow: Option('rgba(0, 0, 0, .6)', { 'scss': 'shadow' }),
+        dock: {
+            icon_size: Option(42),
+            pinned_apps: Option([
+                "brave",
+                "Visual Studio Code",
+                "kitty",
+                "org.gnome.Nautilus",
+                "obsidian",
+                "discord",
+                "spotify",
+                "superslicer",
+                "org.gnome.Software"
+            ], { 'scss': 'exclude' }),
+        },
     },
 
     notifications: {
@@ -264,7 +289,7 @@ export default {
         'note': 'Set it to 0 to make it dynamic',
     }),
 
-    temperature: '/sys/class/thermal/thermal_zone2/temp',
+    temperature: '/sys/class/thermal/thermal_zone6/temp',
     systemFetchInterval: 1000,
     brightnessctlKBD: 'asus::kbd_backlight',
     substitutions: {

@@ -5,10 +5,10 @@
 @import './common/unset';
 @import './common/widget';
 @import './common/button';
+@import './common/button-workspaces.scss';
 @import './common/a11y-button';
 @import './common/floating-widget';
 @import './common/slider';
-@import './common/shader';
 @import './common/scrollable';
 @import './common/switch';
 @import './common/hidden';
@@ -16,7 +16,6 @@
 @import './common/tooltip';
 @import './common/menu';
 @import './common/spacing';
-@import './common/bar-widget';
 
 // widgets
 @import './widgets/about';

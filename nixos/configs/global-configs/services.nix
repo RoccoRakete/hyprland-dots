@@ -26,6 +26,7 @@
       pulse.enable = true;
     };
     printing.enable = true;
+    acpid.enable = true;
     flatpak.enable = true;
   };
 }

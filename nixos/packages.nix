@@ -23,13 +23,6 @@
       ];
     })
 
-    (lutris.override {
-      extraPkgs = pkgs: [
-        wineWowPackages.waylandFull
-      ];
-    })
-
-
     #Packages
     # gnome
     gnome.gnome-bluetooth

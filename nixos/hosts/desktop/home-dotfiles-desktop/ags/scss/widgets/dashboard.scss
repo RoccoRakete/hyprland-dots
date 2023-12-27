@@ -1,29 +1,27 @@
 @mixin calendar {
     @include widget;
-    border-radius: $popover-radius;
-    padding: $padding * 2 $padding * 2 0;
+    padding: $padding*2 $padding*2 0;
 
-    calendar {
+    calendar{
         all: unset;
 
-        &.button {
+        &.button{
             @include button($flat: true);
         }
 
-        &:selected {
-            box-shadow:
-                inset 0 -8px 0 0 transparentize($accent, 0.5),
-                inset 0 0 0 1px $accent;
-            border-radius: $radii * 0.6;
+        &:selected{
+            box-shadow: inset 0 -8px 0 0 transparentize($accent, 0.5),
+            inset 0 0 0 1px $accent;
+            border-radius: $radii*0.6;
         }
 
-        &.header {
+        &.header{
             background-color: transparent;
             border: none;
             color: transparentize($fg-color, 0.5);
         }
 
-        &.highlight {
+        &.highlight{
             background-color: transparent;
             color: transparentize($accent, 0.5);
         }
@@ -32,7 +30,7 @@
             color: transparentize($fg-color, 0.9);
         }
         font-size: 1.1em;
-        padding: 0.2em;
+        padding: .2em;
     }
 }
 
@@ -43,12 +41,10 @@ window#dashboard .window-content {
         min-width: $notifications-width;
 
         .header {
-            margin-bottom: $spacing * 5;
-            margin-right: $spacing * 5;
+            margin-bottom: $spacing;
+            margin-right: $spacing;
 
-            > label {
-                margin-left: $radii / 2;
-            }
+            > label { margin-left: $radii / 2; }
 
             button {
                 @include button;
@@ -58,14 +54,10 @@ window#dashboard .window-content {
 
         .notification-scrollable {
             @include scrollable;
-            border-radius: $popover-radius;
-
         }
 
         .notification-list {
             margin-right: $spacing;
-            border-radius: $popover-radius;
-
         }
 
         .notification {
@@ -73,20 +65,14 @@ window#dashboard .window-content {
 
             > box {
                 @include widget;
-                border-radius: $popover-radius;
-                margin-bottom: $spacing*5;
-                margin-right: $spacing*5;
                 padding: $padding;
+                margin-bottom: $spacing;
             }
         }
 
         .placeholder {
-            image {
-                font-size: 7em;
-            }
-            label {
-                font-size: 1.2em;
-            }
+            image {  font-size: 7em; }
+            label {  font-size: 1.2em; }
         }
     }
 
@@ -97,7 +83,7 @@ window#dashboard .window-content {
         margin-right: $spacing;
     }
 
-    .datemenu {
+    .datemenu, .system-info {
         @include spacing;
     }
 
@@ -115,7 +101,23 @@ window#dashboard .window-content {
 
     .calendar {
         @include calendar;
-        margin-left: $spacing*5;
+    }
 
+    .circular-progress-box {
+        @include widget;
+        padding: $padding;
+
+        .circular-progress {
+            min-height: $sys-info-size;
+            min-width: $sys-info-size;
+            margin: $padding/2;
+            font-size: $padding;
+            background-color: $bg-color;
+            color: $accent;
+
+            image {
+                font-size: 1.8em;
+            }
+        }
     }
 }

@@ -22,7 +22,7 @@ class Recorder extends Service {
     timer = 0;
 
     async start() {
-        if (!(await dependencies(['slurp', 'wf-recorder'])))
+        if (!dependencies(['slurp', 'wf-recorder']))
             return;
 
         if (this.recording)
@@ -43,13 +43,13 @@ class Recorder extends Service {
     }
 
     async stop() {
-        if (!(await dependencies(['notify-send'])))
+        if (!dependencies(['notify-send']))
             return;
 
         if (!this.recording)
             return;
 
-        Utils.execAsync('pkill wf-recorder');
+        Utils.execAsync('killall -INT wf-recorder');
         this.recording = false;
         this.changed('recording');
         GLib.source_remove(this.#interval);
@@ -71,7 +71,7 @@ class Recorder extends Service {
     }
 
     async screenshot(full = false) {
-        if (!(await dependencies(['slurp', 'wayshot'])))
+        if (!dependencies(['slurp', 'wayshot']))
             return;
 
         const path = GLib.get_home_dir() + '/Pictures/Screenshots';

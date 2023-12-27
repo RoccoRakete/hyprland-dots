@@ -32,7 +32,7 @@ export default () => PopupWindow({
     connections: [[options.bar.position, self => {
         self.anchor = ['right', options.bar.position.value];
         self.transition = 'crossfade';
-
+        
     }]],
     child: Widget.Box({
         vertical: true,

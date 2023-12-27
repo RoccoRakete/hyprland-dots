@@ -16,11 +16,11 @@ in
   home.username = vars.user1;
   home.homeDirectory = vars.homeDirectoryUser1;
 
-  services.gpg-agent = {
-    enable = true;
-    defaultCacheTtl = 1800;
-    enableSshSupport = true;
-  };
+  #broken?????    #services.gpg-agent = {
+  #  enable = true;
+  #  defaultCacheTtl = 1800;
+  #  enableSshSupport = true;
+  #};
 
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
