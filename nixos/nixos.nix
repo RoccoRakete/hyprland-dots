@@ -8,10 +8,10 @@ in
 {
 
   #environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.pathsToLink = [ 
+  environment.pathsToLink = [
     "/share/zsh"
     "~/.config/emacs/bin"
-     ];
+  ];
 
 
   nix = {
@@ -87,6 +87,8 @@ in
   };
 
   security.pam.services.gtklock = { };
+  security.pam.services.waylock = { };
+  security.pam.services.swaylock = { };
   security.polkit.enable = true;
 
   # Enable sound with pipewire.

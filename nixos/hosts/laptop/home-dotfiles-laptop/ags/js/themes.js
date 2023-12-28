@@ -164,6 +164,19 @@ export default [
     "desktop.wallpaper.fg": "#fff",
     "desktop.drop_shadow": false,
     "desktop.shadow": "rgba(0, 0, 0, .6)",
+    "desktop.dock.icon_size": 42,
+    "desktop.dock.pinned_apps": [
+      "brave",
+      "Visual Studio Code",
+      "kitty",
+      "org.gnome.Nautilus",
+      "obsidian",
+      "discord",
+      "spotify",
+      "superslicer",
+      "org.gnome.Software",
+      
+    ],
 
     "notifications.black_list": [
       "Spotify"
@@ -244,6 +257,19 @@ export default [
     "desktop.wallpaper.fg": "#fff",
     "desktop.drop_shadow": false,
     "desktop.shadow": "rgba(0, 0, 0, .6)",
+    "desktop.dock.icon_size": 42,
+    "desktop.dock.pinned_apps": [
+      "brave",
+      "Visual Studio Code",
+      "kitty",
+      "org.gnome.Nautilus",
+      "obsidian",
+      "discord",
+      "spotify",
+      "superslicer",
+      "org.gnome.Software",
+      
+    ],
 
     "notifications.black_list": [
       "Spotify"
@@ -324,6 +350,19 @@ Theme({
     "desktop.wallpaper.fg": "#fff",
     "desktop.drop_shadow": false,
     "desktop.shadow": "rgba(0, 0, 0, .6)",
+    "desktop.dock.icon_size": 42,
+    "desktop.dock.pinned_apps": [
+      "brave",
+      "Visual Studio Code",
+      "kitty",
+      "org.gnome.Nautilus",
+      "obsidian",
+      "discord",
+      "spotify",
+      "superslicer",
+      "org.gnome.Software",
+      
+    ],
 
     "notifications.black_list": [
       "Spotify"

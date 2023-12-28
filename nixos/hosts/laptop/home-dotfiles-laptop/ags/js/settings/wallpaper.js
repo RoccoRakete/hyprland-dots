@@ -1,6 +1,7 @@
 import options from '../options.js';
 import { exec, execAsync } from 'resource:///com/github/Aylur/ags/utils.js';
 import { dependencies } from '../utils.js';
+import GLib from 'gi://GLib';
 
 export function initWallpaper() {
     if (dependencies(['swww'])) {
@@ -11,13 +12,19 @@ export function initWallpaper() {
 }
 
 export function wallpaper() {
+    const backgrounds = GLib.get_home_dir() + '/.config/backgrounds';
     if (!dependencies(['swww']))
         return;
 
     execAsync([
         'swww', 'img',
-        '--transition-type', 'grow',
-        '--transition-pos', exec('hyprctl cursorpos').replace(' ', ''),
+        '--transition-step', '4',
+        '-f',
+        'CatmullRom', '--transition-fps', '120',
         options.desktop.wallpaper.img.value,
     ]).catch(err => console.error(err));
+    execAsync([
+        'cp', options.desktop.wallpaper.img.value, `${backgrounds}/last/image.png`
+    ]);
+    execAsync(`sh -c ~/.config/ags/prepare_background.sh`)
 }

@@ -21,7 +21,6 @@
 
     dconf.enable = true;
     zsh.enable = true;
-    #hyprland.enable = true;
     direnv.enable = true;
   };
 }

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   # Allow unfree packages
@@ -47,9 +47,8 @@
     imagemagick
     nwg-look
     hyprpicker
-    gtklock
-    gtklock-userinfo-module
     gradience
+    swaylock-effects
 
     # code
     sassc
@@ -70,6 +69,7 @@
     ripgrep
     fd
     emacs
+    jq
 
     # homelab
     rpi-imager
@@ -135,6 +135,9 @@
     wev
     sabnzbd
     wineWowPackages.waylandFull
+    inputs.nix-software-center.packages.${system}.nix-software-center
+    inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
+    nixos-generators
   ];
 
 }

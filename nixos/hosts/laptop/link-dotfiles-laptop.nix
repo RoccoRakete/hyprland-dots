@@ -15,9 +15,9 @@
     enable = true;
   };
 
-  # gtklock
-  home.file."${config.xdg.configHome}/gtklock" = {
-    source = ../../global-dotfiles/gtklock;
+  # swaylock
+  home.file."${config.xdg.configHome}/swaylock" = {
+    source = ../../global-dotfiles/swaylock;
     recursive = true;
     enable = true;
   };
