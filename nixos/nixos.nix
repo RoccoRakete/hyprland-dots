@@ -85,9 +85,7 @@ in
     podman.enable = true;
     libvirtd.enable = true;
   };
-
-  security.pam.services.gtklock = { };
-  security.pam.services.waylock = { };
+  
   security.pam.services.swaylock = { };
   security.polkit.enable = true;
 

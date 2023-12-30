@@ -52,10 +52,8 @@
 
     # code
     sassc
-    neovim-unwrapped
     neovide
     fzf
-    vimPlugins.telescope-fzf-native-nvim
     nodejs_21
     libgcc
     libgccjit
@@ -70,6 +68,7 @@
     fd
     emacs
     jq
+    nil
 
     # homelab
     rpi-imager
@@ -98,6 +97,7 @@
     spotify
     sauerbraten
     gimp
+    gthumb
 
     # system
     coreutils
@@ -116,7 +116,6 @@
     wl-clipboard
     swayidle
     sway-audio-idle-inhibit
-    fwupd
     xdg-desktop-portal
     distrobox
     nixos-icons
@@ -138,6 +137,8 @@
     inputs.nix-software-center.packages.${system}.nix-software-center
     inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
     nixos-generators
+    wlr-randr
+    powertop
   ];
 
 }

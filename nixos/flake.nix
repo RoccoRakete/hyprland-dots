@@ -9,9 +9,13 @@
     hyprland.url = "github:hyprwm/Hyprland";
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, nixvim, ... }@inputs:
     let
       vars = import ./variables.nix;
       system = "x86_64-linux";
@@ -29,15 +33,17 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/desktop/configuration-desktop.nix
+            inputs.nixvim.nixosModules.nixvim
           ];
         };
 
-        # desktop
+        # laptop
         ${vars.laptop} = lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
             ./hosts/laptop/configuration-laptop.nix
+            inputs.nixvim.nixosModules.nixvim
           ];
         };
       };

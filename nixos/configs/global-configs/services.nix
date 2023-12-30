@@ -3,6 +3,7 @@
 {
   services = {
     #fprintd.enable = true;
+    fwupd.enable = true;
     tumbler.enable = true;
     gvfs.enable = true;
     gnome.core-utilities.enable = true;

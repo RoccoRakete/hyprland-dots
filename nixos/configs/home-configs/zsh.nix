@@ -6,7 +6,7 @@
     initExtraFirst =
       "wal -R" + "\n" +
       "clear";
-      
+
     initExtra =
       "source ~/.p10k.zsh" + "\n" +
       "neofetch" + "\n" +
@@ -15,6 +15,7 @@
     shellAliases = {
       ll = "ls -lah";
       v = "nvim";
+      editd = "nvim ~/.dots";
 
       update = "sudo nixos-rebuild switch";
       flake-update = "nix flake update ~/.dots/nixos";

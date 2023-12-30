@@ -23,9 +23,9 @@
   };
 
   # neovim
-  home.file."${config.xdg.configHome}/nvim" = {
-    source = ../../global-dotfiles/nvim;
-    recursive = true;
-    enable = true;
-  };
+  #home.file."${config.xdg.configHome}/nvim" = {
+  #  source = ../../global-dotfiles/nvim;
+  #  recursive = true;
+  #  enable = true;
+  #};
 }

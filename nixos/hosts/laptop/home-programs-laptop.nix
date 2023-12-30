@@ -13,6 +13,7 @@
     ags = {
       enable = true;
       configDir = ./home-dotfiles-laptop/ags;
+      #configDir = null;
       extraPackages = [ pkgs.libsoup_3 ];
     };
 
