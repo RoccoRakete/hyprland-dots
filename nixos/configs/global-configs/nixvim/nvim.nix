@@ -9,6 +9,8 @@
     #./telescope.nix
     ./neo-tree.nix
     ./prettier.nix
+    ./lsp-servers.nix
+    ./treesitter.nix
   ];
   programs = {
     nixvim = {
@@ -24,18 +26,6 @@
       plugins = {
         nix.enable = true;
 
-        lsp.servers.nixd.enable = true;
-        lsp.servers.cssls.enable = true;
-        lsp.servers.java-language-server.enable = true;
-        lsp.servers.jsonls.enable = true;
-        lsp.servers.lua-ls.enable = true;
-        lsp.servers.pylsp.enable = true;
-        lsp.servers.rust-analyzer.enable = true;
-        lsp.servers.rust-analyzer.installCargo = true;
-        lsp.servers.rust-analyzer.installRustc = true;
-        lsp.servers.tsserver.enable = true;
-        lsp.servers.yamlls.enable = true;
-
         lsp-lines.enable = true;
         lsp-format.enable = true;
         lspkind.enable = true;
@@ -43,8 +33,11 @@
         neogit.enable = true;
         cmp-zsh.enable = true;
         noice.enable = true;
-        notify.enable = true;
-        cmp-treesitter.enable = true;
+        luasnip.enable = true;
+        notify = {
+          enable = true;
+          backgroundColour = "#000000";
+        };
 
         airline = {
           enable = true;
