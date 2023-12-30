@@ -16,7 +16,10 @@
     shellAliases = {
       ll = "ls -lah";
       v = "nvim";
+
       editd = "nvim ~/.dots";
+
+      pushd = "cd ~/.dots && git add -A && git commit && git push --repo https://github.com/RoccoRakete/hyprland-dots.git";
 
       update = "sudo nixos-rebuild switch";
       flake-update = "nix flake update ~/.dots/nixos";
