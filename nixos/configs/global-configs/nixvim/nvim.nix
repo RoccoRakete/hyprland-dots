@@ -6,13 +6,15 @@
     ./nvim-cmp.nix
     ./lsp.nix
     ./bufferline.nix
-    ./telescope.nix
+    #./telescope.nix
     ./neo-tree.nix
+    ./prettier.nix
   ];
   programs = {
     nixvim = {
       enable = true;
       globals.mapleader = " ";
+      clipboard.providers.wl-copy.enable = true;
 
       options = {
         number = true;
@@ -41,6 +43,8 @@
         neogit.enable = true;
         cmp-zsh.enable = true;
         noice.enable = true;
+        notify.enable = true;
+        cmp-treesitter.enable = true;
 
         airline = {
           enable = true;

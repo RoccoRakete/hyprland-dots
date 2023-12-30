@@ -21,12 +21,12 @@
 
         {
           key = "<Tab>";
-          action = "<CMD>:bNext<NL>";
+          action = "<CMD>:bnext<NL>";
         }
 
         {
           key = "<leader>x";
-          action = "<CMD>:bdelete!<NL>";
+          action = "<CMD>:bp | bd #<NL>";
         }
       ];
     };
