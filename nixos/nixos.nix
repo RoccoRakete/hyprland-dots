@@ -6,13 +6,18 @@ let
 in
 
 {
-
   #environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.pathsToLink = [
-    "/share/zsh"
-    "~/.config/emacs/bin"
-  ];
-
+  environment = {
+    variables = {
+      #SUDO_EDITOR = "nvim";
+      #SYSTEMD_EDITOR = "nvim";
+      #EDITOR = "nvim";
+      #VISUAL = "nvim";
+    };
+    pathsToLink = [
+      "/share/zsh"
+    ];
+  };
 
   nix = {
     optimise.automatic = true;
@@ -30,8 +35,6 @@ in
       auto-optimise-store = true;
     };
   };
-
-  environment.variables.EDITOR = "nvim";
 
   # Bootloader.
   boot = {

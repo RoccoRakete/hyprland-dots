@@ -22,5 +22,6 @@
     dconf.enable = true;
     zsh.enable = true;
     direnv.enable = true;
+    nano.enable = false;
   };
 }

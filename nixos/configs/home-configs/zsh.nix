@@ -10,7 +10,8 @@
     initExtra =
       "source ~/.p10k.zsh" + "\n" +
       "neofetch" + "\n" +
-      "export TERM=kitty";
+      "export TERM=kitty" + "\n" +
+      "export EDITOR=nvim";
 
     shellAliases = {
       ll = "ls -lah";
@@ -32,7 +33,7 @@
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     history.size = 1000;
-    history.extended = false;
+    history.extended = true;
     historySubstringSearch = {
       enable = true;
       searchUpKey = [ "\\eOA" ];
