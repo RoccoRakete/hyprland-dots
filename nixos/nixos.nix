@@ -31,6 +31,8 @@ in
     };
   };
 
+  environment.variables.EDITOR = "nvim";
+
   # Bootloader.
   boot = {
     initrd.systemd.enable = true;
@@ -85,7 +87,7 @@ in
     podman.enable = true;
     libvirtd.enable = true;
   };
-  
+
   security.pam.services.swaylock = { };
   security.polkit.enable = true;
 
