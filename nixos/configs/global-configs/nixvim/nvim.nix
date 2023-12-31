@@ -11,6 +11,7 @@
     ./prettier.nix
     ./lsp-servers.nix
     ./treesitter.nix
+    ./autopairs.nix
   ];
   programs = {
     nixvim = {
@@ -33,6 +34,7 @@
         neogit.enable = true;
         cmp-zsh.enable = true;
         noice.enable = true;
+        nvim-colorizer.enable = true;
         luasnip.enable = true;
         notify = {
           enable = true;
@@ -41,6 +43,7 @@
 
         airline = {
           enable = true;
+          powerline = true;
         };
       };
 

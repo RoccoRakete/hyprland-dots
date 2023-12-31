@@ -4,7 +4,7 @@
   programs.zsh = {
     enable = true;
     initExtraFirst =
-      "wal -R" + "\n" +
+      #"wal -R" + "\n" +
       "clear";
 
     initExtra =

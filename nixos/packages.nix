@@ -49,6 +49,7 @@
     hyprpicker
     gradience
     swaylock-effects
+    kitty-themes
 
     # code
     sassc
@@ -104,7 +105,6 @@
     mate.mate-polkit
     polkit
     wget
-    kitty
     brightnessctl
     libnotify
     inotify-tools

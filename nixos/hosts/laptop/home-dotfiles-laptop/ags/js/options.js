@@ -31,12 +31,6 @@ export default {
 	}),
 
 	misc: {
-		pywal: {
-			theme: Option('base16-default', {
-				'scss': 'exclude',
-
-			})
-		},
 		gtk: {
 			theme: Option('adw-gtk3-dark', {
 				'scss': 'exclude',

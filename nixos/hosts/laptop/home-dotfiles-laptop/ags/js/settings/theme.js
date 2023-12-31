@@ -18,7 +18,6 @@ export function setTheme(name) {
     reloadScss();
     setupHyprland();
     wallpaper();
-    pywal();
     gtkIcons();
     gtkTheme();
 }

@@ -12,7 +12,6 @@ export default [
 
 		"workspaces": 10,
 
-		"misc.pywal.theme": "base16-default",
 		"misc.gtk.theme": "adw-gtk3-dark",
 		"misc.gtkIcons.theme": "Adwaita",
 
@@ -104,7 +103,6 @@ export default [
 
 		"workspaces": 10,
 
-		"misc.pywal.theme": "base16-gruvbox-hard",
 		"misc.gtk.theme": "Gruvbox-Dark-B",
 		"misc.gtkIcons.theme": "gruvbox_icons",
 
@@ -197,9 +195,8 @@ export default [
 
 		"workspaces": 10,
 
-		"misc.pywal.theme": "base16-seti",
-		"misc.gtk.theme": "Catppuccin_Mocha",
-		"misc.gtkIcons.theme": "catppuccin_mocha",
+		"misc.gtk.theme": "adw-gtk3-dark",
+		"misc.gtkIcons.theme": "Adwaita",
 
 		"desktop.wallpaper.img": WP + "oled-mountains.jpg",
 		"desktop.avatar": HOME + "face.png",
@@ -232,7 +229,7 @@ export default [
 		"border.barcolor": "$accent",
 
 		"hypr.inactive_border": "rgba(333333ff)",
-		"hypr.wm_gaps": 3,
+		"hypr.wm_gaps": 5,
 
 		"font.font": "Ubuntu Nerd Font",
 		"font.mono": "Mononoki Nerd Font",
@@ -290,7 +287,6 @@ export default [
 
 		"workspaces": 10,
 
-		"misc.pywal.theme": "base16-default",
 		"misc.gtk.theme": "rose-pine-gtk",
 		"misc.gtkIcons.theme": "rose-pine-icons",
 
