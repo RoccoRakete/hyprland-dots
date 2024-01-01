@@ -13,6 +13,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    more-waita = {
+      url = "github:somepaulo/MoreWaita";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, nixvim, ... }@inputs:

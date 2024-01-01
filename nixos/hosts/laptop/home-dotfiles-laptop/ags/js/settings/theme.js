@@ -18,8 +18,8 @@ export function setTheme(name) {
     reloadScss();
     setupHyprland();
     wallpaper();
-    gtkIcons();
-    gtkTheme();
+//    gtkIcons();
+//    gtkTheme();
 }
 
 export const WP = GLib.get_home_dir() + '/.config/backgrounds/';

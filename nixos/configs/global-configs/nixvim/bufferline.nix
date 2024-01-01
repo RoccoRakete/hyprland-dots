@@ -5,58 +5,69 @@
     enable = true;
     mode = "buffers";
     diagnostics = "nvim_lsp";
+    indicator.style = "icon";
 
     #separatorStyle = "slant";
     closeIcon = "󰅚";
     bufferCloseIcon = "󰅙";
     modifiedIcon = "󰀨";
 
-    highlights = rec {
-      # Tab bar fill
-      fill.bg = "#21222a";
-      fill.fg = "#5a5b64";
+    offsets = [
+      {
+        filetype = "neo-tree";
+        text = "File Explorer";
+        text_align = "center";
+        separator = true;
+      }
+    ];
 
-      # Tab fill
-      background.fg = "#5a5b64";
-      background.bg = "#000000";
-      background.sp = fill.bg;
+    #highlights = rec {
+    #  # Tab bar fill
+    #  fill.bg = "#21222a";
+    #  fill.fg = "#5a5b64";
 
-      # Tab separator
-      separator = background // { fg = fill.bg; };
-      separatorVisible = background // { fg = fill.bg; };
+    #  # Tab fill
+    #  background.fg = "#5a5b64";
+    #  background.bg = "#000000";
+    #  background.sp = fill.bg;
 
-      # Path name
-      duplicate = background // { fg = "#5a5b64"; };
+    # Tab separator
+    #  separator = background // { fg = fill.bg; };
+    #  separatorVisible = background // { fg = fill.bg; };
 
-      # buffer = { fg = "#5a5b64"; } // background;
-      modified = background // { fg = "#5e3828"; };
-      closeButton = background;
+    #  # Path name
+    #  duplicate = background // { fg = "#5a5b64"; };
 
-      # duplicate.bg = "#21222a";
-      pick.bg = "#212fff";
-      hint.bg = "#212fff";
-      # error.bg = "#21222a";
-      # warning.bg = "#21222a";
-      # info.bg = "#21222a";
-      # hint.bg = "#21222a";
-      # hintDiagnostic.bg = "#21222a";
-      # infoDiagnostic.bg = "#21222a";
-      # errorDiagnostic.bg = "#21222a";
-      # warningDiagnostic.bg = "#21222a";
-      # numbers.bg = "#21222a";
+    #  # buffer = { fg = "#5a5b64"; } // background;
+    #  #modified = background // { fg = "#f38ba8"; };
+    #  closeButton = background;
 
-      # icon = background;
-      bufferSelected.fg = "#ecedfa";
-      separatorSelected.fg = separator.fg;
-      # separatorSelected.fg = "#000000";
-      closeButtonSelected.fg = "#ecedfa";
+    # duplicate.bg = "#21222a";
+    #pick.bg = "#89b4fa";
+    #  hint.bg = "#000000";
+    #error.bg = "#f38ba8";
+    #warning.bg = "#eba0ac";
+    #info.bg = "#f9e2af";
+    # hint.bg = "#21222a";
+    #  hintDiagnostic.bg = "#89b4fa";
+    #  infoDiagnostic.bg = "#f9e2af";
+    #  errorDiagnostic.bg = "#f38ba8";
+    #  warningDiagnostic.bg = "#eba0ac";
+    # numbers.bg = "#21222a";
 
-      # nameVisible.fg = "#ecedfa";
-      modifiedSelected.fg = "#ef4030";
+    # icon = background;
+    #  bufferSelected.fg = "#ecedfa";
+    #  separatorSelected.fg = separator.fg;
+    # separatorSelected.fg = "#000000";
+    #  closeButtonSelected.fg = "#ecedfa";
 
-      bufferVisible.fg = "#5a5b64";
-      infoVisible.fg = "#5a5b64";
-    };
+    # nameVisible.fg = "#ecedfa";
+    #  modifiedSelected.fg = "#f38ba8";
+    #  modified.bg = "#000000";
+
+    #  bufferVisible.fg = "#5a5b64";
+    #  infoVisible.fg = "#eba0ac";
+    #};
     diagnosticsIndicator = ''
       function(count, level)
         local icon = level:match("error") and " " or ""

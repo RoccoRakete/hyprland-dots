@@ -165,11 +165,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1703838268,
-        "narHash": "sha256-SRg5nXcdPnrsQR2MTAp7en0NyJnQ2wB1ivmsgEbvN+o=",
+        "lastModified": 1704100519,
+        "narHash": "sha256-SgZC3cxquvwTN07vrYYT9ZkfvuhS5Y1k1F4+AMsuflc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2aff324cf65f5f98f89d878c056b779466b17db8",
+        "rev": "6e91c5df192395753d8e6d55a0352109cb559790",
         "type": "github"
       },
       "original": {
@@ -188,11 +188,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1703951941,
-        "narHash": "sha256-OWWeq3/ENX2Bo3F/OkhG3HFcgcdqJnsapjA3tD7B+fk=",
+        "lastModified": 1704027264,
+        "narHash": "sha256-RzzCNXrSjQAIB4C84/WZ5eYna20d2ZBKhE/PtWK89SM=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "94d6b2d2c12663efe90f6d0410528b0d7bcc671e",
+        "rev": "46997a764304366d772456c20b1c719960927aa7",
         "type": "github"
       },
       "original": {
@@ -223,6 +223,22 @@
       "original": {
         "owner": "hyprwm",
         "repo": "hyprland-protocols",
+        "type": "github"
+      }
+    },
+    "more-waita": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1700249054,
+        "narHash": "sha256-A/XigUb903ebJo7TmhdqOm4uy5HWcCSHFaxhb5plPQE=",
+        "owner": "somepaulo",
+        "repo": "MoreWaita",
+        "rev": "05c406b47326cdb0f481486156a6c9c9b28ef304",
+        "type": "github"
+      },
+      "original": {
+        "owner": "somepaulo",
+        "repo": "MoreWaita",
         "type": "github"
       }
     },
@@ -369,11 +385,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1703944758,
-        "narHash": "sha256-VOe76pyV9zY+1pX09nX4ZDv2dINZylI7U5sWmWm20gA=",
+        "lastModified": 1704074057,
+        "narHash": "sha256-A8kZLLVTOtgU9aQvQf7v3UxvrEBc0KXKNh6GJnFEYCg=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "9738dae3eac5c9b1c1e3ab787db0cedfc59e49b9",
+        "rev": "f2e808a519d9526cf7df9047f20f71c323c21ac9",
         "type": "github"
       },
       "original": {
@@ -412,6 +428,7 @@
         "ags": "ags",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "more-waita": "more-waita",
         "nix-software-center": "nix-software-center",
         "nixos-conf-editor": "nixos-conf-editor",
         "nixpkgs": "nixpkgs_5",

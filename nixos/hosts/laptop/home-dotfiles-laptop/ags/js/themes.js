@@ -12,8 +12,8 @@ export default [
 
 		"workspaces": 10,
 
-		"misc.gtk.theme": "adw-gtk3-dark",
-		"misc.gtkIcons.theme": "Adwaita",
+		//"misc.gtk.theme": "adw-gtk3-dark",
+		//"misc.gtkIcons.theme": "Adwaita",
 
 		"desktop.wallpaper.img": WP + "nord.jpg",
 		"desktop.avatar": HOME + "face.png",
@@ -103,8 +103,8 @@ export default [
 
 		"workspaces": 10,
 
-		"misc.gtk.theme": "Gruvbox-Dark-B",
-		"misc.gtkIcons.theme": "gruvbox_icons",
+		//"misc.gtk.theme": "Gruvbox-Dark-B",
+		//"misc.gtkIcons.theme": "gruvbox_icons",
 
 		"desktop.wallpaper.img": WP + "stairs.png",
 		"desktop.avatar": HOME + "face.png",
@@ -195,10 +195,10 @@ export default [
 
 		"workspaces": 10,
 
-		"misc.gtk.theme": "adw-gtk3-dark",
-		"misc.gtkIcons.theme": "Adwaita",
+		//"misc.gtk.theme": "Catppuccin-Frappe",
+		//"misc.gtkIcons.theme": "Adwaita",
 
-		"desktop.wallpaper.img": WP + "oled-mountains.jpg",
+		"desktop.wallpaper.img": WP + "mocha-mountains.png",
 		"desktop.avatar": HOME + "face.png",
 
 		"spacing": 2,
@@ -217,7 +217,7 @@ export default [
 		"theme.scheme": "dark",
 		"theme.bg": "#181825",
 		"theme.fg": "#CDD6F4",
-		"theme.accent.accent": "$teal",
+		"theme.accent.accent": "$blue",
 		"theme.accent.fg": "$bg-color",
 		"theme.accent.gradient": "to right, $accent, lighten($accent, 14%)",
 		"theme.widget.bg": "$fg-color",
@@ -287,8 +287,8 @@ export default [
 
 		"workspaces": 10,
 
-		"misc.gtk.theme": "rose-pine-gtk",
-		"misc.gtkIcons.theme": "rose-pine-icons",
+		//"misc.gtk.theme": "rose-pine-gtk",
+		//"misc.gtkIcons.theme": "rose-pine-icons",
 
 		"desktop.wallpaper.img": WP + "leafy-moon.png",
 		"desktop.avatar": HOME + "face.png",

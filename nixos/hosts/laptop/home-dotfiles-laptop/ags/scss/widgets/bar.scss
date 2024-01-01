@@ -263,6 +263,8 @@ $button-radius: if($bar-style =="floating", max(0, $radii - $bar-spacing), $radi
 	}
 
 	.battery-bar {
+		border-radius: $radii;
+
 		label {
 			margin-right: $bar-spacing * 3;
 		}
@@ -282,14 +284,23 @@ $button-radius: if($bar-style =="floating", max(0, $radii - $bar-spacing), $radi
 			margin-right: $bar-spacing * 0.5;
 		}
 
-		levelbar trough {
-			@include widget;
-			min-width: $battery-bar-width;
-			min-height: $battery-bar-height;
+		levelbar {
+			border-radius: $radii;
 
-			block.filled {
-				border-radius: max($radii - $border-width, 0);
-				background-image: $active-gradient;
+			horizontal {
+				border-radius: $radii;
+			}
+
+			trough {
+				@include widget;
+				min-width: $battery-bar-width;
+				min-height: $battery-bar-height;
+				border-radius: $radii;
+
+				block.filled {
+					border-radius: max($radii - $border-width, 0);
+					background-image: $active-gradient;
+				}
 			}
 		}
 

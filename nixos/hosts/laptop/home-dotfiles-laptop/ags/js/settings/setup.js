@@ -26,9 +26,9 @@ export function init() {
         reloadScss();
         hyprlandInit();
         wallpaper();
-        pywal();
-        gtkTheme();
-        gtkIcons();
+//        pywal();
+//        gtkTheme();
+//        gtkIcons();
     });
 }
 

@@ -44,6 +44,7 @@
         airline = {
           enable = true;
           powerline = true;
+          #theme = "bubblegum";
         };
       };
 
@@ -53,12 +54,23 @@
 
       extraConfigLua = "";
 
+      #colorschemes.kanagawa = {
+      #  enable = true;
+      #  terminalColors = true;
+      #};
+
+      #colorschemes.ayu = {
+      #  enable = true;
+      #  mirage = true;
+      #};
+
       colorschemes.catppuccin = {
         enable = true;
-        flavour = "frappe";
+        flavour = "mocha";
         transparentBackground = true;
       };
 
     };
   };
 }
+
