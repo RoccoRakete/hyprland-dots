@@ -9,6 +9,7 @@ in
   imports = [
     ../../configs/home-configs/styling.nix
     ../../configs/home-configs/zsh.nix
+    ../../configs/home-configs/kitty.nix
     ./link-dotfiles-laptop.nix
     ./home-programs-laptop.nix
   ];

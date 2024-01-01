@@ -9,11 +9,11 @@ in
     [
       ./hardware-configuration-laptop.nix
       ./configs-laptop/thinkfan.nix
-      ../../configs/global-configs/services.nix
-      ../../configs/global-configs/programs.nix
-      ../../configs/global-configs/nixvim/nvim.nix
-      ../../configs/global-configs/bluetooth.nix
-      ../../configs/global-configs/tlp.nix
+      ../../configs/nixos-configs/services.nix
+      ../../configs/nixos-configs/programs.nix
+      ../../configs/nixos-configs/nixvim/nvim.nix
+      ../../configs/nixos-configs/bluetooth.nix
+      ../../configs/nixos-configs/tlp.nix
       ../../nixos.nix
       ../../packages.nix
     ];

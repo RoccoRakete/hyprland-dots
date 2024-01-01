@@ -190,7 +190,7 @@ export default [
 	}),
 
 	Theme({
-		name: 'Catppuccin Mocha',
+		name: 'Catppuccin Frappé',
 		icon: '󰄛 ',
 
 		"workspaces": 10,
@@ -206,17 +206,17 @@ export default [
 		"radii": 5,
 		"popover_padding_multiplier": 1.4,
 
-		"color.red": "#F38BA8",
-		"color.green": "#A6E3A1",
-		"color.yellow": "#F9E2AF",
-		"color.blue": "#89B4FA",
-		"color.magenta": "#CBA6F7",
-		"color.teal": "#94E2D5",
-		"color.orange": "#FAB387",
+		"color.red": "#e78284",
+		"color.green": "#a6d189",
+		"color.yellow": "#e5c890",
+		"color.blue": "#8caaee",
+		"color.magenta": "#ca9ee6",
+		"color.teal": "#81c8be",
+		"color.orange": "#ef9f76",
 
 		"theme.scheme": "dark",
-		"theme.bg": "#181825",
-		"theme.fg": "#CDD6F4",
+		"theme.bg": "#181926",
+		"theme.fg": "#c6d0f5",
 		"theme.accent.accent": "$blue",
 		"theme.accent.fg": "$bg-color",
 		"theme.accent.gradient": "to right, $accent, lighten($accent, 14%)",

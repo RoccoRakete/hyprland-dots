@@ -5,7 +5,7 @@
     enable = true;
     mode = "buffers";
     diagnostics = "nvim_lsp";
-    indicator.style = "icon";
+    indicator.style = "underline";
 
     #separatorStyle = "slant";
     closeIcon = "󰅚";
@@ -20,6 +20,11 @@
         separator = true;
       }
     ];
+
+    highlights =
+      {
+        indicatorSelected.sp = "#89b4fa";
+      };
 
     #highlights = rec {
     #  # Tab bar fill
@@ -74,6 +79,13 @@
         return " " .. icon .. count
       end
     '';
+    #extraOptions = {
+    #  highlights = {
+    #    tab_separator_selected = {
+    #      underline = "#89b4fa";
+    #    };
+    #  };
+    #};
   };
 }
 
