@@ -82,6 +82,7 @@
     bitwarden
     discord
     betaflight-configurator
+    floorp
 
     # office
     obsidian
@@ -139,6 +140,7 @@
     nixos-generators
     wlr-randr
     powertop
+    cpu-x
   ];
 
 }

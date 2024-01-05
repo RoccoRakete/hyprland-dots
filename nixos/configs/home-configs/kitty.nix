@@ -7,6 +7,9 @@
     settings = {
       font_family = "Hurmit Nerd Font";
       font_size = "14.0";
+      background = "#1E1E1E";
+      foreground = "#DEDDDA";
+      tab_bar_background = "#1E1E1E";
       scrollback_lines = 10000;
       show_hyperlink_targets = "yes";
       focus_follows_mouse = "no";
@@ -18,9 +21,6 @@
       tab_title_template = "{title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}";
       url_style = "none";
       underline_hyperlinks = "never";
-      #modify_font = "underline_position 2;
-      #modify_font = "underline_thickness = 1500%";
-      #modify_font_strikethrough_position = "10px";
     };
     extraConfig =
       "modify_font underline_position 3" + "\n" +

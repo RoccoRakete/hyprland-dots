@@ -24,6 +24,7 @@
     highlights =
       {
         indicatorSelected.sp = "#89b4fa";
+        #tabSeparatorSelected.underline = "#89b4fa";
       };
 
     #highlights = rec {

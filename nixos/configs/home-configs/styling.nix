@@ -1,21 +1,11 @@
 { inputs, config, pkgs, ... }:
 
-let
-  moreWaita = pkgs.stdenv.mkDerivation {
-    name = "MoreWaita";
-    src = inputs.more-waita;
-    installPhase = ''
-      mkdir -p $out/share/icons
-      mv * $out/share/icons
-    '';
-  };
-in
 {
-  home = {
-    packages = with pkgs; [
-      moreWaita
-    ];
+  imports = [
+    ../../pkgs
+  ];
 
+  home = {
     pointerCursor = {
       gtk.enable = true;
       package = pkgs.bibata-cursors;
@@ -27,37 +17,44 @@ in
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Mocha-Standard-Blue-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "blue" ];
-        size = "standard";
-        tweaks = [ "normal" ];
-        variant = "mocha";
-      };
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
+      #theme = {
+      #  name = "Kanagawa-BL";
+      #  package = pkgs.custompkgs.kanagawa-gtk-theme;
     };
-    #theme = {
-    #  package = pkgs.catppuccin-gtk;
-    #  name = "adw-gtk3-dark";
     #};
+
+    #gtk = {
+    #  enable = true;
+    #  theme = {
+    #    name = "Catppuccin-Mocha-Standard-Blue-Dark";
+    #    package = pkgs.catppuccin-gtk.override {
+    #      accents = [ "blue" ];
+    #      size = "standard";
+    #      tweaks = [ "normal" ];
+    #      variant = "mocha";
+    #    };
+    #  };
     font = {
       name = "Ubuntu Nerd Font";
       size = 13;
     };
-    gtk3.extraCss = ''
-      headerbar, .titlebar,
-      .csd:not(.popup):not(tooltip):not(messagedialog) decoration{
-        border-radius: 0;
-      };
-      levelbar {
-        border-radius: 10;
-      };
-    '';
+    # gtk3.extraCss = ''
+    #   headerbar, .titlebar,
+    #   .csd:not(.popup):not(tooltip):not(messagedialog) decoration{
+    #     border-radius: 0;
+    #   };
+    #   levelbar {
+    #     outline-offset: 0;
+    #   };
+    # '';
     #iconTheme.name = moreWaita.name;
   };
 
   qt = {
     enable = true;
     platformTheme = "gtk";
-    style.name = "adwaita-dark";
+    style.name = "Catppuccin-Mocha-Standard-Blue-Dark";
   };
 }
