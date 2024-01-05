@@ -58,7 +58,7 @@
       extraConfigLua =
         ''if vim.g.neovide then'' + "\n" +
         ''vim.o.guifont = "Hurmit Nerd Font:h14"'' + "\n" +
-        ''vim.g.background_color = "#1E1E1E"'' + "\n" +
+        ''vim.api.nvim_set_hl(0, 'Normal', {bg = '#1e1e1e'})'' + "\n" +
 
         ''vim.keymap.set('n', '<C-S-s>', ':w<CR>') -- Save'' + "\n" +
         ''vim.keymap.set('v', '<C-S-c>', '"+y') -- Copy'' + "\n" +
