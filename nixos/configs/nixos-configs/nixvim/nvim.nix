@@ -12,6 +12,7 @@
     ./lsp-servers.nix
     ./treesitter.nix
     ./autopairs.nix
+    ./whichkey.nix
   ];
   programs = {
     nixvim = {

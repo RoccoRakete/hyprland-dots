@@ -3,7 +3,7 @@
 {
   services = {
     thinkfan.enable = true;
-    thinkfan.extraArgs = [ "-b""-10" "-s" "1" ];
+    thinkfan.extraArgs = [ "-b" "-10" "-s" "1" ];
     thinkfan.sensors = [
       {
         query = "/proc/acpi/ibm/thermal";
@@ -18,8 +18,9 @@
       }
     ];
     thinkfan.levels = [
-      [ 0 0 90 ]
-      [ 1 87 95 ]
+      [ 0 0 75 ]
+      [ 1 72 90 ]
+      [ 2 86 95 ]
       [ "level auto" 92 32767 ]
     ];
   };

@@ -12,53 +12,54 @@ import MicMute from './widgets/MicMute.js';
 import options from '../options.js';
 
 const Row = (toggles = [], menus = []) => Widget.Box({
-    vertical: true,
-    children: [
-        Widget.Box({
-            class_name: 'row horizontal',
-            children: toggles,
-        }),
-        ...menus,
-    ],
+	vertical: true,
+	children: [
+		Widget.Box({
+			class_name: 'row horizontal',
+			children: toggles,
+		}),
+		...menus,
+	],
 });
 
 const Homogeneous = toggles => Widget.Box({
-    homogeneous: true,
-    children: toggles,
+	homogeneous: true,
+	children: toggles,
 });
 
 export default () => PopupWindow({
-    name: 'quicksettings',
-    connections: [[options.bar.position, self => {
-        self.anchor = ['right', options.bar.position.value];
-        self.transition = 'crossfade';
-        
-    }]],
-    child: Widget.Box({
-        vertical: true,
-        children: [
-            Header(),
-            Widget.Box({
-                class_name: 'sliders-box vertical',
-                vertical: true,
-                children: [
-                    Row(
-                        [Volume()],
-                        [SinkSelector(), AppMixer()],
-                    ),
-                    Microhone(),
-                    Brightness(),
-                ],
-            }),
-            Row(
-                [Homogeneous([NetworkToggle(), BluetoothToggle()]), DND()],
-                [WifiSelection(), BluetoothDevices()],
-            ),
-            Row(
-                [Homogeneous([ThemeToggle()]), MicMute()],
-                [ThemeSelector()],
-            ),
-            Media(),
-        ],
-    }),
+	name: 'quicksettings',
+	setup: self => self.hook(options.bar.position, () => {
+		self.anchor = ['right', options.bar.position.value];
+		self.transition = 'crossfade';
+
+	}),
+
+	child: Widget.Box({
+		vertical: true,
+		children: [
+			Header(),
+			Widget.Box({
+				class_name: 'sliders-box vertical',
+				vertical: true,
+				children: [
+					Row(
+						[Volume()],
+						[SinkSelector(), AppMixer()],
+					),
+					Microhone(),
+					Brightness(),
+				],
+			}),
+			Row(
+				[Homogeneous([NetworkToggle(), BluetoothToggle()]), DND()],
+				[WifiSelection(), BluetoothDevices()],
+			),
+			Row(
+				[Homogeneous([ThemeToggle()]), MicMute()],
+				[ThemeSelector()],
+			),
+			Media(),
+		],
+	}),
 });

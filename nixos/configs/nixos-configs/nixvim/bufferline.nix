@@ -5,7 +5,7 @@
     enable = true;
     mode = "buffers";
     diagnostics = "nvim_lsp";
-    indicator.style = "underline";
+    indicator.style = null;
 
     #separatorStyle = "slant";
     closeIcon = "󰅚";

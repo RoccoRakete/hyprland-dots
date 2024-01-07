@@ -6,11 +6,11 @@ import options from '../options.js';
 
 export default () => PopupWindow({
     name: 'dashboard',
-    connections: [[options.bar.position, self => {
+    setup: self => self.hook(options.bar.position, () => {
         self.anchor = [options.bar.position.value];
         self.transition = 'crossfade';
 
-    }]],
+    }),
     child: Widget.Box({
         children: [
             NotificationColumn(),
