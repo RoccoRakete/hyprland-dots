@@ -88,7 +88,6 @@
     obsidian
     libreoffice-fresh
     nextcloud-client
-    anydesk
     remmina
 
     # media
@@ -97,9 +96,9 @@
     grimblast
     wayshot
     spotify
-    sauerbraten
     gimp
     gthumb
+    yuzu-mainline
 
     # system
     coreutils

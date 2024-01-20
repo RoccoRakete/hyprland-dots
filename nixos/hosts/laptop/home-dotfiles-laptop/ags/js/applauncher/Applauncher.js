@@ -5,6 +5,7 @@ import PopupWindow from '../misc/PopupWindow.js';
 import AppItem from './AppItem.js';
 import icons from '../icons.js';
 import { launchApp } from '../utils.js';
+import options from '../options.js';
 
 const WINDOW_NAME = 'applauncher';
 
@@ -24,6 +25,7 @@ const Applauncher = () => {
     ];
 
     const list = Widget.Box({
+        class_name: 'app-list',
         vertical: true,
         children: children(),
     });
@@ -72,5 +74,6 @@ const Applauncher = () => {
 export default () => PopupWindow({
     name: WINDOW_NAME,
     transition: 'slide_down',
+    anchor: options.applauncher.anchor.bind('value'),
     child: Applauncher(),
 });

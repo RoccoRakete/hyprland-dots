@@ -15,7 +15,7 @@ export default [
 		//"misc.gtk.theme": "adw-gtk3-dark",
 		//"misc.gtkIcons.theme": "Adwaita",
 
-		"desktop.wallpaper.img": WP + "nord.jpg",
+		"desktop.wallpaper.img": WP + "hypr-marble.png",
 		"desktop.avatar": HOME + "face.png",
 
 		"spacing": 2,
@@ -55,6 +55,7 @@ export default [
 		"applauncher.width": 500,
 		"applauncher.height": 400,
 		"applauncher.icon_size": 42,
+		"applauncher.anchor": "center",
 
 		"bar.position": "top",
 		"bar.style": "floating",
@@ -73,7 +74,7 @@ export default [
 		"desktop.dock.icon_size": 42,
 		"desktop.dock.pinned_apps": [
 			"brave",
-			"Visual Studio Code",
+			"neovide",
 			"kitty",
 			"org.gnome.Nautilus",
 			"obsidian",
@@ -146,6 +147,7 @@ export default [
 		"applauncher.width": 500,
 		"applauncher.height": 400,
 		"applauncher.icon_size": 32,
+		"applauncher.anchor": "center",
 
 		"bar.position": "top",
 		"bar.style": "floating",
@@ -164,7 +166,7 @@ export default [
 		"desktop.dock.icon_size": 42,
 		"desktop.dock.pinned_apps": [
 			"brave",
-			"Visual Studio Code",
+			"neovide",
 			"kitty",
 			"org.gnome.Nautilus",
 			"obsidian",
@@ -238,6 +240,7 @@ export default [
 		"applauncher.width": 500,
 		"applauncher.height": 400,
 		"applauncher.icon_size": 32,
+		"applauncher.anchor": "center",
 
 		"bar.position": "top",
 		"bar.style": "floating",
@@ -256,7 +259,7 @@ export default [
 		"desktop.dock.icon_size": 42,
 		"desktop.dock.pinned_apps": [
 			"brave",
-			"Visual Studio Code",
+			"neovide",
 			"kitty",
 			"org.gnome.Nautilus",
 			"obsidian",
@@ -330,6 +333,7 @@ export default [
 		"applauncher.width": 500,
 		"applauncher.height": 400,
 		"applauncher.icon_size": 32,
+		"applauncher.anchor": "center",
 
 		"bar.position": "top",
 		"bar.style": "floating",
@@ -348,7 +352,7 @@ export default [
 		"desktop.dock.icon_size": 42,
 		"desktop.dock.pinned_apps": [
 			"brave",
-			"Visual Studio Code",
+			"neovide",
 			"kitty",
 			"org.gnome.Nautilus",
 			"obsidian",

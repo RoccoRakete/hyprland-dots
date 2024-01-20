@@ -12,7 +12,7 @@ font="Ubuntu Nerd Font"
 
 clock
 timestr=%R
-datestr=%a, %e.%B
+datestr=%a, %d. %B
 
 # Add an image as a background 
 image=~/.dots/backgrounds/last/image_blurred.png

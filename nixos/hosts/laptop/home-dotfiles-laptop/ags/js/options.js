@@ -179,6 +179,7 @@ export default {
 		width: Option(500),
 		height: Option(500),
 		icon_size: Option(42),
+                anchor: Option(['center']),
 	},
 
 	bar: {

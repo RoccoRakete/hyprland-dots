@@ -16,6 +16,8 @@
 
   gtk = {
     enable = true;
+    iconTheme.package = pkgs.morewaita-icon-theme;
+    iconTheme.name = "MoreWaita";
     theme = {
       name = "adw-gtk3-dark";
       package = pkgs.adw-gtk3;
