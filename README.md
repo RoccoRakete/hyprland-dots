@@ -6,8 +6,12 @@
 ---
 
 # ⏰ **Updates**
- * Now works with ags > 1.5.0! If you want to use it with ags < 1.5.0 please use: "ags_old_working_1.4.x"
- * Added the ability to set GTK-Themes/Icons directly from the ags config. 
+ * This has changed quiet a lot...
+   * These dotfiles are now intended to be used with NixOS. 
+   * I removed the ability to set GTK-Themes/Icons, due to, weird behaviors... This styling is now to be done with home-manager.
+   * More small changes has been made. 
+ * works with ags > 1.5.0! If you want to use it with ags < 1.5.0 please use: "ags_old_working_1.4.x"
+ * Added the ability to set GTK-Themes/Icons directly from the ags config. -> This got removed! 
  * Pywal-Themes can also be set from the ags config.
  * Needs Ags v1.4.0 to work correctly now... 
  * Rofi Wallpaper switcher is now available. 
