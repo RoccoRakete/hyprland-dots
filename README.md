@@ -44,7 +44,7 @@ bind = , XF86AudioLowerVolume , exec , ags run-js "audio.speaker.volume -= 0.05;
 ... this triggers the OSD to show up too!
 This should work with brightness control too, but I can't verify this, since I'm not using Linux on a Laptop.
 
-# ⚙️ ** !!obsolete!! GTK-Themes / GTK-Icons / PyWall-Themes**
+# ⚙️ **!!obsolete!! GTK-Themes / GTK-Icons / PyWall-Themes**
 ![Screenshot_19-11-23_12-20](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/0a197c8a-e0d8-40e4-acf2-7d17771c5bb7)
 
 
@@ -61,7 +61,9 @@ This should work with brightness control too, but I can't verify this, since I'm
   
   Have fun! 
 
-# 📜 **Installation** 
+# 📜 **Installation**
+If you still want to use this with anything other than NixOS, this is the stuff you need to install:
+
 If you install [ags](https://github.com/Aylur/ags/wiki/installation) and [Hyprland](https://wiki.hyprland.org/Getting-Started/Installation/) you're 99% ready to go. 
 
 Forthermore I recommend installing the following things: 
