@@ -44,7 +44,7 @@ bind = , XF86AudioLowerVolume , exec , ags run-js "audio.speaker.volume -= 0.05;
 ... this triggers the OSD to show up too!
 This should work with brightness control too, but I can't verify this, since I'm not using Linux on a Laptop.
 
-# ⚙️ **GTK-Themes / GTK-Icons / PyWall-Themes**
+# ⚙️ ** !!obsolete!! GTK-Themes / GTK-Icons / PyWall-Themes**
 ![Screenshot_19-11-23_12-20](https://github.com/RoccoRakete/hyprland-dots/assets/44879342/0a197c8a-e0d8-40e4-acf2-7d17771c5bb7)
 
 
