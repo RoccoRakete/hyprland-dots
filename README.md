@@ -18,14 +18,12 @@
  * Added a systemresource monitor to the bar.
 
 # 🔧 **Stuff used** 
-* GTK-Theme: [Gruvbox theme by me.](https://github.com/RoccoRakete/gruvbox-gtk-theme)
-* Icons: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+* GTK-Theme: [Mostly Adwaita/adw-gtk3.](https://github.com/lassekongo83/adw-gtk3)
+* Icons: [MoreWaita](https://github.com/somepaulo/MoreWaita)
 * Compositor: [Hyprland](https://github.com/hyprwm/Hyprland)
 * Shell: [ags](https://github.com/Aylur/ags)
-* Launcher: [Anyrun](https://github.com/Kirottu/anyrun)
 * Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
-* [Rofi](https://github.com/lbonn/rofi)
-* [Wallaper](https://github.com/AngelJumbo/gruvbox-wallpapers/blob/main/wallpapers/irl/stairs.jpg)
+* [Wallaper shown on the pictures](https://github.com/AngelJumbo/gruvbox-wallpapers/blob/main/wallpapers/irl/stairs.jpg)
 
 # 🎨 **The Ags-Shell** 
 When I first started using ags I thought, OMG: Why is this so hard and complicated ...
