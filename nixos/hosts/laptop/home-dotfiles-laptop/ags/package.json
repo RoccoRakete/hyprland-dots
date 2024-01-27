@@ -1,6 +1,6 @@
 {
 	"name": "ags-dotfiles",
-	"version": "1.7.2",
+	"version": "1.7.3",
 	"description": "An extensible GTK-Shell",
 	"main": "config.js",
 	"scripts": {

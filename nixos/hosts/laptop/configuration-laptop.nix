@@ -18,6 +18,10 @@ in
       ../../packages.nix
     ];
 
+  services.logind = {
+    lidSwitchDocked = "ignore";
+  };
+
   # Networking
   networking = {
     hostName = vars.laptop;

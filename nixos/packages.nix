@@ -50,6 +50,7 @@
     gradience
     swaylock-effects
     kitty-themes
+    gtklock
 
     # code
     sassc
@@ -70,6 +71,16 @@
     emacs
     jq
     nil
+    rustc
+    pkg-config-unwrapped
+    pkg-config
+    glib
+    gdk-pixbuf
+    cairo
+    pango
+    gobject-introspection
+    atkmm
+
 
     # homelab
     rpi-imager
@@ -140,6 +151,7 @@
     wlr-randr
     powertop
     cpu-x
+    poweralertd
   ];
 
 }

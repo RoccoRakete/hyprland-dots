@@ -73,7 +73,7 @@ export default [
 		"desktop.shadow": "rgba(0, 0, 0, .6)",
 		"desktop.dock.icon_size": 42,
 		"desktop.dock.pinned_apps": [
-			"brave",
+			"firefox",
 			"neovide",
 			"kitty",
 			"org.gnome.Nautilus",
@@ -165,7 +165,7 @@ export default [
 		"desktop.shadow": "rgba(0, 0, 0, .6)",
 		"desktop.dock.icon_size": 42,
 		"desktop.dock.pinned_apps": [
-			"brave",
+			"firefox",
 			"neovide",
 			"kitty",
 			"org.gnome.Nautilus",
@@ -258,7 +258,7 @@ export default [
 		"desktop.shadow": "rgba(0, 0, 0, .6)",
 		"desktop.dock.icon_size": 42,
 		"desktop.dock.pinned_apps": [
-			"brave",
+			"firefox",
 			"neovide",
 			"kitty",
 			"org.gnome.Nautilus",
@@ -351,7 +351,7 @@ export default [
 		"desktop.shadow": "rgba(0, 0, 0, .6)",
 		"desktop.dock.icon_size": 42,
 		"desktop.dock.pinned_apps": [
-			"brave",
+			"firefox",
 			"neovide",
 			"kitty",
 			"org.gnome.Nautilus",

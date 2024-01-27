@@ -47,8 +47,8 @@
 
         airline = {
           enable = true;
-          powerline = true;
-          #theme = "bubblegum";
+          #powerline = true;
+          theme = "bubblegum";
         };
       };
 

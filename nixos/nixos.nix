@@ -48,7 +48,6 @@ in
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-
     plymouth = {
       enable = true;
       theme = "bgrt";
@@ -60,21 +59,25 @@ in
   time.timeZone = "Europe/Berlin";
 
   # Locale Settings
-  i18n.extraLocaleSettings = {
-    defaultLocale = "de_DE.UTF-8";
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
+  i18n = {
+    extraLocaleSettings = {
+      defaultLocale = "de_DE.UTF-8";
+      LC_ADDRESS = "de_DE.UTF-8";
+      LC_IDENTIFICATION = "de_DE.UTF-8";
+      LC_MEASUREMENT = "de_DE.UTF-8";
+      LC_MONETARY = "de_DE.UTF-8";
+      LC_NAME = "de_DE.UTF-8";
+      LC_NUMERIC = "de_DE.UTF-8";
+      LC_PAPER = "de_DE.UTF-8";
+      LC_TELEPHONE = "de_DE.UTF-8";
+      LC_TIME = "de_DE.UTF-8";
+    };
   };
 
-  # Configure console keymap
+  # Configure console(tty)
   console.keyMap = "de";
+  #console.font = "ter-v32b";
+  #console.packages = with pkgs; [ terminus_font ];
 
   hardware = {
     pulseaudio.enable = false;
@@ -92,6 +95,7 @@ in
   };
 
   security.pam.services.swaylock = { };
+  security.pam.services.gtklock = { };
   security.polkit.enable = true;
 
   # Enable sound with pipewire.
