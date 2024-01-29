@@ -49,7 +49,7 @@ while true; do
   # check conditions
   if [[ $(cat "$LID_STATUS") == *"$LID_CLOSED_CONDITION"* && $(cat "$EXTERNAL_MONITOR_STATUS") == *"$EXTERNAL_MONITOR_CONDITION"* ]]; then
     # execute screenlocker
-    $LOCK_COMMAND  $LOCK_COMMAND_PARAMS 
+    $LOCK_COMMAND $LOCK_COMMAND_PARAMS 
   fi
   sleep 1
 done
