@@ -5,7 +5,7 @@ let
   vars = import ./variables.nix;
 in
 
-{
+  {
   #environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment = {
     variables = {
@@ -42,12 +42,13 @@ in
     tmp.cleanOnBoot = true;
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [ "quiet" "nosgx" ];
-
+    
     loader = {
       timeout = 0;
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
+    
     plymouth = {
       enable = true;
       theme = "bgrt";

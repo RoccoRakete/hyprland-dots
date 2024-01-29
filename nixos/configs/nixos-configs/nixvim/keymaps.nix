@@ -5,6 +5,13 @@
     nixvim = {
       keymaps = [
         {
+          key = "<leader>fm";
+          action = ":Autoformat<CR>";
+          options = {
+            silent = true;
+          };
+        }
+        {
           key = ".";
           action = ":";
         }

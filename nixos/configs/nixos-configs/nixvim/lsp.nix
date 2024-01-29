@@ -3,8 +3,8 @@
 {
   programs.nixvim.plugins.lsp = {
     enable = true;
-    keymaps.lspBuf = {
-      "<leader>fm" = "format";
-    };
+    #keymaps.lspBuf = {
+    #  "<leader>fm" = "format";
+    #};
   };
 }

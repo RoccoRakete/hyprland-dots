@@ -6,11 +6,12 @@
 
 {
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "electron-25.9.0"
+    ];
+  };
 
   # Package configurations
   environment.systemPackages = with pkgs; [
@@ -54,6 +55,7 @@
 
     # code
     sassc
+    sass
     neovide
     fzf
     nodejs_21
@@ -71,16 +73,11 @@
     emacs
     jq
     nil
-    rustc
-    pkg-config-unwrapped
-    pkg-config
-    glib
-    gdk-pixbuf
-    cairo
-    pango
-    gobject-introspection
-    atkmm
-
+    rustfmt
+    nixd
+    java-language-server
+    jsonfmt
+    luaformatter
 
     # homelab
     rpi-imager
@@ -93,7 +90,6 @@
     bitwarden
     discord
     betaflight-configurator
-    floorp
 
     # office
     obsidian
@@ -113,6 +109,9 @@
 
     # system
     coreutils
+    toybox
+    powerstat
+    cosmic-term
     mate.mate-polkit
     polkit
     wget

@@ -2,10 +2,10 @@
 
 {
   services = {
-    physlock = {
-      enable = true;
-      muteKernelMessages = true;
-    };
+    #physlock = {
+    #  enable = true;
+    #  muteKernelMessages = true;
+    #};
     fwupd.enable = true;
     tumbler.enable = true;
     gvfs.enable = true;

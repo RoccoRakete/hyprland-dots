@@ -1,415 +1,415 @@
 $bar-spacing: $spacing / 2;
-$button-radius: if($bar-style =="floating", max(0, $radii - $bar-spacing), $radii);
+$button-radius: if(
+  $bar-style == "floating",
+  max(0, $radii - $bar-spacing),
+  $radii
+);
 
 @mixin panel-button($flat: $bar-flat-buttons, $reactive: true) {
-	@include unset;
+  @include unset;
 
-	@if $bar-style =="separated" {
-		transition: $transition;
+  @if $bar-style == "separated" {
+    transition: $transition;
 
-		>* {
-			@include floating-widget;
-			border-radius: $radii;
-			margin: $wm-gaps $bar-spacing;
-			transition: $transition;
-		}
+    > * {
+      @include floating-widget;
+      border-radius: $radii;
+      margin: $wm-gaps $bar-spacing;
+      transition: $transition;
+    }
 
-		&:hover>* {
-			color: $hover-fg;
+    &:hover > * {
+      color: $hover-fg;
 
-			@if $drop-shadow {
-				box-shadow:
-					0 0 min(6px, $spacing/2) 0 $shadow,
-					inset 0 0 0 99px $hover;
-			}
+      @if $drop-shadow {
+        box-shadow:
+          0 0 min(6px, $spacing/2) 0 $shadow,
+          inset 0 0 0 99px $hover;
+      } @else {
+        box-shadow: inset 0 0 0 99px $hover;
+      }
+    }
 
-			@else {
-				box-shadow: inset 0 0 0 99px $hover;
-			}
-		}
+    &:active > *,
+    &.active > * {
+      label,
+      image {
+        color: $accent-fg;
+      }
 
-		&:active>*,
-		&.active>* {
+      background-image: $active-gradient;
+      background-color: $accent;
+    }
+  } @else {
+    @include accs-button($flat, $reactive);
 
-			label,
-			image {
-				color: $accent-fg;
-			}
+    > * {
+      border-radius: $button-radius;
+      margin: $bar-spacing;
+    }
+  }
 
-			background-image: $active-gradient;
-			background-color: $accent;
-		}
-	}
+  label,
+  image {
+    font-weight: bold;
+  }
 
-	@else {
-		@include accs-button($flat, $reactive);
-
-		>* {
-			border-radius: $button-radius;
-			margin: $bar-spacing;
-		}
-	}
-
-	label,
-	image {
-		font-weight: bold;
-	}
-
-	>* {
-		padding: $padding * 0.4 $padding * 0.8;
-	}
+  > * {
+    padding: $padding * 0.4 $padding * 0.8;
+  }
 }
 
 .panel {
-	.cpu {
-		padding-left: $spacing/2;
-		color: $accent;
-		font-size: $font_size/5;
-		border-radius: max($radii - $border_width, 0);
-		margin: $spacing;
-		min-height: $font_size * 1.25;
-		min-width: $font_size * 1.25;
+  .cpu {
+    padding-left: $spacing/2;
+    color: $accent;
+    font-size: $font_size/5;
+    border-radius: max($radii - $border_width, 0);
+    margin: $spacing;
+    min-height: $font_size * 1.25;
+    min-width: $font_size * 1.25;
 
-		@if $bar_style =="separated" {
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
-			margin-left: $spacing/4;
-			margin-right: 0;
-			padding: $spacing;
-			padding-left: $spacing * 3;
-			background-color: $bg-color;
-		}
-	}
+    @if $bar_style == "separated" {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      margin-left: $spacing/4;
+      margin-right: 0;
+      padding: $spacing;
+      padding-left: $spacing * 3;
+      background-color: $bg-color;
+    }
+  }
 
-	.ram {
-		color: $yellow;
-		font-size: $font_size/5;
-		border-radius: max($radii - $border_width, 0);
-		margin: $spacing;
-		min-height: $font_size * 1.25;
-		min-width: $font_size * 1.25;
+  .ram {
+    color: $yellow;
+    font-size: $font_size/5;
+    border-radius: max($radii - $border_width, 0);
+    margin: $spacing;
+    min-height: $font_size * 1.25;
+    min-width: $font_size * 1.25;
 
-		@if $bar_style =="separated" {
-			border-radius: 0;
-			margin-left: 0;
-			margin-right: 0;
-			padding: $spacing;
-			background-color: $bg-color;
-		}
-	}
+    @if $bar_style == "separated" {
+      border-radius: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding: $spacing;
+      background-color: $bg-color;
+    }
+  }
 
-	.temp {
-		padding-right: $spacing * 2;
-		color: $magenta;
-		font-size: $font_size/5;
-		border-radius: max($radii - $border_width, 0);
-		margin: $spacing;
-		min-height: $font_size * 1.25;
-		min-width: $font_size * 1.25;
+  .temp {
+    padding-right: $spacing * 2;
+    color: $magenta;
+    font-size: $font_size/5;
+    border-radius: max($radii - $border_width, 0);
+    margin: $spacing;
+    min-height: $font_size * 1.25;
+    min-width: $font_size * 1.25;
 
-		@if $bar_style =="separated" {
-			border-top-left-radius: 0;
-			border-bottom-left-radius: 0;
-			margin-right: $spacing/4;
-			margin-left: 0;
-			padding: $spacing;
-			padding-right: $spacing * 3;
-			background-color: $bg-color;
-		}
-	}
+    @if $bar_style == "separated" {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      margin-right: $spacing/4;
+      margin-left: 0;
+      padding: $spacing;
+      padding-right: $spacing * 3;
+      background-color: $bg-color;
+    }
+  }
 
-	.circular-progress-box {
-		.circular-progress {
-			margin: $spacing/2.5;
-			background-color: $widget-bg;
-			font-size: 1em;
+  .circular-progress-box {
+    .circular-progress {
+      margin: $spacing/2.5;
+      background-color: $widget-bg;
+      font-size: 1em;
 
-			@if $bar_style =="separated" {
-				padding: $wm_gaps $wm_gaps + 5px $wm_gaps $wm_gaps + 5px;
-				border-radius: max($radii - $border_width, 0);
-				margin-left: $spacing/4;
-				margin-right: $spacing/4;
-			}
-		}
-	}
+      @if $bar_style == "separated" {
+        padding: $wm_gaps $wm_gaps + 5px $wm_gaps $wm_gaps + 5px;
+        border-radius: max($radii - $border_width, 0);
+        margin-left: $spacing/4;
+        margin-right: $spacing/4;
+      }
+    }
+  }
 
-	@if $bar-style =="normal" {
-		background-color: $bg-color;
-	}
+  @if $bar-style == "normal" {
+    background-color: $bg-color;
+  }
 
-	@if not $screen-corners and $bar-style =="normal" {
-		@if $bar-position =="bottom" {
-			border-top: $border;
-		}
+  @if not $screen-corners and $bar-style == "normal" {
+    @if $bar-position == "bottom" {
+      border-top: $border;
+    } @else {
+      border-bottom: $border;
+    }
+  }
 
-		@else {
-			border-bottom: $border;
-		}
-	}
+  @if $bar-style == "floating" {
+    @include floating-widget;
+    border-radius: $radii;
+    margin-top: $wm-gaps;
+    margin-left: $wm-gaps;
+    margin-right: $wm-gaps;
+    margin-bottom: 0;
+    padding: 0;
+  }
 
-	@if $bar-style =="floating" {
-		@include floating-widget;
-		border-radius: $radii;
-		margin-top: $wm-gaps;
-		margin-left: $wm-gaps;
-		margin-right: $wm-gaps;
-		margin-bottom: 0;
-		padding: 0;
-	}
+  @if $bar-style == "separated" {
+    > .end > button:last-child > * {
+      margin-right: $wm-gaps;
+    }
 
-	@if $bar-style =="separated" {
-		>.end>button:last-child>* {
-			margin-right: $wm-gaps;
-		}
+    > .start > button:first-child > * {
+      margin-left: $wm-gaps;
+    }
 
-		>.start>button:first-child>* {
-			margin-left: $wm-gaps;
-		}
+    margin-bottom: 0;
+  }
 
-		margin-bottom: 0;
-	}
+  .panel-button {
+    @include panel-button;
+  }
 
-	.panel-button {
-		@include panel-button;
-	}
+  .battery_percentage {
+    padding-bottom: 2px;
+  }
 
-	.battery_percentage {
-		padding-bottom: 2px;
-	}
+  .tray-item,
+  .color-picker {
+    @include panel-button($flat: true);
+  }
 
-	.tray-item,
-	.color-picker {
-		@include panel-button($flat: true);
-	}
+  separator {
+    background-color: transparentize($fg-color, 0.86);
+    border-radius: $radii;
+    min-height: 5px;
+    min-width: 5px;
+  }
 
-	separator {
-		background-color: transparentize($fg-color, 0.86);
-		border-radius: $radii;
-		min-height: 5px;
-		min-width: 5px;
-	}
+  .overview {
+    label {
+      color: transparentize($accent, 0.2);
+    }
 
-	.overview {
-		label {
-			color: transparentize($accent, 0.2);
-		}
+    &:hover label {
+      color: $accent;
+    }
 
-		&:hover label {
-			color: $accent;
-		}
+    &:active label,
+    &.active label {
+      color: $accent-fg;
+    }
+  }
 
-		&:active label,
-		&.active label {
-			color: $accent-fg;
-		}
-	}
+  .powermenu,
+  .recorder {
+    image {
+      color: transparentize($red, 0.3);
+    }
 
-	.powermenu,
-	.recorder {
-		image {
-			color: transparentize($red, 0.3);
-		}
+    &:hover image {
+      color: transparentize($red, 0.15);
+    }
 
-		&:hover image {
-			color: transparentize($red, 0.15);
-		}
+    &:active image {
+      color: $red;
+    }
+  }
 
-		&:active image {
-			color: $red;
-		}
-	}
+  .focused-client > box > box,
+  .quicksettings > box > box {
+    @include spacing(
+      $spacing: if($bar-spacing ==0, $padding / 2, $bar-spacing)
+    );
+  }
 
-	.focused-client>box>box,
-	.quicksettings>box>box {
-		@include spacing($spacing: if($bar-spacing ==0, $padding / 2, $bar-spacing));
-	}
+  /* stylelint-disable-next-line selector-not-notation */
+  .quicksettings:not(.active):not(:active) {
+    .bluetooth {
+      color: $blue;
+    }
 
-	/* stylelint-disable-next-line selector-not-notation */
-	.quicksettings:not(.active):not(:active) {
-		.bluetooth {
-			color: $blue;
-		}
+    .battery {
+      &.low {
+        color: $red;
+      }
 
-		.battery {
-			&.low {
-				color: $red;
-			}
+      &.charged,
+      &.charging {
+        color: $green;
+      }
+    }
+  }
 
-			&.charged,
-			&.charging {
-				color: $green;
-			}
-		}
-	}
+  .media {
+    &.spotify image {
+      color: $green;
+    }
 
-	.media {
-		&.spotify image {
-			color: $green;
-		}
+    &.firefox image {
+      color: $orange;
+    }
 
-		&.firefox image {
-			color: $orange;
-		}
+    &.mpv image {
+      color: $magenta;
+    }
+  }
 
-		&.mpv image {
-			color: $magenta;
-		}
-	}
+  .notifications {
+    image {
+      color: $yellow;
+    }
+  }
 
-	.notifications {
-		image {
-			color: $yellow;
-		}
-	}
+  .battery-bar {
+    label {
+      margin-right: $bar-spacing * 3;
+    }
 
-	.battery-bar {
-		label {
-			margin-right: $bar-spacing * 3;
-		}
+    .font-icon {
+      font-size: 1.15em;
+    }
 
-		.font-icon {
-			font-size: 1.15em;
-		}
+    @if $battery-bar-full {
+      > box {
+        padding: 0;
+      }
+    }
 
-		@if $battery-bar-full {
-			>box {
-				padding: 0;
-			}
-		}
+    image,
+    .font-icon {
+      margin-right: $bar-spacing * 0.5;
+    }
 
-		image,
-		.font-icon {
-			margin-right: $bar-spacing * 0.5;
-		}
+    levelbar {
+      margin: $padding;
+      padding: $padding;
 
-		levelbar {
-			margin: $padding;
-			padding: $padding;
+      trough {
+        @include widget;
+        min-width: $battery-bar-width;
+        min-height: $battery-bar-height;
 
-			trough {
-				@include widget;
-				min-width: $battery-bar-width;
-				min-height: $battery-bar-height;
+        block.filled {
+          border-radius: max($radii - $border-width, 0);
+          background-image: $active-gradient;
+        }
 
-				block.filled {
-					border-radius: max($radii - $border-width, 0);
-					background-image: $active-gradient;
-				}
+        block.empty {
+          border-radius: max($radii - $border-width, 0);
+        }
+      }
+    }
 
-				block.empty {
-					border-radius: max($radii - $border-width, 0);
-				}
-			}
-		}
+    @mixin color($color) {
+      image,
+      label {
+        color: $fg_color;
+      }
 
-		@mixin color($color) {
+      block.filled {
+        background-image: linear-gradient(
+          to right,
+          $color,
+          lighten($color, 6%)
+        );
+      }
+    }
 
-			image,
-			label {
-				color: $fg_color;
-			}
+    .medium {
+      @include color($yellow);
+    }
 
-			block.filled {
-				background-image: linear-gradient(to right, $color, lighten($color, 6%));
-			}
-		}
+    .low {
+      @include color($red);
+    }
 
-		.medium {
-			@include color($yellow);
-		}
+    .charging {
+      @include color($green);
+    }
 
-		.low {
-			@include color($red);
-		}
+    &:active {
+      @include color($accent-fg);
+    }
 
-		.charging {
-			@include color($green);
-		}
+    .whole-button {
+      label {
+        color: $fg-color;
+        text-shadow: $text-shadow;
+      }
 
-		&:active {
-			@include color($accent-fg);
-		}
+      trough,
+      block.filled {
+        border-radius: $button-radius;
+      }
 
-		.whole-button {
-			label {
-				color: $fg-color;
-				text-shadow: $text-shadow;
-			}
+      @if $bar-style == "separated" {
+        trough {
+          border: none;
+        }
+      }
+    }
+  }
 
-			trough,
-			block.filled {
-				border-radius: $button-radius;
-			}
+  .workspaces {
+    .horizontal {
+      background-color: $bg-color;
+    }
 
-			@if $bar-style =="separated" {
-				trough {
-					border: none;
-				}
-			}
-		}
-	}
+    > * {
+      padding: 0;
+    }
 
-	.workspaces {
-		.horizontal {
-			background-color: $bg-color;
-		}
+    .eventbox {
+      transition: $transition;
 
-		>* {
-			padding: 0;
-		}
+      @if $bar-style == "separated" {
+        border-radius: max($radii - $border-width, 0);
+      } @else {
+        @include button($flat: true);
+      }
+    }
 
-		.eventbox {
-			transition: $transition;
+    button {
+      all: unset;
+      background-color: $bg-color;
+      border-radius: $radii;
 
-			@if $bar-style =="separated" {
-				border-radius: max($radii - $border-width, 0);
-			}
+      .indicator {
+        font-size: 0;
+        min-width: $font_size * 0.9;
+        min-height: $font_size * 0.9;
+        border-radius: $font_size;
+        box-shadow: inset 0 0 0 $border-width $border-color;
+        margin: 0 $padding/2;
+        transition: $transition/2;
+        background-color: transparentize($fg-color, 0.8);
+      }
 
-			@else {
-				@include button($flat: true);
-			}
-		}
+      &:last-child .indicator {
+        margin-right: $padding;
+      }
 
-		button {
-			all: unset;
-			background-color: $bg-color;
-			border-radius: $radii;
+      &:first-child .indicator {
+        margin-left: $padding;
+      }
 
-			.indicator {
-				font-size: 0;
-				min-width: $font_size * 0.9;
-				min-height: $font_size * 0.9;
-				border-radius: $font_size;
-				box-shadow: inset 0 0 0 $border-width $border-color;
-				margin: 0 $padding/2;
-				transition: $transition/2;
-				background-color: transparentize($fg-color, 0.8);
-			}
+      &.occupied .indicator {
+        background-color: transparentize($fg-color, 0.2);
+      }
 
-			&:last-child .indicator {
-				margin-right: $padding;
-			}
+      &:hover .indicator {
+        box-shadow: inset 0 0 0 10px transparentize($fg-color, 0.8);
+      }
 
-			&:first-child .indicator {
-				margin-left: $padding;
-			}
+      &.active .indicator,
+      &:active .indicator {
+        background-color: $accent;
+      }
 
-			&.occupied .indicator {
-				background-color: transparentize($fg-color, 0.2);
-			}
-
-			&:hover .indicator {
-				box-shadow: inset 0 0 0 10px transparentize($fg-color, 0.8);
-			}
-
-			&.active .indicator,
-			&:active .indicator {
-				background-color: $accent;
-			}
-
-			&.active .indicator {
-				min-width: $font_size * 2.5;
-			}
-		}
-	}
+      &.active .indicator {
+        min-width: $font_size * 2.5;
+      }
+    }
+  }
 }

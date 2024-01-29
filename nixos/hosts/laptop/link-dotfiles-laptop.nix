@@ -21,6 +21,12 @@
     recursive = true;
     enable = true;
   };
+  # swaylock
+  home.file."${config.xdg.configHome}/screenlock" = {
+    source = ./home-dotfiles-laptop/screenlock;
+    recursive = true;
+    enable = true;
+  };
 
   # neovim
   #home.file."${config.xdg.configHome}/nvim" = {

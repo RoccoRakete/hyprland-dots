@@ -29,7 +29,7 @@
         nix.enable = true;
 
         lsp-lines.enable = true;
-        lsp-format.enable = true;
+        #lsp-format.enable = true;
         lspkind.enable = true;
 
         neogit.enable = true;
@@ -37,6 +37,7 @@
         noice.enable = true;
         nvim-colorizer.enable = true;
         luasnip.enable = true;
+        rust-tools.enable = true;
 
         notify = {
           enable = true;
@@ -54,6 +55,8 @@
 
       extraPlugins = with pkgs.vimPlugins; [
         telescope-ui-select-nvim
+        vim-autoformat
+        vim-jsbeautify
       ];
 
       extraConfigLua =
