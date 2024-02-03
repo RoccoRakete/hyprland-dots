@@ -41,5 +41,6 @@ window.floating-dock .dock {
     @include dock;
     @include floating-widget;
     border-radius: if($radii == 0, 0, $radii + $spacing / 2);
+    border: $border-width solid $popover-border-color;
     padding: $spacing / 2;
 }

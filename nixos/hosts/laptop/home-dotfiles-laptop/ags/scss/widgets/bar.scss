@@ -146,6 +146,7 @@ $button-radius: if(
 
   @if $bar-style == "floating" {
     @include floating-widget;
+    border: $bar-border-width solid $popover-border-color;
     border-radius: $radii;
     margin-top: $wm-gaps;
     margin-left: $wm-gaps;

@@ -1,6 +1,4 @@
 import SystemTray from 'resource:///com/github/Aylur/ags/service/systemtray.js';
-import Widget from 'resource:///com/github/Aylur/ags/widget.js';
-import Variable from 'resource:///com/github/Aylur/ags/variable.js';
 import Battery from 'resource:///com/github/Aylur/ags/service/battery.js';
 import OverviewButton from './buttons/OverviewButton.js';
 import Workspaces from './buttons/Workspaces.js';

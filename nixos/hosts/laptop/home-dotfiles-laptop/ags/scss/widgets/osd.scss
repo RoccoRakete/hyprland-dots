@@ -2,6 +2,7 @@ window.indicator .progress {
     @include floating-widget;
     padding: $padding / 2;
     border-radius: if($radii == 0, 0, $radii + $padding / 2);
+    border: $border-width solid $popover-border-color;
 
     .fill {
         border-radius: $radii;

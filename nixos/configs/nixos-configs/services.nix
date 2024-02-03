@@ -19,8 +19,8 @@
     gnome.tracker-miners.enable = true;
     xserver = {
       enable = true;
-      layout = "de";
-      xkbVariant = "";
+      xkb.layout = "de";
+      xkb.variant = "";
       excludePackages = [ pkgs.xterm ];
     };
     pipewire = {

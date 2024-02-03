@@ -10,6 +10,7 @@
     allowUnfree = true;
     permittedInsecurePackages = [
       "electron-25.9.0"
+      "electron-19.1.9"
     ];
   };
 
@@ -81,6 +82,7 @@
 
     # homelab
     rpi-imager
+    etcher
     super-slicer-beta
 
     # information
