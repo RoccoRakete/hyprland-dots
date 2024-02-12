@@ -84,6 +84,7 @@
     rpi-imager
     etcher
     super-slicer-beta
+    rustdesk
 
     # information
     firefox

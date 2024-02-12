@@ -8,24 +8,28 @@ import options from '../options.js';
 const WINDOW_NAME = 'applauncher';
 
 const Applauncher = () => {
-    const children = () => [
-        ...Applications.query('').flatMap(app => {
-            const item = AppItem(app);
-            return [
-                Widget.Separator({
-                    hexpand: true,
-                    binds: [['visible', item, 'visible']],
-                }),
-                item,
-            ];
-        }),
+    const mkItems = () => [
+        Widget.Separator({ hexpand: true }),
+        ...Applications.query('').flatMap(app => Widget.Revealer({
+            setup: w => w.attribute = { app, revealer: w },
+            child: Widget.Box({
+                vertical: true,
+                children: [
+                    Widget.Separator({ hexpand: true }),
+                    AppItem(app),
+                    Widget.Separator({ hexpand: true }),
+                ],
+            }),
+        })),
         Widget.Separator({ hexpand: true }),
     ];
+
+    let items = mkItems();
 
     const list = Widget.Box({
         class_name: 'app-list',
         vertical: true,
-        children: children(),
+        children: items,
     });
 
     const entry = Widget.Entry({
@@ -41,9 +45,11 @@ const Applauncher = () => {
                 launchApp(list[0]);
             }
         },
-        on_change: ({ text }) => list.children.map(item => {
-            if (item.app)
-                item.visible = item.app.match(text);
+        on_change: ({ text }) => items.map(item => {
+            if (item.attribute) {
+                const { app, revealer } = item.attribute;
+                revealer.reveal_child = app.match(text);
+            }
         }),
     });
 
@@ -56,22 +62,26 @@ const Applauncher = () => {
                 child: list,
             }),
         ],
-        connections: [[App, (_, name, visible) => {
-            if (name !== WINDOW_NAME)
+        setup: self => self.hook(App, (_, win, visible) => {
+            if (win !== WINDOW_NAME)
                 return;
 
+            entry.text = '-';
             entry.text = '';
-            if (visible)
+            if (visible) {
                 entry.grab_focus();
-            else
-                list.children = children();
-        }]],
+            }
+            else {
+                items = mkItems();
+                list.children = items;
+            }
+        }),
     });
 };
 
 export default () => PopupWindow({
     name: WINDOW_NAME,
     transition: 'slide_down',
-    anchor: options.applauncher.anchor.bind('value'),
     child: Applauncher(),
+    anchor: options.applauncher.anchor.bind('value'),
 });

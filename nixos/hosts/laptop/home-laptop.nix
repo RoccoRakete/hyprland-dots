@@ -39,6 +39,25 @@ in
     terminal = false;
   };
 
+  xdg.desktopEntries."BlHeliSuite32" = {
+    name = "BlHeliSuite32";
+    comment = "Configurator for BlHeli32 ESC's";
+    icon = "org.gnome.Settings";
+    exec = "/home/martin/.local/bin/blhelisuite32";
+    categories = [ "X-FPV" ];
+    terminal = false;
+  };
+
+  xdg.desktopEntries."ExpressLRS Configurator" = {
+    name = "ExpressLRS Configurator";
+    comment = "Configurator for ExpressLRS";
+    icon = "expresslrs-configurator";
+    exec = "/home/martin/.local/bin/expresslrs-configurator";
+    categories = [ "X-FPV" ];
+    terminal = false;
+  };
+
+
   home.file = { };
   home.sessionVariables = { };
 

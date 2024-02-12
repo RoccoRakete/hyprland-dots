@@ -13,6 +13,7 @@
     gnome.core-shell.enable = true;
     upower.enable = true;
     #xserver.desktopManager.gnome.enable = true;
+    xserver.desktopManager.xfce.enable = true;
     xserver.displayManager.gdm.enable = true;
     gnome.gnome-keyring.enable = true;
     gnome.tracker.enable = true;
