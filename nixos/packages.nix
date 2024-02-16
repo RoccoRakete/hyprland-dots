@@ -52,11 +52,12 @@
     gradience
     swaylock-effects
     kitty-themes
-    gtklock
 
     # code
     sassc
     sass
+    dart-sass
+    bun
     neovide
     fzf
     nodejs_21
@@ -84,7 +85,7 @@
     rpi-imager
     etcher
     super-slicer-beta
-    rustdesk
+    #rustdesk
 
     # information
     firefox
@@ -112,9 +113,7 @@
 
     # system
     coreutils
-    toybox
     powerstat
-    cosmic-term
     mate.mate-polkit
     polkit
     wget
@@ -125,7 +124,6 @@
     bluez
     bluez-tools
     wl-clip-persist
-    mission-center
     wl-clipboard
     swayidle
     sway-audio-idle-inhibit
@@ -152,7 +150,6 @@
     nixos-generators
     wlr-randr
     powertop
-    cpu-x
     poweralertd
   ];
 
