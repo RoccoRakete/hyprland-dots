@@ -13,7 +13,7 @@
         lsp.servers.rust-analyzer.enable = true;
         lsp.servers.rust-analyzer.installCargo = true;
         lsp.servers.rust-analyzer.installRustc = true;
-        lsp.servers.tsserver.enable = true;
+        lsp.servers.tsserver.enable = false;
         lsp.servers.yamlls.enable = true;
       };
     };

@@ -15,7 +15,7 @@ timestr=%R
 datestr=%a, %d. %B
 
 # Add an image as a background 
-image=~/.dots/backgrounds/last/image_blurred.png
+image=/tmp/hypr/latest_screenshot/latest_blur.png
 
 # Fade in time
 fade-in=0

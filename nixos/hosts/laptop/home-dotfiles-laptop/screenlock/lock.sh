@@ -34,10 +34,10 @@ if [ "$EXTERNAL_MONITOR_CONDITION" != "disconnected" ] && [ "$EXTERNAL_MONITOR_C
 fi
 
 # check if config file input of "LOCK_COMMAND" is valid
-if ! command -v "$LOCK_COMMAND" &> /dev/null; then
-    echo "Screenlocker '$LOCK_COMMAND' is not installed or not in PATH."
-    ((errors++))
-fi
+#if ! command -v "$LOCK_COMMAND" &> /dev/null; then
+#    echo "Screenlocker '$LOCK_COMMAND' is not installed or not in PATH."
+#    ((errors++))
+#fi
 
 # Output status
 if [ $errors != 0 ]; then

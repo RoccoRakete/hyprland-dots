@@ -54,8 +54,8 @@
     kitty-themes
 
     # code
-    sassc
-    sass
+    #sassc
+    #sass
     dart-sass
     bun
     neovide
@@ -94,6 +94,8 @@
     bitwarden
     discord
     betaflight-configurator
+    whatsapp-for-linux
+    kicad
 
     # office
     obsidian
@@ -112,6 +114,7 @@
     yuzu-mainline
 
     # system
+    nitch
     coreutils
     powerstat
     mate.mate-polkit
@@ -151,6 +154,7 @@
     wlr-randr
     powertop
     poweralertd
+    pulseaudio
   ];
 
 }

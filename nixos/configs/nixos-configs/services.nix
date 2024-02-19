@@ -33,5 +33,11 @@
     printing.enable = true;
     acpid.enable = true;
     flatpak.enable = true;
+    openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false;
+      };
+    };
   };
 }
