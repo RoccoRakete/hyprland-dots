@@ -8,8 +8,8 @@ fi
 
 playerctl pause
 
-grimblast save output /tmp/hypr/latest_screenshot/latest.png
+grimblast save output /tmp/hypr/latest_screenshot/latest.png &&
 
-convert /tmp/hypr/latest_screenshot/latest.png -blur 0x3 -brightness-contrast -5x0 /tmp/hypr/latest_screenshot/latest_blur.png
+convert /tmp/hypr/latest_screenshot/latest.png -blur 0x3 -brightness-contrast -5x0 /tmp/hypr/latest_screenshot/latest_blur.png &&
 
-swaylock -f
+swaylock -f &&

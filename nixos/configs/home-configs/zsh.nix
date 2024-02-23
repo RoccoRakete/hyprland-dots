@@ -29,8 +29,8 @@
       home-upgrade-desktop = "home-manager switch --flake ~/.dots/nixos#OptiPlex3060";
       news-desktop = "home-manager news --flake ~/.dots/nixos#OptiPlex3060";
 
-      upgrade-laptop = "sudo nixos-rebuild switch --upgrade --flake ~/.dots/nixos#ThinkPad";
-      home-upgrade-laptop = "home-manager switch --flake ~/.dots/nixos#ThinkPad";
+      upgrade-laptop = "nh os switch -H ThinkPad";
+      home-upgrade-laptop = "nh home switch -c ThinkPad";
       news-laptop = "home-manager news --flake ~/.dots/nixos#ThinkPad";
     };
 

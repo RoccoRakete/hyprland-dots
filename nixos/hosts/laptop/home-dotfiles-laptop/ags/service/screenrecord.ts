@@ -27,10 +27,9 @@ class Recorder extends Service {
         if (this.recording)
             return
 
-        const area = await sh("slurp")
         Utils.ensureDirectory(this.#recordings)
         this.#file = `${this.#recordings}/${now()}.mp4`
-        sh(`wf-recorder -g ${area} -f ${this.#file} --pixel-format yuv420p`)
+        sh(`wf-recorder -g ${await sh("slurp")} -f ${this.#file} --pixel-format yuv420p`)
 
         this.recording = true
         this.changed("recording")
@@ -46,7 +45,7 @@ class Recorder extends Service {
         if (!this.recording)
             return
 
-        bash("killall -INT wf-recorder")
+        await bash("killall -INT wf-recorder")
         this.recording = false
         this.changed("recording")
         GLib.source_remove(this.#interval)
@@ -81,7 +80,7 @@ class Recorder extends Service {
                 "Show in Files": () => sh(`xdg-open ${this.#screenshots}`),
                 "View": () => sh(`xdg-open ${file}`),
                 "Edit": () => {
-                    if (!dependencies("swappy"))
+                    if (dependencies("swappy"))
                         sh(`swappy, -f ${file}`)
                 },
             },

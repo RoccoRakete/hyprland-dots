@@ -155,6 +155,7 @@
     powertop
     poweralertd
     pulseaudio
+    inputs.nh.packages.${system}.default
   ];
 
 }

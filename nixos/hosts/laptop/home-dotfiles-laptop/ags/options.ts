@@ -1,10 +1,10 @@
 import { type BarWidget } from "widget/bar/Bar"
 import { opt, mkOptions } from "lib/option"
 
-const options = mkOptions(Utils.CACHE_DIR + "/options2.json", {
+const options = mkOptions(OPTIONS, {
     autotheme: opt(false),
 
-    wallpaper: opt(`/home/${Utils.USER}/.config/background`),
+    wallpaper: opt(`/home/${USER}/.config/background`, { persistent: true }),
 
     theme: {
         dark: {
@@ -36,17 +36,18 @@ const options = mkOptions(Utils.CACHE_DIR + "/options2.json", {
             border: opt("#080808"),
         },
 
+        blur: opt(0),
         scheme: opt<"dark" | "light">("dark"),
         widget: { opacity: opt(94) },
         border: {
-            width: opt(1),
+            width: opt(0),
             opacity: opt(96),
         },
 
         shadows: opt(true),
         padding: opt(7),
-        spacing: opt(12),
-        radius: opt(11),
+        spacing: opt(5),
+        radius: opt(15),
     },
 
     transition: opt(200),
@@ -59,7 +60,7 @@ const options = mkOptions(Utils.CACHE_DIR + "/options2.json", {
     bar: {
         flatButtons: opt(true),
         position: opt<"top" | "bottom">("top"),
-        corners: opt(true),
+        corners: opt(false),
         layout: {
             start: opt<BarWidget[]>([
                 "launcher",
@@ -85,7 +86,7 @@ const options = mkOptions(Utils.CACHE_DIR + "/options2.json", {
         launcher: {
             icon: {
                 colored: opt(true),
-                icon: opt("system-search-symbolic"),
+                icon: opt("nixos"),
             },
             label: {
                 colored: opt(false),
@@ -98,10 +99,11 @@ const options = mkOptions(Utils.CACHE_DIR + "/options2.json", {
             action: opt(() => App.toggleWindow("datemenu")),
         },
         battery: {
-            bar: opt<"hidden" | "regular" | "whole">("regular"),
-            percentage: opt(false),
-            blocks: opt(10),
-            width: opt(70),
+            bar: opt<"hidden" | "regular" | "whole">("hidden"),
+            charging: opt("#00D787"),
+            percentage: opt(true),
+            blocks: opt(7),
+            width: opt(50),
             low: opt(30),
         },
         workspaces: {
@@ -134,12 +136,12 @@ const options = mkOptions(Utils.CACHE_DIR + "/options2.json", {
 
     applauncher: {
         iconSize: opt(62),
-        width: opt(400),
+        width: opt(0),
         margin: opt(80),
-        maxItem: opt(6),
+        maxItem: opt(10),
         favorites: opt([
             "firefox",
-            "blackbox",
+            "org.gnome.Nautilus",
             "org.gnome.Calendar",
             "obsidian",
             "discord",
@@ -149,7 +151,7 @@ const options = mkOptions(Utils.CACHE_DIR + "/options2.json", {
 
     overview: {
         scale: opt(9),
-        workspaces: opt(7),
+        workspaces: opt(10),
         monochromeIcon: opt(true),
     },
 
@@ -171,7 +173,7 @@ const options = mkOptions(Utils.CACHE_DIR + "/options2.json", {
         position: opt<"left" | "center" | "right">("right"),
         networkSettings: opt("gtk-launch gnome-control-center"),
         media: {
-            monochromeIcon: opt(false),
+            monochromeIcon: opt(true),
             coverSize: opt(100),
         },
     },
@@ -182,10 +184,10 @@ const options = mkOptions(Utils.CACHE_DIR + "/options2.json", {
 
     osd: {
         progress: {
-            vertical: opt(true),
+            vertical: opt(false),
             pack: {
-                h: opt<"start" | "center" | "end">("end"),
-                v: opt<"start" | "center" | "end">("center"),
+                h: opt<"start" | "center" | "end">("center"),
+                v: opt<"start" | "center" | "end">("end"),
             },
         },
         microphone: {
@@ -203,11 +205,6 @@ const options = mkOptions(Utils.CACHE_DIR + "/options2.json", {
     },
 
     hyprland: {
-        blur: opt<"*" | Array<string>>([
-            "powermenu",
-            "verification",
-        ]),
-        alpha: opt(.3),
         gaps: opt(2.4),
         inactiveBorder: opt("333333ff"),
     },

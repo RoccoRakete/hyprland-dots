@@ -7,6 +7,7 @@ in
 
   {
   #environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.FLAKE = "/home/${vars.user1}/.dots/nixos/";
   environment = {
     variables = {
       #SUDO_EDITOR = "nvim";
@@ -42,13 +43,13 @@ in
     tmp.cleanOnBoot = true;
     kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [ "quiet" "nosgx" ];
-    
+
     loader = {
       timeout = 0;
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    
+
     plymouth = {
       enable = true;
       theme = "bgrt";
@@ -112,6 +113,10 @@ in
       extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
     };
   };
+
+  system.activationScripts.script.text = ''
+  cp /home/${vars.user1}/face.png /var/lib/AccountsService/icons/${vars.user1}
+  '';
 
   # Installed Fonts
   fonts = {

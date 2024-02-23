@@ -1,3 +1,6 @@
+App.addIcons(`${App.configDir}/assets`)
+
+import "lib/session"
 import "lib/init"
 import options from "options"
 import Bar from "widget/bar/Bar"
@@ -9,17 +12,12 @@ import NotificationPopups from "widget/notifications/NotificationPopups"
 import ScreenCorners from "widget/bar/ScreenCorners"
 import OSD from "widget/osd/OSD"
 import SettingsDialog from "widget/settings/SettingsDialog"
-import { dependencies, config, forMonitors } from "lib/utils"
+import { config, forMonitors } from "lib/utils"
 import { setupQuickSettings } from "widget/quicksettings/QuickSettings"
 import { setupDateMenu } from "widget/datemenu/DateMenu"
 import { init } from "lib/init"
 
-Utils.ensureDirectory("/tmp/ags")
-if (!dependencies("dart-sass", "brightnessctl"))
-    App.quit()
-
 export default config({
-    icons: "./assets",
     onConfigParsed: () => {
         setupQuickSettings()
         setupDateMenu()

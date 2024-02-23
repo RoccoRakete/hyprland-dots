@@ -1,18 +1,21 @@
 /* eslint-disable max-len */
 import { type Opt } from "lib/option"
 import options from "options"
-import { bash } from "lib/utils"
+import { bash, dependencies, sh } from "lib/utils"
 
-const deps = ["font", "theme", "bar.flatButtons", "bar.position"]
-
-const dirs = [
-    `${App.configDir}/style/mixins`,
-    `${App.configDir}/style/widget`,
+const deps = [
+    "font",
+    "theme",
+    "bar.flatButtons",
+    "bar.position",
+    "bar.battery.charging",
+    "bar.battery.blocks",
 ]
 
 const {
     dark,
     light,
+    blur,
     scheme,
     padding,
     spacing,
@@ -32,7 +35,7 @@ const t = (dark: Opt<any> | string, light: Opt<any> | string) => scheme.value ==
 const $ = (name: string, value: string | Opt<any>) => `$${name}: ${value};`
 
 const variables = () => [
-    $("bg", t(dark.bg, light.bg)),
+    $("bg", blur.value ? `transparentize(${t(dark.bg, light.bg)}, ${blur.value / 100})` : t(dark.bg, light.bg)),
     $("fg", t(dark.fg, light.fg)),
 
     $("primary-bg", t(dark.primary.bg, light.primary.bg)),
@@ -41,6 +44,7 @@ const variables = () => [
     $("error-bg", t(dark.error.bg, light.error.bg)),
     $("error-fg", t(dark.error.fg, light.error.fg)),
 
+    $("scheme", scheme),
     $("padding", `${padding}pt`),
     $("spacing", `${spacing}pt`),
     $("radius", `${radius}px`),
@@ -69,32 +73,37 @@ const variables = () => [
     $("font-name", options.font.name),
 
     // etc
-    $("charging-bg", "#00D787"),
-    $("charging-fg", "#141414"),
+    $("charging-bg", options.bar.battery.charging),
     $("bar-battery-blocks", options.bar.battery.blocks),
     $("bar-position", options.bar.position),
     $("hyprland-gaps-multiplier", options.hyprland.gaps),
 ]
 
 async function resetCss() {
-    const vars = "/tmp/ags/variables.scss"
-    await Utils.writeFile(variables().join("\n"), vars)
+    if (!dependencies("sass", "fd"))
+        return
 
-    const files = dirs.flatMap(dir => Utils.exec(`ls ${dir}`)
-        .split(/\s+/)
-        .map(file => `@import '${dir}/${file}';`))
+    try {
+        const vars = `${TMP}/variables.scss`
+        await Utils.writeFile(variables().join("\n"), vars)
 
-    const scss = [`@import '${vars}';`, ...files].join("\n")
-    const css = await bash`echo "${scss}" | sass --stdin`
-    const file = "/tmp/ags/style.css"
+        const fd = await sh(`fd ".scss" ${App.configDir}`)
+        const files = fd.split(/\s+/).map(f => `@import '${f}';`)
+        const scss = [`@import '${vars}';`, ...files].join("\n")
+        const css = await bash`echo "${scss}" | sass --stdin`
+        const file = `${TMP}/style.css`
 
-    await Utils.writeFile(css, file)
-    App.resetCss()
-    App.applyCss(file)
+        await Utils.writeFile(css, file)
+
+        App.resetCss()
+        App.applyCss(file)
+    } catch (error) {
+        logError(error)
+    }
 }
 
 export default function init() {
-    dirs.forEach(dir => Utils.monitorFile(dir, resetCss))
+    Utils.monitorFile(App.configDir, resetCss)
     options.handler(deps, resetCss)
     resetCss()
 }

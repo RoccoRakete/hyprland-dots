@@ -10,6 +10,7 @@ in
       ./hardware-configuration-laptop.nix
       ./configs-laptop/thinkfan.nix
       ../../configs/nixos-configs/services.nix
+      ../../configs/nixos-configs/services.nix
       ../../configs/nixos-configs/programs.nix
       ../../configs/nixos-configs/nixvim/nvim.nix
       ../../configs/nixos-configs/bluetooth.nix
@@ -20,6 +21,7 @@ in
 
   services.logind = {
     lidSwitchDocked = "ignore";
+    #lidSwitch = "ignore";
   };
 
   # Networking

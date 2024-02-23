@@ -1,4 +1,4 @@
-import Gtk from "gi://Gtk?version=3.0"
+import RegularWindow from "widget/RegularWindow"
 import layout from "./layout"
 import icons from "lib/icons"
 import options from "options"
@@ -42,9 +42,6 @@ const PagesStack = () => Widget.Stack({
     shown: current.bind() as never,
 })
 
-// eslint-disable-next-line max-len
-const RegularWindow = Widget.subclass<typeof Gtk.Window, Gtk.Window.ConstructorProperties>(Gtk.Window)
-
 export default () => RegularWindow({
     name: "settings-dialog",
     class_name: "settings-dialog",
@@ -54,7 +51,7 @@ export default () => RegularWindow({
             win.hide()
             return true
         })
-        win.set_default_size(600, 500)
+        win.set_default_size(500, 600)
     },
     child: Widget.Box({
         vertical: true,

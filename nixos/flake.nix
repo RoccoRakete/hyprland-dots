@@ -13,16 +13,20 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nh = {
+      url = "github:viperML/nh";
+      inputs.nixpkgs.follows = "nixpkgs"; # override this repo's nixpkgs snapshot
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, hyprland, nixvim, ... }@inputs:
-    let
-      vars = import ./variables.nix;
-      system = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
+  let
+    vars = import ./variables.nix;
+    system = "x86_64-linux";
+    lib = nixpkgs.lib;
+    pkgs = nixpkgs.legacyPackages.${system};
+  in
+  {
 
       # system configurations
 
@@ -72,4 +76,4 @@
         };
       };
     };
-}
+  }
