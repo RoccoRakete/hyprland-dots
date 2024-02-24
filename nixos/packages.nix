@@ -114,6 +114,8 @@
     yuzu-mainline
 
     # system
+    mesa-demos
+    mesa
     nitch
     coreutils
     powerstat
