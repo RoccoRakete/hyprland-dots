@@ -139,14 +139,22 @@ const options = mkOptions(OPTIONS, {
         width: opt(0),
         margin: opt(80),
         maxItem: opt(10),
-        favorites: opt([
-            "firefox",
-            "org.gnome.Nautilus",
-            "org.gnome.Calendar",
-            "obsidian",
-            "discord",
-            "spotify",
-        ]),
+            favorites: opt([
+            [
+                "firefox",
+                "org.gnome.Nautilus",
+                "obsidian",
+                "spotify",
+		"kitty"
+            ],
+            [
+                "betaflight-configurator",
+                "org.gnome.Calendar",
+                "discord",
+                "neovide",
+                "gimp",
+            ],
+        ]),  
     },
 
     overview: {

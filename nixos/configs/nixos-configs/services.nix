@@ -1,6 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
+imports = [
+];
+
   services = {
     #physlock = {
     #  enable = true;

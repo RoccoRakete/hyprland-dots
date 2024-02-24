@@ -10,7 +10,7 @@ case $1 in
         while [ "$current_brightness" -gt 1 ]; do
             current_brightness=$((current_brightness - 1200))
             brightnessctl s -q $current_brightness
-            sleep 0.01
+            sleep 0.03
         done
         ;;
 

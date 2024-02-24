@@ -130,7 +130,7 @@
     bluez-tools
     wl-clip-persist
     wl-clipboard
-    swayidle
+    #swayidle
     sway-audio-idle-inhibit
     xdg-desktop-portal
     distrobox

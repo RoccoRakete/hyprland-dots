@@ -12,6 +12,7 @@ in
     ../../configs/home-configs/kitty.nix
     ./link-dotfiles-laptop.nix
     ./home-programs-laptop.nix
+    inputs.hypridle.homeManagerModules.default
   ];
 
   home.username = vars.user1;
@@ -22,6 +23,10 @@ in
   #  defaultCacheTtl = 1800;
   #  enableSshSupport = true;
   #};
+
+  services = {
+    hypridle.enable = true;
+  };
 
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
