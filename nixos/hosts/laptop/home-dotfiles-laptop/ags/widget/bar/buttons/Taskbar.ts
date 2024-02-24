@@ -1,7 +1,6 @@
 import { launchApp, icon } from "lib/utils"
 import icons from "lib/icons"
 import options from "options"
-import { watch } from "lib/experiments"
 import PanelButton from "../PanelButton"
 
 const hyprland = await Service.import("hyprland")
@@ -29,11 +28,6 @@ const AppItem = (address: string) => {
         tooltip_text: client.title,
         on_primary_click: () => focus(address),
         on_middle_click: () => app && launchApp(app),
-        visible: watch(true, [exclusive, hyprland], () => {
-            return exclusive.value
-                ? hyprland.active.workspace.id === client.workspace.id
-                : true
-        }),
         child: Widget.Icon({
             icon: monochrome.bind().as(m => icon(
                 (app?.icon_name || client.class) + (m ? "-symbolic" : ""),
@@ -43,7 +37,14 @@ const AppItem = (address: string) => {
     })
 
     return Widget.Box(
-        { attribute: { address } },
+        {
+            attribute: { address },
+            visible: Utils.watch(true, [exclusive, hyprland], () => {
+                return exclusive.value
+                    ? hyprland.active.workspace.id === client.workspace.id
+                    : true
+            }),
+        },
         Widget.Overlay({
             child: btn,
             pass_through: true,

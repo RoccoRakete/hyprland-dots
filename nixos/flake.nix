@@ -7,6 +7,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     ags.url = "github:Aylur/ags";
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprlock.url = "github:hyprwm/Hyprlock";
+    hypridle.url = "github:hyprwm/Hypridle";
     nix-software-center.url = "github:snowfallorg/nix-software-center";
     nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
     nixvim = {
@@ -19,7 +21,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, nixvim, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, hyprlock, hypridle, nixvim, ... }@inputs:
   let
     vars = import ./variables.nix;
     system = "x86_64-linux";
@@ -29,7 +31,6 @@
   {
 
       # system configurations
-
       # desktop
       nixosConfigurations = {
         ${vars.desktop} = lib.nixosSystem {
@@ -53,7 +54,6 @@
       };
 
       # home configurations
-
       # desktop
       homeConfigurations = {
         ${vars.desktop} = home-manager.lib.homeManagerConfiguration {

@@ -3,6 +3,8 @@
 {
   imports = [
     inputs.ags.homeManagerModules.default
+    inputs.hyprlock.homeManagerModules.default
+    inputs.hypridle.homeManagerModules.default
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -10,6 +12,8 @@
   programs.home-manager.enable = true;
 
   programs = {
+    hyprlock.enable = true;
+    #hypridle.enable = true;
     ags = {
       enable = true;
       configDir = ./home-dotfiles-laptop/ags;
