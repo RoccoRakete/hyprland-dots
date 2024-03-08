@@ -1,0 +1,6 @@
+{
+    "css.lint.unknownAtRules": "ignore",
+    "css.lint.propertyIgnoredDueToDisplay": "ignore",
+    "html.validate.styles":false,
+    "css.lint.unknownProperties": "ignore"
+}

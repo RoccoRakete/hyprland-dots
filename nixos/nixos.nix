@@ -1,4 +1,4 @@
-{ pkgs, nixos-icons, options, lib, inputs, ... }:
+{ pkgs, options, ... }:
 
 let
   inherit (pkgs) nixos-icons;
@@ -98,6 +98,7 @@ in
 
   security.pam.services.swaylock = { };
   security.pam.services.gtklock = { };
+  security.pam.services.hyprlock = {};
   security.polkit.enable = true;
 
   # Enable sound with pipewire.
@@ -110,7 +111,7 @@ in
     users.${vars.user1} = {
       isNormalUser = true;
       description = "Martin";
-      extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
+      extraGroups = [ "input" "networkmanager" "wheel" "dialout" "libvirtd" ];
     };
   };
 

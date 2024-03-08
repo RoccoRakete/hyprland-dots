@@ -1,0 +1,36 @@
+* {
+}
+
+window {
+    background-image: url("../backgrounds/last/image_blurred.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+box#window-box {
+    padding-bottom: 5em;
+}
+
+label#clock-label {
+    font-size: 5em;
+    padding-bottom: 3em;
+    color: @theme_fg_color;
+}
+label#input-label {
+    font-size: 0px;
+}
+
+entry#input-field {
+    color: @theme_fg_color;
+    background-color: @theme_bg_color;
+}
+
+button {
+    color: @theme_fg_color;
+    background-color: @theme_bg_color;
+}
+
+image#user-image {
+
+}

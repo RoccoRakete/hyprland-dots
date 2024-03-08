@@ -43,6 +43,7 @@
     gtk3
 
     # theming
+    wlogout
     neofetch
     swww
     pywal
@@ -84,7 +85,7 @@
     # homelab
     rpi-imager
     etcher
-    super-slicer-beta
+    #super-slicer-beta
     #rustdesk
 
     # information
@@ -93,6 +94,8 @@
     brave
     bitwarden
     discord
+    webcord
+    gtkcord4
     betaflight-configurator
     whatsapp-for-linux
     kicad
@@ -102,6 +105,7 @@
     libreoffice-fresh
     nextcloud-client
     remmina
+    vivaldi
 
     # media
     obs-studio
@@ -111,9 +115,14 @@
     spotify
     gimp
     gthumb
-    yuzu-mainline
+    #yuzu-mainline
+    jellyfin-media-player
+    heroic
 
     # system
+    envsubst
+    grim
+    deadnix
     mesa-demos
     mesa
     nitch
@@ -158,6 +167,7 @@
     poweralertd
     pulseaudio
     inputs.nh.packages.${system}.default
+    satty
   ];
 
 }

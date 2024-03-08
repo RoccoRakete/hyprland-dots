@@ -1,7 +1,6 @@
-{ inputs, config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
-  inherit (pkgs) nixos-icons;
   vars = import ../../variables.nix;
 in
 

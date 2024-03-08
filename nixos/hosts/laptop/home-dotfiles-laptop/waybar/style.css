@@ -1,0 +1,72 @@
+* {
+  font-weight: bolder; }
+
+window#waybar {
+  font-size: 13pt;
+  background: #171717;
+  border-radius: 10px;
+  box-shadow: inset -2px -2px 5px 1px rgba(0, 0, 0, 0.4), 2px 2px 5px 1px rgba(0, 0, 0, 0.4) inset; }
+
+#workspaces button {
+  font-size: 0;
+  min-width: 11.7pt;
+  min-height: 11.7pt;
+  padding: 0;
+  margin: 4.5px;
+  border-radius: 15px;
+  background-color: white;
+  transition: 100ms;
+  animation: ws_normal 20s ease-out 10; }
+
+#workspaces button.active {
+  min-width: 26pt;
+  background-color: #15539e;
+  transition: 100ms; }
+
+#network,
+#pulseaudio {
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px; }
+
+#network {
+  padding-left: 6px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px; }
+
+#pulseaudio {
+  padding-right: 6px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px; }
+
+#battery,
+#backlight,
+#temperature,
+#memory,
+#cpu,
+#tray,
+#custom-power {
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-right: 6px;
+  border-radius: 5px; }
+
+#custom-power {
+  color: #A84A65; }
+
+#clock,
+#workspaces {
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-radius: 5px; }
+
+#workspaces {
+  margin-left: 9px; }
+
+.modules-left {
+  margin-left: 9px; }

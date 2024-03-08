@@ -1,0 +1,159 @@
+{
+  "spacing": 0,
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-top": 10,
+  "layer": "top",
+  "reload_style_on_change": true,
+  "modules-left": [
+    "image",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "temperature",
+    "backlight",
+    "battery",
+    "tray",
+    "network",
+    "pulseaudio",
+    "custom/power"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "tooltip": false,
+    "all-outputs": false,
+    "current-only": true,
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": ""
+    },
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "8": "",
+      "9": "",
+      "10": "",
+      "active": "",
+      "default": ""
+    }
+  },
+  "tray": {
+    "spacing": 6
+  },
+  "clock": {
+    "format":"{:%d.%m.%y - %H:%M}", 
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": false,
+    "interval": 1,
+    "max-length": 8
+  },
+  "memory": {
+    "format": " {used} GiB"
+  },
+  "temperature": {
+    "thermal-zone": 6,
+    "critical-threshold": 90,
+    "format": " {temperatureC}°C",
+    "interval": 1
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-full": "<span foreground=\"#5EB220\"></span>",
+    "format-charging": "<span foreground=\"#5EB220\">󱐋</span>{capacity}%",
+    "format-plugged": "󱐋{capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ],
+    "interval": 1
+  },
+  "network": {
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "tooltip-format": "{ifname} ({ipaddr}) via {gwaddr} at\n{essid}",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon} {format_source}",
+    "format-bluetooth": "{icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+	"",
+	"",
+	""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "image": {
+    "path": "/home/martin/Dokumente/Backgrounds/nixos.png",
+    "size": 20,
+    "interval": 5,
+    "on-click": "mpc toggle"
+  },
+  "custom/power": {
+    "format": "{}",
+    "on-click": "wlogout -b 5 -c 0 -r 0 -T 0 -B 0",
+    "interval" : 86400, // once every day
+    "tooltip": true
+  }
+}
+

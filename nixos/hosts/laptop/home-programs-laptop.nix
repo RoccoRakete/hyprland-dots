@@ -4,6 +4,7 @@
   imports = [
     inputs.ags.homeManagerModules.default
     inputs.hyprlock.homeManagerModules.default
+    inputs.anyrun.homeManagerModules.default
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -12,6 +13,26 @@
 
   programs = {
     hyprlock.enable = true;
+    anyrun = {
+      enable = true;
+      config = {
+        plugins = [
+          inputs.anyrun.packages.${pkgs.system}.applications
+        ];
+        width = { fraction = 0.25; };
+        y = { fraction = 0.3; };
+        hideIcons = false;
+        ignoreExclusiveZones = true;
+        layer = "overlay";
+        hidePluginInfo = true;
+        closeOnClick = true;
+        showResultsImmediately = true;
+        maxEntries = null;
+      };
+      extraCss = ''
+      @import url("stylesheet.css");
+      '';
+    };
     ags = {
       enable = true;
       configDir = ./home-dotfiles-laptop/ags;
@@ -46,6 +67,7 @@
   home.packages = with pkgs; [
     htop
     sassc
+    gparted
     (python311.withPackages (p: [ p.python-pam ]))
   ];
 }

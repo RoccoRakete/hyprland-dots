@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ ... }:
 
 {
   programs.nixvim.plugins.none-ls.sources.formatting.prettier = {

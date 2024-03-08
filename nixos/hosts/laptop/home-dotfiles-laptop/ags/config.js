@@ -1,6 +1,6 @@
 const v = {
     ags: pkg.version.split(".").map(Number),
-    expect: [1, 7, 8],
+    expect: [1, 8, 0],
 }
 
 function mismatch() {

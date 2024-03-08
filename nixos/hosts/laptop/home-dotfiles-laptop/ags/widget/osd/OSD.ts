@@ -18,7 +18,7 @@ function OnScreenProgress(vertical: boolean) {
     const progress = Progress({
         vertical,
         width: vertical ? 42 : 200,
-        height: vertical ? 300 : 32,
+        height: vertical ? 200 : 42,
         child: indicator,
     })
 

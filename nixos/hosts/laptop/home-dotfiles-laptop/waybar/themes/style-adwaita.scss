@@ -1,0 +1,90 @@
+@import "./adwaita.scss";
+
+* {
+  font-weight: bolder;
+}
+
+window#waybar {
+  font-size: $font-size;
+  background: $bar-bg;
+  border-radius: $radii;
+  box-shadow:
+  inset -2px -2px 5px 1px (transparentize($color: #000000, $amount: 0.6)),
+  2px 2px 5px 1px transparentize($color: #000000, $amount: 0.6) inset;
+}
+
+#workspaces button {
+  font-size: 0;
+  min-width: $font-size * 0.8;
+  min-height: $font-size * 0.8;
+  padding: 0;
+  margin: $spacing * 1.5;
+  border-radius: $spacing * 5;
+  background-color: $text_color;
+  transition: 100ms;
+  animation: ws_normal 20s ease-out 10;
+}
+
+#workspaces button.active {
+  min-width: $font-size * 2;
+  background-color: $selected_bg_color;
+  transition: 100ms;
+}
+
+#network,
+#pulseaudio {
+  padding-left: $spacing;
+  padding-right: $spacing;
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+}
+
+#network {
+  padding-left: $spacing * 2;
+  border-top-left-radius: $radii/2;
+  border-bottom-left-radius: $radii/2;
+}
+
+#pulseaudio {
+  padding-right: $spacing * 2;
+  border-top-right-radius: $radii/2;
+  border-bottom-right-radius: $radii/2;
+}
+
+#battery,
+#backlight,
+#temperature,
+#memory,
+#cpu,
+#tray,
+#custom-power {
+  padding-left: $spacing;
+  padding-right: $spacing;
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+  margin-right: $spacing * 2;
+  border-radius: $radii/2;
+}
+
+#custom-power {
+  color: $red;
+}
+
+#clock,
+#workspaces {
+  padding-left: $spacing;
+  padding-right: $spacing;
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+  border-radius: $radii/2;
+}
+
+#workspaces {
+  padding-top: $spacing*0.8;
+  padding-bottom: $spacing*0.8;
+  margin-left: $spacing * 3;
+}
+
+.modules-left {
+  margin-left: $spacing * 3;
+}

@@ -1,7 +1,7 @@
 window.indicator {
   .progress {
     @include floating-widget;
-    margin: max($spacing * 15, 8px);
+    margin: max($spacing * 5, 8px);
     padding: $padding * 0.5;
     border-radius: if($radius >0, calc($radius + $padding * 0.5), 0);
     @debug $radius;

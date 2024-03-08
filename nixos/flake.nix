@@ -30,6 +30,14 @@
       url = "github:Aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    waybar = {
+      url = "github:alexays/waybar";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
@@ -45,7 +53,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, hyprlock, hypridle, nixvim, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixvim, waybar, anyrun, ... }@inputs:
   let
     vars = import ./variables.nix;
     system = "x86_64-linux";

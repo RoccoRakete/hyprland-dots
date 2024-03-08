@@ -4,7 +4,7 @@ let
 in
 {
   nixpkgs.overlays = [
-    (final: prev: {
+    (_final: _prev: {
       custompkgs = {
         kanagawa-gtk-theme = callPackage ./kanagawa-gtk-theme.nix { };
       };

@@ -1,4 +1,4 @@
-{ config, home-manager, lib, pkgs, username, inputs, ... }:
+{ lib, ... }:
 
 let
   vars = import ../../variables.nix;

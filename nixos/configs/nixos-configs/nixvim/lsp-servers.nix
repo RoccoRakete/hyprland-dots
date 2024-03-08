@@ -1,11 +1,13 @@
-{ pkgs, lib, ... }:
+{ ... }:
 
 {
   programs = {
     nixvim = {
       plugins = {
         lsp.servers.nixd.enable = true;
-        lsp.servers.cssls.enable = true;
+        lsp.servers.cssls = {
+          enable = true;
+        };
         lsp.servers.java-language-server.enable = true;
         lsp.servers.jsonls.enable = true;
         lsp.servers.lua-ls.enable = true;
