@@ -11,8 +11,11 @@
     permittedInsecurePackages = [
       "electron-25.9.0"
       "electron-19.1.9"
+      "nix-2.16.2"
     ];
   };
+
+  services.udev.packages = [ pkgs.swayosd ];
 
   # Package configurations
   environment.systemPackages = with pkgs; [
@@ -43,6 +46,7 @@
     gtk3
 
     # theming
+    swayosd
     wlogout
     neofetch
     swww

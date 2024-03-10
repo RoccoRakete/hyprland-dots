@@ -42,8 +42,8 @@
   };
 
   # waybar themes
-  home.file."${config.xdg.configHome}/waybar/themes" = {
-    source = ./home-dotfiles-laptop/waybar/themes;
+  home.file."${config.xdg.configHome}/waybar/themes/style-adwaita.scss" = {
+    source = ../../../styles/waybar/style-adwaita.scss;
     recursive = true;
     enable = true;
   };
@@ -62,13 +62,14 @@
     enable = true;
   };
 
-# anyrun themes
-home.file."${config.xdg.configHome}/anyrun/themes" = {
-  source = ./home-dotfiles-laptop/anyrun/themes;
-  recursive = true;
-  enable = true;
-};
-  # neovim
+ # anyrun themes
+ home.file."${config.xdg.configHome}/anyrun/themes/style-adwaita.scss" = {
+   source = ../../../styles/anyrun/style-adwaita.scss;
+   recursive = true;
+   enable = true;
+ };
+
+# neovim
   #home.file."${config.xdg.configHome}/nvim" = {
   #  source = ../../global-dotfiles/nvim;
   #  recursive = true;

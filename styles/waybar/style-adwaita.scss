@@ -1,0 +1,112 @@
+@import "../../../.dots/styles/themes/adwaita.scss";
+@import "../../../.dots/styles/waybar/adwaita-colored-buttons.scss";
+
+* {
+  padding: 0;
+  margin: 0;
+  font-weight: bolder;
+}
+
+window#waybar {
+  font-size: $font-size;
+  background: $bar-bg;
+  border-radius: $radii;
+  box-shadow:
+  inset -2px -2px 5px 1px (transparentize($color: #000000, $amount: 0.6)),
+  2px 2px 5px 1px transparentize($color: #000000, $amount: 0.6) inset;
+}
+
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio {
+  padding-left: $spacing;
+  padding-right: $spacing;
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+}
+
+#cpu,
+#network {
+  padding-left: $spacing*2;
+  border-top-left-radius: $radii/2;
+  border-bottom-left-radius: $radii/2;
+}
+
+#backlight,
+#pulseaudio {
+  margin-right: $spacing*2;
+  padding-right: $spacing*2;
+  border-top-right-radius: $radii/2;
+  border-bottom-right-radius: $radii/2;
+}
+
+#cpu {
+  font-size: 1.1em;
+  font-weight: bolder;
+  color: $orange;
+  transition: 400ms;
+  animation: ws_normal 20s ease-out 10;
+}
+
+#bluetooth.connected {
+  font-size: 1.15em;
+  color: darken($color: $blue, $amount: 10);
+}
+
+#pulseaudio {
+  padding-left: 0;
+}
+
+#image,
+#workspaces,
+#clock,
+#battery,
+#tray,
+#custom-power {
+  padding-left: $spacing;
+  padding-right: $spacing;
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+  margin-right: $spacing*2;
+  border-radius: $radii/2;
+}
+
+#workspaces button {
+  font-size: 0;
+  min-width: $font-size*0.85;
+  min-height: $font-size*0.85;
+  margin: $spacing*1.5;
+  border-radius: $spacing*10;
+  background-color: $fg_color;
+  transition: 100ms;
+  animation: ws_normal 20s ease-out 10;
+}
+
+#workspaces button.empty {
+  background-color: $dark_1;
+}
+
+#workspaces button.active {
+  min-width: $font-size*2;
+  background-color: $selected_bg_color;
+  transition: 100ms;
+}
+
+#battery.full {
+  font-size: 1.15em;
+}
+
+#custom-power {
+  color: $red;
+  margin-right: $spacing;
+  border-top-right-radius: $radii;
+  border-bottom-right-radius: $radii;
+}
+
+.modules-left {
+  margin-left: $spacing;
+}

@@ -34,7 +34,7 @@
       '';
     };
     ags = {
-      enable = true;
+      enable = false;
       configDir = ./home-dotfiles-laptop/ags;
       #configDir = null;
       extraPackages = [ pkgs.libsoup_3 ];

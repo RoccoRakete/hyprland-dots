@@ -20,9 +20,18 @@
     "battery",
     "tray",
     "network",
+    "bluetooth",
     "pulseaudio",
     "custom/power"
   ],
+
+  "image": {
+    "path": "/home/martin/Dokumente/Backgrounds/nixos.png",
+    "size": 20,
+    "interval": 86400, // once every day
+    "on-click": "mpc toggle"
+  },
+
   "hyprland/workspaces": {
     "format": "{icon}",
     "tooltip": false,
@@ -56,31 +65,33 @@
       "default": ""
     }
   },
-  "tray": {
-    "spacing": 6
-  },
+
   "clock": {
-    "format":"{:%d.%m.%y - %H:%M}", 
+    "format":"{:%d.%m.%y - %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
-  "cpu": {
-    "format": " {usage}%",
+
+   "cpu": {
+    "format": "{icon}",
+    "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
     "tooltip": false,
-    "interval": 1,
-    "max-length": 8
+    "interval": 1
   },
   "memory": {
-    "format": " {used} GiB"
+    "tooltip": false,
+    "format": "{used:.1f} GiB"
   },
   "temperature": {
+    "tooltip": false,
     "thermal-zone": 6,
     "critical-threshold": 90,
-    "format": " {temperatureC}°C",
+    "format": "{temperatureC}°C",
     "interval": 1
   },
   "backlight": {
-    "format": "{icon} {percent}%",
+    "tooltip": false,
+    "format": "{icon}{percent}%",
     "format-icons": [
       "",
       "",
@@ -93,14 +104,15 @@
       ""
     ]
   },
+
   "battery": {
     "states": {
       "warning": 30,
       "critical": 15
     },
     "format": "{icon} {capacity}%",
-    "format-full": "<span foreground=\"#5EB220\"></span>",
-    "format-charging": "<span foreground=\"#5EB220\">󱐋</span>{capacity}%",
+    "format-full": "<span foreground=\"#2A995C\">󱐥</span>",
+    "format-charging": "<span foreground=\"#2A995C\">󱐋</span>{capacity}%",
     "format-plugged": "󱐋{capacity}%",
     "format-alt": "{time} {icon}",
     "format-icons": [
@@ -112,20 +124,33 @@
     ],
     "interval": 1
   },
+ 
+ "tray": {
+    "spacing": 6
+  },
+
   "network": {
     "format-wifi": "",
     "format-ethernet": "󰈀",
     "tooltip-format": "{ifname} ({ipaddr}) via {gwaddr} at\n{essid}",
     "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
+    "format-disconnected": "󰖪",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
     "format": "{icon} {format_source}",
     "format-bluetooth": "{icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
+    "format-muted": "󰸈 {format_source}",
     "format-source": "",
     "format-source-muted": "",
     "format-icons": {
@@ -143,14 +168,9 @@
     },
     "on-click": "pavucontrol"
   },
-  "image": {
-    "path": "/home/martin/Dokumente/Backgrounds/nixos.png",
-    "size": 20,
-    "interval": 5,
-    "on-click": "mpc toggle"
-  },
+
   "custom/power": {
-    "format": "{}",
+    "format": "",
     "on-click": "wlogout -b 5 -c 0 -r 0 -T 0 -B 0",
     "interval" : 86400, // once every day
     "tooltip": true

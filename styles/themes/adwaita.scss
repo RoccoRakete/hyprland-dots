@@ -9,8 +9,20 @@ $radii: 10px;
 $spacing: 3px;
 $border: solid 2px;
 
+$bar-bg: #171717;
 $widget-bg: #171717;
-$red: #A84A65; 
+$color-fg: #171717;
+
+$blue: #3584e4;
+$green: #33d17a;
+$yellow: #f6d32d;
+$orange: #ff7800;
+$red: #e01b24;
+$purple: #9141ac;
+$brown: #986a44;
+$dark_1: #77767b; 
+
+
 
 $base_color: if($variant == 'light', #ffffff, lighten(desaturate(#241f31, 100%), 2%));
 $text_color: if($variant == 'light', black, white);

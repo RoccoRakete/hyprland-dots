@@ -1,0 +1,29 @@
+@import "../../../.dots/styles/themes/adwaita.scss";
+
+#cpu,
+#memory,
+#temperature,
+#backlight {
+  background-color: transparentize($color: $blue, $amount: 0.3);
+  color: $color-fg;
+}
+
+#battery {
+  background-color: transparentize($color: $red, $amount: 0.3);
+  color: $color-fg;
+}
+
+#tray {
+  background-color: transparentize($color: $yellow, $amount: 0.3);
+}
+
+#network,
+#pulseaudio,
+#bluetooth {
+  background-color: transparentize($color: $purple, $amount: 0.3);
+  color: $color-fg;
+}
+
+#custom-power {
+  background-color: transparentize($color: $green, $amount: 0.3);
+}
