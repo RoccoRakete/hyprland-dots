@@ -10,10 +10,6 @@ in
   environment.sessionVariables.FLAKE = "/home/${vars.user1}/.dots/nixos/";
   environment = {
     variables = {
-      #SUDO_EDITOR = "nvim";
-      #SYSTEMD_EDITOR = "nvim";
-      #EDITOR = "nvim";
-      #VISUAL = "nvim";
     };
     pathsToLink = [
       "/share/zsh"

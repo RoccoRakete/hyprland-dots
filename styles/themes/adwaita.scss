@@ -5,14 +5,6 @@ $variant: 'dark';
 
 $font-size: 13pt;
 
-$radii: 10px;
-$spacing: 3px;
-$border: solid 2px;
-
-$bar-bg: #171717;
-$widget-bg: #171717;
-$color-fg: #171717;
-
 $blue: #3584e4;
 $green: #33d17a;
 $yellow: #f6d32d;
@@ -20,8 +12,29 @@ $orange: #ff7800;
 $red: #e01b24;
 $purple: #9141ac;
 $brown: #986a44;
-$dark_1: #77767b; 
+$dark_1: #77767b;
+$dark_3 :#3d3846;
 
+$radii: 10px;
+$widget-radii: $radii*2.5;
+$spacing: 3px;
+$border: solid 2px;
+$widget-margin: $spacing*4;
+$widget-padding: $spacing*3; 
+
+$bar-bg: #171717;
+$widget-bg: #171717;
+$grid-bg: lighten(#171717, 7%);
+$button-bg: lighten(#171717, 15%);
+$button-bg-darker: #171717;
+$button-bg-focus: #9A9A9A;
+$close-button-bg:#666666; 
+$widget-border: $border $dark_1;
+$color-fg: #171717;
+
+$text-color-disabled: #000000;
+
+$bg-selected: $blue;
 
 
 $base_color: if($variant == 'light', #ffffff, lighten(desaturate(#241f31, 100%), 2%));

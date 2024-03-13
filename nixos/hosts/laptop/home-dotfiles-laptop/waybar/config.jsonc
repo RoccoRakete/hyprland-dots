@@ -22,6 +22,7 @@
     "network",
     "bluetooth",
     "pulseaudio",
+    "custom/notification",
     "custom/power"
   ],
 
@@ -67,12 +68,12 @@
   },
 
   "clock": {
-    "format":"{:%d.%m.%y - %H:%M}",
+    "format":"{:%H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%Y-%m-%d}"
+    "format-alt": "{:%d.%m.%y - %H:%M}"
   },
 
-   "cpu": {
+  "cpu": {
     "format": "{icon}",
     "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
     "tooltip": false,
@@ -110,11 +111,11 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity}%",
+    "format": "{icon}",
     "format-full": "<span foreground=\"#2A995C\">󱐥</span>",
     "format-charging": "<span foreground=\"#2A995C\">󱐋</span>{capacity}%",
     "format-plugged": "󱐋{capacity}%",
-    "format-alt": "{time} {icon}",
+    "format-alt": "{icon} {capacity}%",
     "format-icons": [
       " ",
       " ",
@@ -124,8 +125,8 @@
     ],
     "interval": 1
   },
- 
- "tray": {
+
+  "tray": {
     "spacing": 6
   },
 
@@ -135,7 +136,7 @@
     "tooltip-format": "{ifname} ({ipaddr}) via {gwaddr} at\n{essid}",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "󰖪",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "on-click": "swaync-client -t -sw"
   },
   "bluetooth": {
     "format": "",
@@ -143,7 +144,8 @@
     "format-connected": "󰂱",
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "swaync-client -t -sw"
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
@@ -166,7 +168,28 @@
 	""
       ]
     },
-    "on-click": "pavucontrol"
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "pavucontrol"
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   },
 
   "custom/power": {

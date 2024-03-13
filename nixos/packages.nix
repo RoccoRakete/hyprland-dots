@@ -9,8 +9,8 @@
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
-      "electron-25.9.0"
-      "electron-19.1.9"
+      #"electron-25.9.0"
+      #"electron-19.1.9"
       "nix-2.16.2"
     ];
   };
@@ -46,6 +46,7 @@
     gtk3
 
     # theming
+    swaynotificationcenter
     swayosd
     wlogout
     neofetch
@@ -88,7 +89,8 @@
 
     # homelab
     rpi-imager
-    etcher
+    #etcher
+    #orca-slicer
     #super-slicer-beta
     #rustdesk
 
@@ -163,8 +165,8 @@
     wev
     sabnzbd
     wineWowPackages.waylandFull
-    inputs.nix-software-center.packages.${system}.nix-software-center
-    inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
+    #inputs.nix-software-center.packages.${system}.nix-software-center
+    #inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
     nixos-generators
     wlr-randr
     powertop

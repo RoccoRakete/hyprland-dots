@@ -16,10 +16,6 @@
     gnome.core-shell.enable = true;
     upower.enable = true;
     #xserver.desktopManager.gnome.enable = true;
-    xserver.desktopManager.xfce.enable = true;
-    xserver.desktopManager.plasma6 = {
-      enable = false;
-    };
     power-profiles-daemon.enable = false;
     xserver.displayManager.gdm.enable = true;
     gnome.gnome-keyring.enable = true;

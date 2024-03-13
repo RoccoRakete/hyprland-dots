@@ -19,7 +19,8 @@
 
 #network,
 #pulseaudio,
-#bluetooth {
+#bluetooth,
+#custom-notification{
   background-color: transparentize($color: $purple, $amount: 0.3);
   color: $color-fg;
 }

@@ -22,7 +22,8 @@ window#waybar {
 #backlight,
 #network,
 #bluetooth,
-#pulseaudio {
+#pulseaudio,
+#custom-notification {
   padding-left: $spacing;
   padding-right: $spacing;
   margin-top: $spacing;
@@ -37,7 +38,7 @@ window#waybar {
 }
 
 #backlight,
-#pulseaudio {
+#custom-notification {
   margin-right: $spacing*2;
   padding-right: $spacing*2;
   border-top-right-radius: $radii/2;
