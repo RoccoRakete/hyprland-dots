@@ -1,4 +1,4 @@
-@import "../../../.dots/styles/themes/adwaita.scss";
+@import "./adwaita.scss";
 
 #cpu,
 #memory,
@@ -20,7 +20,7 @@
 #network,
 #pulseaudio,
 #bluetooth,
-#custom-notification{
+#custom-notification {
   background-color: transparentize($color: $purple, $amount: 0.3);
   color: $color-fg;
 }

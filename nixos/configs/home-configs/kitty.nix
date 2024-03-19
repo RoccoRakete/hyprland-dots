@@ -7,9 +7,9 @@
     settings = {
       font_family = "Hurmit Nerd Font";
       font_size = "14.0";
-      background = "#1E1E1E";
-      foreground = "#DEDDDA";
-      tab_bar_background = "#1E1E1E";
+      #background = "#1E1E1E";
+      #foreground = "#DEDDDA";
+      #tab_bar_background = "#1E1E1E";
       scrollback_lines = 10000;
       show_hyperlink_targets = "yes";
       focus_follows_mouse = "no";
@@ -28,4 +28,3 @@
       "modify_font strikethrough_position 2px";
   };
 }
-

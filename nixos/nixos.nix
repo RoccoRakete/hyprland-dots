@@ -1,16 +1,15 @@
-{ pkgs, options, ... }:
+{ pkgs, ... }:
 
 let
   inherit (pkgs) nixos-icons;
   vars = import ./variables.nix;
 in
 
-  {
+{
   #environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.FLAKE = "/home/${vars.user1}/.dots/nixos/";
   environment = {
-    variables = {
-    };
+    variables = { };
     pathsToLink = [
       "/share/zsh"
     ];
@@ -101,7 +100,7 @@ in
 
   security.pam.services.swaylock = { };
   security.pam.services.gtklock = { };
-  security.pam.services.hyprlock = {};
+  security.pam.services.hyprlock = { };
   security.polkit.enable = true;
 
   # Enable sound with pipewire.
@@ -119,7 +118,7 @@ in
   };
 
   system.activationScripts.script.text = ''
-  cp /home/${vars.user1}/face.png /var/lib/AccountsService/icons/${vars.user1}
+    cp /home/${vars.user1}/face.png /var/lib/AccountsService/icons/${vars.user1}
   '';
 
   # Installed Fonts

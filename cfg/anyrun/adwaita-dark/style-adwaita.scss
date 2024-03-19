@@ -1,7 +1,8 @@
-@import "../../../.dots/styles/themes/adwaita.scss";
+@import "./adwaita.scss";
 
 window {
-  background: transparent; /* rgba(0, 0, 0, 0.8);*/
+  background: transparent;
+  /* rgba(0, 0, 0, 0.8);*/
 }
 
 #match,
@@ -47,8 +48,8 @@ window {
   border-top-right-radius: 12px;
 }
 
-#match.activatable:selected + #match.activatable,
-#match.activatable:hover + #match.activatable {
+#match.activatable:selected+#match.activatable,
+#match.activatable:hover+#match.activatable {
   border-top: 2px solid transparent;
 }
 

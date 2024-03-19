@@ -54,13 +54,13 @@
   };
 
   outputs = { nixpkgs, home-manager, nixvim, ... }@inputs:
-  let
-    vars = import ./variables.nix;
-    system = "x86_64-linux";
-    lib = nixpkgs.lib;
-    pkgs = nixpkgs.legacyPackages.${system};
-  in
-  {
+    let
+      vars = import ./variables.nix;
+      system = "x86_64-linux";
+      lib = nixpkgs.lib;
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
+    {
       # system configurations
       # desktop
       nixosConfigurations = {
@@ -107,4 +107,4 @@
         };
       };
     };
-  }
+}

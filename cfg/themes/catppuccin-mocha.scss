@@ -1,0 +1,68 @@
+$variant: "dark";
+
+$font-size: 13pt;
+
+$orange: #ff7800;
+$purple: #9141ac;
+$brown: #986a44;
+$dark_1: #77767b;
+$dark_3: #3d3846;
+$blue: #89b4fa;
+$lavender: #b4befe;
+$sapphire: #74c7ec;
+$sky: #89dceb;
+$teal: #94e2d5;
+$green: #a6e3a1;
+$yellow: #f9e2af;
+$peach: #fab387;
+$maroon: #eba0ac;
+$red: #f38ba8;
+$mauve: #cba6f7;
+$pink: #f5c2e7;
+$flamingo: #f2cdcd;
+$rosewater: #f5e0dc;
+
+$base: #1e1e2e;
+$mantle: #181825;
+$crust: #11111b;
+
+$text: #cdd6f4;
+$subtext0: #a6adc8;
+$subtext1: #bac2de;
+
+$surface0: #313244;
+$surface1: #45475a;
+$surface2: #585b70;
+
+$overlay0: #6c7086;
+$overlay1: #7f849c;
+$overlay2: #9399b2;
+
+$radii: 10px;
+$widget-radii: $radii*2.5;
+$spacing: 3px;
+$border: solid 2px;
+$widget-margin: $spacing*4;
+$widget-padding: $spacing*3;
+
+$bar-bg: $crust;
+$widget-bg: $crust;
+$grid-bg: lighten($crust, 7%);
+$button-bg: lighten($crust, 15%);
+$button-bg-darker: $crust;
+$button-bg-focus: $overlay2;
+$close-button-bg: $overlay2;
+$widget-border: $border $dark_1;
+$color-fg: $crust;
+
+$text-color-disabled: #000000;
+
+$bg-selected: $blue;
+
+$selected-bg-color: $overlay2;
+
+
+$base_color: if($variant =='light', #ffffff, lighten(desaturate(#241f31, 100%), 2%));
+$text_color: if($variant =='light', black, white);
+$bg_color: if($variant =='light', #f6f5f4, darken(desaturate(#3d3846, 100%), 4%));
+$fg_color: if($variant =='light', #2e3436, #eeeeec);

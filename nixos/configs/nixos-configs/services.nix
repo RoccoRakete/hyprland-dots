@@ -5,10 +5,7 @@
   ];
 
   services = {
-    #physlock = {
-    #  enable = true;
-    #  muteKernelMessages = true;
-    #};
+    blueman.enable = true;
     fwupd.enable = true;
     tumbler.enable = true;
     gvfs.enable = true;

@@ -16,7 +16,7 @@
   ];
   programs = {
     nixvim = {
-      enable = true;
+      enable = false;
       globals.mapleader = " ";
       clipboard.providers.wl-copy.enable = true;
 

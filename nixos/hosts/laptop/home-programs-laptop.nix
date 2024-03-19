@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   imports = [
@@ -14,7 +14,7 @@
   programs = {
     hyprlock.enable = true;
     anyrun = {
-      enable = true;
+      enable = false;
       config = {
         plugins = [
           inputs.anyrun.packages.${pkgs.system}.applications
@@ -30,9 +30,16 @@
         maxEntries = null;
       };
       extraCss = ''
-      @import url("stylesheet.css");
+        @import url("stylesheet.css");
       '';
     };
+    wofi = {
+      enable = true;
+    };
+    #rofi = {
+    #  enable = true;
+    #  package = pkgs.rofi.override { plugins = [ pkgs.rofi-wayland ]; };
+    #};
     ags = {
       enable = false;
       configDir = ./home-dotfiles-laptop/ags;
@@ -50,7 +57,12 @@
       ];
       userSettings = { };
     };
-
+    zoxide = {
+      enable = true;
+      options = [
+        "--cmd cd"
+      ];
+    };
     git = {
       enable = true;
       userName = "RoccoRakete";

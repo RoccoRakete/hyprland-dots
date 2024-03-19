@@ -6,6 +6,8 @@
   ];
 
   home = {
+
+    # Cursor
     pointerCursor = {
       gtk.enable = true;
       package = pkgs.bibata-cursors;
@@ -16,44 +18,32 @@
 
   gtk = {
     enable = true;
+
+    # GTK-Icons
     iconTheme.package = pkgs.morewaita-icon-theme;
     iconTheme.name = "MoreWaita";
-    theme = {
-      name = "adw-gtk3-dark";
-      package = pkgs.adw-gtk3;
-      #theme = {
-      #  name = "Kanagawa-BL";
-      #  package = pkgs.custompkgs.kanagawa-gtk-theme;
-    };
-    #};
 
-    #gtk = {
-    #  enable = true;
-    #  theme = {
-    #    name = "Catppuccin-Mocha-Standard-Blue-Dark";
-    #    package = pkgs.catppuccin-gtk.override {
-    #      accents = [ "blue" ];
-    #      size = "standard";
-    #      tweaks = [ "normal" ];
-    #      variant = "mocha";
-    #    };
-    #  };
+    # GTK-Colors
+    # Catppuccin
+    theme.name = "Catppuccin-Mocha-Standard-Blue-Dark";
+    theme.package = pkgs.catppuccin-gtk.override {
+      accents = [ "blue" ];
+      size = "standard";
+      variant = "mocha";
+    };
+
+    # Kanagawa
+    #theme.name = "Kanagawa-B";
+    #theme.package = pkgs.kanagawa-gtk-theme.override { };
+
+    # Fonts
     font = {
       name = "Ubuntu Nerd Font";
       size = 13;
     };
-    # gtk3.extraCss = ''
-    #   headerbar, .titlebar,
-    #   .csd:not(.popup):not(tooltip):not(messagedialog) decoration{
-    #     border-radius: 0;
-    #   };
-    #   levelbar {
-    #     outline-offset: 0;
-    #   };
-    # '';
-    #iconTheme.name = moreWaita.name;
   };
 
+  # QT
   qt = {
     enable = true;
     platformTheme = "gtk";

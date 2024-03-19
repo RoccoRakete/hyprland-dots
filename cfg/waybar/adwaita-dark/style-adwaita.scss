@@ -1,5 +1,5 @@
-@import "../../../.dots/styles/themes/adwaita.scss";
-@import "../../../.dots/styles/waybar/adwaita-colored-buttons.scss";
+@import "./adwaita.scss";
+@import "./adwaita-colored-buttons.scss";
 
 * {
   padding: 0;
@@ -12,8 +12,8 @@ window#waybar {
   background: $bar-bg;
   border-radius: $radii;
   box-shadow:
-  inset -2px -2px 5px 1px (transparentize($color: #000000, $amount: 0.6)),
-  2px 2px 5px 1px transparentize($color: #000000, $amount: 0.6) inset;
+    inset -2px -2px 5px 1px (transparentize($color: #000000, $amount: 0.6)),
+    2px 2px 5px 1px transparentize($color: #000000, $amount: 0.6) inset;
 }
 
 #cpu,

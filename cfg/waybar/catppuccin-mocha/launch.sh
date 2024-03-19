@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+# Catppuccin-Mocha
+
 is_swww_daemon_running() {
     if pgrep -x "swww-daemon" > /dev/null
     then
@@ -20,6 +22,6 @@ swww img ~/.config/backgrounds/minimal_landscape.jpg
 
 pkill waybar
 
-sassc $HOME/.config/waybar/themes/style-catppuccin-mocha.scss $HOME/.config/waybar/style.css
+sassc $HOME/.config/waybar/style-catppuccin-mocha.scss $HOME/.config/waybar/style.css
 
 waybar

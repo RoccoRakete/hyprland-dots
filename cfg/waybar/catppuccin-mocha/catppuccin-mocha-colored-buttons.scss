@@ -1,0 +1,30 @@
+@import "./catppuccin-mocha.scss";
+
+#cpu,
+#memory,
+#temperature,
+#backlight {
+  background-color: darken($color: $blue, $amount: 5);
+  color: $color-fg;
+}
+
+#battery {
+  background-color: darken($color: $teal, $amount: 5);
+  color: $color-fg;
+}
+
+#tray {
+  background-color: darken($color: $lavender, $amount: 0);
+}
+
+#network,
+#pulseaudio,
+#bluetooth,
+#custom-notification {
+  background-color: darken($color: $mauve, $amount: 15);
+  color: $color-fg;
+}
+
+#custom-power {
+  background-color: darken($color: $green, $amount: 40);
+}

@@ -11,7 +11,7 @@
     permittedInsecurePackages = [
       #"electron-25.9.0"
       #"electron-19.1.9"
-      "nix-2.16.2"
+      #"nix-2.16.2"
     ];
   };
 
@@ -33,7 +33,7 @@
     gnome.gnome-bluetooth
     gnome.gnome-settings-daemon
     gnome.gnome-software
-    gnome.nautilus
+    #gnome.nautilus
     glib
     nautilus-open-any-terminal
     libadwaita
@@ -46,6 +46,7 @@
     gtk3
 
     # theming
+    inputs.anyrun.packages.${system}.default
     swaynotificationcenter
     swayosd
     wlogout
@@ -60,8 +61,8 @@
     kitty-themes
 
     # code
-    #sassc
-    #sass
+    lua-language-server
+    neovim-unwrapped
     dart-sass
     bun
     neovide
@@ -82,17 +83,20 @@
     jq
     nil
     rustfmt
-    nixd
     java-language-server
     jsonfmt
     luaformatter
+    typescript
+    meson
+    vala
+    cmake
+    pkg-config
+    vala-language-server
+    uncrustify
 
     # homelab
     rpi-imager
-    #etcher
-    #orca-slicer
     #super-slicer-beta
-    #rustdesk
 
     # information
     firefox
@@ -126,6 +130,9 @@
     heroic
 
     # system
+    #blueman
+    rofi-wayland
+    pika-backup
     envsubst
     grim
     deadnix
