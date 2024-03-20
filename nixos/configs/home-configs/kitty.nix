@@ -8,6 +8,7 @@
       font_family = "Hurmit Nerd Font";
       font_size = "14.0";
       #background = "#1E1E1E";
+      background_opacity = "0.9";
       #foreground = "#DEDDDA";
       #tab_bar_background = "#1E1E1E";
       scrollback_lines = 10000;

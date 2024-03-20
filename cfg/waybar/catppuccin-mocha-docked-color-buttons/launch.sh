@@ -18,7 +18,7 @@ while ! is_swww_daemon_running; do
     sleep 1
 done
 
-swww img ~/.config/backgrounds/minimal_landscape.jpg 
+swww img ~/.config/backgrounds/mocha-mountains.png 
 
 pkill waybar
 

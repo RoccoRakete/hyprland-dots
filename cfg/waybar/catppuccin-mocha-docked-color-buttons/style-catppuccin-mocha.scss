@@ -11,7 +11,7 @@ window#waybar {
   font-size: $font-size;
   /*border-radius: $radii;
   */
-  background: $bar-bg;
+  background: transparentize($color: $bar-bg, $amount: 0.2);
 
 }
 
