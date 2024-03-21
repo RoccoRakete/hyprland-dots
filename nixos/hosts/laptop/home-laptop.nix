@@ -71,6 +71,13 @@ in
     terminal = false;
   };
 
+  xdg.desktopEntries."SuperSlicer" = {
+    name = "SuperSlicer";
+    comment = "3D Print Slicer";
+    exec = "/home/martin/.local/bin/superslicer";
+    categories = [ "X-FPV" ];
+    terminal = false;
+  };
 
   home.file = { };
   home.sessionVariables = { };

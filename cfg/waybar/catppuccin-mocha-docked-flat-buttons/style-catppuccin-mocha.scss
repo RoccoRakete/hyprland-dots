@@ -67,8 +67,8 @@ window#waybar {
 #battery,
 #tray,
 #custom-power {
-  padding-left: $spacing;
-  padding-right: $spacing;
+  padding-left: $spacing*1.5;
+  padding-right: $spacing*1.5;
   margin-top: $spacing*1.5;
   margin-bottom: $spacing*1.5;
   margin-right: $spacing*2.0;
@@ -109,8 +109,6 @@ window#waybar {
 #custom-power {
   color: darken($color: $red, $amount: 10);
   margin-right: $spacing*1.5;
-  padding-left: $spacing*1.5;
-  padding-right: $spacing*1.5;
 }
 
 .modules-left {
