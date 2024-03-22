@@ -15,6 +15,13 @@
     enable = true;
   };
 
+  # hyprland
+  home.file."${config.xdg.configHome}/screenlock" = {
+    source = ./home-dotfiles-laptop/screenlock;
+    recursive = true;
+    enable = true;
+  };
+
   # waybar launchscript
   #home.file."${config.xdg.configHome}/waybar/launch.sh" = {
   #  source = ./home-dotfiles-laptop/waybar/launch.sh;

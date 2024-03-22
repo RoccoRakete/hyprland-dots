@@ -13,12 +13,14 @@
     "hyprland/workspaces"
   ],
   "modules-center": [
-    "clock"
+    "clock",
+    "custom/weather"
   ],
   "modules-right": [
-    "cpu",
+    "network#speed",
     "memory",
     "temperature",
+    "cpu",
     "backlight",
     "battery",
     "tray",
@@ -68,9 +70,16 @@
     }
   },
   "clock": {
-    "format": "{:%H:%M}",
+    "format": "{:%a. <span rise=\"1.5pt\">|</span> %H:%M <span rise=\"1.5pt\">|</span>}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%d.%m.%y - %H:%M}"
+  },
+  "custom/weather": {
+    "exec": "${HOME}/.config/waybar/scripts/get_weather.sh",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 900
   },
   "cpu": {
     "format": "{icon}",
@@ -143,6 +152,10 @@
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "󰖪",
     "on-click": "swaync-client -t -sw"
+  },
+  "network#speed": {
+    "format": "<span line_height=\"0.75\" size=\"9pt\"> {bandwidthUpBytes}\n {bandwidthDownBytes}</span>",
+    "interval": 1
   },
   "bluetooth": {
     "format": "",

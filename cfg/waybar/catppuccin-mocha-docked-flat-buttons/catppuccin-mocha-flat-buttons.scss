@@ -10,32 +10,9 @@
 #pulseaudio,
 #bluetooth,
 #custom-notification,
-#custom-power {
-  background-color: transparentize($color: $text, $amount: 0.75);
+#custom-power,
+#clock,
+#custom-weather {
+  background-color: transparentize($color: $text, $amount: 0.6);
   color: $color-fg;
-}
-
-#cpu,
-#network {
-  border-width: 0;
-  border-left-width: 1px;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-}
-
-#memory,
-#temperature,
-#bluetooth,
-#pulseaudio {
-  border-width: 0;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-}
-
-#backlight,
-#custom-notification {
-  border-width: 0;
-  border-right-width: 1px;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
 }

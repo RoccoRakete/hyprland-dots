@@ -10,6 +10,7 @@ in
     ../../configs/home-configs/zsh.nix
     ../../configs/home-configs/kitty.nix
     ../../configs/home-configs/waybar.nix
+    ../../configs/home-configs/overlays.nix
     ./link-dotfiles-laptop.nix
     ./home-programs-laptop.nix
     inputs.hypridle.homeManagerModules.default
