@@ -1,0 +1,89 @@
+{
+  "title": "ThemeSwitcher",
+  "name": "Rocco Rakete",
+  "menus": [
+    {
+      "name": "Waybar Themes",
+      "options": [
+        "Catppuccin-Mocha - docked bar - color buttons",
+        "Catppuccin-Mocha - docked bar - flat butons",
+        "Adwaita-dark - floating bar"
+      ],
+      "commands": [
+        [
+          "sh -c \"rm -rf ~/.config/waybar/*\"",
+          "sh -c \"cp -r ~/.dots/cfg/waybar/scripts/ ~/.config/waybar/\"",
+          "sh -c \"cp ~/.dots/cfg/waybar/catppuccin-mocha-docked-color-buttons/* ~/.config/waybar/\"",
+          "sh -c \"cp ~/.dots/cfg/themes/catppuccin-mocha.scss ~/.config/waybar/catppuccin-mocha.scss\""
+        ],
+        [
+          "sh -c \"rm -rf ~/.config/waybar/*\"",
+          "sh -c \"cp -r ~/.dots/cfg/waybar/scripts/ ~/.config/waybar/\"",
+          "sh -c \"cp ~/.dots/cfg/waybar/catppuccin-mocha-docked-flat-buttons/* ~/.config/waybar/\"",
+          "sh -c \"cp ~/.dots/cfg/themes/catppuccin-mocha.scss ~/.config/waybar/catppuccin-mocha.scss\""
+        ],
+        [
+          "sh -c \"rm -rf ~/.config/waybar/*\"",
+          "sh -c \"cp -r ~/.dots/cfg/waybar/scripts/ ~/.config/waybar/\"",
+          "sh -c \"cp ~/.dots/cfg/waybar/adwaita-dark/* ~/.config/waybar/\"",
+          "sh -c \"cp ~/.dots/cfg/themes/adwaita.scss ~/.config/waybar/adwaita.scss\""
+        ]
+      ]
+    },
+    {
+      "name": "Anyrun Themes",
+      "options": [
+        "Catppuccin-Mocha",
+        "Adwaita-dark"
+      ],
+      "commands": [
+        [
+          "sh -c \"rm -rf ~/.config/anyrun/*\"",
+          "sh -c \"cp -r ~/.dots/cfg/anyrun/plugins/ ~/.config/anyrun/\"",
+          "sh -c \"cp ~/.dots/cfg/anyrun/catppuccin-mocha/* ~/.config/anyrun/\"",
+          "sh -c \"cp ~/.dots/cfg/themes/catppuccin-mocha.scss ~/.config/anyrun/catppuccin-mocha.scss\""
+        ],
+        [
+          "sh -c \"rm -rf ~/.config/anyrun/*\"",
+          "sh -c \"cp -r ~/.dots/cfg/anyrun/plugins/ ~/.config/anyrun/\"",
+          "sh -c \"cp ~/.dots/cfg/anyrun/adwaita-dark/* ~/.config/anyrun/\"",
+          "sh -c \"cp ~/.dots/cfg/themes/adwaita.scss ~/.config/anyrun/adwaita.scss\""
+        ]
+      ]
+    },
+    {
+      "name": "SwayNC Themes",
+      "options": [
+        "Catppuccin-Mocha",
+        "Adwaita-dark"
+      ],
+      "commands": [
+        [
+          "sh -c \"rm -rf ~/.config/swaync/*\"",
+          "sh -c \"cp ~/.dots/cfg/swaync/catppuccin-mocha/* ~/.config/swaync/\"",
+          "sh -c \"cp ~/.dots/cfg/themes/catppuccin-mocha.scss ~/.config/swaync/catppuccin-mocha.scss\""
+        ],
+        [
+          "sh -c \"rm -rf ~/.config/swaync/*\"",
+          "sh -c \"cp ~/.dots/cfg/swaync/adwaita-dark/* ~/.config/swaync/\"",
+          "sh -c \"cp ~/.dots/cfg/themes/adwaita.scss ~/.config/swaync/adwaita.scss\""
+        ]
+      ]
+    },
+    {
+      "name": "Hyprland Themes",
+      "options": [
+        "Catppuccin-Mocha",
+        "Adwaita-dark"
+      ],
+      "commands": [
+        [
+          "sh -c \"cp ~/.dots/cfg/hypr/catppuccin-mocha/* ~/.config/hypr/\""
+        ],
+        [
+          "sh -c \"cp ~/.dots/cfg/hypr/adwaita-dark/* ~/.config/hypr/\""
+        ]
+      ]
+    }
+  ]
+}

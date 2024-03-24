@@ -10,5 +10,5 @@ Config(
   close_on_click: true,
   show_results_immediately: true,
   max_entries: None,
-  plugins: ["/nix/store/78s37pd0a67zzwvvy9nf5c26yp98pcc3-applications-0.1.0/lib/libapplications.so"],
+  plugins: ["libapplications.so"],
 )

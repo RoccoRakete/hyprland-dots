@@ -14,13 +14,14 @@
       "export EDITOR=nvim";
 
     shellAliases = {
-      ll = "ls -lah";
+      #ll = "ls -lah";
+      ll = "eza -loah --icons=always --no-permissions --git";
       v = "nvim";
 
       editd = "nvim ~/.dots";
 
-      pushd = "cd ~/.dots && git add -A && git commit && git push --repo https://github.com/RoccoRakete/hyprland-dots.git";
-      addd = "cd ~/.dots && git add -A";
+      pushd = "cd ~/.dots && git add -A && git commit && git push --repo https://github.com/RoccoRakete/hyprland-dots.git && cd";
+      addd = "cd ~/.dots && git add -A && cd";
 
       update = "sudo nixos-rebuild switch";
       flake-update = "nix flake update ~/.dots/nixos";
@@ -57,7 +58,9 @@
       enable = true;
       plugins = [
         "git"
+        "thefuck"
       ];
+      theme = "robbyrussell";
     };
   };
 }

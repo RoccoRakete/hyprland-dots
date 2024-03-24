@@ -75,6 +75,7 @@ in
   xdg.desktopEntries."SuperSlicer" = {
     name = "SuperSlicer";
     comment = "3D Print Slicer";
+    icon = "SuperSlicer";
     exec = "/home/martin/.local/bin/superslicer";
     categories = [ "X-FPV" ];
     terminal = false;

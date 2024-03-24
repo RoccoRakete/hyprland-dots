@@ -103,19 +103,19 @@
     thunderbird
     brave
     bitwarden
-    discord
-    webcord
-    gtkcord4
+    #discord
+    #webcord
+    #gtkcord4
+    vesktop
     betaflight-configurator
     whatsapp-for-linux
-    kicad
+    #kicad
 
     # office
     obsidian
     libreoffice-fresh
     nextcloud-client
     remmina
-    vivaldi
 
     # media
     obs-studio
@@ -131,6 +131,7 @@
 
     # system
     #blueman
+    inputs.eza.packages.${system}.default
     rofi-wayland
     pika-backup
     envsubst

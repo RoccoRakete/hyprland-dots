@@ -21,6 +21,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    eza = {
+      url = "github:eza-community/eza";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nh = {
       url = "github:viperML/nh";
       inputs.nixpkgs.follows = "nixpkgs";

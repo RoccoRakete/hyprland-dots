@@ -1,0 +1,25 @@
+.menu-label {
+  font-size: 1.2em;
+  font-weight: bolder;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.menu-dropdown {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.title-label {
+  padding: 10px;
+  font-size: 2em;
+  font-weight: bolder;
+  background-color: #11111B;
+}
+
+.menu-bar {
+  padding-top: 10px;
+  margin: 0;
+  background-color: #11111B;
+}

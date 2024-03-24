@@ -15,9 +15,16 @@
     enable = true;
   };
 
-  # hyprland
+  # screenlock
   home.file."${config.xdg.configHome}/screenlock" = {
     source = ./home-dotfiles-laptop/screenlock;
+    recursive = true;
+    enable = true;
+  };
+
+  # ThemeSwitcher
+  home.file."${config.xdg.configHome}/themeswitcher" = {
+    source = ../../../cfg/themeswitcher;
     recursive = true;
     enable = true;
   };
