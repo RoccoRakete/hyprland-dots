@@ -20,8 +20,8 @@
 
       editd = "nvim ~/.dots";
 
-      pushd = "cd ~/.dots && git add -A && git commit && git push --repo https://github.com/RoccoRakete/hyprland-dots.git && cd";
-      addd = "cd ~/.dots && git add -A && cd";
+      pushd = "cd ~/.dots && git add -A && git commit && git push --repo https://github.com/RoccoRakete/hyprland-dots.git && cd ~";
+      addd = "cd ~/.dots && git add -A && cd ~";
 
       update = "sudo nixos-rebuild switch";
       flake-update = "nix flake update ~/.dots/nixos";
