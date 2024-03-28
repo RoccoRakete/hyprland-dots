@@ -46,6 +46,7 @@
     gtk3
 
     # theming
+    starship
     inputs.anyrun.packages.${system}.default
     swaynotificationcenter
     swayosd

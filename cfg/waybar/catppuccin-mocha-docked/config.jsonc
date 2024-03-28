@@ -72,7 +72,7 @@
   "clock": {
     "format": "{:%a. <span rise=\"1.5pt\">|</span> %H:%M <span rise=\"1.5pt\">|</span>}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%a. %d.%m.%y <span rise=\"1.5pt\">|</span> %H:%M <span rise=\"1.5pt\">|</span>}"
+    "format-alt": "{:%d.%m.%y - %H:%M}"
   },
   "custom/weather": {
     "exec": "${HOME}/.config/waybar/scripts/get_weather.sh",

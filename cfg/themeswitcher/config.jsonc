@@ -7,6 +7,7 @@
       "options": [
         "Catppuccin-Mocha - docked bar - color buttons",
         "Catppuccin-Mocha - docked bar - flat butons",
+        "Catppuccin-Mocha - docked bar",
         "Adwaita-dark - floating bar"
       ],
       "commands": [
@@ -20,6 +21,12 @@
           "sh -c \"rm -rf ~/.config/waybar/*\"",
           "sh -c \"cp -r ~/.dots/cfg/waybar/scripts/ ~/.config/waybar/\"",
           "sh -c \"cp ~/.dots/cfg/waybar/catppuccin-mocha-docked-flat-buttons/* ~/.config/waybar/\"",
+          "sh -c \"cp ~/.dots/cfg/themes/catppuccin-mocha.scss ~/.config/waybar/catppuccin-mocha.scss\""
+        ],
+        [
+          "sh -c \"rm -rf ~/.config/waybar/*\"",
+          "sh -c \"cp -r ~/.dots/cfg/waybar/scripts/ ~/.config/waybar/\"",
+          "sh -c \"cp ~/.dots/cfg/waybar/catppuccin-mocha-docked/* ~/.config/waybar/\"",
           "sh -c \"cp ~/.dots/cfg/themes/catppuccin-mocha.scss ~/.config/waybar/catppuccin-mocha.scss\""
         ],
         [

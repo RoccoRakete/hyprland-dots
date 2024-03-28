@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 #TODO: remove after package update !!!
 
 {

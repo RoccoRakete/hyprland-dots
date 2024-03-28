@@ -1,5 +1,4 @@
 @import "./catppuccin-mocha.scss";
-@import "./catppuccin-mocha-flat-buttons.scss";
 
 * {
   padding: 0;
@@ -84,8 +83,8 @@ window#waybar {
 
 #workspaces button {
   font-size: 0;
-  min-width: $font-size*0.95;
-  min-height: $font-size*0.95;
+  min-width: $font-size*1;
+  min-height: $font-size*1;
   margin: $spacing*1.5;
   margin-top: $spacing*1.5;
   margin-bottom: $spacing*1.5;
@@ -100,7 +99,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  min-width: $font-size*2;
+  min-width: $font-size*2.2;
   background-color: darken($color: $blue, $amount: 5);
   transition: 100ms;
 }
