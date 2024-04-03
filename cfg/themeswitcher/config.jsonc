@@ -59,6 +59,20 @@
       ]
     },
     {
+      "name": "Walker Themes",
+      "options": [
+        "Catppuccin-Mocha"
+      ],
+      "commands": [
+        [
+          "sh -c \"rm -rf ~/.config/walker/*\"",
+          "sh -c \"cp -r ~/.dots/cfg/walker/plugins/ ~/.config/walker/\"",
+          "sh -c \"cp ~/.dots/cfg/walker/catppuccin-mocha/* ~/.config/walker/\"",
+          "sh -c \"cp ~/.dots/cfg/themes/catppuccin-mocha.scss ~/.config/walker/catppuccin-mocha.scss\""
+        ]
+      ]
+    },
+    {
       "name": "SwayNC Themes",
       "options": [
         "Catppuccin-Mocha",

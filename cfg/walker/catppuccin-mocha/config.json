@@ -1,0 +1,92 @@
+{
+  "activation_mode": {
+    "disabled": false,
+    "use_alt": false
+  },
+  "align": {
+    "anchors": {
+      "bottom": false,
+      "left": false,
+      "right": false,
+      "top": false
+    },
+    "horizontal": "center",
+    "ignore_exlusive": true,
+    "margins": {
+      "bottom": 0,
+      "end": 0,
+      "start": 0,
+      "top": 0
+    },
+    "vertical": "center",
+    "width": 500
+  },
+  "clipboard": {
+    "image_height": 300,
+    "max_entries": 10
+  },
+  "enable_typeahead": false,
+  "fullscreen": false,
+  "icons": {
+    "hide": false,
+    "image_height": 200,
+    "size": 32
+  },
+  "ignore_mouse": false,
+  "keep_open": false,
+  "list": {
+    "always_show": true,
+    "height": 400,
+    "hide_sub": false,
+    "margin_top": 10
+  },
+  "modules": [
+    {
+      "name": "runner",
+      "prefix": ""
+    },
+    {
+      "name": "applications",
+      "prefix": ""
+    },
+    {
+      "name": "ssh",
+      "prefix": "",
+      "switcher_exclusive": true
+    },
+    {
+      "name": "finder",
+      "prefix": "",
+      "switcher_exclusive": true
+    },
+    {
+      "name": "commands",
+      "prefix": "",
+      "switcher_exclusive": true
+    },
+    {
+      "name": "websearch",
+      "prefix": "?"
+    },
+    {
+      "name": "switcher",
+      "prefix": "/"
+    }
+  ],
+  "orientation": "vertical",
+  "placeholder": "Search...",
+  "runner": {
+    "excludes": [
+      "rm"
+    ]
+  },
+  "scrollbar_policy": "automatic",
+  "search": {
+    "delay": 0,
+    "hide_icons": false,
+    "hide_spinner": true,
+    "margin_spinner": 10
+  },
+  "show_initial_entries": true,
+  "ssh_host_file": ""
+}

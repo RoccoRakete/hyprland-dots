@@ -46,6 +46,7 @@
     gtk3
 
     # theming
+    inputs.walker.packages.${system}.default
     starship
     inputs.anyrun.packages.${system}.default
     swaynotificationcenter

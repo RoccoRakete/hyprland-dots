@@ -1,0 +1,83 @@
+@import "./catppuccin-mocha.scss";
+
+* {
+  font-weight: bolder;
+}
+
+#window {
+  border-radius: $widget-radii;
+  border: $border transparentize($color: $blue, $amount: 0.2);
+}
+
+#box {
+  padding: $widget-padding*1.5;
+}
+
+#searchwrapper {}
+
+#search,
+#typeahead {
+  outline: none;
+  outline-width: 0px;
+  box-shadow: none;
+  border-bottom: none;
+  border: none;
+  padding-left: $widget-padding;
+  padding-right: $widget-padding;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-radius: $radii/3;
+}
+
+#typeahead {
+  background: none;
+  opacity: 0.5;
+}
+
+#search placeholder {
+  opacity: 0.5;
+}
+
+#list {}
+
+row:selected {
+  border-radius: $radii;
+  background-color: transparentize($color: $text, $amount: 0.75);
+  color: black;
+}
+
+.item {
+  padding: $spacing;
+  border-radius: 2px;
+}
+
+.icon {
+  padding-right: $spacing;
+}
+
+.textwrapper {}
+
+.label {}
+
+.sub {
+  opacity: 0.5;
+}
+
+.activationlabel {
+  opacity: 0.25;
+}
+
+.activation .activationlabel {
+  opacity: 1;
+  color: $green;
+}
+
+.activation .textwrapper,
+.activation .icon,
+.activation .search {
+  opacity: 0.5;
+}
+
+#search {
+  border-radius: $radii;
+}

@@ -5,6 +5,7 @@
     inputs.ags.homeManagerModules.default
     inputs.hyprlock.homeManagerModules.default
     inputs.anyrun.homeManagerModules.default
+    inputs.walker.homeManagerModules.default
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -35,6 +36,9 @@
     };
     wofi = {
       enable = true;
+    };
+    walker = {
+      enable = false;
     };
     #rofi = {
     #  enable = true;
