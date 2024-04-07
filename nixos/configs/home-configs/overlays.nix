@@ -1,4 +1,4 @@
-#TODO: remove after package update !!!
+# NOT USED !!!
 
 {
   nixpkgs.overlays = [
@@ -22,10 +22,10 @@
               ];
             });
           }
-        )
-      ];
-    })
-  ];
+          )
+        ];
+      })
+    ];
 
 
-}
+  }

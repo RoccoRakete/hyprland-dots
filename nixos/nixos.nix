@@ -143,6 +143,8 @@ in
     };
   };
 
+  xdg.portal.enable = true;
+
   system.activationScripts.script.text = ''
     cp /home/${vars.user1}/face.png /var/lib/AccountsService/icons/${vars.user1}
   '';

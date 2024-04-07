@@ -6,17 +6,20 @@
     ./nvim-cmp.nix
     ./lsp.nix
     ./bufferline.nix
-    #./telescope.nix
+    ./telescope.nix
     ./neo-tree.nix
     ./prettier.nix
     ./lsp-servers.nix
     ./treesitter.nix
     ./autopairs.nix
     ./whichkey.nix
+    ./dashboard.nix
+    ./efmls.nix
+    ./lsp-format.nix
   ];
   programs = {
     nixvim = {
-      enable = false;
+      enable = true;
       globals.mapleader = " ";
       clipboard.providers.wl-copy.enable = true;
 
@@ -29,7 +32,10 @@
         nix.enable = true;
 
         lsp-lines.enable = true;
-        #lsp-format.enable = true;
+        conform-nvim = {
+          enable = false;
+          formatOnSave.lspFallback = true;
+        };
         lspkind.enable = true;
 
         neogit.enable = true;
@@ -41,7 +47,8 @@
 
         notify = {
           enable = true;
-          backgroundColour = "#000000";
+          #backgroundColour = "#000000";
+          timeout = 2000;
           fps = 120;
           stages = "fade";
         };
@@ -49,9 +56,17 @@
         airline = {
           enable = true;
           #powerline = true;
-          theme = "bubblegum";
+          theme = "catppuccin";
         };
       };
+
+      autoCmd = [
+        {
+          event = [ "BufWrite" ];
+          pattern = [ "" ];
+          command = "Autoformat";
+        }
+      ];
 
       extraPlugins = with pkgs.vimPlugins; [
         telescope-ui-select-nvim
@@ -62,7 +77,6 @@
       extraConfigLua =
         ''if vim.g.neovide then'' + "\n" +
         ''vim.o.guifont = "Hurmit Nerd Font:h14"'' + "\n" +
-        ''vim.api.nvim_set_hl(0, 'Normal', {bg = '#1e1e1e'})'' + "\n" +
 
         ''vim.keymap.set('n', '<C-S-s>', ':w<CR>') -- Save'' + "\n" +
         ''vim.keymap.set('v', '<C-S-c>', '"+y') -- Copy'' + "\n" +
@@ -86,10 +100,9 @@
       colorschemes.catppuccin = {
         enable = true;
         flavour = "mocha";
-        transparentBackground = true;
+        transparentBackground = false;
       };
 
     };
   };
 }
-

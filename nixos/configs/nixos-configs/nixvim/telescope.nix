@@ -6,7 +6,7 @@
 
     enabledExtensions = [ "ui-select" ];
     extensionConfig.ui-select = { };
-    extensions.frecency.enable = true;
+    extensions.frecency.enable = false;
     extensions.fzf-native.enable = true;
 
     extensions.file_browser = {
@@ -19,6 +19,13 @@
       "<leader>ff" = "find_files";
       "<leader>fs" = "grep_string";
       "<leader>fg" = "live_grep";
+    };
+    extraOptions = {
+      pickers = {
+        find_files = {
+          hidden = true;
+        };
+      };
     };
   };
 }

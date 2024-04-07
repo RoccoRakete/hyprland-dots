@@ -49,26 +49,27 @@
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprlock = {
       url = "github:hyprwm/Hyprlock";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     hypridle = {
       url = "github:hyprwm/Hypridle";
-      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
     };
   };
 
   outputs = { nixpkgs, home-manager, nixvim, ... }@inputs:
-    let
-      vars = import ./variables.nix;
-      system = "x86_64-linux";
-      lib = nixpkgs.lib;
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
+  let
+    vars = import ./variables.nix;
+    system = "x86_64-linux";
+    lib = nixpkgs.lib;
+    pkgs = nixpkgs.legacyPackages.${system};
+  in
+  {
       # system configurations
       # desktop
       nixosConfigurations = {
@@ -115,4 +116,4 @@
         };
       };
     };
-}
+  }

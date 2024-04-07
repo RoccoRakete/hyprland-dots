@@ -17,19 +17,19 @@
         filetype = "neo-tree";
         text = "File Explorer";
         text_align = "center";
-        separator = true;
+        separator = false;
       }
     ];
 
     highlights =
       {
-        indicatorSelected.sp = "#89b4fa";
-        #tabSeparatorSelected.underline = "#89b4fa";
+        indicatorSelected.fg = "#89b4fa";
+        #tabSeparatorSelected.fg = "#89b4fa";
       };
 
-    #highlights = rec {
+    highlights = rec {
     #  # Tab bar fill
-    #  fill.bg = "#21222a";
+      #fill.bg = "#ffffff";
     #  fill.fg = "#5a5b64";
 
     #  # Tab fill
@@ -73,7 +73,7 @@
 
     #  bufferVisible.fg = "#5a5b64";
     #  infoVisible.fg = "#eba0ac";
-    #};
+    };
     diagnosticsIndicator = ''
       function(count, level)
         local icon = level:match("error") and " " or ""

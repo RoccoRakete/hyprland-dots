@@ -1,8 +1,5 @@
 {
   "spacing": 0,
-  //"margin-left": 10,
-  //"margin-right": 10,
-  //"margin-top": 10,
   "margin-left": 0,
   "margin-right": 0,
   "margin-top": 0,
@@ -136,9 +133,9 @@
     "format-alt": "{icon} {capacity}%",
     "format-icons": [
       "<span foreground=\"#f38ba8\"></span> ",
-      "<span foreground=\"#eba0ac\"></span> ",
-      "<span foreground=\"#fab387\"></span> ",
-      "<span foreground=\"#f9e2af\"></span> ",
+      "<span foreground=\"#fab387\"></span> ",
+      "<span foreground=\"#f9e2af\"></span> ",
+      "<span foreground=\"#a6e3a1\"></span> ",
       "<span foreground=\"#a6e3a1\"></span> "
     ],
     "interval": 1
@@ -168,28 +165,28 @@
     "on-click": "swaync-client -t -sw"
   },
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{icon} {format_source}",
-    "format-bluetooth": "{icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": "󰸈 {format_source}",
-    "format-source": "",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    },
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "pavucontrol"
+		// "scroll-step": 1, // %, can be a float
+		"format": "{icon} {format_source}",
+		"format-bluetooth": "{icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": "󰸈 {format_source}",
+		"format-source": "",
+		"format-source-muted": "",
+		"format-icons": {
+		  "headphone": "",
+		  "hands-free": "",
+		  "headset": "",
+		  "phone": "",
+		  "portable": "",
+		  "car": "",
+		  "default": [
+		    "",
+		    "",
+		    ""
+		  ]
+		},
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "pavucontrol"
   },
   "custom/notification": {
     "tooltip": false,

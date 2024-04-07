@@ -6,7 +6,7 @@
 
 #window {
   border-radius: $widget-radii;
-  border: $border transparentize($color: $blue, $amount: 0.2);
+  border: $widget-border;
 }
 
 #box {

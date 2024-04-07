@@ -1,7 +1,3 @@
-#Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { pkgs, inputs, ... }:
 
 {
@@ -47,7 +43,7 @@
 
     # theming
     inputs.walker.packages.${system}.default
-    starship
+    #starship
     inputs.anyrun.packages.${system}.default
     swaynotificationcenter
     swayosd
@@ -59,12 +55,13 @@
     nwg-look
     hyprpicker
     gradience
-    swaylock-effects
+    #swaylock-effects
     kitty-themes
 
     # code
+    jsbeautifier
     lua-language-server
-    neovim-unwrapped
+    #neovim-unwrapped
     dart-sass
     bun
     neovide
@@ -81,7 +78,7 @@
     cargo
     ripgrep
     fd
-    emacs
+    #emacs
     jq
     nil
     rustfmt
@@ -93,12 +90,12 @@
     vala
     cmake
     pkg-config
-    vala-language-server
+    #vala-language-server
     uncrustify
 
     # homelab
     rpi-imager
-    #super-slicer-beta
+    super-slicer-beta
 
     # information
     firefox
@@ -117,7 +114,7 @@
     obsidian
     libreoffice-fresh
     nextcloud-client
-    remmina
+    #remmina
 
     # media
     obs-studio
@@ -134,7 +131,7 @@
     # system
     #blueman
     inputs.eza.packages.${system}.default
-    rofi-wayland
+    #rofi-wayland
     pika-backup
     envsubst
     grim
@@ -171,13 +168,12 @@
     slurp
     playerctl
     unzip
-    sway-audio-idle-inhibit
     wev
     sabnzbd
     wineWowPackages.waylandFull
     #inputs.nix-software-center.packages.${system}.nix-software-center
     #inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
-    nixos-generators
+    #nixos-generators
     wlr-randr
     powertop
     poweralertd
