@@ -5,15 +5,15 @@
     enable = true;
 
     enabledExtensions = [ "ui-select" ];
-    extensionConfig.ui-select = { };
+    extensions.ui-select.enable = true;
     extensions.frecency.enable = false;
     extensions.fzf-native.enable = true;
 
-    extensions.file_browser = {
+    extensions.file-browser = {
       enable = true;
-      hidden = true;
-      depth = 9999999999;
-      autoDepth = true;
+      settings.hidden = true;
+      settings.depth = 9999999999;
+      settings.auto_depth = true;
     };
     keymaps = {
       "<leader>ff" = "find_files";

@@ -10,8 +10,7 @@ window#waybar {
   font-size: $font-size;
   /*border-radius: $radii;
    */
-background: transparentize($color: $bar-bg, $amount: 0.2);
-
+  background: transparentize($color: $bar-bg, $amount: 0.2);
 }
 
 #clock,
@@ -27,13 +26,13 @@ background: transparentize($color: $bar-bg, $amount: 0.2);
 #custom-notification {
   padding-left: $spacing;
   padding-right: $spacing;
-  margin-top: $spacing*1.5;
-  margin-bottom: $spacing*1.5;
+  margin-top: $spacing * 1.5;
+  margin-bottom: $spacing * 1.5;
 }
 
 #clock,
 #network {
-  padding-left: $spacing*2;
+  padding-left: $spacing * 2;
   border-top-left-radius: $radii/2;
   border-bottom-left-radius: $radii/2;
 }
@@ -41,8 +40,8 @@ background: transparentize($color: $bar-bg, $amount: 0.2);
 #custom-weather,
 #backlight,
 #custom-notification {
-  margin-right: $spacing*2;
-  padding-right: $spacing*2;
+  margin-right: $spacing * 2;
+  padding-right: $spacing * 2;
   border-top-right-radius: $radii/2;
   border-bottom-right-radius: $radii/2;
 }
@@ -69,11 +68,11 @@ background: transparentize($color: $bar-bg, $amount: 0.2);
 #battery,
 #tray,
 #custom-power {
-  padding-left: $spacing*1.5;
-  padding-right: $spacing*1.5;
-  margin-top: $spacing*1.5;
-  margin-bottom: $spacing*1.5;
-  margin-right: $spacing*2.0;
+  padding-left: $spacing * 1.5;
+  padding-right: $spacing * 1.5;
+  margin-top: $spacing * 1.5;
+  margin-bottom: $spacing * 1.5;
+  margin-right: $spacing * 2;
   border-radius: $radii/2;
 }
 
@@ -83,12 +82,12 @@ background: transparentize($color: $bar-bg, $amount: 0.2);
 
 #workspaces button {
   font-size: 0;
-  min-width: $font-size*1;
-  min-height: $font-size*1;
-  margin: $spacing*1.5;
-  margin-top: $spacing*1.5;
-  margin-bottom: $spacing*1.5;
-  border-radius: $spacing*10;
+  min-width: $font-size * 1;
+  min-height: $font-size * 1;
+  margin: $spacing * 1.5;
+  margin-top: $spacing * 1.5;
+  margin-bottom: $spacing * 1.5;
+  border-radius: $spacing * 10;
   background-color: $fg_color;
   transition: 100ms;
   animation: ws_normal 20s ease-out 10;
@@ -99,7 +98,7 @@ background: transparentize($color: $bar-bg, $amount: 0.2);
 }
 
 #workspaces button.active {
-  min-width: $font-size*2.2;
+  min-width: $font-size * 2.2;
   background-color: darken($color: $blue, $amount: 5);
   transition: 100ms;
 }
@@ -110,7 +109,7 @@ background: transparentize($color: $bar-bg, $amount: 0.2);
 
 #custom-power {
   color: darken($color: $red, $amount: 10);
-  margin-right: $spacing*1.5;
+  margin-right: $spacing * 1.5;
 }
 
 .modules-left {

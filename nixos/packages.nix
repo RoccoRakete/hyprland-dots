@@ -2,13 +2,58 @@
 
 {
   # Allow unfree packages
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [
-      #"electron-25.9.0"
-      #"electron-19.1.9"
-      #"nix-2.16.2"
-    ];
+  nixpkgs = {
+    config = {
+
+      ########## TODO: remove after electron update
+      packageOverrides = pkgs: rec {
+        electron_28 = pkgs.electron_28.overrideAttrs
+          (oldAttrs: rec {
+
+            buildCommand =
+              let
+                electron-unwrapped = pkgs.electron_28.passthru.unwrapped.overrideAttrs (oldAttrs: rec {
+                  postPatch = builtins.replaceStrings [ "--exclude='src/third_party/blink/web_tests/*'" ] [ "--exclude='src/third_party/blink/web_tests/*' --exclude='src/content/test/data/*'" ] oldAttrs.postPatch;
+                });
+              in
+              ''
+                gappsWrapperArgsHook
+                mkdir -p $out/bin
+                makeWrapper "${electron-unwrapped}/libexec/electron/electron" "$out/bin/electron" \
+                  "''${gappsWrapperArgs[@]}" \
+                  --set CHROME_DEVEL_SANDBOX $out/libexec/electron/chrome-sandbox
+
+                ln -s ${electron-unwrapped}/libexec $out/libexec
+              '';
+          });
+        electron = pkgs.electron.overrideAttrs
+          (oldAttrs: rec {
+            buildCommand =
+              let
+                electron-unwrapped = pkgs.electron.passthru.unwrapped.overrideAttrs (oldAttrs: rec {
+                  postPatch = builtins.replaceStrings [ "--exclude='src/third_party/blink/web_tests/*'" ] [ "--exclude='src/third_party/blink/web_tests/*' --exclude='src/content/test/data/*'" ] oldAttrs.postPatch;
+                });
+              in
+              ''
+                gappsWrapperArgsHook
+                mkdir -p $out/bin
+                makeWrapper "${electron-unwrapped}/libexec/electron/electron" "$out/bin/electron" \
+                  "''${gappsWrapperArgs[@]}" \
+                  --set CHROME_DEVEL_SANDBOX $out/libexec/electron/chrome-sandbox
+
+                ln -s ${electron-unwrapped}/libexec $out/libexec
+              '';
+          });
+        ########## TODO: remove after electron update
+      };
+
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        #"electron-25.9.0"
+        #"electron-19.1.9"
+        #"nix-2.16.2"
+      ];
+    };
   };
 
   services.udev.packages = [ pkgs.swayosd ];
@@ -29,7 +74,6 @@
     gnome.gnome-bluetooth
     gnome.gnome-settings-daemon
     gnome.gnome-software
-    #gnome.nautilus
     glib
     nautilus-open-any-terminal
     libadwaita
@@ -43,7 +87,6 @@
 
     # theming
     inputs.walker.packages.${system}.default
-    #starship
     inputs.anyrun.packages.${system}.default
     swaynotificationcenter
     swayosd
@@ -55,13 +98,17 @@
     nwg-look
     hyprpicker
     gradience
-    #swaylock-effects
     kitty-themes
 
     # code
+    stylua
+    codespell
+    isort
+    black
+    prettierd
+    shfmt
     jsbeautifier
     lua-language-server
-    #neovim-unwrapped
     dart-sass
     bun
     neovide
@@ -78,7 +125,6 @@
     cargo
     ripgrep
     fd
-    #emacs
     jq
     nil
     rustfmt
@@ -90,8 +136,9 @@
     vala
     cmake
     pkg-config
-    #vala-language-server
     uncrustify
+    #vala-language-server
+    #neovim-unwrapped
 
     # homelab
     rpi-imager
@@ -102,9 +149,6 @@
     thunderbird
     brave
     bitwarden
-    #discord
-    #webcord
-    #gtkcord4
     vesktop
     betaflight-configurator
     whatsapp-for-linux
@@ -114,7 +158,7 @@
     obsidian
     libreoffice-fresh
     nextcloud-client
-    #remmina
+    mailspring
 
     # media
     obs-studio
@@ -124,14 +168,11 @@
     spotify
     gimp
     gthumb
-    #yuzu-mainline
     jellyfin-media-player
     heroic
 
     # system
-    #blueman
     inputs.eza.packages.${system}.default
-    #rofi-wayland
     pika-backup
     envsubst
     grim
@@ -152,7 +193,6 @@
     bluez-tools
     wl-clip-persist
     wl-clipboard
-    #swayidle
     sway-audio-idle-inhibit
     xdg-desktop-portal
     distrobox
@@ -171,9 +211,6 @@
     wev
     sabnzbd
     wineWowPackages.waylandFull
-    #inputs.nix-software-center.packages.${system}.nix-software-center
-    #inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
-    #nixos-generators
     wlr-randr
     powertop
     poweralertd
@@ -181,5 +218,4 @@
     inputs.nh.packages.${system}.default
     satty
   ];
-
 }

@@ -16,6 +16,7 @@
     ./dashboard.nix
     ./efmls.nix
     ./lsp-format.nix
+    ./conform.nix
   ];
   programs = {
     nixvim = {
@@ -32,10 +33,6 @@
         nix.enable = true;
 
         lsp-lines.enable = true;
-        conform-nvim = {
-          enable = false;
-          formatOnSave.lspFallback = true;
-        };
         lspkind.enable = true;
 
         neogit.enable = true;
@@ -60,18 +57,19 @@
         };
       };
 
-      autoCmd = [
-        {
-          event = [ "BufWrite" ];
-          pattern = [ "" ];
-          command = "Autoformat";
-        }
-      ];
+      #autoCmd = [
+      #  {
+      #    event = [ "BufWrite" ];
+      #    pattern = [ "" ];
+      #    command = "lua require('conform').format({ lsp_fallback = true, async = false, timeout_ms = 500 })<CR>";
+      #  }
+      #];
 
       extraPlugins = with pkgs.vimPlugins; [
         telescope-ui-select-nvim
-        vim-autoformat
+        #vim-autoformat
         vim-jsbeautify
+
       ];
 
       extraConfigLua =

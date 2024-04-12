@@ -1,220 +1,217 @@
 {
-  "spacing": 0,
-  //"margin-left": 10,
-  //"margin-right": 10,
-  //"margin-top": 10,
-  "margin-left": 0,
-  "margin-right": 0,
-  "margin-top": 0,
-  "layer": "top",
-  "reload_style_on_change": true,
-  "modules-left": [
-    "image",
-    "hyprland/workspaces"
-  ],
-  "modules-center": [
-    "clock",
-    "custom/weather"
-  ],
-  "modules-right": [
-    "network#speed",
-    "memory",
-    "temperature",
-    "cpu",
-    "backlight",
-    "battery",
-    "tray",
-    "network",
-    "bluetooth",
-    "pulseaudio",
-    "custom/notification",
-    "custom/power"
-  ],
-  "image": {
-    "path": "/home/martin/Dokumente/Backgrounds/nixos.png",
-    "size": 23,
-    "interval": 86400, // once every day
-    "on-click": "mpc toggle"
-  },
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "tooltip": false,
-    "all-outputs": false,
-    "current-only": true,
-    "sort-by-number": true,
-    "persistent-workspaces": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
-      "8": "",
-      "9": "",
-      "10": ""
-    },
-    "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
-      "8": "",
-      "9": "",
-      "10": "",
-      "active": "",
-      "default": ""
-    }
-  },
-  "clock": {
-    "format": "{:%a. <span rise=\"1.5pt\">|</span> %H:%M <span rise=\"1.5pt\">|</span>}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%d.%m.%y - %H:%M}"
-  },
-  "custom/weather": {
-    "exec": "${HOME}/.config/waybar/scripts/get_weather.sh",
-    "return-type": "json",
-    "format": "{}",
-    "tooltip": true,
-    "interval": 900
-  },
-  "cpu": {
-    "format": "{icon}",
-    "format-icons": [
-      "󰝦",
-      "󰪞",
-      "󰪟",
-      "󰪠",
-      "󰪡",
-      "󰪢",
-      "󰪣",
-      "󰪤",
-      "󰪥"
-    ],
-    "tooltip": false,
-    "interval": 1
-  },
-  "memory": {
-    "tooltip": false,
-    "format": "󰆼{used:.1f} GiB"
-  },
-  "temperature": {
-    "tooltip": false,
-    "thermal-zone": 6,
-    "critical-threshold": 90,
-    "format": "{temperatureC}°C",
-    "interval": 1
-  },
-  "backlight": {
-    "tooltip": false,
-    "format": "{icon}{percent}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15,
-      "full-at": 98
-    },
-    "format": "{icon}",
-    "format-full": "<span foreground=\"#2A995C\">󱐥</span>",
-    "format-charging": "<span foreground=\"#2A995C\">󱐋</span>{capacity}%",
-    "format-plugged": "<span foreground=\"#2A995C\">󱐋</span>{capacity}%",
-    "format-alt": "{icon} {capacity}%",
-    "format-icons": [
-      "<span foreground=\"#f38ba8\"></span> ",
-      "<span foreground=\"#eba0ac\"></span> ",
-      "<span foreground=\"#fab387\"></span> ",
-      "<span foreground=\"#f9e2af\"></span> ",
-      "<span foreground=\"#a6e3a1\"></span> "
-    ],
-    "interval": 1
-  },
-  "tray": {
-    "spacing": 6
-  },
-  "network": {
-    "format-wifi": "",
-    "format-ethernet": "󰈀",
-    "tooltip-format": "{ifname} ({ipaddr}) via {gwaddr} at\n{essid}",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "󰖪",
-    "on-click": "swaync-client -t -sw"
-  },
-  "network#speed": {
-    "format": "<span line_height=\"0.75\" size=\"9pt\"> {bandwidthUpBytes}\n {bandwidthDownBytes}</span>",
-    "interval": 1
-  },
-  "bluetooth": {
-    "format": "",
-    "format-disabled": "󰂲",
-    "format-connected": "󰂱",
-    "tooltip-format": "{controller_alias}\t{controller_address}",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "swaync-client -t -sw"
-  },
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{icon} {format_source}",
-    "format-bluetooth": "{icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": "󰸈 {format_source}",
-    "format-source": "",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    },
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "pavucontrol"
-  },
-  "custom/notification": {
-    "tooltip": false,
-    "format": "{icon}",
-    "format-icons": {
-      "notification": "󰂟",
-      "none": "",
-      "dnd-notification": "󰺁",
-      "dnd-none": "",
-      "inhibited-notification": "󰂟",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "󰺁",
-      "dnd-inhibited-none": ""
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true
-  },
-  "custom/power": {
-    "format": "",
-    "on-click": "wlogout -b 5 -c 0 -r 0 -T 0 -B 0",
-    "interval": 86400, // once every day
-    "tooltip": true
-  }
+	"spacing": 0,
+	"margin-left": 0,
+	"margin-right": 0,
+	"margin-top": 0,
+	"layer": "top",
+	"reload_style_on_change": true,
+	"modules-left": [
+		"image",
+		"hyprland/workspaces"
+	],
+	"modules-center": [
+		"clock",
+		"custom/weather"
+	],
+	"modules-right": [
+		"network#speed",
+		"memory",
+		"temperature",
+		"cpu",
+		"backlight",
+		"battery",
+		"tray",
+		"network",
+		"bluetooth",
+		"pulseaudio",
+		"custom/notification",
+		"custom/power"
+	],
+	"image": {
+		"path": "/home/martin/Dokumente/Backgrounds/nixos.png",
+		"size": 23,
+		"interval": 86400, // once every day
+		"on-click": "mpc toggle"
+	},
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"tooltip": false,
+		"all-outputs": false,
+		"current-only": true,
+		"sort-by-number": true,
+		"persistent-workspaces": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "",
+			"6": "",
+			"7": "",
+			"8": "",
+			"9": "",
+			"10": ""
+		},
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "",
+			"6": "",
+			"7": "",
+			"8": "",
+			"9": "",
+			"10": "",
+			"active": "",
+			"default": ""
+		}
+	},
+	"clock": {
+		"format": "{:%a. <span rise=\"1.5pt\">|</span> %H:%M <span rise=\"1.5pt\">|</span>}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%d.%m.%y - %H:%M}"
+	},
+	"custom/weather": {
+		"exec": "${HOME}/.config/waybar/scripts/get_weather.sh",
+		"return-type": "json",
+		"format": "{}",
+		"tooltip": true,
+		"interval": 900
+	},
+	"cpu": {
+		"format": "{icon}",
+		"format-icons": [
+			"󰝦",
+			"󰪞",
+			"󰪟",
+			"󰪠",
+			"󰪡",
+			"󰪢",
+			"󰪣",
+			"󰪤",
+			"󰪥"
+		],
+		"tooltip": false,
+		"interval": 1
+	},
+	"memory": {
+		"tooltip": false,
+		"format": "󰆼{used:.1f} GiB"
+	},
+	"temperature": {
+		"tooltip": false,
+		"thermal-zone": 6,
+		"critical-threshold": 90,
+		"format": "{temperatureC}°C",
+		"interval": 1
+	},
+	"backlight": {
+		"tooltip": false,
+		"format": "{icon}{percent}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			""
+		]
+	},
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15,
+			"full-at": 98
+		},
+		"format": "{icon}",
+		"format-full": "<span foreground=\"#2A995C\">󱐥</span>",
+		"format-charging": "<span foreground=\"#2A995C\">󱐋</span>{capacity}%",
+		"format-plugged": "<span foreground=\"#2A995C\">󱐋</span>{capacity}%",
+		"format-alt": "{icon} {capacity}%",
+		"format-icons": [
+			"<span foreground=\"#f38ba8\"></span> ",
+			"<span foreground=\"#eba0ac\"></span> ",
+			"<span foreground=\"#fab387\"></span> ",
+			"<span foreground=\"#f9e2af\"></span> ",
+			"<span foreground=\"#a6e3a1\"></span> "
+		],
+		"interval": 1
+	},
+	"tray": {
+		"spacing": 6
+	},
+	"network": {
+		"format-wifi": "",
+		"format-ethernet": "󰈀",
+		"tooltip-format": "{ifname} ({ipaddr}) via {gwaddr} at\n{essid}",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "󰖪",
+		"on-click": "swaync-client -t -sw"
+	},
+	"network#speed": {
+		"format": "<span line_height=\"0.75\" size=\"9pt\"> {bandwidthUpBytes}\n {bandwidthDownBytes}</span>",
+		"interval": 1
+	},
+	"bluetooth": {
+		"format": "",
+		"format-disabled": "󰂲",
+		"format-connected": "󰂱",
+		"tooltip-format": "{controller_alias}\t{controller_address}",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"on-click": "swaync-client -t -sw"
+	},
+	"pulseaudio": {
+		// "scroll-step": 1, // %, can be a float
+		"format": "{icon} {format_source}",
+		"format-bluetooth": "{icon} {format_source}",
+		"format-bluetooth-muted": " {icon} {format_source}",
+		"format-muted": "󰸈 {format_source}",
+		"format-source": "",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				"",
+				"",
+				""
+			]
+		},
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "pavucontrol"
+	},
+	"custom/notification": {
+		"tooltip": false,
+		"format": "{icon}",
+		"format-icons": {
+			"notification": "󰂟",
+			"none": "",
+			"dnd-notification": "󰺁",
+			"dnd-none": "",
+			"inhibited-notification": "󰂟",
+			"inhibited-none": "",
+			"dnd-inhibited-notification": "󰺁",
+			"dnd-inhibited-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
+	"custom/power": {
+		"format": "",
+		"on-click": "wlogout -b 5 -c 0 -r 0 -T 0 -B 0",
+		"interval": 86400, // once every day
+		"tooltip": true
+	}
 }

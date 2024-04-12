@@ -7,13 +7,13 @@
       #"wal -R" + "\n" +
       "clear";
 
-    initExtra =
-      "source ~/.p10k.zsh" + "\n" +
-      "neofetch" + "\n" +
-      "export TERM=kitty" + "\n" +
-      "export EDITOR=nvim";
+      initExtra =
+        "source ~/.p10k.zsh" + "\n" +
+        "neofetch" + "\n" +
+        "export TERM=kitty" + "\n" +
+        "export EDITOR=nvim";
 
-    shellAliases = {
+        shellAliases = {
       #ll = "ls -lah";
       ll = "eza -loah --icons=always --no-permissions --git";
       v = "nvim";
@@ -25,6 +25,7 @@
 
       update = "sudo nixos-rebuild switch";
       flake-update = "nix flake update ~/.dots/nixos";
+      fwup = "sudo fwupdmgr refresh --force && sudo fwupdmgr get-updates && sudo fwupdmgr update";
 
       upgrade-desktop = "sudo nixos-rebuild switch --upgrade --flake ~/.dots/nixos#OptiPlex3060";
       home-upgrade-desktop = "home-manager switch --flake ~/.dots/nixos#OptiPlex3060";

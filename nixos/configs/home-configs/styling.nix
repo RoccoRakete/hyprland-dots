@@ -20,6 +20,11 @@
     enable = true;
 
     # GTK-Icons
+    # Yaru
+    #iconTheme.package = pkgs.yaru-theme;
+    #iconTheme.name = "Yaru";
+
+    # MoreWaita
     iconTheme.package = pkgs.morewaita-icon-theme;
     iconTheme.name = "MoreWaita";
 

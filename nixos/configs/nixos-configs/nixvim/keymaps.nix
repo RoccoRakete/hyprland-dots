@@ -6,7 +6,8 @@
       keymaps = [
         {
           key = "<leader>lf";
-          action = ":Autoformat<CR>";
+          action = "<cmd>lua require('conform').format({ lsp_fallback = true, async = false, timeout_ms = 500 })<CR>";
+
           options = {
             silent = true;
           };
@@ -36,6 +37,10 @@
           action = "<CMD>:bnext<NL>";
         }
 
+        {
+          key = "<leader>c";
+          action = "<CMD>:bp | bd #<NL>";
+        }
         {
           key = "<leader>c";
           action = "<CMD>:bp | bd #<NL>";
