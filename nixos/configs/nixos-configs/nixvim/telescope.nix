@@ -20,7 +20,7 @@
       "<leader>fs" = "grep_string";
       "<leader>fg" = "live_grep";
     };
-    extraOptions = {
+    settings = {
       pickers = {
         find_files = {
           hidden = true;

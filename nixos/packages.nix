@@ -4,54 +4,20 @@
   # Allow unfree packages
   nixpkgs = {
     config = {
-
-      ########## TODO: remove after electron update
-      packageOverrides = pkgs: rec {
-        electron_28 = pkgs.electron_28.overrideAttrs
-          (oldAttrs: rec {
-
-            buildCommand =
-              let
-                electron-unwrapped = pkgs.electron_28.passthru.unwrapped.overrideAttrs (oldAttrs: rec {
-                  postPatch = builtins.replaceStrings [ "--exclude='src/third_party/blink/web_tests/*'" ] [ "--exclude='src/third_party/blink/web_tests/*' --exclude='src/content/test/data/*'" ] oldAttrs.postPatch;
-                });
-              in
-              ''
-                gappsWrapperArgsHook
-                mkdir -p $out/bin
-                makeWrapper "${electron-unwrapped}/libexec/electron/electron" "$out/bin/electron" \
-                  "''${gappsWrapperArgs[@]}" \
-                  --set CHROME_DEVEL_SANDBOX $out/libexec/electron/chrome-sandbox
-
-                ln -s ${electron-unwrapped}/libexec $out/libexec
-              '';
-          });
-        electron = pkgs.electron.overrideAttrs
-          (oldAttrs: rec {
-            buildCommand =
-              let
-                electron-unwrapped = pkgs.electron.passthru.unwrapped.overrideAttrs (oldAttrs: rec {
-                  postPatch = builtins.replaceStrings [ "--exclude='src/third_party/blink/web_tests/*'" ] [ "--exclude='src/third_party/blink/web_tests/*' --exclude='src/content/test/data/*'" ] oldAttrs.postPatch;
-                });
-              in
-              ''
-                gappsWrapperArgsHook
-                mkdir -p $out/bin
-                makeWrapper "${electron-unwrapped}/libexec/electron/electron" "$out/bin/electron" \
-                  "''${gappsWrapperArgs[@]}" \
-                  --set CHROME_DEVEL_SANDBOX $out/libexec/electron/chrome-sandbox
-
-                ln -s ${electron-unwrapped}/libexec $out/libexec
-              '';
-          });
-        ########## TODO: remove after electron update
-      };
-
       allowUnfree = true;
       permittedInsecurePackages = [
         #"electron-25.9.0"
         #"electron-19.1.9"
         #"nix-2.16.2"
+      ];
+      overlays = [
+        #(final: prev: {
+        #  brave = prev.brave.override {
+        #    commandLineArgs =
+        #      "--password-store=basic
+        #      --enable-features=TouchpadOverscrollHistoryNavigation";
+        #    };
+        #})
       ];
     };
   };
@@ -61,13 +27,27 @@
   # Package configurations
   environment.systemPackages = with pkgs; [
 
+    #(
+    #  pkgs.runCommand
+    #    "brave-wrapped"
+    #    { nativeBuildInputs = [ pkgs.makeWrapper ]; }
+    #    ''
+    #      makeWrapper ${lib.getExe pkgs.brave} $out/bin/brave \
+    #        --append-flags "--enable-features=TouchpadOverscrollHistoryNavigation" \
+    #        --append-flags "--password-store=basic" \
+    #        --append-flags "--enable-chrome-browser-cloud-management"
+    #    ''
+    #)
+
     #Commandline arguments
-    (brave.override {
-      commandLineArgs = [
-        "--enable-features=TouchpadOverscrollHistoryNavigation"
-        "--ozone-platform=wayland"
-      ];
-    })
+    (
+      brave.override {
+        commandLineArgs = [
+          "--enable-features=TouchpadOverscrollHistoryNavigation"
+          "--password-store=basic"
+        ];
+      }
+    )
 
     #Packages
     # gnome
@@ -113,7 +93,6 @@
     bun
     neovide
     fzf
-    nodejs_21
     libgcc
     libgccjit
     bintools-unwrapped
@@ -145,6 +124,7 @@
     super-slicer-beta
 
     # information
+    lutris
     firefox
     thunderbird
     brave
@@ -172,6 +152,7 @@
     heroic
 
     # system
+    proxmox-backup-client
     inputs.eza.packages.${system}.default
     pika-backup
     envsubst

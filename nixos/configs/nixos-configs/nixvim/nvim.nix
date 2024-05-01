@@ -53,7 +53,9 @@
         airline = {
           enable = true;
           #powerline = true;
-          theme = "catppuccin";
+          settings = {
+            theme = "catppuccin";
+          };
         };
       };
 
@@ -97,8 +99,10 @@
 
       colorschemes.catppuccin = {
         enable = true;
-        flavour = "mocha";
-        transparentBackground = false;
+        settings = {
+          flavour = "mocha";
+          transparentBackground = false;
+        };
       };
 
     };

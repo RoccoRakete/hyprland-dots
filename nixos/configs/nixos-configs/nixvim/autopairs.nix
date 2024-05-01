@@ -3,6 +3,8 @@
 {
   programs.nixvim.plugins.nvim-autopairs = {
     enable = true;
-    checkTs = true;
+    settings = {
+      checkTs = true;
+    };
   };
 }

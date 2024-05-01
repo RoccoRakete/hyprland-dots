@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, lib, config, ... }:
 
 {
   programs.zsh = {
@@ -7,13 +7,15 @@
       #"wal -R" + "\n" +
       "clear";
 
-      initExtra =
-        "source ~/.p10k.zsh" + "\n" +
-        "neofetch" + "\n" +
-        "export TERM=kitty" + "\n" +
-        "export EDITOR=nvim";
+    initExtra =
+      "source ~/.p10k.zsh" + "\n" +
+      "neofetch" + "\n" +
+      "export TERM=xterm" + "\n" +
+      "export EDITOR=nvim" + "\n" +
+      "bindkey '^[[A' menu-complete"
+    ;
 
-        shellAliases = {
+    shellAliases = {
       #ll = "ls -lah";
       ll = "eza -loah --icons=always --no-permissions --git";
       v = "nvim";
@@ -36,15 +38,17 @@
       news-laptop = "home-manager news --flake ~/.dots/nixos#ThinkPad";
     };
 
-    enableCompletion = true;
+    enableCompletion = false;
     syntaxHighlighting.enable = true;
-    history.size = 1000;
-    history.extended = true;
+    autosuggestion.enable = true;
+
     historySubstringSearch = {
       enable = true;
       searchUpKey = [ "\\eOA" ];
       searchDownKey = [ "\\eOB" ];
     };
+    history.size = 10000;
+    history.path = "${config.xdg.dataHome}/zsh/history";
 
     zplug = {
       enable = true;
@@ -56,28 +60,11 @@
     };
 
     oh-my-zsh = {
-      enable = true;
+      enable = false;
       plugins = [
         "git"
         "colored-man-pages"
-        #"starship"
-        #"thefuck"
       ];
-      #theme = "robbyrussell";
-    };
-  };
-  programs.starship = {
-    enable = false;
-    # Configuration written to ~/.config/starship.toml
-    settings = {
-      # add_newline = false;
-
-      # character = {
-      #   success_symbol = "[➜](bold green)";
-      #   error_symbol = "[➜](bold red)";
-      # };
-
-      # package.disabled = true;
     };
   };
 }

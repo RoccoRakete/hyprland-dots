@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 for i in {1..5}; do
-	text=$(curl -s "https://de.wttr.in/?nonce=$RANDOM\&format=1")
+	text=$(curl -s "de.wttr.in/~50.8322608,12.9252977?nonce=$RANDOM\&format=1")
 
 	if [[ $? == 0 ]]; then
 		text=$(echo "$text" | sed -E "s|[+ ]||g")
-		tooltip=$(curl -s "https://de.wttr.in/?nonce=$RANDOM\&format=4")
+		tooltip=$(curl -s "de.wttr.in/~50.8322608,12.9252977?nonce=$RANDOM\&format=4")
 		if [[ $? == 0 ]]; then
 			tooltip=$(echo "$tooltip" | sed -E "s/\s+/ /g")
 			echo "{\"text\":\"$text\", \"tooltip\":\"$tooltip\"}"

@@ -96,7 +96,7 @@
 	},
 	"memory": {
 		"tooltip": false,
-		"format": " {used:.1f} GiB"
+		"format": "  {used:.1f} GiB"
 	},
 	"temperature": {
 		"tooltip": false,
@@ -187,7 +187,7 @@
 			"default": [
 				"",
 				"",
-				""
+				" "
 			]
 		},
 		"on-click": "swaync-client -t -sw",

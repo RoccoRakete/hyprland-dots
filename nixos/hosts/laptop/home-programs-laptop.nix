@@ -61,6 +61,11 @@
       ];
       userSettings = { };
     };
+
+    zathura = {
+      enable = true;
+    };
+
     zoxide = {
       enable = true;
       options = [
