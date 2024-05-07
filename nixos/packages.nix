@@ -122,6 +122,7 @@
     # homelab
     rpi-imager
     super-slicer-beta
+    orca-slicer
 
     # information
     lutris
@@ -152,8 +153,10 @@
     heroic
 
     # system
+    clipse
     proxmox-backup-client
     inputs.eza.packages.${system}.default
+    inputs.hypridle.packages.${system}.default
     pika-backup
     envsubst
     grim
