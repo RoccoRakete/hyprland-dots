@@ -140,6 +140,7 @@
     libreoffice-fresh
     nextcloud-client
     mailspring
+    localsend
 
     # media
     obs-studio

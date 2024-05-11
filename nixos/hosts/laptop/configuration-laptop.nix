@@ -29,5 +29,10 @@ in
     hostName = vars.laptop;
     useDHCP = lib.mkDefault true;
     networkmanager.enable = true;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 53317 ];
+      allowedUDPPorts = [ 53317 ];
+    };
   };
 }

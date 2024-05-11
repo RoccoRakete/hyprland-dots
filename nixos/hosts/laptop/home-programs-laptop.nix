@@ -3,7 +3,7 @@
 {
   imports = [
     inputs.ags.homeManagerModules.default
-    inputs.hyprlock.homeManagerModules.default
+    #inputs.hyprlock.homeManagerModules.default
     inputs.anyrun.homeManagerModules.default
     inputs.walker.homeManagerModules.default
   ];
