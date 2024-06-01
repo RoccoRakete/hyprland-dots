@@ -34,9 +34,9 @@ in
     name = "Settings";
     comment = "Gnome Control Center";
     icon = "org.gnome.Settings";
-    exec = "env XDG_CURRENT_DESKTOP=gnome ${pkgs.gnome.gnome-control-center}/bin/gnome-control-center";
+    exec = "env XDG_CURRENT_DESKTOP=GNOME gnome-control-center --verbose";
     categories = [ "X-Preferences" ];
-    terminal = false;
+    terminal = true;
   };
 
   xdg.desktopEntries."com.RoccoRakete.ThemeSwitcher" = {
@@ -45,6 +45,15 @@ in
     icon = "org.gnome.Settings";
     exec = "/home/martin/.local/bin/theme_switcher";
     categories = [ "X-Preferences" ];
+    terminal = false;
+  };
+
+  xdg.desktopEntries."Betaflight Configurator 10.9.0" = {
+    name = "Betaflight Configurator 10.9.0";
+    comment = "Configurator FPV Flight Controllers";
+    icon = "/home/martin/.local/bin/BetaflightConfigurator10_9_0/icon/bf_icon_128.png";
+    exec = "/home/martin/.local/bin/betaflight-configurator";
+    categories = [ "X-FPV" ];
     terminal = false;
   };
 
@@ -66,14 +75,14 @@ in
     terminal = false;
   };
 
-  xdg.desktopEntries."SuperSlicer" = {
-    name = "SuperSlicer";
-    comment = "3D Print Slicer";
-    icon = "SuperSlicer";
-    exec = "/home/martin/.local/bin/superslicer";
-    categories = [ "X-FPV" ];
-    terminal = false;
-  };
+  #xdg.desktopEntries."SuperSlicer" = {
+  #  name = "SuperSlicer";
+  #  comment = "3D Print Slicer";
+  #  icon = "SuperSlicer";
+  #  exec = "/home/martin/.local/bin/superslicer";
+  #  categories = [ "X-FPV" ];
+  #  terminal = false;
+  #};
 
   home.file = { };
   home.sessionVariables = { };

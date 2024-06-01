@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 for i in {1..5}; do
-	text=$(curl -s "de.wttr.in/~50.8322608,12.9252977?nonce=$RANDOM\&format=1")
+	text=$(curl -s "de.wttr.in/Chemnitz?nonce=$RANDOM\&format=1")
 
 	if [[ $? == 0 ]]; then
 		text=$(echo "$text" | sed -E "s|[+ ]||g")

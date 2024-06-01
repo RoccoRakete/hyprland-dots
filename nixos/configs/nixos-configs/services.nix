@@ -12,7 +12,7 @@
     gnome.core-utilities.enable = true;
     gnome.core-shell.enable = true;
     upower.enable = true;
-    #xserver.desktopManager.gnome.enable = true;
+    xserver.desktopManager.xfce.enable = true;
     power-profiles-daemon.enable = false;
     xserver.displayManager.gdm.enable = true;
     gnome.gnome-keyring.enable = true;

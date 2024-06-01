@@ -3,15 +3,15 @@
 	"margin-left": 0,
 	"margin-right": 0,
 	"margin-top": 0,
-	"layer": "top",
+	"layer": "bottom",
 	"reload_style_on_change": true,
 	"modules-left": [
 		"image",
 		"hyprland/workspaces"
 	],
 	"modules-center": [
-		"clock",
-		"custom/weather"
+		"clock"
+		//"custom/weather"
 	],
 	"modules-right": [
 		"network#speed",
@@ -67,7 +67,7 @@
 		}
 	},
 	"clock": {
-		"format": "{:%a. <span rise=\"1.5pt\">|</span> %H:%M <span rise=\"1.5pt\">|</span>}",
+		"format": "{:%a. <span rise=\"1.5pt\">|</span> %H:%M<span rise=\"1.5pt\"></span>}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"format-alt": "{:%a. %d.%m.%y <span rise=\"1.5pt\">|</span> %H:%M <span rise=\"1.5pt\">|</span>}"
 	},

@@ -1,6 +1,11 @@
 { pkgs, inputs, ... }:
-
+#let
+#  myOverlays = import ./overlays/betaflight-configurator.nix;
+#in
 {
+
+  #nixpkgs.overlays = [ myOverlays ];
+
   # Allow unfree packages
   nixpkgs = {
     config = {
@@ -11,13 +16,6 @@
         #"nix-2.16.2"
       ];
       overlays = [
-        #(final: prev: {
-        #  brave = prev.brave.override {
-        #    commandLineArgs =
-        #      "--password-store=basic
-        #      --enable-features=TouchpadOverscrollHistoryNavigation";
-        #    };
-        #})
       ];
     };
   };
@@ -48,6 +46,8 @@
         ];
       }
     )
+
+
 
     #Packages
     # gnome
@@ -81,6 +81,8 @@
     kitty-themes
 
     # code
+    yarn
+    nodejs_22
     stylua
     codespell
     isort
@@ -126,12 +128,15 @@
 
     # information
     lutris
+    openra
     firefox
     thunderbird
     brave
     bitwarden
     vesktop
-    betaflight-configurator
+    #betaflight-configurator
+    #BlHeliSuite32xl
+    #betaflightConfigurator
     whatsapp-for-linux
     #kicad
 

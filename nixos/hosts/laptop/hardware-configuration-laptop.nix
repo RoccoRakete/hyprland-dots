@@ -40,4 +40,7 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-}
+  hardware.opengl.driSupport = true; # This is already enabled by default 
+  hardware.opengl.driSupport32Bit = true; # For 32 bit applications 
+  hardware.xpadneo.enable = true;
+    }
